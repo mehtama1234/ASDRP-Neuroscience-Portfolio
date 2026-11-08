@@ -23,6 +23,8 @@ causal evidence.
 - Separate exploratory analysis from confirmatory evaluation.
 - Document preprocessing and possible leakage risks.
 - Compare pixel, PCA, and CNN feature representations.
+- Run the committed behavior-shuffle negative control before interpreting added
+  behavior features as aligned signal.
 
 The flagship repository now includes a pinned core dependency manifest and a formal
 [replication protocol](https://github.com/AmishI123/neuroscience-project/blob/main/docs/REPLICATION_PLAN.md).
