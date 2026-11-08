@@ -20,6 +20,10 @@ voice and experiences.
 For a printable summary, use the [generated reviewer packet PDF](ASDRP-neuroscience-portfolio-packet.pdf).
 The source generator is `build_packet.py`.
 
+Run `python3 application/audit_portfolio.py` for the dependency-free handoff
+audit covering required artifacts, three-mouse claims, EEG outputs, video files,
+and the verified Android APK hash.
+
 ## Existing drafts
 
 - [Why applying](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_1_why_applying.md)
