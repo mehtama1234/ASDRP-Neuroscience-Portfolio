@@ -15,6 +15,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import balanced_accuracy_score, f1_score, roc_auc_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import TimeSeriesSplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,6 +66,43 @@ def evaluate(name: str, x: np.ndarray, y: np.ndarray, train_end: int, val_end: i
     }
 
 
+def blocked_cross_validate(name: str, x: np.ndarray, y: np.ndarray, splits: int = 5) -> dict:
+    """Evaluate contiguous future blocks using only earlier samples for fitting."""
+    splitter = TimeSeriesSplit(n_splits=splits)
+    folds = []
+    for fold, (train_index, test_index) in enumerate(splitter.split(x), 1):
+        model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1200, class_weight="balanced"))
+        model.fit(x[train_index], y[train_index])
+        probability = model.predict_proba(x[test_index])[:, 1]
+        prediction = (probability >= 0.5).astype(int)
+        fold_result = {
+            "fold": fold,
+            "train_start": int(train_index[0]),
+            "train_end_exclusive": int(train_index[-1] + 1),
+            "test_start": int(test_index[0]),
+            "test_end_exclusive": int(test_index[-1] + 1),
+            "train_samples": int(len(train_index)),
+            "test_samples": int(len(test_index)),
+            "test_roc_auc": float(roc_auc_score(y[test_index], probability)),
+            "test_balanced_accuracy": float(balanced_accuracy_score(y[test_index], prediction)),
+            "test_f1": float(f1_score(y[test_index], prediction)),
+        }
+        folds.append(fold_result)
+    aucs = np.array([fold["test_roc_auc"] for fold in folds])
+    return {
+        "model": name,
+        "splitter": "sklearn TimeSeriesSplit",
+        "fold_count": len(folds),
+        "folds": folds,
+        "summary": {
+            "mean_test_roc_auc": float(aucs.mean()),
+            "std_test_roc_auc": float(aucs.std(ddof=1)),
+            "min_test_roc_auc": float(aucs.min()),
+            "max_test_roc_auc": float(aucs.max()),
+        },
+    }
+
+
 def main() -> None:
     x, y = load_data()
     train_end = int(len(y) * 0.70)
@@ -80,6 +118,10 @@ def main() -> None:
         "models": [
             evaluate("pointwise EEG", x, y, train_end, val_end),
             evaluate("EEG + causal temporal context", trailing_features(x), y, train_end, val_end),
+        ],
+        "blocked_cross_validation": [
+            blocked_cross_validate("pointwise EEG", x, y),
+            blocked_cross_validate("EEG + causal temporal context", trailing_features(x), y),
         ],
     }
     RESULTS.mkdir(exist_ok=True)

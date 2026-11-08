@@ -22,7 +22,7 @@ Result: `PORTFOLIO AUDIT PASSED`.
 | Artifact | SHA-256 |
 |---|---|
 | `application/ASDRP-neuroscience-portfolio-packet.pdf` | `f7e38972aa30694af094177401785e1798d7bd0398bb6286d573a055665d61a1` |
-| `communication/video/renders/eeg-research-storyboard.mp4` | `b80f0e2468843ae8a7ebe453aa3dc87faca182fe4f8fdd956832960e666b39a0` |
+| `communication/video/renders/eeg-research-storyboard.mp4` | `67e438fff9e167faf4332b677dee15d4c8f0f17403ef3c4c2fc2f66cac90c070` |
 | `communication/video/renders/mouse-research-storyboard.mp4` | `51ae34b49c644727cc847a56b485c7f7eb02c9dea6c4eeb9de24e0081b344073` |
 | `communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk` | `0549e522f492b8ea5c110554e780ca8027294e31a838b57921157774b8b5e3c1` |
 

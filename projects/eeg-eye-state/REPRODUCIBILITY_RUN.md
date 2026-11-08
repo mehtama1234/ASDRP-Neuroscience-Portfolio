@@ -12,5 +12,7 @@ Running `python src/analyze.py` reproduced the committed metrics:
 | EEG + causal temporal context | 0.5296496 |
 
 The run uses the retained ARFF file, the chronological 70/15/15 split, and no
-random row shuffling. This is a reproduction of one continuous recording, not
-evidence of generalization to new participants.
+random row shuffling. It also writes five forward-chaining blocked-fold results
+under `blocked_cross_validation` in `results/metrics.json`; mean ROC AUC is 0.478
+for pointwise EEG and 0.488 for causal context. This is still one continuous
+recording, not evidence of generalization to new participants.

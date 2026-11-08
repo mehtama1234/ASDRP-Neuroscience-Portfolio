@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import hashlib
+import json
 import re
 
 
@@ -41,6 +42,7 @@ def main() -> None:
         "communication/video/renders/eeg-research-storyboard.vtt",
         "projects/eeg-eye-state/results/metrics.json",
         "projects/eeg-eye-state/REPRODUCIBILITY_RUN.md",
+        "../neuroscience-project/results/per_mouse_replication_summary.json",
     ]
     for path in required:
         require(path)
@@ -65,6 +67,11 @@ def main() -> None:
     if re.search(r"two-mouse|two mice|both animals|beyond two", reproducibility, re.IGNORECASE):
         raise SystemExit("STALE replication scope in flagship reproducibility record")
     print("OK flagship reproducibility scope: three-mouse")
+    eeg_metrics = json.loads((ROOT / "projects/eeg-eye-state/results/metrics.json").read_text(encoding="utf-8"))
+    blocked = eeg_metrics.get("blocked_cross_validation", [])
+    if len(blocked) != 2 or any(item.get("fold_count") != 5 for item in blocked):
+        raise SystemExit("EXPECTED five blocked EEG folds for both models")
+    print("OK EEG expansion: five forward-chaining folds per model")
 
     apk = ROOT / "communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk"
     digest = hashlib.sha256(apk.read_bytes()).hexdigest()

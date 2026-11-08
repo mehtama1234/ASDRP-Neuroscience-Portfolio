@@ -26,4 +26,6 @@ held-out block did not.
 
 “The result is not that temporal context never helps. It is that this first feature
 design did not generalize on this recording. A transparent negative result tells us
-exactly what the next experiment must test: more recordings and multiple timescales.”
+exactly what the next experiment must test: more recordings and multiple timescales.
+Our five forward-chaining folds also vary widely and average near chance, so the
+small context advantage there is not a population claim.”

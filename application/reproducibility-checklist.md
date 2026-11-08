@@ -20,7 +20,7 @@
 - [x] Baseline and extension implemented
 - [x] Held-out metrics saved in `results/metrics.json`
 - [x] Negative result documented rather than discarded
-- [ ] Additional recordings or blocked cross-validation
+- [x] Five-fold forward-chaining blocked cross-validation analysis (additional recordings remain open)
 - [x] Project dependency manifest (`projects/eeg-eye-state/requirements.txt`)
 - [x] Clean-environment analysis run documented
 

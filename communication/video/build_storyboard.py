@@ -37,6 +37,7 @@ SLIDES = {
         ("THE EVALUATION", "Time order matters.", "70% train, 15% validation, 15% final test. No random row split."),
         ("THE BASELINE", "Test ROC AUC: 0.625", "Pointwise standardized EEG with class-balanced logistic regression."),
         ("THE EXTENSION", "Test ROC AUC: 0.530", "Causal temporal context did not generalize on the final held-out block."),
+        ("THE EXPANSION", "Five blocked folds stay near chance.", "Mean ROC AUC: 0.478 pointwise versus 0.488 with context; fold variation is wide."),
         ("THE LIMIT", "Negative results count.", "More recordings and multiple time scales are needed before generalization claims."),
     ],
 }

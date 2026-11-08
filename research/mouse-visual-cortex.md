@@ -18,13 +18,16 @@ causal evidence.
 
 - Repeat the analysis across additional mice beyond the three already evaluated.
 - Compare animals with different amounts of running behavior.
-- Add confidence intervals and statistical tests.
+- Use the descriptive animal-level gain summary without pooling neurons.
+- Extend beyond three animals before attempting hierarchical population uncertainty.
 - Separate exploratory analysis from confirmatory evaluation.
 - Document preprocessing and possible leakage risks.
 - Compare pixel, PCA, and CNN feature representations.
 
 The flagship repository now includes a pinned core dependency manifest and a formal
 [replication protocol](https://github.com/AmishI123/neuroscience-project/blob/main/docs/REPLICATION_PLAN.md).
+The current descriptive cross-animal summary is in
+[`per_mouse_replication_summary.json`](https://github.com/AmishI123/neuroscience-project/blob/main/results/per_mouse_replication_summary.json).
 
 ## Displayable artifacts
 

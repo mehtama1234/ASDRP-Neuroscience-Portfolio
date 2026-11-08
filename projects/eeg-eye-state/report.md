@@ -42,6 +42,24 @@ The extended model looked slightly better on validation but failed to generalize
 the final block. That divergence is exactly why the final test block was kept hidden
 from model selection.
 
+## Blocked cross-validation expansion
+
+To test whether the final-block result depended on one arbitrary boundary, we added
+five forward-chaining folds with `TimeSeriesSplit`. Each fold trains only on earlier
+samples and evaluates the next contiguous block. The original 70/15/15 result above
+is retained as the primary pre-specified holdout; these folds are a robustness
+analysis, not a replacement for independent recordings.
+
+| Model | Mean fold ROC AUC | SD | Range |
+|---|---:|---:|---:|
+| Pointwise EEG | 0.478 | 0.100 | 0.354–0.593 |
+| EEG + causal context | 0.488 | 0.095 | 0.346–0.602 |
+
+Across these non-independent time blocks, both models vary substantially and remain
+near chance on average. The context model is only slightly higher on mean AUC; this
+does not overturn the original final-block negative result or establish that context
+helps generally.
+
 ## Limitations and next experiments
 
 - One continuous recording cannot establish subject-level generalization.
