@@ -25,11 +25,11 @@ SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 SLIDES = {
     "mouse": [
         ("ASDRP / MOUSE VISUAL CORTEX", "Can behavior help us predict the brain?", "A visual-cortex encoding-model study using real mouse recordings."),
-        ("THE DATA", "8,372 neurons. 5,994 trials.", "Natural-image stimuli, pupil size, running speed, and neural responses."),
+        ("THE DATA", "Two mice. Thousands of neurons.", "Natural-image stimuli, pupil size, running speed, and neural responses."),
         ("THE COMPARISON", "Two models. One held-out test.", "Stimulus only versus stimulus plus behavior, with training-only preprocessing."),
-        ("THE RESULT", "0.126  →  0.158", "Mean held-out correlation rises when behavior is added."),
-        ("THE ABLATION", "Pupil carries the gain here.", "Running alone: 0.127. Pupil alone: 0.158. This mouse rarely ran."),
-        ("THE LIMIT", "One animal is not a universal law.", "The next scientific step is replication across animals and running regimes."),
+        ("THE RESULT", "0.126 → 0.158 | 0.154 → 0.203", "Mean held-out correlation rises when behavior is added in both evaluated mice."),
+        ("THE ABLATION", "Pupil improves both.", "Running contributes differently across animals; the result is predictive, not causal."),
+        ("THE LIMIT", "Two animals are not a population.", "The next scientific step is replication beyond two animals with population-level uncertainty."),
     ],
     "eeg": [
         ("ASDRP / EEG EYE STATE", "Can short-term history decode a neural state?", "A time-aware classification study using a public 14-channel EEG recording."),
@@ -75,6 +75,12 @@ def render(name: str) -> Path:
     code = process.wait()
     if code:
         raise RuntimeError(error[-2000:])
+    captions = ["WEBVTT\n\n"]
+    for index, (kicker, title, body) in enumerate(slides):
+        start = index * SECONDS
+        end = (index + 1) * SECONDS
+        captions.append(f"{start // 3600:02d}:{(start % 3600) // 60:02d}:{start % 60:02d}.000 --> {end // 3600:02d}:{(end % 3600) // 60:02d}:{end % 60:02d}.000\n{kicker}\n{title}\n{body}\n\n")
+    (OUT / f"{name}-research-storyboard.vtt").write_text("".join(captions), encoding="utf-8")
     print(destination)
     return destination
 

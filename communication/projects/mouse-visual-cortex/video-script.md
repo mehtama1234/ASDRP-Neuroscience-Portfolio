@@ -9,25 +9,28 @@ activity better if we measure the mouse's internal state?”
 ## 0:35–1:25 — The data and design
 
 Show the Sensorium dataset, the visual stimulus, pupil size, running speed, and the
-8,372 recorded V1 neurons. Explain the held-out evaluation before showing results.
+thousands of recorded V1 neurons in two evaluated mice. Explain the held-out
+evaluation before showing results.
 
 ## 1:25–2:30 — The model comparison
 
 Show the interactive explainer. Toggle from stimulus-only to stimulus + behavior and
-explain that the comparison is between 0.126 and 0.158 mean test correlation.
+explain the two comparisons: 0.126 → 0.158 for the original mouse and 0.154 → 0.203
+for the second.
 
 ## 2:30–3:25 — The ablation
 
-Show that running alone barely changes the score while pupil alone captures the
-reported gain. Explain that this is a property of this analyzed mouse, not a claim
-that running is unimportant in all animals.
+Show that pupil improves both animals while the running contribution differs across
+them. Explain that this is a predictive result, not a claim that behavior causes the
+neural activity.
 
 ## 3:25–4:20 — Interpretation and limits
 
-Show the arousal-sensitive neuron result, then state the one-mouse and correlational
-limitations plainly.
+Show the arousal-sensitive neuron result, then state the two-mouse, within-animal
+bootstrap, and correlational limitations plainly.
 
 ## 4:20–5:00 — Next experiment
 
-End with replication across animals, a fair test of high-running mice, and a bridge
-from the research model to accessible communication tools.
+End with replication beyond two animals, population-level uncertainty, a fair test of
+high-running mice, and a bridge from the research model to accessible communication
+tools.
