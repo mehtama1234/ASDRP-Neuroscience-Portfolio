@@ -7,7 +7,7 @@
 - [x] Training-only preprocessing described
 - [x] Baseline and behavior-augmented models defined
 - [x] Held-out evaluation reported
-- [ ] Replication across additional mice
+- [x] Replication across one additional mouse
 - [x] Core dependency manifest added (`neuroscience-project/requirements.txt`)
 - [ ] Automated clean-environment run from that manifest
 - [ ] Statistical uncertainty and confidence intervals
@@ -31,4 +31,4 @@
 - [x] Video scripts
 - [x] Scope and limitations notes
 - [ ] Recorded final videos
-- [ ] Final exported ASDRP PDF packet
+- [x] Final exported ASDRP PDF packet

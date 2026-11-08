@@ -8,10 +8,10 @@ work into accessible tools and explanations.
 ## Flagship study
 
 The mouse visual-cortex project compares stimulus-only and behavior-augmented
-encoding models on Sensorium recordings. The reported mean held-out correlation rises
-from 0.126 to 0.158, with pupil-linked arousal carrying the gain in the analyzed
-mouse. The report explicitly limits the claim to one animal and a correlational
-prediction result.
+encoding models on Sensorium recordings. The original mouse rises from 0.1265 to
+0.1583, and a second mouse rises from 0.1543 to 0.2034 under the same pipeline. The
+report still distinguishes prediction from causation and shows that the relative
+running-versus-pupil contribution varies by animal.
 
 ## Complementary study
 
@@ -28,6 +28,7 @@ HTML explainers, presentations, PDFs, and video scripts.
 
 ## What remains
 
-The strongest scientific next step is replication of both modeling claims across
-additional recordings. The strongest application next step is replacing draft essay
-prompts and scripts with the applicant’s own verified experiences and recorded work.
+The strongest scientific next step is extending the replication beyond two animals
+with pre-specified uncertainty summaries. The strongest application next step is
+replacing draft essay prompts and scripts with the applicant’s own verified
+experiences and recorded work.
