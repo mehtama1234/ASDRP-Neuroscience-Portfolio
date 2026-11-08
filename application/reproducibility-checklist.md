@@ -9,7 +9,7 @@
 - [x] Held-out evaluation reported
 - [x] Replication across one additional mouse
 - [x] Core dependency manifest added (`neuroscience-project/requirements.txt`)
-- [ ] Automated clean-environment run from that manifest
+- [x] Automated clean-environment run from that manifest
 - [ ] Statistical uncertainty and confidence intervals
 
 ## EEG eye-state study
