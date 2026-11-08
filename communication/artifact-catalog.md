@@ -7,7 +7,8 @@ The portfolio uses the same artifact breadth established in `neurocomms` and
 
 - **Mobile apps:** mobile-ready communication and accessibility experiences,
   including the existing `neurocomms/my-visit-notes-mobile` work and the
-  project-specific `communication/projects/neuroscience-mobile/` demo.
+  project-specific `communication/projects/neuroscience-mobile/` demo, plus its
+  generated Capacitor Android/iOS projects under `native/`.
 - **HTML demos:** static, reviewable research and product walkthroughs that can be
   opened without a backend or account.
 - **Presentations:** slide, presenter, handout, live, and design views for the
