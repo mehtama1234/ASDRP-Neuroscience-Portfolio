@@ -1,0 +1,2 @@
+# The hosted Sites checkout has its own Git metadata; the publishable copy lives in website/.
+site/
