@@ -15,10 +15,21 @@ reviewed HTML and manifest into the Capacitor `dist/` directory.
 
 ## Still required before native delivery
 
-- Install the pinned Capacitor dependencies with `npm install`.
-- Run `npm run sync` and produce Android/iOS builds.
+- Produce Android/iOS builds after installing the pinned Capacitor dependencies
+  with `npm install` and running `npm run sync`.
 - Test real back behavior, safe-area cutouts, keyboard/rotation, printing,
   share/export behavior, and offline reopen on both platforms.
 - Record device or simulator versions and build hashes in a native runbook.
 
 No native build or device result is represented as complete by this file.
+
+## Current environment check
+
+- `npm install` completed with the pinned package versions; npm reported seven
+  transitive audit findings that should be reviewed before public release.
+- `npm run sync` passed.
+- `npx cap add android` passed and generated the Android project.
+- `npx cap add ios` passed and generated the iOS project; CocoaPods and Xcode
+  were unavailable, so no iOS build was attempted.
+- `android/gradlew assembleDebug --no-daemon` was attempted and stopped before
+  compilation because Java/JAVA_HOME is unavailable in this environment.
