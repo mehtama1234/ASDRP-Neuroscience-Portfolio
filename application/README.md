@@ -15,6 +15,9 @@ voice and experiences.
    analyses.
 6. Review the [application essay map](essay-map.md).
 
+For a printable summary, use the [generated reviewer packet PDF](ASDRP-neuroscience-portfolio-packet.pdf).
+The source generator is `build_packet.py`.
+
 ## Existing drafts
 
 - [Why applying](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_1_why_applying.md)
