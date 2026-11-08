@@ -5,7 +5,7 @@ Last technical verification: 2026-11-08.
 ## Source state
 
 - Portfolio repository: `mehtama1234/ASDRP-Neuroscience-Portfolio`, commit
-  `5a50caf` or later.
+  `4760e6b` or later.
 - Flagship repository: `AmishI123/neuroscience-project`, commit `5256a1b`.
 - Hosted portfolio: Site version 22, deployment status `succeeded`.
 
