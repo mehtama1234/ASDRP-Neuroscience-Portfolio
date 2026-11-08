@@ -21,7 +21,8 @@
 - [x] Held-out metrics saved in `results/metrics.json`
 - [x] Negative result documented rather than discarded
 - [ ] Additional recordings or blocked cross-validation
-- [ ] Pinned dependency file
+- [x] Project dependency manifest (`projects/eeg-eye-state/requirements.txt`)
+- [x] Clean-environment analysis run documented
 
 ## Communication artifacts
 

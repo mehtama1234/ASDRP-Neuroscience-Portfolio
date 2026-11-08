@@ -26,8 +26,12 @@ reproducibility. Dataset details and citation are on the [official UCI page](htt
 Run:
 
 ```bash
+python3 -m pip install -r requirements.txt
 python3 src/analyze.py
 ```
+
+The project keeps its own small dependency manifest so the complementary study
+can be reproduced independently of the flagship project.
 
 ## Interpretation boundary
 
