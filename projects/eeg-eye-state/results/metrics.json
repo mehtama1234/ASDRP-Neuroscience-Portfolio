@@ -1,0 +1,46 @@
+{
+  "dataset": {
+    "name": "UCI EEG Eye State",
+    "samples": 14980,
+    "channels": [
+      "AF3",
+      "F7",
+      "F3",
+      "FC5",
+      "T7",
+      "P7",
+      "O1",
+      "O2",
+      "P8",
+      "T8",
+      "FC6",
+      "F4",
+      "F8",
+      "AF4"
+    ],
+    "eye_closed_fraction": 0.4487983978638184,
+    "split": "chronological 70% train / 15% validation / 15% test"
+  },
+  "models": [
+    {
+      "model": "pointwise EEG",
+      "train_samples": 10486,
+      "validation_samples": 2247,
+      "test_samples": 2247,
+      "validation_roc_auc": 0.5719865279694574,
+      "test_roc_auc": 0.625206506544669,
+      "test_balanced_accuracy": 0.5569084381751176,
+      "test_f1": 0.16748232735182164
+    },
+    {
+      "model": "EEG + causal temporal context",
+      "train_samples": 10486,
+      "validation_samples": 2247,
+      "test_samples": 2247,
+      "validation_roc_auc": 0.5807056209774154,
+      "test_roc_auc": 0.5296495742788156,
+      "test_balanced_accuracy": 0.48499650527385946,
+      "test_f1": 0.14164004259850904
+    }
+  ]
+}
