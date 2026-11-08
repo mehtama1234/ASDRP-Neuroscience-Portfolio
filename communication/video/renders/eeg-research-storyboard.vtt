@@ -31,6 +31,11 @@ Five blocked folds stay near chance.
 Mean ROC AUC: 0.478 pointwise versus 0.488 with context; fold variation is wide.
 
 00:00:24.000 --> 00:00:28.000
+THE TIMESCALE TEST
+90 samples led the sweep.
+Mean blocked-fold ROC AUC: 0.491 at 3 samples, 0.488 at 9, 0.548 at 30, and 0.567 at 90.
+
+00:00:28.000 --> 00:00:32.000
 THE LIMIT
 Negative results count.
 More recordings and multiple time scales are needed before generalization claims.

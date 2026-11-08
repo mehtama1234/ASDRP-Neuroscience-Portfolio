@@ -38,6 +38,7 @@ SLIDES = {
         ("THE BASELINE", "Test ROC AUC: 0.625", "Pointwise standardized EEG with class-balanced logistic regression."),
         ("THE EXTENSION", "Test ROC AUC: 0.530", "Causal temporal context did not generalize on the final held-out block."),
         ("THE EXPANSION", "Five blocked folds stay near chance.", "Mean ROC AUC: 0.478 pointwise versus 0.488 with context; fold variation is wide."),
+        ("THE TIMESCALE TEST", "90 samples led the sweep.", "Mean blocked-fold ROC AUC: 0.491 at 3 samples, 0.488 at 9, 0.548 at 30, and 0.567 at 90."),
         ("THE LIMIT", "Negative results count.", "More recordings and multiple time scales are needed before generalization claims."),
     ],
 }

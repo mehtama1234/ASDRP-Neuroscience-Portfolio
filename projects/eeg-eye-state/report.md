@@ -60,6 +60,24 @@ near chance on average. The context model is only slightly higher on mean AUC; t
 does not overturn the original final-block negative result or establish that context
 helps generally.
 
+### Temporal-window sweep
+
+We also varied the causal window before looking at the results: 3, 9, 30, and 90
+samples. The original nine-sample model remains the named primary extension; the
+sweep is exploratory robustness analysis.
+
+| Causal window | Final-block ROC AUC | Five-fold mean ROC AUC |
+|---:|---:|---:|
+| 3 samples | 0.599 | 0.491 |
+| 9 samples | 0.530 | 0.488 |
+| 30 samples | 0.599 | 0.548 |
+| 90 samples | 0.556 | 0.567 |
+
+Longer context performs better in this one recording’s blocked folds, but the fold
+range remains broad and the analysis is not independent-subject validation. This
+motivates testing multiple timescales on additional recordings rather than
+selecting a winning window as a general rule.
+
 ## Limitations and next experiments
 
 - One continuous recording cannot establish subject-level generalization.

@@ -190,5 +190,83 @@
         "max_test_roc_auc": 0.6018571356215495
       }
     }
+  ],
+  "temporal_window_sweep": [
+    {
+      "window_samples": 3,
+      "final_holdout": {
+        "model": "EEG + causal context (3 samples)",
+        "train_samples": 10486,
+        "validation_samples": 2247,
+        "test_samples": 2247,
+        "validation_roc_auc": 0.5794948149772349,
+        "test_roc_auc": 0.599353475663998,
+        "test_balanced_accuracy": 0.532103825136612,
+        "test_f1": 0.15851063829787235
+      },
+      "blocked_summary": {
+        "mean_test_roc_auc": 0.4912159994380524,
+        "std_test_roc_auc": 0.10296590009516518,
+        "min_test_roc_auc": 0.34433151370751275,
+        "max_test_roc_auc": 0.6003599466495585
+      }
+    },
+    {
+      "window_samples": 9,
+      "final_holdout": {
+        "model": "EEG + causal context (9 samples)",
+        "train_samples": 10486,
+        "validation_samples": 2247,
+        "test_samples": 2247,
+        "validation_roc_auc": 0.5807056209774154,
+        "test_roc_auc": 0.5296495742788156,
+        "test_balanced_accuracy": 0.48499650527385946,
+        "test_f1": 0.14164004259850904
+      },
+      "blocked_summary": {
+        "mean_test_roc_auc": 0.4884147847192325,
+        "std_test_roc_auc": 0.09537564233955506,
+        "min_test_roc_auc": 0.34568663685441436,
+        "max_test_roc_auc": 0.6018571356215495
+      }
+    },
+    {
+      "window_samples": 30,
+      "final_holdout": {
+        "model": "EEG + causal context (30 samples)",
+        "train_samples": 10486,
+        "validation_samples": 2247,
+        "test_samples": 2247,
+        "validation_roc_auc": 0.592874140666314,
+        "test_roc_auc": 0.5988663320201635,
+        "test_balanced_accuracy": 0.5014415745329774,
+        "test_f1": 0.1465076660988075
+      },
+      "blocked_summary": {
+        "mean_test_roc_auc": 0.5480413744089525,
+        "std_test_roc_auc": 0.08880449580854494,
+        "min_test_roc_auc": 0.4196892470258577,
+        "max_test_roc_auc": 0.6139953740439973
+      }
+    },
+    {
+      "window_samples": 90,
+      "final_holdout": {
+        "model": "EEG + causal context (90 samples)",
+        "train_samples": 10486,
+        "validation_samples": 2247,
+        "test_samples": 2247,
+        "validation_roc_auc": 0.6045170641420852,
+        "test_roc_auc": 0.5563577540560003,
+        "test_balanced_accuracy": 0.5066082094294065,
+        "test_f1": 0.14765906362545017
+      },
+      "blocked_summary": {
+        "mean_test_roc_auc": 0.5672190533621884,
+        "std_test_roc_auc": 0.11636075489068491,
+        "min_test_roc_auc": 0.4461227164427092,
+        "max_test_roc_auc": 0.7096800213872193
+      }
+    }
   ]
 }

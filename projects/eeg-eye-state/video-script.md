@@ -22,7 +22,13 @@ Show the test ROC AUC values: 0.625 for pointwise EEG and 0.530 for the context
 extension. Explain that validation favored the extension slightly, but the final
 held-out block did not.
 
-## 2:35–3:00 — The lesson
+## 2:35–2:50 — The expansion
+
+“We also tested causal windows of 3, 9, 30, and 90 samples. The 90-sample window
+had the highest mean blocked-fold AUC at 0.567, but this is still one recording
+with broad fold variation.”
+
+## 2:50–3:15 — The lesson
 
 “The result is not that temporal context never helps. It is that this first feature
 design did not generalize on this recording. A transparent negative result tells us

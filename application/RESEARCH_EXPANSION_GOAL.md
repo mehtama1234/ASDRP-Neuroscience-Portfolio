@@ -21,7 +21,8 @@ and explicit uncertainty.
    a population estimate.
 3. **Next experiment queue:** identify additional recordings, alternative causal
    temporal windows, and pre-specified hierarchical uncertainty as follow-up
-   experiments rather than silently changing the current claims.
+   experiments rather than silently changing the current claims. The first
+   3/9/30/90-sample window sweep is now recorded as exploratory analysis.
 
 ## Completion evidence
 
