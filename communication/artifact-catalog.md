@@ -28,5 +28,5 @@ The portfolio uses the same artifact breadth established in `neurocomms` and
 - `neuro-divergent/presentation/`
 
 The first portfolio website page copies the established landing-page style. The
-next implementation pass will add project-specific HTML demos and presentation
-artifacts using the same source templates.
+exact reusable source templates now live in `communication/templates/`; the next
+pass will create project-specific copies for the mouse visual-cortex study.
