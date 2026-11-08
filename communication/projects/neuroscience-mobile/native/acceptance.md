@@ -1,6 +1,6 @@
 # Native acceptance status
 
-Status: **scaffolded; native runtime validation not yet claimed.**
+Status: **Android debug build verified; native runtime validation still open.**
 
 This Capacitor wrapper packages the working mobile web demo at
 `../index.html` as `org.asdrp.neurosciencelab`. The build script copies the
@@ -31,5 +31,10 @@ No native build or device result is represented as complete by this file.
 - `npx cap add android` passed and generated the Android project.
 - `npx cap add ios` passed and generated the iOS project; CocoaPods and Xcode
   were unavailable, so no iOS build was attempted.
-- `android/gradlew assembleDebug --no-daemon` was attempted and stopped before
-  compilation because Java/JAVA_HOME is unavailable in this environment.
+- `android/gradlew assembleDebug --no-daemon` passed after installing a local
+  JDK 17 and Android SDK 34. The packaged artifact is
+  `../releases/neuroscience-lab-debug.apk` with SHA-256
+  `0549e522f492b8ea5c110554e780ca8027294e31a838b57921157774b8b5e3c1`.
+- The APK build is not the same as a device acceptance test; install, back
+  behavior, offline reopen, print/share, rotation, and accessibility checks
+  remain to be recorded on Android and iOS.
