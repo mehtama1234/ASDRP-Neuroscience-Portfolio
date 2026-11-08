@@ -8,7 +8,8 @@
 - [x] Baseline and behavior-augmented models defined
 - [x] Held-out evaluation reported
 - [ ] Replication across additional mice
-- [ ] Automated clean-environment run from a pinned dependency file
+- [x] Core dependency manifest added (`neuroscience-project/requirements.txt`)
+- [ ] Automated clean-environment run from that manifest
 - [ ] Statistical uncertainty and confidence intervals
 
 ## EEG eye-state study
