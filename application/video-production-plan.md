@@ -28,3 +28,7 @@ Before calling a video complete:
 - limitations are spoken, not hidden in a footer;
 - captions/transcript are included;
 - final MP4 and source script are stored together.
+
+The executable handoff is in `communication/video/recording-kit.md`; after the
+applicant records a WAV, `communication/video/mux_narration.py` creates the
+final narrated MP4 without altering the verified storyboard visuals.
