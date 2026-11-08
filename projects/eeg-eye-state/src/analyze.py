@@ -123,7 +123,16 @@ def main() -> None:
             blocked_cross_validate("pointwise EEG", x, y),
             blocked_cross_validate("EEG + causal temporal context", trailing_features(x), y),
         ],
+        "temporal_window_sweep": [],
     }
+    for window in (3, 9, 30, 90):
+        final_result = evaluate(f"EEG + causal context ({window} samples)", trailing_features(x, window), y, train_end, val_end)
+        blocked_result = blocked_cross_validate(f"EEG + causal context ({window} samples)", trailing_features(x, window), y)
+        results["temporal_window_sweep"].append({
+            "window_samples": window,
+            "final_holdout": final_result,
+            "blocked_summary": blocked_result["summary"],
+        })
     RESULTS.mkdir(exist_ok=True)
     (RESULTS / "metrics.json").write_text(json.dumps(results, indent=2) + "\n")
     print(json.dumps(results, indent=2))
