@@ -19,7 +19,7 @@ scientific question -> experiment -> model -> interpretation -> usable tool -> p
 - [Mouse visual cortex and behavioral state](research/mouse-visual-cortex.md) —
   Does pupil size and running behavior improve prediction of mouse V1 activity?
 - [Future project: neural state and attention](research/neural-state-attention.md) —
-  Planned EEG or physiological-signal study.
+  Completed EEG eye-state decoding study with a negative temporal-context result.
 - [Future project: biological and artificial vision](research/biological-artificial-vision.md) —
   Planned comparison of neural and neural-network representations.
 
@@ -43,6 +43,11 @@ scientific question -> experiment -> model -> interpretation -> usable tool -> p
 
 Individual repositories contain the implementation. This repository is the
 application-facing map that explains how the projects fit together.
+
+## Live explainers
+
+- [Mouse visual-cortex explainer](website/mouse-visual-cortex.html)
+- [EEG eye-state explainer](website/eeg-eye-state.html)
 
 ## Status
 
