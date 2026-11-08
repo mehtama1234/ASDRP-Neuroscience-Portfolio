@@ -22,4 +22,5 @@ the originals remain unchanged.
 3. Replace only the content, figures, and project links.
 4. Preserve the established interaction, accessibility, and limitations patterns.
 5. Verify every HTML, PDF, mobile, and video artifact before linking it from the
-   portfolio site.
+   portfolio site. The first completed project-specific mobile copy is
+   `communication/projects/neuroscience-mobile/`.
