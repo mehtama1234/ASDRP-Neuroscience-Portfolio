@@ -27,6 +27,7 @@
 
 - [x] Interactive HTML explainers
 - [x] Mobile interaction specifications
+- [x] Working responsive mobile research demo
 - [x] Presentation outlines
 - [x] Video scripts
 - [x] Scope and limitations notes
