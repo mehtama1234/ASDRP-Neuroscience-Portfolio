@@ -29,6 +29,6 @@ HTML explainers, presentations, PDFs, and video scripts.
 ## What remains
 
 The strongest scientific next step is extending the replication beyond two animals
-with pre-specified uncertainty summaries. The strongest application next step is
+with a hierarchical population-level uncertainty summary. The strongest application next step is
 replacing draft essay prompts and scripts with the applicant’s own verified
 experiences and recorded work.
