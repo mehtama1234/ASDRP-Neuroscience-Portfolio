@@ -13,3 +13,10 @@ It covers both portfolio studies:
 The “Print research card” control turns the selected result into a compact
 presentation/application handout. It contains no participant data and makes no
 clinical inference.
+
+## Native path
+
+`native/` is a Capacitor wrapper based on the copied Neurocomms mobile
+configuration pattern. Its deterministic build copies the reviewed demo into a
+Capacitor `dist/` directory. The wrapper is scaffolded; Android/iOS builds and
+device validation remain explicitly unclaimed in `native/acceptance.md`.
