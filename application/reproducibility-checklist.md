@@ -7,7 +7,7 @@
 - [x] Training-only preprocessing described
 - [x] Baseline and behavior-augmented models defined
 - [x] Held-out evaluation reported
-- [x] Replication across one additional mouse
+- [x] Replication across two additional mice (three evaluated animals total)
 - [x] Core dependency manifest added (`neuroscience-project/requirements.txt`)
 - [x] Automated clean-environment run from that manifest
 - [x] Descriptive within-animal bootstrap intervals (population-level CI remains open)
@@ -31,7 +31,8 @@
 - [x] Working responsive mobile research demo
 - [x] Capacitor native wrapper scaffolded
 - [x] Android debug APK build verified
-- [ ] iOS build and Android/iOS device acceptance runbook
+- [x] Android/iOS device acceptance runbook documented
+- [ ] iOS build and Android/iOS device acceptance execution
 - [x] Presentation outlines
 - [x] Video scripts
 - [x] Scope and limitations notes
