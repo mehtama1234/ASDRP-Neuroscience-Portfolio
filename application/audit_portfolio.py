@@ -53,12 +53,18 @@ def main() -> None:
     for path in (
         "communication/projects/mouse-visual-cortex/index.html",
         "communication/projects/mouse-visual-cortex/slides.html",
+        "communication/projects/mouse-visual-cortex/video-script.md",
         "communication/projects/neuroscience-mobile/index.html",
         "application/reviewer-packet.html",
     ):
         contains(path, r"0\.143")
         contains(path, r"0\.191")
         contains(path, r"three")
+
+    reproducibility = (ROOT.parent / "neuroscience-project/docs/REPRODUCIBILITY_RUN.md").read_text(encoding="utf-8")
+    if re.search(r"two-mouse|two mice|both animals|beyond two", reproducibility, re.IGNORECASE):
+        raise SystemExit("STALE replication scope in flagship reproducibility record")
+    print("OK flagship reproducibility scope: three-mouse")
 
     apk = ROOT / "communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk"
     digest = hashlib.sha256(apk.read_bytes()).hexdigest()
