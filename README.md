@@ -18,7 +18,7 @@ scientific question -> experiment -> model -> interpretation -> usable tool -> p
 
 - [Mouse visual cortex and behavioral state](research/mouse-visual-cortex.md) —
   Does pupil size and running behavior improve prediction of mouse V1 activity?
-- [Future project: neural state and attention](research/neural-state-attention.md) —
+- [Complementary project: neural state and attention](research/neural-state-attention.md) —
   Completed EEG eye-state decoding study with a negative temporal-context result.
 - [Future project: biological and artificial vision](research/biological-artificial-vision.md) —
   Planned comparison of neural and neural-network representations.
@@ -49,9 +49,12 @@ application-facing map that explains how the projects fit together.
 
 - [Mouse visual-cortex explainer](website/mouse-visual-cortex.html)
 - [EEG eye-state explainer](website/eeg-eye-state.html)
+- [Mobile research demo](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/)
+- [Submission index](application/SUBMISSION_INDEX.md)
 
 ## Status
 
-The mouse visual-cortex study is the flagship project. The other research tracks
-will be added only after they have a clear question, public data source, baseline,
-main experiment, limitations, and reproducible presentation.
+The mouse visual-cortex study is the flagship project, and the EEG eye-state study
+is the completed complementary project. Planned tracks remain clearly labeled as
+planned until they have a question, public data source, baseline, experiment,
+limitations, and reproducible presentation.

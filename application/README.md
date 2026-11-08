@@ -14,6 +14,8 @@ voice and experiences.
 5. Use the [reproducibility checklist](reproducibility-checklist.md) to rerun the
    analyses.
 6. Review the [application essay map](essay-map.md).
+7. Use the [submission index](SUBMISSION_INDEX.md) for the complete live-artifact
+   handoff, including the mobile build, presentations, videos, and PDF.
 
 For a printable summary, use the [generated reviewer packet PDF](ASDRP-neuroscience-portfolio-packet.pdf).
 The source generator is `build_packet.py`.
