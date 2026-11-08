@@ -36,6 +36,7 @@ that is not available in this Linux workspace.
 - [Video production gate](video-production-plan.md)
 - [Narration recording kit](../communication/video/recording-kit.md)
 - [Final submission gate](FINAL_SUBMISSION_GATE.md)
+- [Release verification record](RELEASE_VERIFICATION.md)
 
 ## Not yet submission-complete
 
