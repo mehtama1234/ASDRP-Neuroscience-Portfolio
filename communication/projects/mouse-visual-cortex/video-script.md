@@ -20,7 +20,7 @@ for the second, and 0.143 → 0.191 for the third.
 
 ## 2:30–3:25 — The ablation
 
-Show that pupil improves both animals while the running contribution differs across
+Show that pupil improves all three animals while the running contribution differs across
 them. Explain that this is a predictive result, not a claim that behavior causes the
 neural activity.
 
