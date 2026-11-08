@@ -35,6 +35,7 @@ that is not available in this Linux workspace.
 - [Reviewer one-page summary](reviewer-one-page.md)
 - [Video production gate](video-production-plan.md)
 - [Narration recording kit](../communication/video/recording-kit.md)
+- [Final submission gate](FINAL_SUBMISSION_GATE.md)
 
 ## Not yet submission-complete
 
