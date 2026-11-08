@@ -11,6 +11,8 @@
 - [x] Core dependency manifest added (`neuroscience-project/requirements.txt`)
 - [x] Automated clean-environment run from that manifest
 - [x] Descriptive within-animal bootstrap intervals (population-level CI remains open)
+- [x] Descriptive animal-level gain summary without pooling neurons
+- [x] Behavior-shuffle negative control (20 permutations per animal)
 
 ## EEG eye-state study
 
@@ -23,6 +25,8 @@
 - [x] Five-fold forward-chaining blocked cross-validation analysis (additional recordings remain open)
 - [x] Project dependency manifest (`projects/eeg-eye-state/requirements.txt`)
 - [x] Clean-environment analysis run documented
+- [x] Five-fold forward-chaining blocked analysis
+- [x] Pre-specified exploratory temporal-window sweep (3/9/30/90 samples)
 
 ## Communication artifacts
 
