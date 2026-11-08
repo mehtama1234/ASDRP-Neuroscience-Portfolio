@@ -30,5 +30,8 @@ and the verified Android APK hash.
 - [Hands-on research experience](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_5_research_experience.md)
 - [Field and advisor preference](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_advisor_and_fields.md)
 
+Use [personalization-form.md](personalization-form.md) to replace the remaining
+bracketed prompts with verified applicant-specific details.
+
 These drafts contain bracketed personal prompts. They must be personalized before
 submission; the portfolio does not present invented experiences as fact.
