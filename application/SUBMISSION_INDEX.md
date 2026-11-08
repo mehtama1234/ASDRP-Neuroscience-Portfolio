@@ -27,6 +27,12 @@ that is not available in this Linux workspace.
 - [Mouse research storyboard video](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-research-storyboard.mp4)
 - [EEG research storyboard video](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-research-storyboard.mp4)
 
+If the private hosted Site is not available to a reviewer, the complete source
+fallback is the public [portfolio GitHub repository](https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio):
+rendered site assets are in `website/`, source reports and demos are in
+`projects/` and `communication/`, and the application handoff is in
+`application/`.
+
 ## Integrity and application materials
 
 - [Contribution ledger](contribution-ledger.md)
