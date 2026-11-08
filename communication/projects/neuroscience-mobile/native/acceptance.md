@@ -38,3 +38,6 @@ No native build or device result is represented as complete by this file.
 - The APK build is not the same as a device acceptance test; install, back
   behavior, offline reopen, print/share, rotation, and accessibility checks
   remain to be recorded on Android and iOS.
+- An Android API 34 emulator/system image was installed and launched with
+  software emulation, but the host has no KVM acceleration; the ADB device
+  remained offline and the runtime test was not completed.
