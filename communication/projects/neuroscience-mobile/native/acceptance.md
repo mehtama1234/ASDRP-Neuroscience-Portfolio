@@ -15,8 +15,9 @@ reviewed HTML and manifest into the Capacitor `dist/` directory.
 
 ## Still required before native delivery
 
-- Produce Android/iOS builds after installing the pinned Capacitor dependencies
-  with `npm install` and running `npm run sync`.
+- Produce an iOS build after installing the pinned Capacitor dependencies with
+  `npm install`, running `npm run sync`, and using macOS/Xcode; the Android
+  debug build is already verified.
 - Test real back behavior, safe-area cutouts, keyboard/rotation, printing,
   share/export behavior, and offline reopen on both platforms.
 - Record device or simulator versions and build hashes in a native runbook.

@@ -18,5 +18,6 @@ clinical inference.
 
 `native/` is a Capacitor wrapper based on the copied Neurocomms mobile
 configuration pattern. Its deterministic build copies the reviewed demo into a
-Capacitor `dist/` directory. The wrapper is scaffolded; Android/iOS builds and
-device validation remain explicitly unclaimed in `native/acceptance.md`.
+Capacitor `dist/` directory. The Android debug APK build is verified; iOS build
+and physical-device/runtime acceptance remain explicitly open in
+`native/acceptance.md`.
