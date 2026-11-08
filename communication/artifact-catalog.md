@@ -6,7 +6,8 @@ The portfolio uses the same artifact breadth established in `neurocomms` and
 ## Artifact families
 
 - **Mobile apps:** mobile-ready communication and accessibility experiences,
-  including the existing `neurocomms/my-visit-notes-mobile` work.
+  including the existing `neurocomms/my-visit-notes-mobile` work and the
+  project-specific `communication/projects/neuroscience-mobile/` demo.
 - **HTML demos:** static, reviewable research and product walkthroughs that can be
   opened without a backend or account.
 - **Presentations:** slide, presenter, handout, live, and design views for the
@@ -28,5 +29,5 @@ The portfolio uses the same artifact breadth established in `neurocomms` and
 - `neuro-divergent/presentation/`
 
 The first portfolio website page copies the established landing-page style. The
-exact reusable source templates now live in `communication/templates/`; the next
-pass will create project-specific copies for the mouse visual-cortex study.
+exact reusable source templates now live in `communication/templates/`, and the
+project-specific mobile research demo is linked from the deployed portfolio.
