@@ -10,7 +10,7 @@
 - [x] Replication across one additional mouse
 - [x] Core dependency manifest added (`neuroscience-project/requirements.txt`)
 - [x] Automated clean-environment run from that manifest
-- [ ] Statistical uncertainty and confidence intervals
+- [x] Descriptive within-animal bootstrap intervals (population-level CI remains open)
 
 ## EEG eye-state study
 
