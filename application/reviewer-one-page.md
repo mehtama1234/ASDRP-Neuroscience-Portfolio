@@ -9,7 +9,8 @@ work into accessible tools and explanations.
 
 The mouse visual-cortex project compares stimulus-only and behavior-augmented
 encoding models on Sensorium recordings. The original mouse rises from 0.1265 to
-0.1583, and a second mouse rises from 0.1543 to 0.2034 under the same pipeline. The
+0.1583, a second mouse rises from 0.1543 to 0.2034, and a third rises from 0.1431 to
+0.1905 under the same pipeline. The
 report still distinguishes prediction from causation and shows that the relative
 running-versus-pupil contribution varies by animal.
 
@@ -28,7 +29,7 @@ HTML explainers, presentations, PDFs, and video scripts.
 
 ## What remains
 
-The strongest scientific next step is extending the replication beyond two animals
+The strongest scientific next step is extending the replication beyond three animals
 with a hierarchical population-level uncertainty summary. The strongest application next step is
 replacing draft essay prompts and scripts with the applicant’s own verified
 experiences and recorded work.

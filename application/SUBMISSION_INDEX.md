@@ -7,7 +7,7 @@ that is not available in this Linux workspace.
 ## Verified research
 
 - [Mouse visual-cortex study](../research/mouse-visual-cortex.md)
-- [Two-mouse metrics and bootstrap intervals](https://github.com/AmishI123/neuroscience-project/blob/main/results/per_mouse_metrics.csv)
+- [Three-mouse metrics and bootstrap intervals](https://github.com/AmishI123/neuroscience-project/blob/main/results/per_mouse_metrics.csv)
 - [Replication figure](https://github.com/AmishI123/neuroscience-project/blob/main/results/per_mouse_replication_summary.png)
 - [Clean-environment replication record](https://github.com/AmishI123/neuroscience-project/blob/main/docs/REPRODUCIBILITY_RUN.md)
 - [EEG eye-state study](../projects/eeg-eye-state/README.md)
@@ -43,5 +43,5 @@ that is not available in this Linux workspace.
   applicant’s narration, collaboration credit, and spoken limitations section.
 - Android has a successful debug build; real-device acceptance and iOS require
   their respective runtime environments.
-- Mouse replication should extend beyond two animals before making a
+- Mouse replication should extend beyond three animals before making a
   population-level claim.

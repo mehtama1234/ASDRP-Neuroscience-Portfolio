@@ -10,7 +10,8 @@ behavior, and a visible scope note.
 2. **Choose a model** — stimulus only or stimulus + behavior.
 3. **See the result** — one large correlation number and a plain-language sentence.
 4. **Explore the ablation** — pupil, running, or both.
-5. **Check the limits** — one mouse, correlational result, replication needed.
+5. **Check the limits** — three evaluated mice, correlational result, population
+   generalization still open.
 6. **Take the research card** — export a compact summary for a presentation or
    application review.
 

@@ -25,11 +25,11 @@ SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 SLIDES = {
     "mouse": [
         ("ASDRP / MOUSE VISUAL CORTEX", "Can behavior help us predict the brain?", "A visual-cortex encoding-model study using real mouse recordings."),
-        ("THE DATA", "Two mice. Thousands of neurons.", "Natural-image stimuli, pupil size, running speed, and neural responses."),
+        ("THE DATA", "Three mice. Thousands of neurons.", "Natural-image stimuli, pupil size, running speed, and neural responses."),
         ("THE COMPARISON", "Two models. One held-out test.", "Stimulus only versus stimulus plus behavior, with training-only preprocessing."),
-        ("THE RESULT", "0.126 → 0.158 | 0.154 → 0.203", "Mean held-out correlation rises when behavior is added in both evaluated mice."),
-        ("THE ABLATION", "Pupil improves both.", "Running contributes differently across animals; the result is predictive, not causal."),
-        ("THE LIMIT", "Two animals are not a population.", "The next scientific step is replication beyond two animals with population-level uncertainty."),
+        ("THE RESULT", "0.126 → 0.158 | 0.154 → 0.203 | 0.143 → 0.191", "Mean held-out correlation rises when behavior is added in all three evaluated mice."),
+        ("THE ABLATION", "Pupil improves all three.", "Running contributes differently across animals; the result is predictive, not causal."),
+        ("THE LIMIT", "Three animals are not a population.", "The next scientific step is replication beyond three animals with population-level uncertainty."),
     ],
     "eeg": [
         ("ASDRP / EEG EYE STATE", "Can short-term history decode a neural state?", "A time-aware classification study using a public 14-channel EEG recording."),

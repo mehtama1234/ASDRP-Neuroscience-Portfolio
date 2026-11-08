@@ -7,7 +7,7 @@ A visual-cortex encoding-model study using real mouse recordings.
 
 00:00:04.000 --> 00:00:08.000
 THE DATA
-Two mice. Thousands of neurons.
+Three mice. Thousands of neurons.
 Natural-image stimuli, pupil size, running speed, and neural responses.
 
 00:00:08.000 --> 00:00:12.000
@@ -17,16 +17,16 @@ Stimulus only versus stimulus plus behavior, with training-only preprocessing.
 
 00:00:12.000 --> 00:00:16.000
 THE RESULT
-0.126 → 0.158 | 0.154 → 0.203
-Mean held-out correlation rises when behavior is added in both evaluated mice.
+0.126 → 0.158 | 0.154 → 0.203 | 0.143 → 0.191
+Mean held-out correlation rises when behavior is added in all three evaluated mice.
 
 00:00:16.000 --> 00:00:20.000
 THE ABLATION
-Pupil improves both.
+Pupil improves all three.
 Running contributes differently across animals; the result is predictive, not causal.
 
 00:00:20.000 --> 00:00:24.000
 THE LIMIT
-Two animals are not a population.
-The next scientific step is replication beyond two animals with population-level uncertainty.
+Three animals are not a population.
+The next scientific step is replication beyond three animals with population-level uncertainty.
 

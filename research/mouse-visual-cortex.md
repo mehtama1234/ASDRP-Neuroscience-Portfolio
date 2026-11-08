@@ -9,13 +9,14 @@ predict activity in visual cortex beyond the visual stimulus alone?
 
 Using Sensorium 2022 recordings and a transparent ridge-regression encoding model,
 the original mouse rises from **0.126** for a stimulus-only model to **0.158** when
-behavior is added; a second mouse rises from **0.154** to **0.203** under the same
-pipeline. Pupil improves both animals, while the running contribution varies by
-animal. These are predictive results, not causal evidence.
+behavior is added; two replications rise from **0.154** to **0.203** and from
+**0.143** to **0.191** under the same pipeline. Pupil improves all three animals,
+while the running contribution varies by animal. These are predictive results, not
+causal evidence.
 
 ## Next experiments
 
-- Repeat the analysis across additional mice beyond the two already evaluated.
+- Repeat the analysis across additional mice beyond the three already evaluated.
 - Compare animals with different amounts of running behavior.
 - Add confidence intervals and statistical tests.
 - Separate exploratory analysis from confirmatory evaluation.
