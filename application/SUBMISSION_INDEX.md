@@ -34,6 +34,7 @@ that is not available in this Linux workspace.
 - [Essay map](essay-map.md)
 - [Reviewer one-page summary](reviewer-one-page.md)
 - [Video production gate](video-production-plan.md)
+- [Narration recording kit](../communication/video/recording-kit.md)
 
 ## Not yet submission-complete
 
