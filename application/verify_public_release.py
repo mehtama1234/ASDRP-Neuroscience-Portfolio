@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site"
-ROUTES = ("/", "/reviewer-dashboard.html", "/reviewer-packet.html", "/release-verification.html", "/mouse-leave-one-out.html", "/eeg-label-shuffle-control.html", "/mouse-visual-cortex.html", "/eeg-eye-state.html", "/neuroscience-mobile/", "/mouse-visual-cortex-slides.html", "/eeg-eye-state-slides.html", "/mouse-research-storyboard.mp4", "/eeg-research-storyboard.mp4", "/portfolio-research-storyboard.mp4")
+ROUTES = ("/", "/reviewer-dashboard.html", "/reviewer-packet.html", "/release-verification.html", "/mouse-leave-one-out.html", "/eeg-label-shuffle-control.html", "/eeg-purge-gap.html", "/mouse-visual-cortex.html", "/eeg-eye-state.html", "/neuroscience-mobile/", "/mouse-visual-cortex-slides.html", "/eeg-eye-state-slides.html", "/mouse-research-storyboard.mp4", "/eeg-research-storyboard.mp4", "/portfolio-research-storyboard.mp4")
 
 
 def fetch(path: str) -> tuple[int, bytes]:
