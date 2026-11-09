@@ -19,6 +19,7 @@ causal evidence.
 - Repeat the analysis across additional mice beyond the three already evaluated.
 - Compare animals with different amounts of running behavior.
 - Use the descriptive animal-level gain summary without pooling neurons.
+- Check leave-one-animal-out stability before interpreting the mean gain.
 - Extend beyond three animals before attempting hierarchical population uncertainty.
 - Separate exploratory analysis from confirmatory evaluation.
 - Document preprocessing and possible leakage risks.

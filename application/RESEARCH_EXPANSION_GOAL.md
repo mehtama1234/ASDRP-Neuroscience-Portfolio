@@ -18,7 +18,8 @@ and explicit uncertainty.
 2. **Mouse cross-animal analysis:** add an animal-level summary of the three
    completed recordings, including per-animal gains, descriptive ranges, and a
    visualization. Do not pool neurons as independent animals or call the result
-   a population estimate.
+   a population estimate. The summary now also includes a leave-one-animal-out
+   stability check; all three omitted-animal means remain positive.
 3. **Next experiment queue:** identify additional recordings, alternative causal
    temporal windows, and pre-specified hierarchical uncertainty as follow-up
    experiments rather than silently changing the current claims. The first

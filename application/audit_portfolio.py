@@ -90,6 +90,11 @@ def main() -> None:
     if len(controls) != 3 or any(row.get("permutations") != 20 for row in controls):
         raise SystemExit("EXPECTED 20 behavior-shuffle controls for three mice")
     print("OK mouse negative control: 20 behavior shuffles per animal")
+    mouse_summary = json.loads((ROOT.parent / "neuroscience-project/results/per_mouse_replication_summary.json").read_text(encoding="utf-8"))
+    leave_one_out = mouse_summary.get("leave_one_animal_out_mean_gain", [])
+    if len(leave_one_out) != 3 or any(row.get("mean_absolute_gain", 0) <= 0 for row in leave_one_out):
+        raise SystemExit("EXPECTED positive leave-one-animal-out gains for three mice")
+    print("OK mouse stability: positive leave-one-animal-out gains")
 
     apk = ROOT / "communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk"
     digest = hashlib.sha256(apk.read_bytes()).hexdigest()
