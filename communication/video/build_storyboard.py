@@ -41,6 +41,15 @@ SLIDES = {
         ("THE TIMESCALE TEST", "90 samples led the sweep.", "Mean blocked-fold ROC AUC: 0.491 at 3 samples, 0.488 at 9, 0.548 at 30, and 0.567 at 90."),
         ("THE LIMIT", "Negative results count.", "More recordings and multiple time scales are needed before generalization claims."),
     ],
+    "portfolio": [
+        ("ASDRP / NEUROSCIENCE PORTFOLIO", "Study the brain. Build for people.", "A connected research and communication portfolio with reproducible evidence."),
+        ("FLAGSHIP", "Behavior improves prediction across three mice.", "Held-out correlation rises 0.126 → 0.158, 0.154 → 0.203, and 0.143 → 0.191."),
+        ("COMPLEMENTARY STUDY", "EEG results stay honest.", "The pointwise model reaches 0.625 final-block ROC AUC; causal context reaches 0.530."),
+        ("DEEPER ANALYSIS", "Controls and timescales matter.", "Behavior shuffles erase the mouse gain; EEG blocked folds and window sweeps expose variability."),
+        ("TRANSLATION", "Research should be inspectable and usable.", "Neurocomms and Neurodivergent patterns inform accessible mobile, HTML, presentation, and video artifacts."),
+        ("REPRODUCIBILITY", "Every claim has a trail.", "Reports, code, manifests, metrics, figures, captions, an Android build, and a release audit are public."),
+        ("NEXT", "Keep testing without overstating.", "Add animals, recordings, hierarchical uncertainty, applicant narration, and personal application details."),
+    ],
 }
 
 

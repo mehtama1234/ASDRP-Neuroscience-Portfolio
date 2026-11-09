@@ -40,6 +40,8 @@ def main() -> None:
         "communication/video/renders/mouse-research-storyboard.vtt",
         "communication/video/renders/eeg-research-storyboard.mp4",
         "communication/video/renders/eeg-research-storyboard.vtt",
+        "communication/video/renders/portfolio-research-storyboard.mp4",
+        "communication/video/renders/portfolio-research-storyboard.vtt",
         "projects/eeg-eye-state/results/metrics.json",
         "projects/eeg-eye-state/REPRODUCIBILITY_RUN.md",
         "../neuroscience-project/results/per_mouse_replication_summary.json",

@@ -2,6 +2,9 @@
 
 ## Video 1 — Portfolio overview (2 minutes)
 
+The verified visual storyboard is `communication/video/renders/portfolio-research-storyboard.mp4`;
+the final narrated version still requires the applicant’s voice.
+
 - 0:00–0:20: brain, behavior, and communication thesis
 - 0:20–0:55: mouse visual-cortex experiment
 - 0:55–1:20: EEG complementary study and negative result
