@@ -43,6 +43,7 @@ def main() -> None:
         "communication/video/renders/portfolio-research-storyboard.mp4",
         "communication/video/renders/portfolio-research-storyboard.vtt",
         "website/reviewer-dashboard.html",
+        "website/eeg-label-shuffle-control.html",
         "projects/eeg-eye-state/results/metrics.json",
         "projects/eeg-eye-state/REPRODUCIBILITY_RUN.md",
         "../neuroscience-project/results/per_mouse_replication_summary.json",
@@ -76,6 +77,10 @@ def main() -> None:
     if len(blocked) != 2 or any(item.get("fold_count") != 5 for item in blocked):
         raise SystemExit("EXPECTED five blocked EEG folds for both models")
     print("OK EEG expansion: five forward-chaining folds per model")
+    shuffled_eeg = eeg_metrics.get("blocked_label_shuffle_control", [])
+    if len(shuffled_eeg) != 2 or any(item.get("permutations") != 20 for item in shuffled_eeg):
+        raise SystemExit("EXPECTED 20 label-shuffle controls for both EEG models")
+    print("OK EEG negative control: 20 label shuffles per model")
     controls = json.loads((ROOT.parent / "neuroscience-project/results/shuffled_behavior_controls.json").read_text(encoding="utf-8"))
     if len(controls) != 3 or any(row.get("permutations") != 20 for row in controls):
         raise SystemExit("EXPECTED 20 behavior-shuffle controls for three mice")

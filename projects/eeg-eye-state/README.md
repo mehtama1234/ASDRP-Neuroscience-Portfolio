@@ -21,7 +21,8 @@ reproducibility. Dataset details and citation are on the [official UCI page](htt
 - **Model:** class-balanced logistic regression.
 - **Evaluation:** chronological 70% train / 15% validation / 15% test split. No
   random row split is used because this is one time series. The analysis also
-  reports five forward-chaining `TimeSeriesSplit` folds as a robustness check.
+  reports five forward-chaining `TimeSeriesSplit` folds as a robustness check
+  and a 20-permutation global label-shuffle control using those same folds.
 - **Metrics:** ROC AUC, balanced accuracy, and F1 on the held-out test block.
 
 Run:

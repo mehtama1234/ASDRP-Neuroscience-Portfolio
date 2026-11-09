@@ -78,6 +78,16 @@ range remains broad and the analysis is not independent-subject validation. This
 motivates testing multiple timescales on additional recordings rather than
 selecting a winning window as a general rule.
 
+### Label-shuffle negative control
+
+As a control for the blocked evaluation, we globally permuted the eye-state
+labels 20 times and reran the same five forward-chaining folds with the same
+feature sets. The mean shuffled ROC AUC was **0.499** for pointwise EEG
+(range 0.491–0.508) and **0.501** for causal context (range 0.491–0.512).
+This is the expected near-chance control pattern. It supports treating the
+observed time-series results as sensitive to the actual labels, while it does
+not create evidence for generalization beyond this one recording.
+
 ## Limitations and next experiments
 
 - One continuous recording cannot establish subject-level generalization.

@@ -103,6 +103,34 @@ def blocked_cross_validate(name: str, x: np.ndarray, y: np.ndarray, splits: int 
     }
 
 
+def blocked_label_shuffle_control(
+    name: str,
+    x: np.ndarray,
+    y: np.ndarray,
+    permutations: int = 20,
+    seed: int = 20261108,
+) -> dict:
+    """Break the signal/label relationship while keeping the same blocked folds."""
+    rng = np.random.default_rng(seed)
+    shuffled_means = []
+    for _ in range(permutations):
+        shuffled = rng.permutation(y)
+        result = blocked_cross_validate(name, x, shuffled)
+        shuffled_means.append(result["summary"]["mean_test_roc_auc"])
+    values = np.asarray(shuffled_means)
+    return {
+        "model": name,
+        "control": "global label permutation before five-fold forward-chaining evaluation",
+        "permutations": permutations,
+        "seed": seed,
+        "mean_test_roc_auc": float(values.mean()),
+        "std_test_roc_auc": float(values.std(ddof=1)),
+        "min_test_roc_auc": float(values.min()),
+        "max_test_roc_auc": float(values.max()),
+        "shuffled_mean_test_roc_auc": [float(value) for value in values],
+    }
+
+
 def main() -> None:
     x, y = load_data()
     train_end = int(len(y) * 0.70)
@@ -122,6 +150,10 @@ def main() -> None:
         "blocked_cross_validation": [
             blocked_cross_validate("pointwise EEG", x, y),
             blocked_cross_validate("EEG + causal temporal context", trailing_features(x), y),
+        ],
+        "blocked_label_shuffle_control": [
+            blocked_label_shuffle_control("pointwise EEG", x, y),
+            blocked_label_shuffle_control("EEG + causal temporal context", trailing_features(x), y),
         ],
         "temporal_window_sweep": [],
     }

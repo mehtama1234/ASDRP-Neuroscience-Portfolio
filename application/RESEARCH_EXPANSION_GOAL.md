@@ -23,6 +23,10 @@ and explicit uncertainty.
    temporal windows, and pre-specified hierarchical uncertainty as follow-up
    experiments rather than silently changing the current claims. The first
    3/9/30/90-sample window sweep is now recorded as exploratory analysis.
+4. **EEG label-shuffle control:** add 20 global label permutations evaluated
+   with the same five forward-chaining folds. The shuffled means remain near
+   chance (0.499 pointwise, 0.501 causal context), strengthening the negative
+   result without implying subject-level generalization.
 
 ## Completion evidence
 

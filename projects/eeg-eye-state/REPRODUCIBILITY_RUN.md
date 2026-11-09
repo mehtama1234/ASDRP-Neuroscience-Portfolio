@@ -17,3 +17,10 @@ under `blocked_cross_validation` in `results/metrics.json`; mean ROC AUC is 0.47
 for pointwise EEG and 0.488 for causal context. This is still one continuous
 recording, not evidence of generalization to new participants. The same file also
 contains the exploratory 3/9/30/90-sample temporal-window sweep.
+
+The same run now adds a pre-specified label-shuffle negative control: 20 global
+permutations of the eye-state labels, evaluated with the same five forward-
+chaining folds. The mean shuffled ROC AUC is 0.499 (pointwise) and 0.501
+(causal context), with ranges 0.491–0.508 and 0.491–0.512. These values are
+consistent with chance and are a control result, not evidence of independent-
+participant generalization.

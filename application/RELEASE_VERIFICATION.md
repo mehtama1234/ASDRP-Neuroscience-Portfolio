@@ -30,3 +30,7 @@ Result: `PORTFOLIO AUDIT PASSED`.
 This record verifies the technical package only. Applicant-authored essays,
 voice narration, physical-device acceptance, and future population-level
 uncertainty remain separately labeled in the final submission gate.
+
+The EEG metrics now also include a 20-permutation global label-shuffle control
+under `blocked_label_shuffle_control`: mean shuffled ROC AUC 0.499 for the
+pointwise model and 0.501 for causal context.

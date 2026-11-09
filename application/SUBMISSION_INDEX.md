@@ -21,6 +21,7 @@ that is not available in this Linux workspace.
 - [PDF packet](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/ASDRP-neuroscience-portfolio-packet.pdf)
 - [Mouse explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex.html)
 - [EEG explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-eye-state.html)
+- [EEG label-shuffle control](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-label-shuffle-control.html)
 - [Mobile research demo](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/)
 - [Verified Android debug build](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/download.html)
 - [Mouse presentation](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex-slides.html)
