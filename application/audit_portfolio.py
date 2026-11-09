@@ -44,6 +44,7 @@ def main() -> None:
         "communication/video/renders/portfolio-research-storyboard.vtt",
         "website/reviewer-dashboard.html",
         "website/eeg-label-shuffle-control.html",
+        "website/mouse-leave-one-out.html",
         "projects/eeg-eye-state/results/metrics.json",
         "projects/eeg-eye-state/REPRODUCIBILITY_RUN.md",
         "../neuroscience-project/results/per_mouse_replication_summary.json",

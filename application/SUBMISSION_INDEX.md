@@ -20,6 +20,7 @@ that is not available in this Linux workspace.
 - [Reviewer dashboard](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/reviewer-dashboard.html)
 - [PDF packet](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/ASDRP-neuroscience-portfolio-packet.pdf)
 - [Mouse explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex.html)
+- [Mouse leave-one-animal-out stability check](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-leave-one-out.html)
 - [EEG explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-eye-state.html)
 - [EEG label-shuffle control](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-label-shuffle-control.html)
 - [Mobile research demo](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/)
