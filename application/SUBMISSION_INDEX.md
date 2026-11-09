@@ -17,6 +17,7 @@ that is not available in this Linux workspace.
 
 - [Live portfolio](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site)
 - [Reviewer packet](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/reviewer-packet.html)
+- [Reviewer dashboard](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/reviewer-dashboard.html)
 - [PDF packet](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/ASDRP-neuroscience-portfolio-packet.pdf)
 - [Mouse explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex.html)
 - [EEG explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-eye-state.html)
