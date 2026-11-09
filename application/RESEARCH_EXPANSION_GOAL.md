@@ -28,6 +28,10 @@ and explicit uncertainty.
    with the same five forward-chaining folds. The shuffled means remain near
    chance (0.499 pointwise, 0.501 causal context), strengthening the negative
    result without implying subject-level generalization.
+5. **EEG purge-gap sensitivity:** repeat the primary blocked evaluation with a
+   90-sample gap before each test block. Mean AUC remains near or below chance
+   (0.448 pointwise, 0.443 causal context), so the interpretation is not driven
+   by immediately adjacent training samples.
 
 ## Completion evidence
 

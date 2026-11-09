@@ -88,6 +88,16 @@ This is the expected near-chance control pattern. It supports treating the
 observed time-series results as sensitive to the actual labels, while it does
 not create evidence for generalization beyond this one recording.
 
+### Purge-gap sensitivity
+
+To test whether immediately adjacent training samples were influencing the
+forward evaluation, we repeated the two primary blocked analyses with a
+pre-specified **90-sample gap** before every test block. This gap matches the
+largest window in the exploratory sweep. Mean ROC AUC was **0.448** for
+pointwise EEG (range 0.288–0.572) and **0.443** for causal context (range
+0.254–0.582). The gap analysis remains near or below chance and does not reverse
+the negative interpretation.
+
 ## Limitations and next experiments
 
 - One continuous recording cannot establish subject-level generalization.

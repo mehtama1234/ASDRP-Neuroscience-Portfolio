@@ -45,6 +45,7 @@ def main() -> None:
         "website/reviewer-dashboard.html",
         "website/eeg-label-shuffle-control.html",
         "website/mouse-leave-one-out.html",
+        "website/eeg-purge-gap.html",
         "projects/eeg-eye-state/results/metrics.json",
         "projects/eeg-eye-state/REPRODUCIBILITY_RUN.md",
         "../neuroscience-project/results/per_mouse_replication_summary.json",
@@ -87,6 +88,10 @@ def main() -> None:
     if len(shuffled_eeg) != 2 or any(item.get("permutations") != 20 for item in shuffled_eeg):
         raise SystemExit("EXPECTED 20 label-shuffle controls for both EEG models")
     print("OK EEG negative control: 20 label shuffles per model")
+    gap = eeg_metrics.get("blocked_gap_sensitivity", [])
+    if len(gap) != 2 or any(item.get("fold_count") != 5 or item.get("gap_samples") != 90 for item in gap):
+        raise SystemExit("EXPECTED five-fold EEG sensitivity with a 90-sample purge gap")
+    print("OK EEG sensitivity: five forward folds with 90-sample purge gap")
     controls = json.loads((ROOT.parent / "neuroscience-project/results/shuffled_behavior_controls.json").read_text(encoding="utf-8"))
     if len(controls) != 3 or any(row.get("permutations") != 20 for row in controls):
         raise SystemExit("EXPECTED 20 behavior-shuffle controls for three mice")

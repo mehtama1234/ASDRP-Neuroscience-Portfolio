@@ -23,6 +23,7 @@ that is not available in this Linux workspace.
 - [Mouse leave-one-animal-out stability check](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-leave-one-out.html)
 - [EEG explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-eye-state.html)
 - [EEG label-shuffle control](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-label-shuffle-control.html)
+- [EEG purge-gap sensitivity](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-purge-gap.html)
 - [Mobile research demo](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/)
 - [Verified Android debug build](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/download.html)
 - [Mouse presentation](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex-slides.html)

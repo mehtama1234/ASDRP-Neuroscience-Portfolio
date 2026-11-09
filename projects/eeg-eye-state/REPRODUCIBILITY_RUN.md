@@ -24,3 +24,9 @@ chaining folds. The mean shuffled ROC AUC is 0.499 (pointwise) and 0.501
 (causal context), with ranges 0.491–0.508 and 0.491–0.512. These values are
 consistent with chance and are a control result, not evidence of independent-
 participant generalization.
+
+Finally, a 90-sample purge gap was inserted before every forward test block, equal
+to the largest exploratory context window. Mean ROC AUC was 0.448 for pointwise
+EEG (range 0.288–0.572) and 0.443 for causal context (range 0.254–0.582). The
+gap sensitivity remains near or below chance and does not reverse the study's
+negative interpretation; it is still one continuous recording.

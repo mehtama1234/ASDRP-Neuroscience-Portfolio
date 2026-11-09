@@ -66,9 +66,9 @@ def evaluate(name: str, x: np.ndarray, y: np.ndarray, train_end: int, val_end: i
     }
 
 
-def blocked_cross_validate(name: str, x: np.ndarray, y: np.ndarray, splits: int = 5) -> dict:
+def blocked_cross_validate(name: str, x: np.ndarray, y: np.ndarray, splits: int = 5, gap: int = 0) -> dict:
     """Evaluate contiguous future blocks using only earlier samples for fitting."""
-    splitter = TimeSeriesSplit(n_splits=splits)
+    splitter = TimeSeriesSplit(n_splits=splits, gap=gap)
     folds = []
     for fold, (train_index, test_index) in enumerate(splitter.split(x), 1):
         model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1200, class_weight="balanced"))
@@ -92,6 +92,7 @@ def blocked_cross_validate(name: str, x: np.ndarray, y: np.ndarray, splits: int 
     return {
         "model": name,
         "splitter": "sklearn TimeSeriesSplit",
+        "gap_samples": gap,
         "fold_count": len(folds),
         "folds": folds,
         "summary": {
@@ -154,6 +155,10 @@ def main() -> None:
         "blocked_label_shuffle_control": [
             blocked_label_shuffle_control("pointwise EEG", x, y),
             blocked_label_shuffle_control("EEG + causal temporal context", trailing_features(x), y),
+        ],
+        "blocked_gap_sensitivity": [
+            blocked_cross_validate("pointwise EEG", x, y, gap=90),
+            blocked_cross_validate("EEG + causal temporal context", trailing_features(x), y, gap=90),
         ],
         "temporal_window_sweep": [],
     }

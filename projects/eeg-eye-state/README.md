@@ -23,6 +23,7 @@ reproducibility. Dataset details and citation are on the [official UCI page](htt
   random row split is used because this is one time series. The analysis also
   reports five forward-chaining `TimeSeriesSplit` folds as a robustness check
   and a 20-permutation global label-shuffle control using those same folds.
+  It also reports a 90-sample purge-gap sensitivity check before each test block.
 - **Metrics:** ROC AUC, balanced accuracy, and F1 on the held-out test block.
 
 Run:

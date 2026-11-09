@@ -47,6 +47,7 @@
     {
       "model": "pointwise EEG",
       "splitter": "sklearn TimeSeriesSplit",
+      "gap_samples": 0,
       "fold_count": 5,
       "folds": [
         {
@@ -120,6 +121,7 @@
     {
       "model": "EEG + causal temporal context",
       "splitter": "sklearn TimeSeriesSplit",
+      "gap_samples": 0,
       "fold_count": 5,
       "folds": [
         {
@@ -255,6 +257,156 @@
         0.4984126527446498,
         0.5068152373639083
       ]
+    }
+  ],
+  "blocked_gap_sensitivity": [
+    {
+      "model": "pointwise EEG",
+      "splitter": "sklearn TimeSeriesSplit",
+      "gap_samples": 90,
+      "fold_count": 5,
+      "folds": [
+        {
+          "fold": 1,
+          "train_start": 0,
+          "train_end_exclusive": 2410,
+          "test_start": 2500,
+          "test_end_exclusive": 4996,
+          "train_samples": 2410,
+          "test_samples": 2496,
+          "test_roc_auc": 0.2876642044062858,
+          "test_balanced_accuracy": 0.3733785822021116,
+          "test_f1": 0.23341645885286783
+        },
+        {
+          "fold": 2,
+          "train_start": 0,
+          "train_end_exclusive": 4906,
+          "test_start": 4996,
+          "test_end_exclusive": 7492,
+          "train_samples": 4906,
+          "test_samples": 2496,
+          "test_roc_auc": 0.4866274506892938,
+          "test_balanced_accuracy": 0.5098024197657164,
+          "test_f1": 0.3887630267331219
+        },
+        {
+          "fold": 3,
+          "train_start": 0,
+          "train_end_exclusive": 7402,
+          "test_start": 7492,
+          "test_end_exclusive": 9988,
+          "train_samples": 7402,
+          "test_samples": 2496,
+          "test_roc_auc": 0.34811859281051305,
+          "test_balanced_accuracy": 0.4334385718633389,
+          "test_f1": 0.6221294363256785
+        },
+        {
+          "fold": 4,
+          "train_start": 0,
+          "train_end_exclusive": 9898,
+          "test_start": 9988,
+          "test_end_exclusive": 12484,
+          "train_samples": 9898,
+          "test_samples": 2496,
+          "test_roc_auc": 0.5714689942766458,
+          "test_balanced_accuracy": 0.44682514223970554,
+          "test_f1": 0.5133593515460823
+        },
+        {
+          "fold": 5,
+          "train_start": 0,
+          "train_end_exclusive": 12394,
+          "test_start": 12484,
+          "test_end_exclusive": 14980,
+          "train_samples": 12394,
+          "test_samples": 2496,
+          "test_roc_auc": 0.5462706036358272,
+          "test_balanced_accuracy": 0.5462959548655923,
+          "test_f1": 0.15331491712707182
+        }
+      ],
+      "summary": {
+        "mean_test_roc_auc": 0.4480299691637131,
+        "std_test_roc_auc": 0.12457692642846989,
+        "min_test_roc_auc": 0.2876642044062858,
+        "max_test_roc_auc": 0.5714689942766458
+      }
+    },
+    {
+      "model": "EEG + causal temporal context",
+      "splitter": "sklearn TimeSeriesSplit",
+      "gap_samples": 90,
+      "fold_count": 5,
+      "folds": [
+        {
+          "fold": 1,
+          "train_start": 0,
+          "train_end_exclusive": 2410,
+          "test_start": 2500,
+          "test_end_exclusive": 4996,
+          "train_samples": 2410,
+          "test_samples": 2496,
+          "test_roc_auc": 0.2534819713552745,
+          "test_balanced_accuracy": 0.3293614881850176,
+          "test_f1": 0.22201317027281278
+        },
+        {
+          "fold": 2,
+          "train_start": 0,
+          "train_end_exclusive": 4906,
+          "test_start": 4996,
+          "test_end_exclusive": 7492,
+          "train_samples": 4906,
+          "test_samples": 2496,
+          "test_roc_auc": 0.5147849453295444,
+          "test_balanced_accuracy": 0.5379224619553958,
+          "test_f1": 0.41938405797101447
+        },
+        {
+          "fold": 3,
+          "train_start": 0,
+          "train_end_exclusive": 7402,
+          "test_start": 7492,
+          "test_end_exclusive": 9988,
+          "train_samples": 7402,
+          "test_samples": 2496,
+          "test_roc_auc": 0.34085973892802013,
+          "test_balanced_accuracy": 0.41509334378864193,
+          "test_f1": 0.5960426179604261
+        },
+        {
+          "fold": 4,
+          "train_start": 0,
+          "train_end_exclusive": 9898,
+          "test_start": 9988,
+          "test_end_exclusive": 12484,
+          "train_samples": 9898,
+          "test_samples": 2496,
+          "test_roc_auc": 0.5819797065725718,
+          "test_balanced_accuracy": 0.4556333676622039,
+          "test_f1": 0.5156964340140201
+        },
+        {
+          "fold": 5,
+          "train_start": 0,
+          "train_end_exclusive": 12394,
+          "test_start": 12484,
+          "test_end_exclusive": 14980,
+          "train_samples": 12394,
+          "test_samples": 2496,
+          "test_roc_auc": 0.522961300195435,
+          "test_balanced_accuracy": 0.5625253512297651,
+          "test_f1": 0.15953079178885632
+        }
+      ],
+      "summary": {
+        "mean_test_roc_auc": 0.44281353247616917,
+        "std_test_roc_auc": 0.13893504688023853,
+        "min_test_roc_auc": 0.2534819713552745,
+        "max_test_roc_auc": 0.5819797065725718
+      }
     }
   ],
   "temporal_window_sweep": [

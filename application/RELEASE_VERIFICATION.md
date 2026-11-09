@@ -34,4 +34,6 @@ uncertainty remain separately labeled in the final submission gate.
 
 The EEG metrics now also include a 20-permutation global label-shuffle control
 under `blocked_label_shuffle_control`: mean shuffled ROC AUC 0.499 for the
-pointwise model and 0.501 for causal context.
+pointwise model and 0.501 for causal context. They also include a 90-sample
+purge-gap sensitivity analysis: mean ROC AUC 0.448 pointwise and 0.443 with
+causal context.
