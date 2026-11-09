@@ -23,6 +23,8 @@ The source generator is `build_packet.py`.
 Run `python3 application/audit_portfolio.py` for the dependency-free handoff
 audit covering required artifacts, three-mouse claims, EEG outputs, video files,
 and the verified Android APK hash.
+After a Site deployment, run `python3 application/verify_public_release.py` to
+verify public routes and the live PDF hash.
 
 ## Existing drafts
 

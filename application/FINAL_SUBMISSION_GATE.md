@@ -6,6 +6,8 @@ Run this gate immediately before sending the ASDRP application.
 
 - [ ] Run `python3 application/audit_portfolio.py`; it must end with
   `PORTFOLIO AUDIT PASSED`.
+- [ ] Run `python3 application/verify_public_release.py`; it must end with
+  `PUBLIC RELEASE VERIFICATION PASSED`.
 - [ ] Confirm the GitHub links in `SUBMISSION_INDEX.md` resolve to the intended
   branches and commits.
 - [ ] Open the live HTML explainer, mobile demo, slide pages, PDF, and both MP4s

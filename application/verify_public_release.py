@@ -1,0 +1,54 @@
+"""Verify that the public Site exposes the current reviewer release."""
+
+from __future__ import annotations
+
+import hashlib
+import sys
+from pathlib import Path
+from urllib.request import Request, urlopen
+
+ROOT = Path(__file__).resolve().parent.parent
+BASE = "https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site"
+ROUTES = ("/", "/reviewer-dashboard.html", "/reviewer-packet.html", "/release-verification.html", "/mouse-leave-one-out.html", "/eeg-label-shuffle-control.html", "/mouse-visual-cortex.html", "/eeg-eye-state.html", "/neuroscience-mobile/", "/mouse-visual-cortex-slides.html", "/eeg-eye-state-slides.html", "/mouse-research-storyboard.mp4", "/eeg-research-storyboard.mp4", "/portfolio-research-storyboard.mp4")
+
+
+def fetch(path: str) -> tuple[int, bytes]:
+    request = Request(BASE + path, headers={"User-Agent": "ASDRP-release-verifier/1.0"})
+    with urlopen(request, timeout=30) as response:
+        return response.status, response.read()
+
+
+def main() -> None:
+    failures: list[str] = []
+    for path in ROUTES:
+        try:
+            status, body = fetch(path)
+            if status != 200 or not body:
+                failures.append(f"{path}: HTTP {status} or empty body")
+            else:
+                print(f"OK public route {path}: HTTP {status}")
+        except Exception as error:  # noqa: BLE001
+            failures.append(f"{path}: {error}")
+
+    try:
+        status, remote_pdf = fetch("/ASDRP-neuroscience-portfolio-packet.pdf")
+        local_pdf = ROOT / "application" / "ASDRP-neuroscience-portfolio-packet.pdf"
+        local_digest = hashlib.sha256(local_pdf.read_bytes()).hexdigest()
+        remote_digest = hashlib.sha256(remote_pdf).hexdigest()
+        if status != 200 or local_digest != remote_digest:
+            failures.append(f"PDF hash mismatch: local={local_digest} public={remote_digest}")
+        else:
+            print(f"OK public PDF SHA-256 {remote_digest}")
+    except Exception as error:  # noqa: BLE001
+        failures.append(f"PDF: {error}")
+
+    if failures:
+        print("PUBLIC RELEASE VERIFICATION FAILED", file=sys.stderr)
+        for failure in failures:
+            print(f"- {failure}", file=sys.stderr)
+        raise SystemExit(1)
+    print("PUBLIC RELEASE VERIFICATION PASSED")
+
+
+if __name__ == "__main__":
+    main()

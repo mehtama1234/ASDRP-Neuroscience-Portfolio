@@ -5,17 +5,18 @@ Last technical verification: 2026-11-09.
 ## Source state
 
 - Portfolio repository: `mehtama1234/ASDRP-Neuroscience-Portfolio`, commit
-  `9799067` or later.
-- Flagship repository: `AmishI123/neuroscience-project`, commit `5256a1b`.
+  `0dd0397` or later.
+- Flagship repository: `AmishI123/neuroscience-project`, commit `c084763`.
 - Hosted portfolio: Site version 27, deployment status `succeeded`.
 
 ## Verification command
 
 ```bash
 python3 application/audit_portfolio.py
+python3 application/verify_public_release.py
 ```
 
-Result: `PORTFOLIO AUDIT PASSED`.
+Results: `PORTFOLIO AUDIT PASSED` and `PUBLIC RELEASE VERIFICATION PASSED`.
 
 ## Key artifact hashes
 
