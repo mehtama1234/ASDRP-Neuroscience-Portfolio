@@ -68,6 +68,11 @@ def main() -> None:
         contains(path, r"0\.191")
         contains(path, r"three")
 
+    legacy_packet = text("application/reviewer-packet-v1.html")
+    if re.search(r"one-mouse|one mouse|replication pending", legacy_packet, re.IGNORECASE):
+        raise SystemExit("STALE one-mouse claim in reviewer packet archive")
+    print("OK archived reviewer packet scope: three-mouse")
+
     reproducibility = (ROOT.parent / "neuroscience-project/docs/REPRODUCIBILITY_RUN.md").read_text(encoding="utf-8")
     if re.search(r"two-mouse|two mice|both animals|beyond two", reproducibility, re.IGNORECASE):
         raise SystemExit("STALE replication scope in flagship reproducibility record")

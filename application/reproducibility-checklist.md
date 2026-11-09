@@ -27,6 +27,7 @@
 - [x] Clean-environment analysis run documented
 - [x] Five-fold forward-chaining blocked analysis
 - [x] Pre-specified exploratory temporal-window sweep (3/9/30/90 samples)
+- [x] Global label-shuffle negative control (20 permutations per EEG model)
 
 ## Communication artifacts
 

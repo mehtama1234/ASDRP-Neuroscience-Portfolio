@@ -10,7 +10,8 @@
 6. Held-out result: 0.126 → 0.158.
 7. Ablation: pupil carries the gain in this mouse.
 8. Which neurons benefit most?
-9. Limitations: one mouse, correlation not causation, modest baseline.
+9. Limitations: three evaluated mice, correlation not causation, modest baseline,
+   and population-level uncertainty remains open.
 10. Next experiment: replicate across animals and running regimes.
 
 The presenter view should demonstrate the interactive explainer before showing the
