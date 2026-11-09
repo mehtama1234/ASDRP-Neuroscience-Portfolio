@@ -1,13 +1,13 @@
 # Release verification record
 
-Last technical verification: 2026-11-08.
+Last technical verification: 2026-11-09.
 
 ## Source state
 
 - Portfolio repository: `mehtama1234/ASDRP-Neuroscience-Portfolio`, commit
-  `2c2754a` or later.
+  `9799067` or later.
 - Flagship repository: `AmishI123/neuroscience-project`, commit `5256a1b`.
-- Hosted portfolio: Site version 23, deployment status `succeeded`.
+- Hosted portfolio: Site version 24, deployment status `succeeded`.
 
 ## Verification command
 
