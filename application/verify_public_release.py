@@ -10,6 +10,12 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site"
 ROUTES = ("/", "/reviewer-dashboard.html", "/reviewer-packet.html", "/release-verification.html", "/mouse-leave-one-out.html", "/eeg-label-shuffle-control.html", "/eeg-purge-gap.html", "/mouse-visual-cortex.html", "/eeg-eye-state.html", "/neuroscience-mobile/", "/mouse-visual-cortex-slides.html", "/eeg-eye-state-slides.html", "/mouse-research-storyboard.mp4", "/eeg-research-storyboard.mp4", "/portfolio-research-storyboard.mp4")
+SOURCE_URLS = (
+    "https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio",
+    "https://github.com/AmishI123/neuroscience-project",
+    "https://github.com/AmishI123/neuroscience-project/blob/main/results/per_mouse_metrics.csv",
+    "https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio/tree/main/projects/eeg-eye-state",
+)
 
 
 def fetch(path: str) -> tuple[int, bytes]:
@@ -29,6 +35,17 @@ def main() -> None:
                 print(f"OK public route {path}: HTTP {status}")
         except Exception as error:  # noqa: BLE001
             failures.append(f"{path}: {error}")
+
+    for url in SOURCE_URLS:
+        try:
+            request = Request(url, headers={"User-Agent": "ASDRP-release-verifier/1.0"})
+            with urlopen(request, timeout=30) as response:
+                if response.status != 200:
+                    failures.append(f"source link {url}: HTTP {response.status}")
+                else:
+                    print(f"OK source link: {url}")
+        except Exception as error:  # noqa: BLE001
+            failures.append(f"source link {url}: {error}")
 
     try:
         status, remote_pdf = fetch("/ASDRP-neuroscience-portfolio-packet.pdf")
