@@ -7,7 +7,7 @@ Last technical verification: 2026-11-09.
 - Portfolio repository: `mehtama1234/ASDRP-Neuroscience-Portfolio`, commit
   `9799067` or later.
 - Flagship repository: `AmishI123/neuroscience-project`, commit `5256a1b`.
-- Hosted portfolio: Site version 26, deployment status `succeeded`.
+- Hosted portfolio: Site version 27, deployment status `succeeded`.
 
 ## Verification command
 
