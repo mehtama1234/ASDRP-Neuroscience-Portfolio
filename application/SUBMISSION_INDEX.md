@@ -43,6 +43,7 @@ rendered site assets are in `website/`, source reports and demos are in
 - [Narration recording kit](../communication/video/recording-kit.md)
 - [Final submission gate](FINAL_SUBMISSION_GATE.md)
 - [Release verification record](RELEASE_VERIFICATION.md)
+- [Submission sprint tracker](SUBMISSION_SPRINT.md)
 - [Research expansion goal](RESEARCH_EXPANSION_GOAL.md)
 
 ## Not yet submission-complete
