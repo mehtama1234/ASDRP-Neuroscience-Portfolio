@@ -18,7 +18,32 @@
   const mouse = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><path class="sp-glyph-ink" d="M-30 6 C -48 10, -52 -6, -66 2"/><ellipse class="sp-face" cx="0" cy="0" rx="32" ry="20"/><circle class="sp-face-soft" cx="20" cy="-18" r="10"/><circle class="sp-face" cx="30" cy="-4" r="14"/><circle class="sp-badge" cx="36" cy="-7" r="3"/><circle class="sp-medal" cx="44" cy="-1" r="2.4"/></g>`;
   const head = (x, y) => `<g transform="translate(${x} ${y})"><ellipse class="sp-face" cx="0" cy="0" rx="50" ry="60"/>${[[-30, -38], [-11, -50], [11, -50], [30, -38], [-40, -14], [40, -14], [-44, 12], [44, 12], [-32, 34], [32, 34], [-13, 47], [13, 47], [-18, -20], [18, -20]].map(([a, b]) => `<circle class="sp-badge" cx="${a}" cy="${b}" r="4.5"/>`).join('')}</g>`;
 
+  const STEPS = [
+    ['users', 'Real life', 'Same words land one', 'moment, not the next'],
+    ['eye', 'Understand', 'Mouse: state changes', 'what the brain sees'],
+    ['activity', 'Measure', 'EEG: readable once,', 'then it drifts'],
+    ['heart-handshake', 'Design', 'Ask, don’t guess.', 'One small step.'],
+    ['flask', 'Test', 'Do the apps help?', 'More studies, papers']
+  ];
+  const stepCard = (i, x, y, w, h, rot) => { const [ic, t, a, b] = STEPS[i]; return card(x, y, w, h, rot, `<circle class="sp-face-soft" cx="22" cy="28" r="12"/><text class="sp-num" x="22" y="32" text-anchor="middle">${i + 1}</text>${glyph(ic, w - 44, 14, 28)}<text class="sp-title" x="14" y="${h - 50}">${t}</text><text class="sp-small" x="14" y="${h - 30}">${a}</text><text class="sp-small" x="14" y="${h - 15}">${b}</text>`); };
+  function loopArt(tall) {
+    if (!tall) {
+      let b = '';
+      for (let i = 0; i < 5; i++) b += stepCard(i, 14 + i * 190, 26 + (i % 2) * 10, 160, 150, i % 2 ? 2 : -2);
+      for (let i = 0; i < 4; i++) { const x = 176 + i * 190; b += line(`M${x} 104 L${x + 24} 104`) + `<path class="sp-arrow" d="M${x + 20} 98l7 6-7 6"/>`; }
+      b += line('M854 196 C 854 262, 760 270, 480 270 C 200 270, 94 262, 94 196') + '<path class="sp-arrow" d="M88 204l6-9 6 9"/><text class="sp-return" x="480" y="292" text-anchor="middle">AND BACK TO REAL LIFE</text>';
+      return svg('The loop: real life raises a question; understand it in a mouse; measure it in a person; design apps from what held up; test them, and go back to real life.', b, 970, 300);
+    }
+    let b = '';
+    for (let i = 0; i < 5; i++) b += stepCard(i, 14 + (i % 2) * 16, 12 + i * 132, 250, 108, i % 2 ? 1.5 : -1.5);
+    for (let i = 0; i < 4; i++) { const y = 122 + i * 132; b += line(`M140 ${y} L140 ${y + 18}`) + `<path class="sp-arrow" d="M134 ${y + 14}l6 7 6-7"/>`; }
+    b += line('M282 600 C 306 560, 306 110, 282 66') + '<path class="sp-arrow" d="M290 74l-8-8 -1 11"/><text class="sp-return" x="328" y="340" text-anchor="middle" transform="rotate(90 328 340)">AND BACK TO REAL LIFE</text>';
+    return svg('The loop: real life, understand, measure, design, test, and back to real life.', b, 344, 672);
+  }
+
   const pictures = {
+    loop: () => loopArt(false),
+    loopTall: () => loopArt(true),
     mouseStudy: () => svg('A picture and the mouse’s pupil and running speed go into a model that predicts each neuron.', `
       ${card(10, 22, 128, 104, -3, `<rect class="sp-screen" x="12" y="18" width="104" height="62" rx="2"/><path class="sp-medal" d="M18 76 L46 40 L64 62 L78 50 L110 76 Z"/><circle class="sp-face" cx="96" cy="32" r="7"/><rect class="sp-bar-soft" x="12" y="88" width="70" height="7"/>`)}
       ${card(14, 138, 124, 70, 2, `${glyph('eye', 14, 22, 26)}${glyph('walk', 50, 22, 26)}<rect class="sp-bar" x="86" y="28" width="26" height="7"/><rect class="sp-bar-soft" x="86" y="42" width="20" height="6"/>`)}

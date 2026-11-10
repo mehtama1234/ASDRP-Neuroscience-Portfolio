@@ -85,7 +85,7 @@ LANDING_ART = """<svg class="landing-art" viewBox="0 0 440 400" aria-hidden="tru
         </svg>"""
 
 page("index.html", "From neurons to next steps · an ASDRP neuroscience portfolio",
-     "From neurons to next steps: a question from real life, tested in a mouse’s visual cortex and a person’s brain waves, then turned into two apps that help.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
+     "From neurons to next steps: a question from real life, tested in a mouse’s brain and a person’s brain waves, then turned into two apps that help.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
       <div class="landing-hero">
         <div class="landing-hero-text">
           <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
@@ -110,10 +110,11 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
       <section class="landing-problems" id="story" aria-labelledby="landing-problems-title">
         <h2 class="landing-subhead" id="landing-problems-title">One loop, five chapters</h2>
         <p class="lp-lead">It starts in real life and ends back there. Each chapter answers the question the last one raised.</p>
+        <div class="loop-figure"><div class="loop-wide" data-art="loop"></div><div class="loop-tall" data-art="loopTall"></div></div>
         <ol aria-label="Five chapters" tabindex="0">
           <li><p class="lp-k">1 · Real life</p><h3>Same words, different moment.</h3><p class="lp-pain">At Pragnya’s outings and in schoolwork, a step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
-          <li><p class="lp-k">2 · Understand</p><h3>A mouse’s state shapes what its visual cortex does.</h3><p class="lp-pain">Thousands of neurons, recorded while mice watched pictures. We predicted each neuron from the picture alone, then from the picture plus pupil size and running.</p><p class="lp-fix"><b>Found:</b> knowing the mouse’s state made prediction 25–34% better, in all three mice. <a href="mouse.html">Read chapter 2 →</a></p></li>
-          <li><p class="lp-k">3 · Measure</p><h3>Can a sensor read state in a person?</h3><p class="lp-pain">Eyes closed is one of the clearest changes in brain waves. One person, 14 scalp sensors, 117 seconds, and the model is always tested on what comes later.</p><p class="lp-fix"><b>Found:</b> on one stretch, yes (0.625, or 0.728 with four glitches limited). Across the recording it drifted to 0.478, about a coin flip. <a href="eeg.html">Read chapter 3 →</a></p></li>
+          <li><p class="lp-k">2 · Understand</p><h3>A mouse’s state changes how its brain sees.</h3><p class="lp-pain">Mice watched pictures while thousands of brain cells were recorded. We guessed what each cell would do from the picture alone, then from the picture plus how alert and active the mouse was.</p><p class="lp-fix"><b>Found:</b> knowing the mouse’s state made our guesses 25–34% better, in all three mice. <a href="mouse.html">Read chapter 2 →</a></p></li>
+          <li><p class="lp-k">3 · Measure</p><h3>Can sensors read state in a person?</h3><p class="lp-pain">A cap of 14 sensors on one person’s head for two minutes (EEG). Closing your eyes is one of the clearest changes it picks up. Can a simple model tell when?</p><p class="lp-fix"><b>Found:</b> on one stretch, often (0.625, where 0.5 is a coin flip). Across the whole recording it drifted to 0.478, no better than guessing. <a href="eeg.html">Read chapter 3 →</a></p></li>
           <li><p class="lp-k">4 · Design</p><h3>From findings to features.</h3><p class="lp-pain">If state matters but cannot be read from outside, an app should ask, not guess. It should show less on a low-energy day, and make pausing and coming back easy.</p><p class="lp-fix"><b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, for real jobs at Pragnya outings. <a href="tools.html">Read chapter 4 →</a></p></li>
           <li><p class="lp-k">5 · Test, then go further</p><h3>Where this goes next.</h3><p class="lp-pain">Four more data experiments, design studies with Pragnya volunteers and families, and papers others can check.</p><p class="lp-fix"><b>The aim:</b> one research direction, where neuroscience and design meet. <a href="next.html">Read chapter 5 →</a></p></li>
         </ol>
@@ -124,104 +125,106 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
       <section class="landing-more" id="checks" aria-labelledby="landing-more-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="landing-more-title">How we tried to break each result</h2><p class="lp-lead">Nothing in the story counts until it has survived a check that could have made it disappear.</p></div><div class="hj-art" data-art="controls"></div></div>
         {grid([
-            ('arrows-shuffle', 'Shuffle the answers', 'A coin flip, as it should be', 'With the EEG labels scrambled 20 times, the score falls to 0.499. Mouse behaviour shuffled 20 times adds almost nothing.'),
-            ('timeline', 'Split by time', 'Train on the past, test the future', 'No random mixing of neighbouring moments, which makes EEG results look far better than they are.'),
-            ('route-2', 'Leave a gap', '90 samples between train and test', 'Removing the moments right next to each test block keeps the EEG result near chance: it is not leakage.'),
-            ('users', 'Leave one out', 'No single mouse carries it', 'The average gain stays positive (+0.040 to +0.048) whichever mouse is left out.'),
-            ('filter', 'Glitch check', 'Four broken samples found', 'Values up to 715,897 where normal is about 4,000. Limiting them helps the last block, not the drift.'),
-            ('code', 'Every number traced', 'Rebuilt from saved results', 'The charts are generated from the committed results files, and the EEG study reruns with one command.'),
+            ('arrows-shuffle', 'Mix up the answers', 'It should fail, and it does', 'If we scramble which moments were eyes-closed, the model drops to a coin flip. If we scramble the mouse’s behaviour, the gain almost vanishes. So the results come from real signal.'),
+            ('timeline', 'Never peek at the future', 'Learn from earlier, test on later', 'The model only ever learns from the past and is tested on what comes after, the way a real app would have to work.'),
+            ('route-2', 'Leave a gap', 'No help from next-door moments', 'Moments right next to each other look alike. We leave a gap between what the model learns from and what it is tested on.'),
+            ('users', 'Leave one mouse out', 'No single mouse carries it', 'Take any one mouse away and the other two still show the gain.'),
+            ('filter', 'Look for broken readings', 'Four found and capped', 'Four readings were hundreds of times too big. Capping them helps one test, but does not fix the drift.'),
+            ('code', 'Every number traced', 'Rebuilt from saved results', 'Every chart is drawn from the saved results files, and the EEG study reruns with one command.'),
         ])}
       </section>
 
       <h2 class="landing-subhead">The story in three numbers</h2><p class="landing-demo-note">One from inside a brain, two from outside. Each chapter has the charts and the checks.</p>
       <ol class="landing-demo" aria-label="Three results" tabindex="0">
-        {phone('Mouse study', 'THREE MICE', 'Behaviour helps', '<div class="ph-paused"><b>+0.032 to +0.049</b><em>held-out correlation</em></div><p class="ph-small">Pupil helps all three mice.</p>', 'State matters inside', 'Adding pupil and running made prediction a quarter to a third better.')}
-        {phone('EEG study', 'FINAL TEST BLOCK', '0.625 → 0.728', '<p class="ph-note">After limiting 4 glitches</p><p class="ph-small">0.5 is a coin flip, 1.0 is perfect.</p>', 'Readable once…', 'A simple model read eye state well on the last part of the recording.')}
-        {phone('EEG study', 'FIVE BLOCKS IN TIME', 'Near a coin flip', '<div class="ph-paused ph-red"><b>Average 0.478</b><em>some blocks well below 0.5</em></div><p class="ph-small">So the tools don’t try to guess.</p>', '…but not over time', 'Within two minutes the link between signal and eye state shifted.')}
+        {phone('Mouse study', 'THREE MICE', 'State helps', '<div class="ph-paused"><b>25–34% better</b><em>in every mouse</em></div><p class="ph-small">Once we know if the mouse is alert and running.</p>', 'State matters inside', 'Knowing the mouse’s state made its brain a quarter to a third easier to predict.')}
+        {phone('EEG study', 'LAST STRETCH', '0.625 → 0.728', '<p class="ph-note">With 4 broken readings capped</p><p class="ph-small">0.5 is a coin flip. 1.0 is always right.</p>', 'Readable once…', 'On the last stretch, a simple model could often tell eyes open from closed.')}
+        {phone('EEG study', 'FIVE STRETCHES', 'About a coin flip', '<div class="ph-paused ph-red"><b>Average 0.478</b><em>some stretches worse than guessing</em></div><p class="ph-small">So the apps ask instead of guess.</p>', '…but not over time', 'Within two minutes, the brain-wave pattern for eyes closed changed.')}
       </ol>
 
       <div class="landing-facts">
-        <div class="landing-fact"><h2>Who did what</h2><p>The studies were done by the applicant with a parent collaborator, who helped scope questions, review code and debug. Software tools, including AI assistants, helped build this website. The <a href="{REPO}/blob/main/application/contribution-ledger.md">contribution ledger</a> lists each part.</p></div>
-        <div class="landing-fact landing-fact-not"><h2>What it is not</h2><p>It is not a clinical or diagnostic study. Three mice and one EEG recording cannot speak for all animals or people, and a model that predicts something does not show what causes it.</p></div>
+        <div class="landing-fact"><h2>Who did what</h2><p>The studies were done by the applicant with a parent collaborator, who helped scope questions, review code and debug. Software tools, including AI assistants, helped build this website and the apps. The <a href="{REPO}/blob/main/application/contribution-ledger.md">contribution ledger</a> lists each part.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>What it is not</h2><p>It is not a medical study and it does not diagnose anyone. Three mice and one person cannot speak for everyone, and being able to predict something is not the same as knowing what causes it.</p></div>
       </div>
       <p class="landing-note">Data: Sensorium 2022 (Willeke et al., 2022) and UCI EEG Eye State (Roesler, 2013). <a href="mouse.html">Mouse study</a><a href="eeg.html">EEG study</a><a href="tools.html">Tools</a><a href="next.html">Next experiments</a></p>
     </section>""")
 
 # ---------------- mouse ----------------
-page("mouse.html", "Mouse visual cortex · From neurons to next steps",
-     "Chapter 2: knowing a mouse’s pupil size and running speed made its visual cortex 25–34% easier to predict, in all three mice.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'All chapters'), 'Chapter 2 · Understand · Mouse study', '<span id="page-title">Does a mouse’s state change what its visual cortex does?</span>', 'We predicted thousands of neurons from the picture a mouse saw, then again with its pupil size and running speed added. If state did not matter, the extra information would add nothing.', 'mouseHero')}
-      <section class="landing-problems answer"><p class="lp-energy"><b>It mattered, in all three mice.</b> With pupil and running added, prediction on unseen pictures rose by +0.032 to +0.049, a quarter to a third better than the picture alone. <span>A better prediction shows a link, not a cause.</span></p></section>
+page("mouse.html", "Understand · mouse study · From neurons to next steps",
+     "Chapter 2: knowing how alert and active a mouse was made its brain’s response to pictures 25–34% easier to predict, in all three mice.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'All chapters'), 'Chapter 2 · Understand · Mouse study', '<span id="page-title">Does a mouse’s state change how its brain responds to what it sees?</span>', 'Mice watched pictures while scientists recorded thousands of brain cells in the part of the brain that handles seeing. We tried to guess what each cell would do, first from the picture alone, then from the picture plus two signs of the mouse’s state: how wide its pupils were and how fast it was running. If state did not matter, the extra signs would not help.', 'mouseHero')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>It mattered, in all three mice.</b> Knowing the mouse’s state made our guesses a quarter to a third better (25–34%), on pictures the model had never seen. <span>This shows state and seeing are linked. It does not yet show which causes which.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
-        <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">The same steps for every mouse, scored on images the model never saw.</p></div><div class="hj-art" data-art="mouseStudy"></div></div>
+        <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">Two guessers, the same pictures, and a fair test on pictures neither had seen.</p></div><div class="hj-art" data-art="mouseStudy"></div></div>
         {grid([
-            ('photo', 'The picture', 'Shrunk and summarised', 'Each image is shrunk 4×4 and summarised with 150 principal components.'),
-            ('eye', 'The behaviour', 'Pupil and running', 'Pupil size and running speed recorded at the same moment as the brain activity.'),
-            ('chart-dots', 'The model', 'Ridge regression', 'One simple model per neuron, standardised on training data only.'),
-            ('target', 'The test', 'Official held-out images', 'Scored by the correlation between predicted and real activity, averaged over neurons.'),
-            ('books', 'The data', 'Sensorium 2022', 'Public recordings from mouse primary visual cortex, thousands of neurons per mouse.'),
-            ('users', 'The unit', 'Each mouse counts once', 'Neurons are not treated as separate animals.'),
+            ('photo', 'Step 1', 'What the mouse saw', 'Each picture is shrunk to a short summary of its light and dark patterns, so a simple model can use it.'),
+            ('eye', 'Step 2', 'What state it was in', 'Pupil size (wider usually means more alert) and running speed, recorded at the same moment as the brain cells.'),
+            ('chart-dots', 'Step 3', 'Two simple guessers', 'Guesser A sees only the picture. Guesser B sees the picture plus pupil and running. Both are the simplest kind of model: a weighted sum.'),
+            ('target', 'Step 4', 'A fair test', 'Both guess how each brain cell responds to pictures they have never seen. We score how closely each guess follows the real cell.'),
+            ('books', 'The data', 'A public dataset', 'Sensorium 2022: recordings of thousands of brain cells from mice watching pictures, shared by scientists for anyone to study.'),
+            ('users', 'Being fair', 'Each mouse counts once', 'The many brain cells in one mouse are not counted as many mice.'),
         ])}
       </section>
 
       <h2 class="landing-subhead">The results</h2>
-      {chart('mouse-scores', 'Result', 'Every mouse is easier to predict once we know its state.', 'The picture explains part of what visual cortex does. Whether the mouse is alert and moving explains more, in every animal.', 'Mean held-out Pearson correlation across neurons, Sensorium 2022 official test images.')}
-      {chart('mouse-gain', 'Gain', 'The size of the gain differs by mouse.', 'Pupil size helps all three animals. How much running adds changes from mouse to mouse, so each animal is reported on its own.', 'Gain = score with behaviour minus score with the picture only.')}
+      {chart('mouse-scale', 'How to read the score', 'How closely the guess follows the real brain cell.', '0 means the guess and the cell have nothing in common; 1 would be a perfect match. Brain cells are noisy, so even good guesses score low. What matters is the jump from A to B.', 'The score is a correlation, averaged over every recorded brain cell.')}
+      {chart('mouse-scores', 'Result', 'Every mouse is easier to predict once we know its state.', 'The picture explains part of what the seeing part of the brain does. Whether the mouse is alert and moving explains more, in every animal.', 'Tested on pictures the guessers never saw.')}
+      {chart('mouse-gain', 'How much state adds', 'Every mouse gains, by different amounts.', 'Pupil size helps all three mice. How much running adds changes from mouse to mouse, so each mouse is shown on its own.', 'Gain = guesser B’s score minus guesser A’s score.')}
 
       <section class="landing-more" aria-labelledby="checks-title" id="checks">
-        <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Trying to break the result</h2><p class="lp-lead">Three checks that could have made the gain disappear.</p></div><div class="hj-art" data-art="controls"></div></div>
+        <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Trying to break the result</h2><p class="lp-lead">Three checks that could have made the gain disappear. It survived all three.</p></div><div class="hj-art" data-art="controls"></div></div>
         {grid([
-            ('arrows-shuffle', 'Shuffle the behaviour', 'Almost no gain', 'Behaviour scrambled across trials, 20 times per mouse, adds almost nothing. The gain needs behaviour from the same moment.'),
-            ('users', 'Leave one mouse out', 'Still positive', 'The average gain stays positive whichever mouse is removed, so no single recording carries the result.'),
-            ('eye', 'Pupil or running?', 'Pupil helps every mouse', 'Taking each signal away in turn: pupil improves all three mice; running varies by animal.'),
+            ('arrows-shuffle', 'Mix up the state', 'The gain almost vanishes', 'We gave guesser B the pupil and running from the wrong moments, 20 times per mouse. It barely helped. The gain needs the mouse’s state at that moment.'),
+            ('users', 'Leave one mouse out', 'Still there', 'Take any one mouse away and the other two still show the gain, so no single mouse carries the result.'),
+            ('eye', 'Pupil or running?', 'Pupil helps every mouse', 'Taking each sign away in turn: pupil helps all three mice; running helps some more than others.'),
         ])}
       </section>
-      {chart('mouse-loo', 'Leave one mouse out', 'Positive without any one animal.', 'This makes the three-mouse pattern less dependent on one recording. It is a check, not an estimate for all mice.', 'Average gain over the two remaining mice.')}
+      {chart('mouse-loo', 'Leave one mouse out', 'The gain stays without any one mouse.', 'So the pattern does not hang on one recording. It is a check, not a promise about all mice.', 'Average gain over the two mice that are left.')}
 
       <div class="landing-facts" style="margin-top:28px">
         <div class="landing-fact"><h2>Code and data</h2><p>The analysis is in <a href="{FLAGSHIP}">AmishI123/neuroscience-project</a> (notebooks 01–05 and <code>src/summarize_replication.py</code>). The numbers here are copied from its committed summary into <code>website/build_results.py</code>. Data: Willeke et al. (2022), <i>The Sensorium competition on predicting large-scale mouse primary visual cortex activity</i>, arXiv:2206.08666.</p></div>
-        <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>Three mice cannot speak for all mice. A better prediction does not show that arousal or running cause the change. The report’s intervals are within each animal, not for the whole population.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>Three mice cannot speak for all mice. A better guess does not show that being alert or running causes the brain to change. Other things that happen at the same time could explain it.</p></div>
       </div>
       {bridge('What chapter 2 tells us:', 'the same picture lands differently depending on the state the mouse is in. So the next question is whether that state can be read from outside the head, in a person.', 'eeg.html', 'Chapter 3')}
       {nav(('index.html', 'All chapters'), ('eeg.html', 'Chapter 3 · EEG'))}
     </section>""")
 
 # ---------------- EEG ----------------
-page("eeg.html", "EEG eye state · From neurons to next steps",
+page("eeg.html", "Measure · EEG study · From neurons to next steps",
      "Chapter 3: a simple model reads eye state from one person’s EEG on one stretch of time, but not reliably across the recording, because the signal drifts.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'All chapters'), 'Chapter 3 · Measure · EEG study', '<span id="page-title">Can a sensor on the head tell when someone’s eyes are closed?</span>', 'Eyes closed is one of the clearest changes in brain waves. If a simple model cannot read it reliably over two minutes, quieter states like tiredness will be harder still.', 'eegHero')}
-      <section class="landing-problems answer"><p class="lp-energy"><b>On one stretch, yes. Over time, no.</b> The model scored 0.625 on the last part of the recording, and 0.728 once four glitch samples were limited. Tested block by block across the recording, it averaged 0.478, about a coin flip. <span>Giving it the last few moments of signal did not help.</span></p></section>
+{heading(('index.html', 'All chapters'), 'Chapter 3 · Measure · EEG study', '<span id="page-title">Can sensors on the head tell when someone’s eyes are closed?</span>', 'EEG is a cap of small sensors that pick up the brain’s electrical activity through the scalp. Closing your eyes is one of the clearest changes it can see. If a simple model cannot read even that reliably for two minutes, quieter states like tiredness will be harder still.', 'eegHero')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>On one stretch, yes. Over time, no.</b> On the last part of the recording the model scored 0.625, and 0.728 once four broken readings were capped. But tested on five stretches across the recording, it averaged 0.478: about a coin flip. <span>Letting it see the last few moments as well did not help.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
-        <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">Always train on the past, and test on the future.</p></div><div class="hj-art" data-art="eegStudy"></div></div>
+        <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">Learn from earlier in the recording, then test on what comes later, like a real app would have to.</p></div><div class="hj-art" data-art="eegStudy"></div></div>
         {grid([
-            ('activity', 'The recording', 'One person, 117 seconds', '14 channels and 14,980 samples, about 45% with eyes closed.'),
-            ('timeline', 'Split by time', '70 · 15 · 15', 'Learn on the first 70%, choose on the next 15%, test once on the last 15%. No random mixing.'),
-            ('chart-dots', 'Two models', 'A moment, or a moment plus history', 'One sees a single moment; the other also sees the average and spread of the last 9 samples.'),
-            ('target', 'The score', 'ROC AUC', '0.5 is a coin flip and 1.0 is perfect.'),
-            ('route-2', 'Five blocks', 'Forward in time', 'Train on everything before a block, test on the block, five times.'),
-            ('books', 'The data', 'UCI EEG Eye State', 'Roesler (2013), a public recording with each moment marked eyes open or closed.'),
+            ('activity', 'The recording', 'One person, two minutes', '14 sensors, about 128 readings a second. Each moment is marked eyes open or eyes closed (closed about 45% of the time).'),
+            ('timeline', 'Learn, then test', 'Earlier, then later', 'The model learns from the first 70% of the recording, is tuned on the next 15%, and is tested once on the last 15%.'),
+            ('chart-dots', 'Two models', 'Now, or now plus a moment ago', 'One sees a single moment. The other also sees the last 9 readings, about a fourteenth of a second.'),
+            ('target', 'The score', '0.5 is a coin flip', 'How often the model ranks an eyes-closed moment above an eyes-open one. 0.5 is guessing, 1.0 is always right.'),
+            ('route-2', 'Five stretches', 'Moving forward in time', 'Learn from everything before a stretch, test on that stretch, and repeat five times across the recording.'),
+            ('books', 'The data', 'A public recording', 'UCI EEG Eye State (Roesler, 2013), shared for anyone to study.'),
         ])}
       </section>
 
       <h2 class="landing-subhead">The results</h2>
-      {chart('eeg-holdout', 'Final test block', 'Good on one block, better without glitches.', 'Four samples are recording glitches, with values up to 715,897 where normal readings are about 4,000. Limiting each channel to the range seen in training lifts the simple model from 0.625 to 0.728.', 'The glitch check was added after the first results, so it is shown next to the original numbers, not instead of them.')}
-      {chart('eeg-folds', 'Five blocks in time', 'Over time, it drifts to a coin flip.', 'Scores scatter around 0.5, and several blocks fall well below it. A model that is reliably worse than chance has learned a pattern that flips later in the recording.', 'That points to drift across the 117 seconds, not only noise. Limiting glitches and leaving a time gap do not change it.')}
+      {chart('eeg-scale', 'How to read the score', 'Where the results sit between guessing and always right.', 'Anything near 0.5 is no better than flipping a coin. Below 0.5 means the model is wrong more often than right, so the pattern it learned has flipped.', 'The score is called AUC.')}
+      {chart('eeg-holdout', 'The last stretch', 'Good on one stretch, better once broken readings are capped.', 'Four readings were broken: up to 715,897 when normal is about 4,000. Capping each sensor at the range seen while learning lifts the score from 0.625 to 0.728.', 'We added this check after the first results, so the new numbers sit next to the old ones, not in place of them.')}
+      {chart('eeg-folds', 'Five stretches in time', 'Across the recording, it drifts to a coin flip.', 'Scores land on both sides of 0.5, and some fall well below it. Being worse than guessing means the pattern the model learned earlier had flipped by later on.', 'So the signal drifts within two minutes. Capping broken readings and leaving a gap do not fix it.')}
 
       <section class="landing-more" aria-labelledby="checks-title" id="checks">
-        <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Making sure it is not the pipeline</h2><p class="lp-lead">Three checks on how the result was produced.</p></div><div class="hj-art" data-art="controls"></div></div>
+        <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Making sure it is not our mistake</h2><p class="lp-lead">Three checks that the result comes from the recording, not from how we handled it.</p></div><div class="hj-art" data-art="controls"></div></div>
         {grid([
-            ('arrows-shuffle', 'Shuffle the answers', '0.499 average', 'Eye-state labels scrambled 20 times give a coin flip, as they should. The pipeline does not invent signal.'),
-            ('route-2', 'Leave a gap', '0.448 average', 'Removing the 90 samples before each test block keeps the result near chance, so it is not leakage from neighbours.'),
-            ('filter', 'Limit the glitches', 'Rows 898, 10386, 11509, 13179', 'Limits are learned from training rows only, separately for each block, so the test never shapes them.'),
+            ('arrows-shuffle', 'Mix up the answers', 'Scores 0.499, a coin flip', 'With eyes open and closed scrambled 20 times, the model scores a coin flip, as it should. Our method does not invent a pattern.'),
+            ('route-2', 'Leave a gap', 'Scores 0.448, still near guessing', 'We left out the moments just before each test stretch, so the model could not lean on near-copies. The result stays near a coin flip.'),
+            ('filter', 'Cap broken readings', 'Four readings, capped fairly', 'The caps come only from the part the model learns from, so the test part never shapes them.'),
         ])}
       </section>
-      {chart('eeg-windows', 'How much history', 'Longer history looks better, but we did not pick a winner.', 'The 3, 9, 30 and 90-sample windows were set before looking. Ninety does best on average, but choosing it now would be fitting this one recording.', 'Next: test window lengths on new recordings before choosing.')}
+      {chart('eeg-windows', 'How far back to look', 'Looking further back seems to help, but we did not pick a winner.', 'We chose to try 3, 9, 30 and 90 readings back before seeing any results. Ninety does best on average, but picking it now would mean tuning to this one recording.', 'Next: compare these on new recordings before choosing.')}
 
       <div class="landing-facts" style="margin-top:28px">
         <div class="landing-fact"><h2>Rerun it</h2><p><code>python3 projects/eeg-eye-state/src/analyze.py</code> writes <code>results/metrics.json</code>, and <code>python3 website/build_results.py</code> turns it into these charts. See the <a href="{REPO}/blob/main/projects/eeg-eye-state/report.md">full report</a>. Data: Roesler, O. (2013). <i>EEG Eye State</i>. UCI Machine Learning Repository, doi:10.24432/C57G7J.</p></div>
-        <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>One person and one short recording cannot show how this works for other people. The label is eyes open or closed, not attention, alertness or any condition.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>One person and one short recording cannot show how this works for other people. The only thing measured is eyes open or closed, not attention, tiredness or any condition.</p></div>
       </div>
       {bridge('What chapter 3 tells us:', 'a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the apps ask the person instead of guessing.', 'tools.html', 'Chapter 4')}
       {nav(('mouse.html', 'Chapter 2 · Mouse'), ('tools.html', 'Chapter 4 · Design'))}
@@ -269,15 +272,15 @@ page("tools.html", "Design · From neurons to next steps",
 
 # ---------------- next ----------------
 EXPS = [
-    ("flask", "1 · Planned · tests chapter 2", "Does the timing matter?", "Does behaviour from the same moment predict better than behaviour from a moment nearby? Needs the raw Sensorium recordings, which are not in this repository."),
-    ("activity", "2 · Ready to run · tests chapter 3", "Brain-wave bands", "Alpha waves rise when eyes close. Do bands like alpha hold up over time better than raw signals? Uses the EEG file already here."),
-    ("brain", "3 · Planned · tests chapter 2", "Which neurons care?", "Is the gain spread across all neurons, or held by groups chosen in advance by depth and position? Needs raw responses and neuron positions."),
-    ("timeline", "4 · Started · tests chapter 3", "Why does it drift?", "How fast does the link between signal and eye state change, and does adjusting for drift help? Block-by-block scores and the glitch check are done."),
+    ("flask", "1 · Planned · tests chapter 2", "Does the timing matter?", "Does the mouse’s state at that exact moment help more than its state a little earlier or later? Needs the full mouse recordings."),
+    ("activity", "2 · Ready to run · tests chapter 3", "Brain-wave bands", "One kind of brain wave, called alpha, grows when eyes close. Does tracking it hold up over time better than the raw readings? Uses the recording we already have."),
+    ("brain", "3 · Planned · tests chapter 2", "Which brain cells change?", "Does state change every brain cell a little, or a few groups a lot? Groups are chosen before looking. Needs the full mouse recordings."),
+    ("timeline", "4 · Started · tests chapter 3", "Why does it drift?", "How quickly does the eyes-closed pattern change, and can the model keep up if it keeps learning? The stretch-by-stretch scores and the broken-reading check are done."),
     ("users", "5 · Planned · closes the loop", "Do the apps help?", "Back to real life: do the four design rules make tasks easier to finish, for the people the apps are for? Needs consent, a task list written in advance and no personal data beyond what the test needs."),
 ]
 ROADMAP = [
     ("Now · done", "Two studies, two apps.", "The mouse and EEG studies, every result checked and rerunnable. Next Step and Helper Jobs working, with the four design rules built in.", "<b>Shown:</b> on this site, in the slides and in the phone tour."),
-    ("Next · with an ASDRP mentor", "Run the four data experiments.", "Brain-wave bands and drift in the EEG, using the data already here. Then timing and neuron groups in the full mouse recordings.", "<b>Aim:</b> a first paper, on why the EEG drifts, for a student research journal such as the <i>Journal of Emerging Investigators</i>, plus a poster."),
+    ("Next · with an ASDRP mentor", "Run the four data experiments.", "Brain-wave bands and drift in the EEG, using the data already here. Then timing and groups of brain cells in the full mouse recordings.", "<b>Aim:</b> a first paper, on why the EEG drifts, for a student research journal such as the <i>Journal of Emerging Investigators</i>, plus a poster."),
     ("Then · with people", "Study the design with the people it is for.", "Co-design sessions with Pragnya volunteers and families, then a usability test of the four design rules. Consent first, and tasks written down before anyone takes part.", "<b>Aim:</b> a second paper, on the design rules, and better apps."),
     ("Longer term · the joined-up question", "Does designing for state help people learn?", "Compare the energy-aware design with a fixed one, for the same person over several weeks. Then ask whether the brain findings predict who it helps most.", "<b>Aim:</b> one research direction, where neuroscience and human–computer interaction meet."),
 ]

@@ -37,10 +37,10 @@
     rows.forEach((r, ri) => {
       const cy = top + 14 + ri * rowH + rowH / 2;
       body += `<text class="cat-l" x="0" y="${cy + 5}">${esc(r.label)}</text><line class="track" x1="${x(Math.min(...r.values))}" x2="${x(Math.max(...r.values))}" y1="${cy}" y2="${cy}"/>`;
-      r.values.forEach((v, i) => { body += `<circle class="dot ${r.tone || ''}" cx="${x(v)}" cy="${cy}" r="9"><title>Block ${i + 1}: ${fmt(v)}</title></circle><text class="fold" x="${x(v)}" y="${cy + 3.5}" text-anchor="middle">${i + 1}</text>`; });
+      r.values.forEach((v, i) => { body += `<circle class="dot ${r.tone || ''}" cx="${x(v)}" cy="${cy}" r="9"><title>Stretch ${i + 1}: ${fmt(v)}</title></circle><text class="fold" x="${x(v)}" y="${cy + 3.5}" text-anchor="middle">${i + 1}</text>`; });
       body += `<path class="mean" d="M${x(avg(r))} ${cy + 12} l6 9 h-12 z"/><text class="val strong" x="${w - 4}" y="${cy + 5}" text-anchor="end">${fmt(avg(r))}</text>`;
     });
-    return frame(w, h, body, caption) + table(caption, ['', ...Array.from({ length: folds }, (_, i) => `Block ${i + 1}`), 'Average'], rows.map(r => [r.label, ...r.values.map(fmt), fmt(avg(r))]));
+    return frame(w, h, body, caption) + table(caption, ['', ...Array.from({ length: folds }, (_, i) => `Stretch ${i + 1}`), 'Average'], rows.map(r => [r.label, ...r.values.map(fmt), fmt(avg(r))]));
   }
 
   // One row of bars: [{label, value}], with a reference line (for example zero gain).
@@ -56,5 +56,20 @@
     return frame(w, height, body, caption) + table(caption, ['', 'Value'], items.map(it => [it.label, format(it.value)]));
   }
 
-  root.PortfolioCharts = { groupedBars, foldDots, rowBars, fmt };
+  // A number line from min to max with labelled marks: how to read a score.
+  // marks: [{v, label, tone, below}], ticks: [{v, label}].
+  function scale({ min = 0, max = 1, marks, ticks, caption, band }) {
+    const w = 640, h = 190, left = 24, right = 24, y0 = 100;
+    const x = v => left + ((v - min) / (max - min)) * (w - left - right);
+    let body = band ? `<rect class="band" x="${x(band[0])}" y="${y0 - 14}" width="${x(band[1]) - x(band[0])}" height="28" rx="4"/>` : '';
+    body += `<line class="axis" x1="${x(min)}" x2="${x(max)}" y1="${y0}" y2="${y0}"/>`;
+    ticks.forEach(t => { body += `<line class="grid" x1="${x(t.v)}" x2="${x(t.v)}" y1="${y0 - 8}" y2="${y0 + 8}"/><text class="tick" x="${x(t.v)}" y="${y0 + 72}" text-anchor="${t.v === min ? 'start' : t.v === max ? 'end' : 'middle'}">${esc(t.label)}</text>`; });
+    marks.forEach(m => {
+      const up = !m.below, ty = up ? y0 - 30 : y0 + 44;
+      body += `<line class="lead" x1="${x(m.v)}" x2="${x(m.v)}" y1="${up ? y0 - 22 : y0 + 4}" y2="${up ? y0 - 4 : y0 + 26}"/><circle class="dot ${m.tone || ''}" cx="${x(m.v)}" cy="${y0}" r="8"/><text class="val strong" x="${x(m.v)}" y="${ty}" text-anchor="middle">${esc(m.label)}</text>`;
+    });
+    return frame(w, h, body, caption) + table(caption, ['', 'Score'], marks.map(m => [m.label, fmt(m.v)]));
+  }
+
+  root.PortfolioCharts = { groupedBars, foldDots, rowBars, scale, fmt };
 })(window);
