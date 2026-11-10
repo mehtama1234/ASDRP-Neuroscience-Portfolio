@@ -65,19 +65,19 @@ slide("ch2-how", "Chapter 2: how the mouse study works, in four steps.", f"""
 # 5
 slide("ch2-result", "Chapter 2 result: guesser B beats guesser A in all three mice.", f"""
 {head('Chapter 2 · The result', 'Every mouse is easier to predict once we know its state.')}
-{answer('<b>A quarter to a third better (25–34%), in all three mice,</b> on pictures the model had never seen. <span>This shows state and seeing are linked. It does not yet show which causes which.</span>')}
+{answer('<b>A quarter to a third better (25–33%), in all three mice,</b> on pictures the model had never seen. <span>This shows state and seeing are linked. It does not yet show which causes which.</span>')}
 {B.chart('mouse-scores', 'Score on unseen pictures', 'Guesser A against guesser B.', '0 means no match, 1 would be perfect. Brain cells are noisy, so scores are low. What matters is the jump from A to B.', 'Average over every recorded brain cell.')}""",
       "In every mouse, guesser B wins. The scores look small because single brain cells are noisy, so the thing to look at is the jump from A to B: a quarter to a third better. That is a link, not proof of cause.")
 # 6
 slide("ch2-checks", "Chapter 2 checks: mix up the state, leave one mouse out, pupil or running.", f"""
 {head('Chapter 2 · Trying to break it', 'Three checks that could have made the gain disappear.', 'It survived all three.', 'controls')}
 {B.grid([
-    ('arrows-shuffle', 'Mix up the state', 'The gain almost vanishes', 'Pupil and running from the wrong moments barely help. It needs the state at that moment.'),
+    ('arrows-shuffle', 'Mix up the state', 'The gain disappears', 'Pupil and running from the wrong moments add nothing. It needs the state at that moment.'),
     ('users', 'Leave one mouse out', 'Still there', 'Take any one mouse away and the other two still show the gain.'),
     ('eye', 'Pupil or running?', 'Pupil helps every mouse', 'Running helps some mice more than others.'),
 ])}
 {B.bridge('What chapter 2 tells us:', 'the same picture lands differently depending on the mouse’s state. Can that state be read from outside the head, in a person?', '#', 'Chapter 3')}""",
-      "We tried to break it. When we gave guesser B the wrong moments’ state, the gain almost vanished. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?")
+      "We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?")
 # 7
 slide("ch3-how", "Chapter 3: how the EEG study works.", f"""
 {head('Chapter 3 · Measure · EEG study', 'Can sensors on the head tell when someone’s eyes are closed?', 'EEG is a cap of small sensors that pick up the brain’s electrical activity through the scalp. Closing your eyes is one of the clearest changes it can see.', 'eegHero')}

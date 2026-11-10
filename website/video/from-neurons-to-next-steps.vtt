@@ -21,33 +21,33 @@ Scientists shared recordings of thousands of brain cells from mice watching pict
 In every mouse, guesser B wins. The scores look small because single brain cells are noisy, so the thing to look at is the jump from A to B: a quarter to a third better. That is a link, not proof of cause.
 
 6
-00:01:19.740 --> 00:01:35.068
-We tried to break it. When we gave guesser B the wrong moments’ state, the gain almost vanished. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?
+00:01:19.740 --> 00:01:34.536
+We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?
 
 7
-00:01:36.468 --> 00:01:54.275
+00:01:35.936 --> 00:01:53.743
 Now a person. EEG is a cap of sensors on the head. Closing your eyes is one of the easiest changes for it to see. If a simple model cannot read even that reliably, quieter states like tiredness will be harder. We always learn from earlier and test on later.
 
 8
-00:01:55.675 --> 00:02:03.525
+00:01:55.143 --> 00:02:02.993
 On one stretch it worked reasonably well. But when we tested it on five stretches across the recording, it averaged a coin flip.
 
 9
-00:02:04.925 --> 00:02:17.704
+00:02:04.393 --> 00:02:17.172
 Each dot is one stretch. They land on both sides of a coin flip, and some are worse than guessing. Within two minutes, the signal drifted. So a tool should not try to guess someone’s state from a sensor.
 
 10
-00:02:19.104 --> 00:02:26.412
+00:02:18.572 --> 00:02:25.880
 This is where the science turns into design. Each finding gives a rule, and each rule is a real feature in the apps.
 
 11
-00:02:27.812 --> 00:02:43.233
+00:02:27.280 --> 00:02:42.700
 Here they are. Next Step asks about energy and shrinks the plan. Save and pause and I’m stuck make it easy to stop and come back. Helper Jobs gives one picture step at a time, read aloud, with a Help button that reaches a volunteer.
 
 12
-00:02:44.633 --> 00:03:01.443
+00:02:44.100 --> 00:03:00.911
 Next, with an ASDRP mentor, we run four more data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: does designing for state help people learn?
 
 13
-00:03:02.843 --> 00:03:23.921
+00:03:02.311 --> 00:03:23.388
 So, the loop. Real life raised the question. The mouse showed that a brain’s state changes what it takes in. The EEG showed that state is hard to read from outside. So the apps ask how someone is doing, and keep each step small. Everything in this video is on the website, with the phone tour, the slides and both apps linked from it.

@@ -93,7 +93,7 @@ def main() -> None:
         contains(path, r"three")
 
     for path in ("website/neuroscience-mobile/index.html", "communication/projects/neuroscience-mobile/index.html"):
-        contains(path, r"25–34%")
+        contains(path, r"25–33%")
         contains(path, r"three mice")
         contains(path, r"0\.478")
     print("OK phone tour tells the same story as the site")
@@ -129,6 +129,11 @@ def main() -> None:
     if len(leave_one_out) != 3 or any(row.get("mean_absolute_gain", 0) <= 0 for row in leave_one_out):
         raise SystemExit("EXPECTED positive leave-one-animal-out gains for three mice")
     print("OK mouse stability: positive leave-one-animal-out gains")
+    rel = mouse_summary["relative_gain_percent_summary"]
+    headline = f"{round(rel['min'])}–{round(rel['max'])}%"
+    for path in ("website/index.html", "website/mouse.html", "website/neuroscience-mobile/index.html"):
+        contains(path, headline)
+    print(f"OK headline gain {headline} matches the flagship summary")
 
     apk = ROOT / "communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk"
     digest = hashlib.sha256(apk.read_bytes()).hexdigest()
