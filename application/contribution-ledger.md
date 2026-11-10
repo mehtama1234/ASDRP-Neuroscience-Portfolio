@@ -1,24 +1,23 @@
-# Contribution ledger
+# Who did what
 
-This ledger makes authorship and contribution boundaries visible to a reviewer.
+Written to Amishi. The designed page is at https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/handoff/who-did-what.html. This file is written from the same list in `website/build_pages.py`.
 
-| Artifact | Applicant contribution to claim | Collaborator/support contribution | Evidence |
+| Part | What it covers | Help | To do |
 |---|---|---|---|
-| Mouse project question | Helped define the comparison between stimulus-only and behavior-augmented prediction; applicant should describe the exact discussion in their own words. | Parent/collaborator helped scope the question. | `neuroscience-project/docs/PROJECT_PLAN.md` |
-| Mouse data exploration | Learned Python, loaded the Sensorium data, inspected neural and behavior variables, and performed exploratory analysis. | Technical setup and debugging support. | `neuroscience-project/notebooks/01`–`02` |
-| Mouse encoding models | Built and compared ridge-regression baselines and held-out evaluation. | Code review and modeling guidance. | `neuroscience-project/notebooks/03`–`05` |
-| Mouse interpretation | Investigated pupil versus running ablations and arousal-sensitive neurons. | Review of analysis choices and writing feedback. | `neuroscience-project/docs/REPORT.md` |
-| EEG project | Implemented the analysis script, chronological split, metrics, report, and explainer in this portfolio repository. | Portfolio architecture and review support. | `projects/eeg-eye-state/` |
-| EEG robustness extensions | The repository now contains five-fold blocked evaluation, 20 label permutations, and a 90-sample purge-gap sensitivity analysis; the applicant should confirm which portions they personally ran, interpreted, or presented. | Technical review and reproducibility support. | `projects/eeg-eye-state/src/analyze.py`, `results/metrics.json` |
-| Mouse replication robustness | The repository now contains a three-animal summary, behavior-shuffle controls, and leave-one-animal-out stability analysis; the applicant should confirm their exact role in running and interpreting each extension. | Technical review, debugging, and release integration. | `neuroscience-project/src/summarize_replication.py`, `results/per_mouse_replication_summary.json` |
-| EEG experiment 2 (brain-wave bands) | Planned, coded and run in this repository with AI assistance on 10 November 2026 (`EXPERIMENT-2-PLAN.md` committed before `src/analyze_bands.py` ran). Before claiming it, the applicant should rerun it herself (`python3 projects/eeg-eye-state/src/analyze_bands.py`) and be able to explain each step. | Planning, code and write-up support. | `projects/eeg-eye-state/results/bands.json`, `report.md` |
-| First-mouse detail on the website | Her saved results (`summary_stats.npz`) and report, redrawn in the site’s chart style. | Redrawing and layout. | `website/mouse.html`, `website/build_results.py` |
-| Reviewer-facing portfolio | The applicant should identify which demos, slides, PDFs, and video scripts they designed, edited, tested, or presented; the repository proves the artifacts exist but not personal ownership of every edit. | Implementation, packaging, and deployment support. | `website/`, `communication/`, public Site |
-| Applied neurotechnology | Participated in the design and documentation of communication/accessibility concepts; exact personal contribution should be specified by the applicant. | Existing `neuro-divergent` and `neurocomms` repositories contain the implementation history. | Linked project repositories |
+| The mouse question | You chose to compare guessing from the picture alone with the picture plus the mouse’s state. | Your father helped shape the question. | Confirm in your words |
+| Exploring the mouse data | You learned Python, loaded the recordings and looked at brain cells, pupil size and running. | Your father helped set up and fix problems. | Confirm |
+| Building the two guessers | You built guesser A and guesser B and tested both on unseen pictures. | Your father checked the code and gave advice. | Confirm |
+| Pupil or running, and which cells gain | You compared pupil with running, and found the cells that follow alertness gain most. | Your father reviewed choices and writing. | Confirm |
+| Two more mice and the checks | The other two mice, mixing up the state, and leaving one mouse out. | Run in your repository with your father’s help. | Say which parts you ran |
+| The EEG study | The learn-from-earlier, test-on-later study and its write-up. | Your father and AI tools helped set up and review it. | Say which parts you did |
+| The EEG checks | Five stretches, mixing up the answers, leaving a gap, capping broken readings. | Added with AI tools and your father. | Say which parts you ran |
+| Experiment 2: brain-wave bands | Planned, coded and run with AI help on 10 November 2026. | AI tools wrote and ran it from a plan written first. | Rerun it yourself first |
+| Website, slides, phone tour and video | The pages that tell the story. | Built with AI tools and your father. | Say what you designed, checked or will present |
+| Next Step | Credited to you, Amishi Mehta. | Built with AI tools and your father. | Describe your part |
+| Helper Jobs | A family project for Pragnya’s Sunday outings. | Built with AI tools and your father. | Describe your part |
 
-## Before submission
+## Rules
 
-- Replace “helped” with precise first-person actions where accurate.
-- Identify which code was written by the applicant versus adapted or reviewed.
-- Keep the parent/collaborator relationship explicit.
-- Do not claim independent authorship for work that was collaborative.
+- Only claim what Amishi did and can explain out loud.
+- Keep her father’s and the AI tools’ help visible.
+- Where a step was done for her, say so.

@@ -41,6 +41,7 @@ rendered site assets are in `website/`, source reports and demos are in
 
 ## Integrity and application materials
 
+- [For Amishi: her four steps, as designed pages](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/handoff/) (answers, both essays, who did what, recording script)
 - [Essay map: every essay follows the same five chapters](essay-map.md)
 - [Essay 1 draft: why applying](essays/essay-1-why-applying.md) and [Essay 5 draft: research experience](essays/essay-5-research-experience.md), which replace the older drafts in AmishI123/neuroscience-project
 - [What Amishi still needs to fill in](personalization-form.md)

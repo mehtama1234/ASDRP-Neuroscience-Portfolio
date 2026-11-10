@@ -52,3 +52,13 @@ body:has(.tour-nav) main{padding-bottom:110px}
 .inside-nums{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:6px}@media(max-width:560px){.inside-nums{grid-template-columns:1fr}}
 .qr-row{grid-template-columns:repeat(4,minmax(0,1fr))!important}.qr-row li{align-items:center;text-align:center}@media(max-width:700px){.qr-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(min-width:1100px){#demo ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#demo li{padding:14px 15px 16px}}.landing-problems.answer a{color:var(--peach)}
+.handoff-form{display:grid;gap:6px;max-width:820px;margin:18px 0}.handoff-field{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--rust);border-radius:var(--radius-card);padding:16px 18px}
+.handoff-field .field{margin:0 0 4px;font-size:17px;font-family:var(--display);font-weight:400}.hint{color:var(--muted);font-size:14px;margin:0 0 8px}.hint.used{margin:8px 0 0;font-size:13px}
+.handoff-form textarea,.essay-box textarea,.ledger textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;font-size:16px;line-height:1.55;background:#fff;color:var(--ink)}
+.handoff-form textarea:focus,.essay-box textarea:focus,.ledger textarea:focus{outline:3px solid var(--peach);border-color:var(--rust)}
+.essay-box{max-width:820px;margin:20px 0}.essay-box textarea{min-height:420px;overflow:hidden;font-family:var(--display);font-size:18px}.hint.over{color:var(--rust);font-weight:700}
+.handoff-bar{align-items:center;flex-wrap:wrap;margin-top:12px}.handoff-bar .landing-try-note{margin:0}
+.link-button{background:none;border:0;padding:0;color:var(--rust);text-decoration:underline;font:inherit;cursor:pointer;min-height:44px}
+.ledger li{display:flex;flex-direction:column;gap:6px}.ledger .help-from{font-size:14px;color:var(--muted)}.ledger .field{margin:6px 0 0;font-size:13px}
+.rec-list{grid-template-columns:repeat(3,minmax(0,1fr))!important}.rec-list img{width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card)}.rec-list span{text-align:left}.rec-list .file-name{font-style:normal;font-size:12px;color:var(--rust);font-weight:700;letter-spacing:.06em}
+@media(max-width:900px){.rec-list{grid-template-columns:1fr!important}}

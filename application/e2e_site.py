@@ -13,7 +13,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[1] / "website").resolve()
 PAGES = ["index.html", "mouse.html", "eeg.html", "tools.html", "next.html", "neuroscience-mobile/index.html",
-         "neuroscience-mobile/download.html", "presentation/index.html", "video/index.html", "share/index.html"]
+         "neuroscience-mobile/download.html", "presentation/index.html", "video/index.html", "share/index.html", "handoff/index.html", "handoff/answers.html", "handoff/essay-1.html", "handoff/essay-5.html", "handoff/who-did-what.html", "handoff/recording.html"]
 REDIRECTS = {"mouse-visual-cortex.html": "mouse.html", "eeg-eye-state.html": "eeg.html", "mouse-visual-cortex-slides.html": "presentation/",
              "eeg-eye-state-slides.html": "presentation/", "reviewer-dashboard.html": "index.html", "release-verification.html": "share/"}
 FILES = ["video/from-neurons-to-next-steps.mp4", "video/from-neurons-to-next-steps.vtt", "presentation/from-neurons-to-next-steps-slides.pdf", "presentation/from-neurons-to-next-steps-slides.pptx", "img/qr-phone-tour.svg",
@@ -67,6 +67,16 @@ def main():
         pg.locator(".tour-nav [data-go=ch3]").click()
         check(pg.evaluate("location.hash") == "#ch3" and pg.locator(".tour-nav [data-go=ch3]").get_attribute("aria-current") == "page", "phone tour: the Measure tab opens chapter 3")
         pg.close()
+
+        # The handoff pages keep writing in the browser and count essay words.
+        ctx = b.new_context(viewport={"width": 1280, "height": 900}); pg = ctx.new_page()
+        pg.goto(base + "handoff/answers.html"); pg.fill("#q-moment", "Test moment")
+        pg.reload(); check(pg.input_value("#q-moment") == "Test moment", "handoff: an answer is still there after reloading")
+        pg.goto(base + "handoff/essay-1.html"); words = pg.inner_text("[data-words-for]")
+        check("of 375" in words and "[brackets]" in words, f"handoff: Essay 1 shows its word count ({words})")
+        with pg.expect_download() as dl: pg.click("[data-download]")
+        check(dl.value.suggested_filename == "essay-1.txt", "handoff: Essay 1 downloads as a text file")
+        ctx.close()
 
         # The slide viewer: arrow keys move, and the presenter view has notes.
         pg = b.new_page(viewport={"width": 1280, "height": 800}); pg.goto(base + "presentation/present.html")

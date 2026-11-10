@@ -56,7 +56,7 @@ def page(name, title, description, body, base="", extra_js="", manifest="", og_e
   </header>
   <main id="app" tabindex="-1">
 {body}
-    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}share/">Share and demo</a><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{SITE}video/">Video</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
+    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}share/">Share and demo</a><a href="{SITE}handoff/">For Amishi</a><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{SITE}video/">Video</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
   </main>
   <script src="{base}assets/icons.js"></script><script src="{base}assets/icons-extra.js"></script><script src="{base}assets/art.js"></script><script src="{base}assets/science-art.js"></script>
   <script src="{base}assets/results.js"></script><script src="{base}assets/charts.js"></script><script src="{base}assets/site.js"></script>{extra_js}
@@ -494,8 +494,174 @@ page("share/index.html", "Share and demo · From neurons to next steps", "Everyt
 
       <div class="landing-facts">
         <div class="landing-fact"><h2>Checked before every publish</h2><p>Every page, chart, drawing, download, the phone tour and the slide viewer are tested automatically before the site goes live, and every number is checked against the saved results. <a href="{REPO}/blob/main/application/e2e_site.py">The test</a> · <a href="{REPO}/blob/main/application/audit_portfolio.py">the number check</a>.</p></div>
-        <div class="landing-fact landing-fact-not"><h2>Still to add, by Amishi</h2><p>One real moment for chapter 1, her exact part in each piece of work, and, if she wants, her own voice on the video. <a href="{REPO}/blob/main/application/personalization-form.md">What to fill in</a> · <a href="{REPO}/blob/main/application/recording-script.md">recording script</a>.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>Still to add, by Amishi</h2><p>One real moment for chapter 1, her own essays, who did what, and, if she wants, her voice on the video. <a href="../handoff/">Her four steps</a>.</p></div>
       </div>
+    </section>""", base="../")
+
+# ---------------- for Amishi: the handoff pages ----------------
+APP = W.parent / "application"
+HANDOFF_JS = '<script src="../assets/handoff.js"></script>'
+
+
+def esc(t):
+    return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def essay_body(md):
+    """The essay text after the '---' line, with markdown bold removed."""
+    body = md.split("\n---\n", 1)[1].strip()
+    out = []
+    for para in body.split("\n\n"):
+        lines = [line.strip() for line in para.splitlines()]
+        title = lines[0].replace("**", "") + "\n" if lines[0].startswith("**") and lines[0].endswith("**") else ""
+        rest = lines[1:] if title else lines
+        out.append(title + " ".join(rest).replace("**", ""))
+    return "\n\n".join(out)
+
+
+def toolbar(filename):
+    return (f'<div class="landing-actions handoff-bar"><button class="button primary" type="button" data-download="{filename}">Download as a text file</button>'
+            f'<button class="button secondary" type="button" data-copy>Copy everything</button><p class="landing-try-note" data-status aria-live="polite">Your writing stays in this browser until you download or copy it.</p></div>')
+
+
+LEDGER = [
+    ("target", "The mouse question", "You chose to compare guessing from the picture alone with the picture plus the mouse’s state.", "Your father helped shape the question.", "Confirm in your words"),
+    ("eye", "Exploring the mouse data", "You learned Python, loaded the recordings and looked at brain cells, pupil size and running.", "Your father helped set up and fix problems.", "Confirm"),
+    ("chart-dots", "Building the two guessers", "You built guesser A and guesser B and tested both on unseen pictures.", "Your father checked the code and gave advice.", "Confirm"),
+    ("brain", "Pupil or running, and which cells gain", "You compared pupil with running, and found the cells that follow alertness gain most.", "Your father reviewed choices and writing.", "Confirm"),
+    ("users", "Two more mice and the checks", "The other two mice, mixing up the state, and leaving one mouse out.", "Run in your repository with your father’s help.", "Say which parts you ran"),
+    ("activity", "The EEG study", "The learn-from-earlier, test-on-later study and its write-up.", "Your father and AI tools helped set up and review it.", "Say which parts you did"),
+    ("arrows-shuffle", "The EEG checks", "Five stretches, mixing up the answers, leaving a gap, capping broken readings.", "Added with AI tools and your father.", "Say which parts you ran"),
+    ("flask", "Experiment 2: brain-wave bands", "Planned, coded and run with AI help on 10 November 2026.", "AI tools wrote and ran it from a plan written first.", "Rerun it yourself first"),
+    ("presentation", "Website, slides, phone tour and video", "The pages that tell the story.", "Built with AI tools and your father.", "Say what you designed, checked or will present"),
+    ("heart-handshake", "Next Step", "Credited to you, Amishi Mehta.", "Built with AI tools and your father.", "Describe your part"),
+    ("users", "Helper Jobs", "A family project for Pragnya’s Sunday outings.", "Built with AI tools and your father.", "Describe your part"),
+]
+(APP / "contribution-ledger.md").write_text(
+    "# Who did what\n\nWritten to Amishi. The designed page is at https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/handoff/who-did-what.html. "
+    "This file is written from the same list in `website/build_pages.py`.\n\n| Part | What it covers | Help | To do |\n|---|---|---|---|\n"
+    + "".join(f"| {t} | {w} | {h} | {st} |\n" for _, t, w, h, st in LEDGER)
+    + "\n## Rules\n\n- Only claim what Amishi did and can explain out loud.\n- Keep her father’s and the AI tools’ help visible.\n- Where a step was done for her, say so.\n")
+
+QUESTIONS = [
+    ("moment", "Your chapter 1 moment (the most important one)", "One real time, at a Pragnya outing or in school, when the same instruction worked once and was lost a little later. What happened, and what did you notice? A few sentences, no names.", 6, "It opens the website, the slides, the video and Essay 1."),
+    ("spark", "What first made the brain interesting to you?", "A class, a book, a conversation or something you saw.", 3, "Used in Essay 1 if it is different from your moment."),
+    ("changed-mind", "A time the data changed your mind", "For example, expecting running to matter and finding it was the pupil.", 3, "Used in Essay 5."),
+    ("next-step", "Next Step: your part", "What you designed, built, tested or decided.", 4, "Used in chapter 4 and Essay 5."),
+    ("helper-jobs", "Helper Jobs: your part", "What you did for the Pragnya outings app, if anything.", 3, "Used in chapter 4."),
+    ("real-need", "One real need that changed a design", "Something a person needed that made you build something differently.", 3, "Used in chapter 4."),
+    ("voice", "The video: your voice?", "Do you want to record it yourself? How should you be credited?", 2, "See the recording script."),
+]
+
+
+def field(key, label, hint, rows, use):
+    return (f'<div class="handoff-field"><label class="field" for="q-{key}">{label}</label><p class="hint">{hint}</p>'
+            f'<textarea id="q-{key}" rows="{rows}" data-save="answer-{key}" data-label="{label}"></textarea><p class="hint used">{use}</p></div>')
+
+
+STEPS = [
+    ("1 · About 15 minutes", "Your real moment, and your parts.", "One real time the same instruction worked once and was lost later, plus what you did in each app.", '<b>Opens:</b> the website, slides, video and Essay 1. <a href="answers.html">Write your answers →</a>'),
+    ("2 · About 30 minutes each", "Make both essays yours.", "Drafts that follow the same five chapters. Fill the parts in [brackets] and change anything that does not sound like you.", '<b>Limit:</b> 375 words each. <a href="essay-1.html">Essay 1 →</a> <a href="essay-5.html">Essay 5 →</a>'),
+    ("3 · About 10 minutes", "Check who did what.", "Eleven parts of the work. Confirm each one, or say what to change.", '<b>Rule:</b> only claim what you did and can explain. <a href="who-did-what.html">Check the list →</a>'),
+    ("4 · Optional · About 20 minutes", "Your voice on the video.", "Read 15 short parts, one per slide, on a phone. Any you skip keep the computer voice.", '<b>Then:</b> send the recordings. <a href="recording.html">Recording script →</a>'),
+]
+steps_html = "".join(f'<li><p class="lp-k">{k}</p><h3>{h}</h3><p class="lp-pain">{a}</p><p class="lp-fix">{b}</p></li>' for k, h, a, b in STEPS)
+
+page("handoff/index.html", "For Amishi · From neurons to next steps", "What Amishi still adds to her portfolio: one real moment, her own essays, who did what, and her voice on the video.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('../index.html', 'All chapters'), 'For Amishi', '<span id="page-title">Four things only you can add.</span>', 'Everything else is built, checked and live. These four make it yours. Each page saves your writing in this browser while you work; download it when you are done and send it back.', 'family')}
+      <section class="landing-problems" id="todo" aria-labelledby="todo-title">
+        <h2 class="landing-subhead" id="todo-title">Your four steps</h2>
+        <p class="lp-lead">Start with the first one. It changes the most.</p>
+        <ol aria-label="Four steps" tabindex="0">{steps_html}</ol>
+      </section>
+      <section class="landing-more" aria-labelledby="see-title">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="see-title">See what is already done</h2><p class="lp-lead">The same story in every format, all linked together.</p></div><div class="hj-art" data-art="loop"></div></div>
+        {grid([
+            ('route-2', 'The website', 'Five chapters', '<a href="../">Read the story</a>, from real life into the lab and back.'),
+            ('presentation', 'The slides', '15 slides, with notes', '<a href="../presentation/">See them</a>, or present them full screen.'),
+            ('player-play', 'The video', 'About four minutes', '<a href="../video/">Watch it</a>. Step 4 puts your voice on it.'),
+            ('device-mobile', 'The phone tour', 'One chapter per screen', '<a href="../neuroscience-mobile/">Open it</a> on your phone.'),
+            ('heart-handshake', 'Share and demo', 'Everything in one place', '<a href="../share/">Links, a five-minute demo, codes and downloads</a>.'),
+            ('code', 'Your mouse study', 'Your code', f'<a href="{FLAGSHIP}">AmishI123/neuroscience-project</a>, checked against the website.'),
+        ])}
+      </section>
+    </section>""", base="../")
+
+page("handoff/answers.html", "Your answers · From neurons to next steps", "Amishi’s real moment for chapter 1, and her part in each app, written in her own words.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'For Amishi'), 'Step 1 of 4 · Your answers', '<span id="page-title">In your own words.</span>', 'Short and true beats long and polished. Write the way you would tell a friend. Nothing here is sent anywhere until you download it.', 'note')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>Why the first one matters:</b> the whole story starts with it. Right now chapter 1 says what can happen in general; your moment makes it yours. <span>No names, nothing private: what happened and what you noticed.</span></p></section>
+      <div class="handoff-form">{''.join(field(*q) for q in QUESTIONS)}</div>
+      {toolbar("amishi-answers.txt")}
+      <p class="landing-note"><a href="index.html">← For Amishi</a><a href="essay-1.html">Step 2: Essay 1 →</a></p>
+    </section>""", base="../", extra_js=HANDOFF_JS)
+
+
+def essay_page(num, title, prompt, src, art, prev, nxt):
+    body = essay_body((APP / "essays" / src).read_text())
+    page(f"handoff/essay-{num}.html", f"Essay {num} · From neurons to next steps", f"Essay {num} draft ({prompt}), following the five chapters, for Amishi to make her own.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'For Amishi'), f'Step 2 of 4 · Essay {num}', f'<span id="page-title">{title}</span>', f'The prompt: {prompt}. This draft follows the same five chapters as the website. Edit it right here; it saves in this browser as you type.', art)}
+      <section class="landing-more" aria-labelledby="how-{num}">
+        <h2 class="landing-subhead" id="how-{num}">Three passes</h2>
+        {grid([
+            ('star', 'First', 'Fill the [brackets]', 'Each one asks for something only you know. Your answers from step 1 go here.'),
+            ('message-2', 'Then', 'Make it sound like you', 'Change any word you would not say. Shorter is fine.'),
+            ('shield-check', 'Last', 'Keep it true', 'Delete anything you cannot explain out loud, and keep your father’s help visible.'),
+        ])}
+      </section>
+      <div class="essay-box"><label class="field" for="essay-{num}">Essay {num} draft</label>
+        <textarea id="essay-{num}" rows="24" data-save="essay-{num}" data-label="Essay {num}: {prompt}">{esc(body)}</textarea>
+        <p class="hint" data-words-for="essay-{num}" data-limit="375"></p></div>
+      {toolbar(f"essay-{num}.txt")}
+      <p class="landing-try-note"><button class="link-button" type="button" data-reset>Start again from the original draft</button></p>
+      <p class="landing-note"><a href="{prev[0]}">← {prev[1]}</a><a href="{nxt[0]}">{nxt[1]} →</a></p>
+    </section>""", base="../", extra_js=HANDOFF_JS)
+
+
+essay_page(1, "Why are you applying?", "why are you applying? Up to 375 words", "essay-1-why-applying.md", "plan", ("answers.html", "Step 1: your answers"), ("essay-5.html", "Essay 5"))
+essay_page(5, "Your hands-on research.", "your hands-on research, up to three examples. Up to 375 words", "essay-5-research-experience.md", "controls", ("essay-1.html", "Essay 1"), ("who-did-what.html", "Step 3: who did what"))
+
+
+def ledger_card(i, ic, t, w, h, st):
+    return (f'<li><div class="lm-top"><span class="lm-icon" data-icon="{ic}"></span><p class="lm-k">{st}</p></div><h3>{t}</h3><p>{w}</p>'
+            f'<p class="help-from"><b>Help:</b> {h}</p><label class="field" for="l-{i}">Your note</label>'
+            f'<textarea id="l-{i}" rows="2" data-save="ledger-{i}" data-label="{t}" placeholder="Confirmed, or what to change"></textarea></li>')
+
+
+ledger_html = "".join(ledger_card(i, *row) for i, row in enumerate(LEDGER))
+page("handoff/who-did-what.html", "Who did what · From neurons to next steps", "Each part of the portfolio, what Amishi did, and the help she had, for her to confirm.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'For Amishi'), 'Step 3 of 4 · Who did what', '<span id="page-title">Only claim what you did.</span>', 'Reviewers trust a portfolio that is honest about help. For each part, write “confirmed” or what to change. The tag on each card says what is needed.', 'coordinator')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>The rule:</b> if you cannot explain it out loud, do not claim it. <span>Help from your father and from AI tools stays visible on the website and in the essays.</span></p></section>
+      <ul class="lm-grid ledger">{ledger_html}</ul>
+      {toolbar("who-did-what.txt")}
+      <p class="landing-note"><a href="essay-5.html">← Essay 5</a><a href="recording.html">Step 4: your voice →</a></p>
+    </section>""", base="../", extra_js=HANDOFF_JS)
+
+
+def rec_card(i, part, slides):
+    head_line, _, text = part.partition("\n")
+    num, name = head_line.split(" · ", 1)
+    img = f"../presentation/slides/{slides[i].name}" if i < len(slides) else ""
+    return (f'<li><img src="{img}" alt="Slide {int(num)}: {esc(name)}" loading="lazy" width="1920" height="1080">'
+            f'<strong>{num} · {esc(name)}</strong><span>{esc(text.strip())}</span><em class="file-name">Save as {num}.m4a</em></li>')
+
+
+REC = (APP / "recording-script.md").read_text().split("\n## ")[1:]
+SLIDE_FILES = sorted((W / "presentation/slides").glob("*.jpg"))
+rec_html = "".join(rec_card(i, part, SLIDE_FILES) for i, part in enumerate(REC))
+page("handoff/recording.html", "Your voice · From neurons to next steps", "The recording script for the video, one short part per slide, for Amishi to read in her own voice.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'For Amishi'), 'Step 4 of 4 · Optional · Your voice', '<span id="page-title">Read it the way you would say it.</span>', 'Fifteen short parts, one per slide, about four minutes in all. Record on a phone. Any part you skip keeps the computer voice, so you can do a few at a time.', 'breakTime')}
+      <section class="landing-more" aria-labelledby="tips-title">
+        <h2 class="landing-subhead" id="tips-title">Before you start</h2>
+        {grid([
+            ('home', 'Where', 'A quiet room', 'Soft things around you, like a bedroom, sound better than a kitchen.'),
+            ('device-mobile', 'How', 'Your phone’s voice memo app', 'Hold it about a hand’s width away. One recording per part.'),
+            ('message-2', 'What to say', 'Change words that are not yours', 'Keep the meaning and the numbers the same.'),
+            ('certificate', 'When done', 'Name and send the files', 'Name each one by its number, 01.m4a to 15.m4a, and send them to your dad.'),
+        ])}
+      </section>
+      <h2 class="landing-subhead">The 15 parts</h2><p class="landing-demo-note">Each part is read while its slide is on screen.</p>
+      <ol class="landing-demo rec-list" aria-label="Recording script">{rec_html}</ol>
+      <p class="landing-note"><a href="who-did-what.html">← Step 3</a><a href="index.html">Back to your four steps →</a></p>
     </section>""", base="../")
 
 # ---------------- old addresses keep working ----------------
