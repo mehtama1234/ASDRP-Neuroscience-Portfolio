@@ -1,1 +1,1 @@
-df49bc4f80ad47093bf250da0037325d61b58b14769c1606a0b3e839bef421c2  neuroscience-lab-debug.apk
+8bfd4ac4148a2fa6aa3ec54e2df0cb30f53a8dea5376407896c37ad5b4617bb2  neuroscience-lab-debug.apk
