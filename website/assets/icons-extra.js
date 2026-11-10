@@ -20,7 +20,9 @@
  "timeline": "<path d=\"M4 16l6 -7l5 5l5 -6\" /> <path d=\"M14 14a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" /> <path d=\"M9 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" /> <path d=\"M3 16a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" /> <path d=\"M19 8a1 1 0 1 0 2 0a1 1 0 1 0 -2 0\" />",
  "alert-triangle": "<path d=\"M12 9v4\" /> <path d=\"M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0\" /> <path d=\"M12 16h.01\" />",
  "presentation": "<path d=\"M3 4l18 0\" /> <path d=\"M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-10\" /> <path d=\"M12 16l0 4\" /> <path d=\"M9 20l6 0\" /> <path d=\"M8 12l3 -3l2 2l3 -3\" />",
- "code": "<path d=\"M7 8l-4 4l4 4\" /> <path d=\"M17 8l4 4l-4 4\" /> <path d=\"M14 4l-4 16\" />"
+ "code": "<path d=\"M7 8l-4 4l4 4\" /> <path d=\"M17 8l4 4l-4 4\" /> <path d=\"M14 4l-4 16\" />",
+ "player-play": "<path d=\"M7 4v16l13 -8z\" />",
+ "file-text": "<path d=\"M14 3v4a1 1 0 0 0 1 1h4\" /> <path d=\"M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z\" /> <path d=\"M9 9l1 0\" /> <path d=\"M9 13l6 0\" /> <path d=\"M9 17l6 0\" />"
 };
   const base = root.HelperJobsIcons;
   function icon(name, label) {

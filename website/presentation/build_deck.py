@@ -169,6 +169,25 @@ def slide_html(i, s):
 <script src="../../assets/results.js"></script><script src="../../assets/charts.js"></script><script src="../../assets/site.js"></script></body></html>"""
 
 
+PPTX = "from-neurons-to-next-steps-slides.pptx"
+
+
+def build_pptx(files):
+    """A PowerPoint copy: each slide is the rendered picture, with its speaker notes, so it opens the
+    same in PowerPoint, Keynote and Google Slides."""
+    from pptx import Presentation
+    from pptx.util import Emu
+    deck = Presentation(); deck.slide_width, deck.slide_height = Emu(12192000), Emu(6858000)
+    deck.core_properties.title = "From neurons to next steps"; deck.core_properties.author = "Amishi Mehta"
+    for name, s in zip(files, SLIDES):
+        sl = deck.slides.add_slide(deck.slide_layouts[6])
+        pic = sl.shapes.add_picture(str(P / "slides" / f"{name}.jpg"), 0, 0, deck.slide_width, deck.slide_height)
+        pic.name = s["alt"][:250]
+        pic._element.nvPicPr.cNvPr.set("descr", s["alt"])
+        sl.notes_slide.notes_text_frame.text = s["notes"]
+    deck.save(P / PPTX)
+
+
 def main():
     from playwright.sync_api import sync_playwright
     from PIL import Image
@@ -190,13 +209,14 @@ def main():
         b.close()
     imgs = [Image.open(out / f"{n}.jpg").convert("RGB") for n in files]
     imgs[0].save(P / PDF, save_all=True, append_images=imgs[1:], resolution=144)
+    build_pptx(files)
     items = [{"src": f"slides/{n}.jpg", "alt": s["alt"], "notes": s["notes"]} for n, s in zip(files, SLIDES)]
     (P / "present.html").write_text(viewers.page("Slides · From neurons to next steps", "Slide", items, "./", "All slides", True, PDF))
     (P / "presenter.html").write_text(viewers.presenter(items))
     figs = "".join(f'<li><a href="present.html#{i}"><img src="slides/{n}.jpg" alt="Slide {i}: {html.escape(s["alt"])}" loading="{"eager" if i < 3 else "lazy"}" width="1920" height="1080" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card)"></a><strong>{i} · {html.escape(s["alt"].split(":")[0])}</strong><span>{html.escape(s["alt"].split(":", 1)[-1].strip())}</span></li>' for i, (n, s) in enumerate(zip(files, SLIDES), 1))
     B.page("presentation/index.html", "Slides · From neurons to next steps", f"The {len(SLIDES)} slides for From neurons to next steps, with speaker notes.", f"""    <section class="screen active landing" aria-labelledby="page-title">
 {B.heading(('../index.html', 'All chapters'), 'The slides', f'<span id="page-title">The same story, in {len(SLIDES)} slides.</span>', 'Built from the same words, charts and drawings as the website. Present full screen, open the presenter view with speaker notes, or download the PDF.', 'loop')}
-      <div class="landing-actions"><a class="button primary" href="present.html">Present <span aria-hidden="true">→</span></a><a class="button secondary" href="presenter.html">Presenter view with notes</a><a class="button secondary" href="{PDF}" download>Download PDF</a><a class="button secondary" href="../video/">Watch the video</a></div>
+      <div class="landing-actions"><a class="button primary" href="present.html">Present <span aria-hidden="true">→</span></a><a class="button secondary" href="presenter.html">Presenter view with notes</a><a class="button secondary" href="{PDF}" download>Download PDF</a><a class="button secondary" href="{PPTX}" download>Download PowerPoint</a><a class="button secondary" href="../video/">Watch the video</a></div>
       <h2 class="landing-subhead">All {len(SLIDES)} slides</h2><ol class="landing-demo deck-list" aria-label="All slides" tabindex="0">{figs}</ol>
     </section>""", base="../")
     print("deck:", len(SLIDES), "slides")

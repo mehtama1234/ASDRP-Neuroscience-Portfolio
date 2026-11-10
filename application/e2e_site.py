@@ -13,10 +13,10 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[1] / "website").resolve()
 PAGES = ["index.html", "mouse.html", "eeg.html", "tools.html", "next.html", "neuroscience-mobile/index.html",
-         "neuroscience-mobile/download.html", "presentation/index.html", "video/index.html"]
+         "neuroscience-mobile/download.html", "presentation/index.html", "video/index.html", "share/index.html"]
 REDIRECTS = {"mouse-visual-cortex.html": "mouse.html", "eeg-eye-state.html": "eeg.html", "mouse-visual-cortex-slides.html": "presentation/",
-             "eeg-eye-state-slides.html": "presentation/", "reviewer-dashboard.html": "index.html"}
-FILES = ["video/from-neurons-to-next-steps.mp4", "video/from-neurons-to-next-steps.vtt", "presentation/from-neurons-to-next-steps-slides.pdf",
+             "eeg-eye-state-slides.html": "presentation/", "reviewer-dashboard.html": "index.html", "release-verification.html": "share/"}
+FILES = ["video/from-neurons-to-next-steps.mp4", "video/from-neurons-to-next-steps.vtt", "presentation/from-neurons-to-next-steps-slides.pdf", "presentation/from-neurons-to-next-steps-slides.pptx", "img/qr-phone-tour.svg",
          "ASDRP-neuroscience-portfolio-packet.pdf", "neuroscience-lab-debug.apk", "neuroscience-mobile/manifest.webmanifest"]
 fails = []
 

@@ -19,6 +19,7 @@ Everything below tells one story, *From neurons to next steps*, in five chapters
 numbers and drawings.
 
 - [The website: start here](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/)
+- [Share and demo: one page with the demo script, QR codes and every download](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/share/)
 - Chapter 2 · Understand: [the mouse study](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse.html)
 - Chapter 3 · Measure: [the EEG study, with experiment 2 on brain-wave bands](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg.html#bands)
 - Chapter 4 · Design: [findings to features, with Next Step and Helper Jobs](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/tools.html)

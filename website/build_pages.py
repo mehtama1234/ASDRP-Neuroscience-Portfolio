@@ -16,7 +16,20 @@ def ic(name):
     return f'<span class="lm-icon" data-icon="{name}"></span>'
 
 
-def page(name, title, description, body, base="", extra_js="", manifest=""):
+def page(name, title, description, body, base="", extra_js="", manifest="", og_extra=""):
+    url = SITE + str(Path(name)).replace("../communication/projects/neuroscience-mobile/", "neuroscience-mobile/").removesuffix("index.html")
+    og = f"""<meta property="og:type" content="website" />
+  <meta property="og:site_name" content="From neurons to next steps" />
+  <meta property="og:title" content="{title}" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:url" content="{url}" />
+  <meta property="og:image" content="{SITE}presentation/slides/01-cover.jpg" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+  <meta property="og:image:alt" content="From neurons to next steps: an ASDRP neuroscience portfolio by Amishi Mehta." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="{url}" />
+  {og_extra}"""
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -25,6 +38,7 @@ def page(name, title, description, body, base="", extra_js="", manifest=""):
   <meta name="theme-color" content="#F3ECE1" />
   <title>{title}</title>
   <meta name="description" content="{description}" />
+  {og}
   {manifest}<link rel="icon" href="{base}assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="{base}assets/base.css" />
   <link rel="stylesheet" href="{base}assets/experience.css" />
@@ -42,13 +56,14 @@ def page(name, title, description, body, base="", extra_js="", manifest=""):
   </header>
   <main id="app" tabindex="-1">
 {body}
-    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{SITE}video/">Video</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
+    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}share/">Share and demo</a><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{SITE}video/">Video</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
   </main>
   <script src="{base}assets/icons.js"></script><script src="{base}assets/icons-extra.js"></script><script src="{base}assets/art.js"></script><script src="{base}assets/science-art.js"></script>
   <script src="{base}assets/results.js"></script><script src="{base}assets/charts.js"></script><script src="{base}assets/site.js"></script>{extra_js}
 </body>
 </html>
 """
+    (W / name).parent.mkdir(parents=True, exist_ok=True)
     (W / name).write_text(html)
 
 
@@ -101,7 +116,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
             <a class="button primary" href="#story">Read the story <span aria-hidden="true">→</span></a>
             <a class="button secondary" href="mouse.html">Start with the mouse study</a>
           </div>
-          <p class="landing-try-note">The same story as <a href="presentation/">slides</a>, a <a href="video/">narrated video</a> and a <a href="neuroscience-mobile/">phone tour</a>. Public data only. A prediction is not a cause.</p>
+          <p class="landing-try-note">The same story as <a href="presentation/">slides</a>, a <a href="video/">narrated video</a> and a <a href="neuroscience-mobile/">phone tour</a>, all on <a href="share/">one page to share</a>. Public data only. A prediction is not a cause.</p>
           <ul class="landing-parts" aria-label="What makes it work">
             <li><a href="mouse.html"><span data-icon="eye"></span><b>Understand</b><small>Mouse: state changes how the brain sees</small></a></li>
             <li><a href="eeg.html"><span data-icon="activity"></span><b>Measure</b><small>EEG: readable once, then it drifts</small></a></li>
@@ -404,14 +419,83 @@ download("../communication/projects/neuroscience-mobile/download.html", "../../.
 tour("../communication/projects/neuroscience-mobile/index.html", "../../../website/", "../../../website/img/")
 
 # ---------------- the video ----------------
-page("video/index.html", "Video · From neurons to next steps", "The five chapters of From neurons to next steps as a short narrated video, with captions.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+page("video/index.html", "Video · From neurons to next steps", "The five chapters of From neurons to next steps as a four-minute narrated video, with captions.", f"""    <section class="screen active landing" aria-labelledby="page-title">
 {heading(('../index.html', 'All chapters'), 'The video', '<span id="page-title">The same story, in a few minutes.</span>', 'The slides with their speaker notes read aloud, and captions you can turn on. The words, numbers and drawings are the same as on the website.', 'loop')}
       <video controls preload="metadata" playsinline poster="../presentation/slides/01-cover.jpg" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card);background:#000">
         <source src="from-neurons-to-next-steps.mp4" type="video/mp4">
         <track kind="captions" src="from-neurons-to-next-steps.vtt" srclang="en" label="English" default>
       </video>
       <div class="landing-actions" style="margin-top:18px"><a class="button secondary" href="from-neurons-to-next-steps.mp4" download>Download the video</a><a class="button secondary" href="from-neurons-to-next-steps.vtt" download>Download the captions</a><a class="button secondary" href="../presentation/">See the slides</a></div>
-      <div class="landing-facts"><div class="landing-fact landing-fact-not"><h2>About the voice</h2><p>The narration is a computer voice reading the speaker notes, so anyone can rebuild the video from the repository.</p></div></div>
+      <div class="landing-facts"><div class="landing-fact landing-fact-not"><h2>About the voice</h2><p>The narration is a computer voice reading the speaker notes, so anyone can rebuild the video from the repository. Amishi can replace any part with her own voice.</p></div><div class="landing-fact"><h2>Share it</h2><p>Send this page’s link, or download the video and captions to attach or upload anywhere. <a href="../share/">Everything to share</a>.</p></div></div>
+    </section>""", base="../", og_extra=f'<meta property="og:video" content="{SITE}video/from-neurons-to-next-steps.mp4" />\n  <meta property="og:video:type" content="video/mp4" />\n  <meta property="og:video:width" content="1920" />\n  <meta property="og:video:height" content="1080" />')
+
+# ---------------- share and demo: the handoff page ----------------
+def qr(name, label, href):
+    return f'<li><a href="{href}"><img src="../img/qr-{name}.svg" alt="QR code for {label}" width="180" height="180" style="width:100%;max-width:180px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);padding:8px"></a><strong>{label}</strong><span>Point a phone camera at it.</span></li>'
+
+
+def size(rel):
+    f = W / rel
+    return f"{f.stat().st_size / 1_048_576:.1f} MB" if f.exists() else ""
+
+
+DEMO = [
+    ("0:00 · Website", "Open with the loop.", "Open the website. Read the first paragraph out loud, then point at the loop drawing: real life, understand, measure, design, test.", "<b>Say:</b> “The same words land one moment and are lost the next. Is that the brain itself?”"),
+    ("0:45 · Chapter 2", "Show the mouse result.", "Open the mouse study and scroll to the first chart: guesser A against guesser B, in all three mice.", "<b>Say:</b> “Knowing the mouse’s state made our guesses 25–33% better, and the gain disappears if the state comes from the wrong moment.”"),
+    ("1:45 · Chapter 3", "Show the drift.", "Open the EEG study and scroll to the five-stretches chart, then to experiment 2.", "<b>Say:</b> “Good on one stretch, a coin flip over time. Even brain-wave bands didn’t fix it, so a tool shouldn’t guess.”"),
+    ("2:45 · Chapter 4", "Show the apps.", "Open the design chapter, then hold up a phone with Next Step open on the energy question.", "<b>Say:</b> “So the app asks how much energy you have, and on a low day shows just the next step.”"),
+    ("3:45 · Chapter 5", "Close on what’s next.", "Open the last chapter and point at the road ahead.", "<b>Say:</b> “Next: the remaining experiments with a mentor, a first paper, and testing the apps with the people they are for.”"),
+]
+page("share/index.html", "Share and demo · From neurons to next steps", "Everything to share or demo From neurons to next steps: one link, a five-minute demo, QR codes, the slides, the video and every download.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('../index.html', 'All chapters'), 'Share and demo', '<span id="page-title">Everything in one place.</span>', 'One link to send, a five-minute demo you can run from a laptop, codes for phones in the room, and every file to download.', 'phone')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>To share it, send one link:</b> <a href="{SITE}">{SITE.removeprefix("https://")}</a> <span>Everything else, including the slides, video, phone tour and both apps, is linked from there.</span></p></section>
+
+      <section class="landing-problems" id="demo" aria-labelledby="demo-title">
+        <h2 class="landing-subhead" id="demo-title">A five-minute demo</h2>
+        <p class="lp-lead">One step per chapter. Or skip the talking and play the four-minute video.</p>
+        <ol aria-label="Demo steps" tabindex="0">
+          {''.join(f'<li><p class="lp-k">{k}</p><h3>{h}</h3><p class="lp-pain">{a}</p><p class="lp-fix">{b}</p></li>' for k, h, a, b in DEMO)}
+        </ol>
+      </section>
+
+      <section class="landing-more" aria-labelledby="present-title">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="present-title">Present it</h2><p class="lp-lead">The same story in every format. Pick the one that fits the room.</p></div></div>
+        {grid([
+            ('presentation', 'Slides, full screen', '15 slides', f'<a href="../presentation/present.html">Present</a> with arrow keys, or open the <a href="../presentation/presenter.html">presenter view</a> on the laptop for notes and a timer.'),
+            ('player-play', 'Video', 'About four minutes, with captions', '<a href="../video/">Play it here</a>, or download it below to play offline.'),
+            ('device-mobile', 'Phone tour', 'Five chapters, one screen each', '<a href="../neuroscience-mobile/">Open it</a>, or let people scan the code below.'),
+        ])}
+      </section>
+
+      <h2 class="landing-subhead">Codes for phones in the room</h2><p class="landing-demo-note">Put this page on the screen; people scan with their phone camera.</p>
+      <ol class="landing-demo qr-row" aria-label="QR codes" tabindex="0">
+        {qr('phone-tour', 'Phone tour', '../neuroscience-mobile/')}{qr('website', 'Website', '../')}{qr('video', 'Video', '../video/')}{qr('slides', 'Slides', '../presentation/')}
+      </ol>
+
+      <section class="landing-more" aria-labelledby="dl-title">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="dl-title">Download and send</h2><p class="lp-lead">Files you can attach to an email, upload, or open with no internet.</p></div></div>
+        {grid([
+            ('presentation', 'Slides', 'PowerPoint, with speaker notes', f'<a href="../presentation/from-neurons-to-next-steps-slides.pptx" download>Download</a> ({size("presentation/from-neurons-to-next-steps-slides.pptx")}). Opens in PowerPoint, Keynote and Google Slides.'),
+            ('file-text', 'Slides', 'PDF', f'<a href="../presentation/from-neurons-to-next-steps-slides.pdf" download>Download</a> ({size("presentation/from-neurons-to-next-steps-slides.pdf")}). For printing or sending.'),
+            ('player-play', 'Video', 'MP4, full HD', f'<a href="../video/from-neurons-to-next-steps.mp4" download>Download</a> ({size("video/from-neurons-to-next-steps.mp4")}). Captions: <a href="../video/from-neurons-to-next-steps.vtt" download>VTT file</a>.'),
+            ('books', 'Packet', 'PDF of all five chapters', f'<a href="../ASDRP-neuroscience-portfolio-packet.pdf" download>Download</a> ({size("ASDRP-neuroscience-portfolio-packet.pdf")}). The website as pages.'),
+            ('device-mobile', 'Android app', 'The phone tour, installed', '<a href="../neuroscience-mobile/download.html">How to install</a>. On iPhone, add the phone tour to the home screen instead.'),
+            ('code', 'Source code', 'Everything, rerunnable', f'<a href="{REPO}">The portfolio</a> and <a href="{FLAGSHIP}">Amishi’s mouse study</a>.'),
+        ])}
+      </section>
+
+      <section class="landing-more" aria-labelledby="apps2-title">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="apps2-title">The two apps</h2><p class="lp-lead">Live, with made-up examples. Each links back here.</p></div></div>
+        {grid([
+            ('heart-handshake', 'By Amishi Mehta', 'Next Step', f'<a href="{NEXT_STEP}">Open Next Step</a>. It can take about 30 seconds to wake up the first time.'),
+            ('users', 'Family project', 'Helper Jobs', f'<a href="{HELPER_JOBS}">Open Helper Jobs</a>. Built for real jobs at Pragnya’s Sunday outings.'),
+        ])}
+      </section>
+
+      <div class="landing-facts">
+        <div class="landing-fact"><h2>Checked before every publish</h2><p>Every page, chart, drawing, download, the phone tour and the slide viewer are tested automatically before the site goes live, and every number is checked against the saved results. <a href="{REPO}/blob/main/application/e2e_site.py">The test</a> · <a href="{REPO}/blob/main/application/audit_portfolio.py">the number check</a>.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>Still to add, by Amishi</h2><p>One real moment for chapter 1, her exact part in each piece of work, and, if she wants, her own voice on the video. <a href="{REPO}/blob/main/application/personalization-form.md">What to fill in</a> · <a href="{REPO}/blob/main/application/recording-script.md">recording script</a>.</p></div>
+      </div>
     </section>""", base="../")
 
 # ---------------- old addresses keep working ----------------
@@ -419,7 +503,7 @@ REDIRECTS = {
     "mouse-visual-cortex.html": "mouse.html", "mouse-leave-one-out.html": "mouse.html#checks",
     "eeg-eye-state.html": "eeg.html", "eeg-label-shuffle-control.html": "eeg.html#checks", "eeg-purge-gap.html": "eeg.html#checks",
     "reviewer-dashboard.html": "index.html", "reviewer-packet.html": "index.html",
-    "mouse-visual-cortex-slides.html": "presentation/", "eeg-eye-state-slides.html": "presentation/",
+    "mouse-visual-cortex-slides.html": "presentation/", "eeg-eye-state-slides.html": "presentation/", "release-verification.html": "share/",
 }
 for old, new in REDIRECTS.items():
     (W / old).write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><meta http-equiv="refresh" content="0; url={new}"><link rel="canonical" href="{new}"></head><body><p>This page moved: <a href="{new}">{new}</a>.</p></body></html>\n')
