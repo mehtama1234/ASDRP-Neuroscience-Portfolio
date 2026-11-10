@@ -42,6 +42,13 @@ def main() -> None:
         "communication/video/renders/eeg-research-storyboard.vtt",
         "communication/video/renders/portfolio-research-storyboard.mp4",
         "communication/video/renders/portfolio-research-storyboard.vtt",
+        "website/index.html",
+        "website/mouse.html",
+        "website/eeg.html",
+        "website/tools.html",
+        "website/next.html",
+        "website/assets/results.js",
+        "website/assets/theme-atlas.css",
         "website/reviewer-dashboard.html",
         "website/eeg-label-shuffle-control.html",
         "website/mouse-leave-one-out.html",
@@ -51,6 +58,18 @@ def main() -> None:
         "../neuroscience-project/results/per_mouse_replication_summary.json",
         "../neuroscience-project/results/shuffled_behavior_controls.json",
     ]
+    # The website's numbers must be the committed results: rebuild them and compare.
+    site_results = text("website/assets/results.js")
+    eeg = json.loads(text("projects/eeg-eye-state/results/metrics.json"))
+    for value in (eeg["models"][0]["test_roc_auc"], eeg["artifact_sensitivity"]["final_holdout"][0]["test_roc_auc"], eeg["blocked_cross_validation"][0]["summary"]["mean_test_roc_auc"]):
+        if f"{round(value, 3)}" not in site_results:
+            raise SystemExit(f"WEBSITE number out of date: {round(value, 3)} (run python3 website/build_results.py)")
+    print("OK website numbers match the committed EEG results")
+    for page in ("index", "mouse", "eeg", "tools", "next"):
+        if "gargibhatia" in text(f"website/{page}.html") or "github.com/mehtama1234/neuro-divergent" in text(f"website/{page}.html"):
+            raise SystemExit(f"WEBSITE {page}.html links to the old host or a private repository")
+    print("OK website pages link only to public places")
+
     for path in required:
         require(path)
 

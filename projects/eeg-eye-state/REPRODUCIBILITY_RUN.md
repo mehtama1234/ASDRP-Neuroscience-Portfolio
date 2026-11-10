@@ -30,3 +30,31 @@ to the largest exploratory context window. Mean ROC AUC was 0.448 for pointwise
 EEG (range 0.288–0.572) and 0.443 for causal context (range 0.254–0.582). The
 gap sensitivity remains near or below chance and does not reverse the study's
 negative interpretation; it is still one continuous recording.
+
+## Recording-glitch sensitivity (added 2026-11-10)
+
+Four samples (rows 898, 10386, 11509 and 13179) are recording glitches: values up to
+715,897 where typical readings are about 4,000 (more than 20 robust standard
+deviations from each channel's median). The primary analysis above does not treat them
+specially, and its results are left unchanged.
+
+`artifact_sensitivity` in `results/metrics.json` repeats the main comparisons after
+limiting each channel to the 0.5th–99.5th percentile of the **training rows only**
+(recomputed for every fold), so test rows never influence the limits. This analysis was
+added after the first results were seen, so it is reported as a sensitivity check, not as
+a replacement:
+
+| | Pointwise EEG | EEG + causal context |
+|---|---:|---:|
+| Final holdout ROC AUC | 0.728 (was 0.625) | 0.609 (was 0.530) |
+| Mean blocked-fold ROC AUC | 0.448 (was 0.478) | 0.476 (was 0.488) |
+
+Limiting the glitches helps the final holdout block, but the five forward folds stay near
+or below chance, and several folds are well below 0.5. That pattern points to the
+relationship between the signal and eye state changing across the 117-second recording
+(drift), not only to noise.
+
+Rerun environment: Python 3.13, NumPy 2.5.3, SciPy 1.18.1, scikit-learn 1.9.1. The
+committed primary values were reproduced to three decimals except the causal-context
+model’s fifth blocked fold (0.535 here vs 0.534 committed), a small numerical
+difference between NumPy 2.5.3 and 2.5.4; the committed primary values are kept.

@@ -8,8 +8,8 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = "https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site"
-ROUTES = ("/", "/reviewer-dashboard.html", "/reviewer-packet.html", "/release-verification.html", "/mouse-leave-one-out.html", "/eeg-label-shuffle-control.html", "/eeg-purge-gap.html", "/mouse-visual-cortex.html", "/eeg-eye-state.html", "/neuroscience-mobile/", "/mouse-visual-cortex-slides.html", "/eeg-eye-state-slides.html", "/mouse-research-storyboard.mp4", "/eeg-research-storyboard.mp4", "/portfolio-research-storyboard.mp4")
+BASE = "https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio"
+ROUTES = ("/", "/mouse.html", "/eeg.html", "/tools.html", "/next.html", "/assets/results.js", "/assets/theme-atlas.css", "/release-verification.html", "/mouse-visual-cortex.html", "/eeg-eye-state.html", "/neuroscience-mobile/", "/mouse-visual-cortex-slides.html", "/eeg-eye-state-slides.html", "/mouse-research-storyboard.mp4", "/eeg-research-storyboard.mp4", "/portfolio-research-storyboard.mp4")
 SOURCE_URLS = (
     "https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio",
     "https://github.com/AmishI123/neuroscience-project",

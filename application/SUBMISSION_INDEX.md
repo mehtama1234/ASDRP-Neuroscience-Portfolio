@@ -15,22 +15,19 @@ that is not available in this Linux workspace.
 
 ## Reviewer-facing artifacts
 
-- [Live portfolio](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site)
-- [Reviewer packet](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/reviewer-packet.html)
-- [Reviewer dashboard](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/reviewer-dashboard.html)
-- [PDF packet](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/ASDRP-neuroscience-portfolio-packet.pdf)
-- [Mouse explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex.html)
-- [Mouse leave-one-animal-out stability check](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-leave-one-out.html)
-- [EEG explainer](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-eye-state.html)
-- [EEG label-shuffle control](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-label-shuffle-control.html)
-- [EEG purge-gap sensitivity](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-purge-gap.html)
-- [Mobile research demo](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/)
-- [Verified Android debug build](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/download.html)
-- [Mouse presentation](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-visual-cortex-slides.html)
-- [EEG presentation](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-eye-state-slides.html)
-- [Mouse research storyboard video](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/mouse-research-storyboard.mp4)
-- [EEG research storyboard video](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/eeg-research-storyboard.mp4)
-- [Portfolio overview storyboard video](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/portfolio-research-storyboard.mp4)
+- [Live portfolio: landing page](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/)
+- [Mouse visual-cortex study, with charts and checks](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse.html)
+- [EEG eye-state study, with charts and checks](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg.html)
+- [Tools for people: Next Step and Helper Jobs](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/tools.html)
+- [Next experiments](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/next.html)
+- [PDF packet](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/ASDRP-neuroscience-portfolio-packet.pdf)
+- [Mobile research demo](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/)
+- [Verified Android debug build](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/download.html)
+- [Mouse presentation](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse-visual-cortex-slides.html)
+- [EEG presentation](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg-eye-state-slides.html)
+- [Mouse research storyboard video](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse-research-storyboard.mp4)
+- [EEG research storyboard video](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg-research-storyboard.mp4)
+- [Portfolio overview storyboard video](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/portfolio-research-storyboard.mp4)
 
 If the private hosted Site is not available to a reviewer, the complete source
 fallback is the public [portfolio GitHub repository](https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio):

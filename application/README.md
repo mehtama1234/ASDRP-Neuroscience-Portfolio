@@ -18,7 +18,7 @@ voice and experiences.
    handoff, including the mobile build, presentations, videos, and PDF.
 
 For a printable summary, use the [generated reviewer packet PDF](ASDRP-neuroscience-portfolio-packet.pdf).
-The source generator is `build_packet.py`.
+The PDF is printed from the website itself by `build_packet_from_site.py`, so it has the same design, charts and numbers (the older text-only generator `build_packet.py` is kept for reference).
 
 Run `python3 application/audit_portfolio.py` for the dependency-free handoff
 audit covering required artifacts, three-mouse claims, EEG outputs, video files,

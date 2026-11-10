@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F3ECE1" />
+  <title>Mouse visual cortex · Brain & Behaviour</title>
+  <meta name="description" content="Adding pupil size and running speed improved held-out prediction of mouse visual cortex in all three mice tested." />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/base.css" />
+  <link rel="stylesheet" href="assets/experience.css" />
+  <link rel="stylesheet" href="assets/theme-atlas.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/charts.css" />
+</head>
+<body>
+  <aside class="public-demo-banner" aria-label="About this portfolio">ASDRP application portfolio · Public data only · Every number comes from committed results</aside>
+  <a class="skip-link" href="#app">Skip to the page</a>
+  <header>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">b.</span> Brain &amp; Behaviour</a>
+    <span class="header-status"><span class="badge">Public data only</span><span class="badge">Plans marked as plans</span></span>
+    <a class="header-link" href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio">Source code</a>
+  </header>
+  <main id="app" tabindex="-1">
+    <section class="screen active landing" aria-labelledby="page-title">
+    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All studies</span></a><p class="eyebrow">Study 1 · Mouse visual cortex · Done</p><h1><span id="page-title">Does knowing what a mouse is doing help predict what its brain sees?</span></h1><p class="hj-sub">A model that sees only the picture, against one that also knows the mouse’s pupil size and running speed.</p></div><div class="hj-art" data-art="mouseHero"></div></div>
+      <section class="landing-problems answer"><p class="lp-energy"><b>The answer: yes, in all three mice.</b> Adding pupil and running raised held-out prediction by +0.032 to +0.049, about 25–34% more than the picture alone. <span>This is prediction, not proof of cause.</span></p></section>
+
+      <section class="landing-more" aria-labelledby="how-title">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">The same steps for every mouse, scored on images the model never saw.</p></div><div class="hj-art" data-art="mouseStudy"></div></div>
+        <ul class="lm-grid"><li><div class="lm-top"><span class="lm-icon" data-icon="photo"></span><p class="lm-k">The picture</p></div><h3>Shrunk and summarised</h3><p>Each image is shrunk 4×4 and summarised with 150 principal components.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="eye"></span><p class="lm-k">The behaviour</p></div><h3>Pupil and running</h3><p>Pupil size and running speed recorded at the same moment as the brain activity.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="chart-dots"></span><p class="lm-k">The model</p></div><h3>Ridge regression</h3><p>One simple model per neuron, standardised on training data only.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="target"></span><p class="lm-k">The test</p></div><h3>Official held-out images</h3><p>Scored by the correlation between predicted and real activity, averaged over neurons.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="books"></span><p class="lm-k">The data</p></div><h3>Sensorium 2022</h3><p>Public recordings from mouse primary visual cortex, thousands of neurons per mouse.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="users"></span><p class="lm-k">The unit</p></div><h3>Each mouse counts once</h3><p>Neurons are not treated as separate animals.</p></li></ul>
+      </section>
+
+      <h2 class="landing-subhead">The results</h2>
+      <div class="chart-card"><div data-chart="mouse-scores"></div><div><p class="lm-k">Result</p><h3>Every mouse is predicted better with behaviour.</h3><p>The picture alone explains part of what visual cortex does. Knowing whether the mouse is alert and running explains more, in all three animals.</p><p class="chart-note">Mean held-out Pearson correlation across neurons, Sensorium 2022 official test images.</p></div></div>
+      <div class="chart-card"><div data-chart="mouse-gain"></div><div><p class="lm-k">Gain</p><h3>The size of the gain differs by mouse.</h3><p>Pupil size helps all three animals. How much running adds changes from mouse to mouse, so each animal is reported on its own.</p><p class="chart-note">Gain = score with behaviour minus score with the picture only.</p></div></div>
+
+      <section class="landing-more" aria-labelledby="checks-title" id="checks">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Trying to break the result</h2><p class="lp-lead">Three checks that could have made the gain disappear.</p></div><div class="hj-art" data-art="controls"></div></div>
+        <ul class="lm-grid"><li><div class="lm-top"><span class="lm-icon" data-icon="arrows-shuffle"></span><p class="lm-k">Shuffle the behaviour</p></div><h3>Almost no gain</h3><p>Behaviour scrambled across trials, 20 times per mouse, adds almost nothing. The gain needs behaviour from the same moment.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="users"></span><p class="lm-k">Leave one mouse out</p></div><h3>Still positive</h3><p>The average gain stays positive whichever mouse is removed, so no single recording carries the result.</p></li><li><div class="lm-top"><span class="lm-icon" data-icon="eye"></span><p class="lm-k">Pupil or running?</p></div><h3>Pupil helps every mouse</h3><p>Taking each signal away in turn: pupil improves all three mice; running varies by animal.</p></li></ul>
+      </section>
+      <div class="chart-card"><div data-chart="mouse-loo"></div><div><p class="lm-k">Leave one mouse out</p><h3>Positive without any one animal.</h3><p>This makes the three-mouse pattern less dependent on one recording. It is a check, not an estimate for all mice.</p><p class="chart-note">Average gain over the two remaining mice.</p></div></div>
+
+      <div class="landing-facts" style="margin-top:28px">
+        <div class="landing-fact"><h2>Code and data</h2><p>The analysis is in <a href="https://github.com/AmishI123/neuroscience-project">AmishI123/neuroscience-project</a> (notebooks 01–05 and <code>src/summarize_replication.py</code>). The numbers here are copied from its committed summary into <code>website/build_results.py</code>. Data: Willeke et al. (2022), <i>The Sensorium competition on predicting large-scale mouse primary visual cortex activity</i>, arXiv:2206.08666.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>Three mice cannot speak for all mice. A better prediction does not show that arousal or running cause the change. The report’s intervals are within each animal, not for the whole population.</p></div>
+      </div>
+      <p class="landing-note"><a href="index.html">← All studies</a><a href="eeg.html">EEG study →</a></p>
+    </section>
+  </main>
+  <script src="assets/icons.js"></script><script src="assets/icons-extra.js"></script><script src="assets/art.js"></script><script src="assets/science-art.js"></script>
+  <script src="assets/results.js"></script><script src="assets/charts.js"></script><script src="assets/site.js"></script>
+</body>
+</html>

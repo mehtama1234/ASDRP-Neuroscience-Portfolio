@@ -98,14 +98,37 @@ pointwise EEG (range 0.288–0.572) and **0.443** for causal context (range
 0.254–0.582). The gap analysis remains near or below chance and does not reverse
 the negative interpretation.
 
+### Recording-glitch sensitivity (added after the first results)
+
+Four samples in the file are recording glitches (rows 898, 10386, 11509 and 13179):
+values up to 715,897 where typical readings are about 4,000. The primary analysis did
+not treat them specially, and its numbers above are unchanged. As a sensitivity check,
+we limited each channel to the 0.5th–99.5th percentile of the **training rows only**
+(recomputed for every fold) and refit.
+
+| | Pointwise EEG | EEG + causal context |
+|---|---:|---:|
+| Final-block ROC AUC | **0.728** (was 0.625) | 0.609 (was 0.530) |
+| Five-fold mean ROC AUC | 0.448 (was 0.478) | 0.476 (was 0.488) |
+
+Handling the glitches clearly helps the final block, but the forward folds stay near
+or below chance, and some folds are well below 0.5. A model that is reliably *worse*
+than chance on a later block has learned a relationship that flips over time, so the
+most likely explanation is drift across the 117-second recording, not only noise.
+Because this check was added after seeing the results, it is reported as a
+sensitivity analysis; the next study should decide glitch handling before any model
+is fit.
+
 ## Limitations and next experiments
 
 - One continuous recording cannot establish subject-level generalization.
 - The label reflects eye state, not attention, alertness, or a clinical condition.
 - A nine-sample window is an initial engineering choice, not a biologically optimal
   timescale.
-- The next version should compare multiple windows, calibrated thresholds, and a
-  blocked cross-validation protocol across additional recordings.
+- The next version should decide glitch handling in advance, and compare multiple
+  windows and calibrated thresholds with blocked folds across additional recordings.
+- Folds well below 0.5 suggest the signal drifts during the recording; a drift-aware
+  model or per-block normalization is a natural next experiment.
 
 ## Reproduction
 

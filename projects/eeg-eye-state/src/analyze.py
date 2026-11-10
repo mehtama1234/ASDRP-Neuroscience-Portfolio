@@ -132,6 +132,43 @@ def blocked_label_shuffle_control(
     }
 
 
+def extreme_samples(x: np.ndarray, threshold: float = 20.0) -> list[int]:
+    """Rows where any channel is more than `threshold` robust SDs from its median (recording glitches)."""
+    median = np.median(x, axis=0)
+    spread = np.median(np.abs(x - median), axis=0) * 1.4826
+    return [int(index) for index in np.where((np.abs(x - median) / spread > threshold).any(axis=1))[0]]
+
+
+def clip_to_training(x: np.ndarray, train_rows, window: int | None = None, low: float = 0.5, high: float = 99.5) -> np.ndarray:
+    """Limit each channel to the 0.5th-99.5th percentile of the training rows only, then (optionally) add
+    the causal trailing features. Test rows never influence the limits."""
+    lower, upper = np.percentile(x[train_rows], [low, high], axis=0)
+    clipped = np.clip(x, lower, upper)
+    return trailing_features(clipped, window) if window else clipped
+
+
+def blocked_cross_validate_clipped(name: str, x: np.ndarray, y: np.ndarray, window: int | None = None, splits: int = 5) -> dict:
+    """The same forward-chaining folds, with glitch limits recomputed from each fold's training rows."""
+    splitter = TimeSeriesSplit(n_splits=splits)
+    aucs = []
+    for train_index, test_index in splitter.split(x):
+        features = clip_to_training(x, train_index, window)
+        model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1200, class_weight="balanced"))
+        model.fit(features[train_index], y[train_index])
+        aucs.append(float(roc_auc_score(y[test_index], model.predict_proba(features[test_index])[:, 1])))
+    values = np.asarray(aucs)
+    return {
+        "model": name,
+        "fold_test_roc_auc": aucs,
+        "summary": {
+            "mean_test_roc_auc": float(values.mean()),
+            "std_test_roc_auc": float(values.std(ddof=1)),
+            "min_test_roc_auc": float(values.min()),
+            "max_test_roc_auc": float(values.max()),
+        },
+    }
+
+
 def main() -> None:
     x, y = load_data()
     train_end = int(len(y) * 0.70)
@@ -161,6 +198,24 @@ def main() -> None:
             blocked_cross_validate("EEG + causal temporal context", trailing_features(x), y, gap=90),
         ],
         "temporal_window_sweep": [],
+    }
+    # Sensitivity analysis added after the first results: four samples are recording glitches
+    # (values up to ~700,000 where typical readings are ~4,000). The primary results above are unchanged;
+    # this repeats the holdout and blocked folds with training-only limits on each channel.
+    train_rows = slice(0, train_end)
+    results["artifact_sensitivity"] = {
+        "added_after_primary_analysis": True,
+        "method": "clip each channel to the 0.5th-99.5th percentile of the training rows only (per fold), then refit",
+        "robust_z_threshold": 20,
+        "extreme_sample_indices": extreme_samples(x),
+        "final_holdout": [
+            evaluate("pointwise EEG, glitches limited", clip_to_training(x, train_rows), y, train_end, val_end),
+            evaluate("EEG + causal temporal context, glitches limited", clip_to_training(x, train_rows, 9), y, train_end, val_end),
+        ],
+        "blocked_cross_validation": [
+            blocked_cross_validate_clipped("pointwise EEG, glitches limited", x, y),
+            blocked_cross_validate_clipped("EEG + causal temporal context, glitches limited", x, y, window=9),
+        ],
     }
     for window in (3, 9, 30, 90):
         final_result = evaluate(f"EEG + causal context ({window} samples)", trailing_features(x, window), y, train_end, val_end)

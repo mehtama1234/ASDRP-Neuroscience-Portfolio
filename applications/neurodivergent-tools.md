@@ -7,4 +7,4 @@ For the ASDRP portfolio, this work should be presented through concrete design
 decisions, accessibility evaluation, user needs, and careful privacy boundaries—not
 unsupported medical claims.
 
-Repository: [mehtama1234/neuro-divergent](https://github.com/mehtama1234/neuro-divergent)
+Live app: [Next Step](https://mehtama1234.github.io/neuro-divergent/) (the source repository is private). Portfolio page: [Tools for people](../website/tools.html).

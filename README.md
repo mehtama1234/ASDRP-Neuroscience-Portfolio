@@ -37,19 +37,20 @@ scientific question -> experiment -> model -> interpretation -> usable tool -> p
 - [Portfolio roadmap](roadmap/ROADMAP.md)
 - [ASDRP application package](application/README.md)
 
-## Existing repositories
+## Code and related work
 
-- [neuroscience-project](https://github.com/AmishI123/neuroscience-project)
-- [neuro-divergent](https://github.com/mehtama1234/neuro-divergent)
+- [AmishI123/neuroscience-project](https://github.com/AmishI123/neuroscience-project): the mouse visual-cortex analysis (notebooks, replication summary).
+- [Next Step](https://mehtama1234.github.io/neuro-divergent/) and [Helper Jobs](https://helper-jobs.onrender.com): the applied tools, linked as live apps (their source repositories are private).
 
-Individual repositories contain the implementation. This repository is the
-application-facing map that explains how the projects fit together.
+This repository is the application-facing map that explains how the projects fit together.
 
-## Live explainers
+## Website
 
-- [Mouse visual-cortex explainer](website/mouse-visual-cortex.html)
-- [EEG eye-state explainer](website/eeg-eye-state.html)
-- [Mobile research demo](https://asdrp-neuroscience-portfolio.gargibhatia37240.chatgpt.site/neuroscience-mobile/)
+**https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/** (GitHub Pages, published from `website/` by `.github/workflows/publish-site.yml`).
+
+- [Landing page](website/index.html) · [Mouse study](website/mouse.html) · [EEG study](website/eeg.html) · [Tools for people](website/tools.html) · [Next experiments](website/next.html)
+- The pages use the same stylesheets, icons and illustrations as Next Step and Helper Jobs (copied unchanged into `website/assets/`). Only the charts are new.
+- `python3 website/build_results.py` rebuilds every number and chart from committed results; `python3 website/build_pages.py` rebuilds the pages.
 - [Submission index](application/SUBMISSION_INDEX.md)
 
 ## Status

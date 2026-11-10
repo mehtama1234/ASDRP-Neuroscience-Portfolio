@@ -1,0 +1,45 @@
+name: Publish the portfolio website
+
+# Copies website/ to the gh-pages branch, which GitHub Pages serves at
+# https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - 'projects/eeg-eye-state/results/**'
+      - '.github/workflows/publish-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-site
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild the numbers and pages from committed results
+        run: |
+          python3 website/build_results.py
+          python3 website/build_pages.py
+          git diff --exit-code website/ || { echo "::error::website/ is out of date with the committed results; run website/build_results.py and website/build_pages.py"; exit 1; }
+      - name: Push website/ to gh-pages
+        run: |
+          rm -rf _site && cp -r website _site
+          rm -f _site/build_results.py _site/build_pages.py _site/hosting.json
+          touch _site/.nojekyll
+          cd _site
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Publish website from ${GITHUB_SHA::7}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
