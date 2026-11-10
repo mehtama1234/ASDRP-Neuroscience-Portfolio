@@ -43,5 +43,23 @@
     fields.forEach(el => { el.value = el.defaultValue; store.set('n2ns:' + el.dataset.save, el.value); });
     count(); status('Back to the original draft.');
   }));
+  // Keep the typeset draft in step with the edit box.
+  const escapeHtml = x => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  function renderRead() {
+    document.querySelectorAll('[data-read]').forEach(art => {
+      const box = document.querySelector('.essay-box textarea'); if (!box) return;
+      const chapters = JSON.parse(art.dataset.chapters || '[]'), tags = JSON.parse(art.dataset.tags || '{}');
+      art.innerHTML = box.value.trim().split(/\n\s*\n/).map((para, i) => {
+        const lines = para.split('\n'), title = lines.length > 1 ? lines[0] : '', text = lines.length > 1 ? lines.slice(1).join(' ') : para;
+        const tag = tags[chapters[i]];
+        const body = escapeHtml(text).replace(/\[([^\]]+)\]/g, (_, m) => `<mark class="slot"><b>Your part</b> ${m}</mark>`);
+        const aside = tag ? `<p class="essay-tag"><span>${window.HelperJobsIcons.icon(tag[0])}</span>${tag[1]}</p>` : '<p class="essay-tag"></p>';
+        return `<div class="essay-row">${aside}<div>${title ? `<h3>${escapeHtml(title)}</h3>` : ''}<p>${body}</p></div></div>`;
+      }).join('');
+    });
+  }
+  fields.forEach(el => el.addEventListener('input', renderRead));
+  document.querySelectorAll('[data-reset]').forEach(b => b.addEventListener('click', renderRead));
+  renderRead();
   count();
 })();
