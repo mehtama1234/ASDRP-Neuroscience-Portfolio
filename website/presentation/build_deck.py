@@ -68,6 +68,12 @@ slide("ch2-result", "Chapter 2 result: guesser B beats guesser A in all three mi
 {answer('<b>A quarter to a third better (25–33%), in all three mice,</b> on pictures the model had never seen. <span>This shows state and seeing are linked. It does not yet show which causes which.</span>')}
 {B.chart('mouse-scores', 'Score on unseen pictures', 'Guesser A against guesser B.', '0 means no match, 1 would be perfect. Brain cells are noisy, so scores are low. What matters is the jump from A to B.', 'Average over every recorded brain cell.')}""",
       "In every mouse, guesser B wins. The scores look small because single brain cells are noisy, so the thing to look at is the jump from A to B: a quarter to a third better. That is a link, not proof of cause.")
+# 5b
+slide("ch2-inside", "Inside the first mouse: it is the pupil, not the running, and 90% of brain cells gain.", f"""
+{head('Chapter 2 · Inside the first mouse', 'It is the pupil, not the running.')}
+<div class="tour-nums inside-nums"><p><b>90%</b><span>of brain cells guessed better once state was added</span></p><p><b>5×</b><span>bigger gain for cells that follow pupil size</span></p><p><b>0.05 → 0.40</b><span>one cell, from noise to a pattern</span></p></div>
+{B.chart('mouse1-ablation', 'From Amishi’s saved results', 'Adding pupil gives almost the whole gain.', 'Running barely moved the score. This mouse ran on only about 5% of trials.', 'First mouse only, unseen pictures.')}""",
+      "Looking inside the first mouse, from Amishi’s own analysis. Adding running barely changed anything; pupil size, a sign of how alert the mouse is, gave almost the whole gain. Nine in ten brain cells were guessed better, and the cells that follow alertness gained about five times as much as the rest.")
 # 6
 slide("ch2-checks", "Chapter 2 checks: mix up the state, leave one mouse out, pupil or running.", f"""
 {head('Chapter 2 · Trying to break it', 'Three checks that could have made the gain disappear.', 'It survived all three.', 'controls')}
@@ -97,14 +103,21 @@ slide("ch3-result", "Chapter 3 result: good on one stretch, a coin flip over tim
 slide("ch3-drift", "Chapter 3: scores on five stretches scatter around a coin flip.", f"""
 {head('Chapter 3 · Over time', 'Within two minutes, the signal drifts.')}
 {B.chart('eeg-folds', 'Five stretches in time', 'Across the recording, it drifts to a coin flip.', 'Some stretches fall well below 0.5: the pattern learned earlier had flipped by later on. Capping broken readings and leaving a gap do not fix it.', 'Mixing up the answers gives 0.499, so the method itself does not invent a pattern.')}
-{B.bridge('What chapter 3 tells us:', 'a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the apps ask the person instead.', '#', 'Chapter 4')}""",
-      "Each dot is one stretch. They land on both sides of a coin flip, and some are worse than guessing. Within two minutes, the signal drifted. So a tool should not try to guess someone’s state from a sensor.")
+""",
+      "Each dot is one stretch. They land on both sides of a coin flip, and some are worse than guessing. Within two minutes, the signal drifted.")
+# 9b
+slide("ch3-bands", "Experiment 2: brain-wave bands help on average but still dip below a coin flip.", f"""
+{head('Chapter 3 · Experiment 2', 'Would brain-wave bands hold steady?', 'So the apps ask the person: even bands are not steady enough to build on.')}
+{answer('Planned before running. All four bands averaged <b>0.566</b> against 0.481 for raw readings, but two of five stretches still fell just below a coin flip. <b>By the rule set beforehand, it did not hold up.</b>')}
+{B.chart('eeg-bands', 'Five stretches, one-second gap', 'Better on average, still not reliable.', 'Alpha alone did worse (0.442). Mixing up the answers gave 0.500, as it should.', 'Plan and code in the repository.')}
+""",
+      "So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave bands, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess someone’s state from a sensor.")
 # 10
 slide("ch4-rules", "Chapter 4: four findings become four design rules.", f"""
 {head('Chapter 4 · Design · Human–computer interaction', 'From findings to features.')}
 {cards([
     ('From chapter 2', 'Show less when energy is low.', '<b>Found:</b> the same picture lands differently depending on state.', '<b>In the apps:</b> “How much energy do you have today?” On “A little”, just the next step.'),
-    ('From chapter 3', 'Ask, don’t guess.', '<b>Found:</b> a sensor read state once, then drifted.', '<b>In the apps:</b> the person says how they are. Nothing happens until they tap.'),
+    ('From chapter 3', 'Ask, don’t guess.', '<b>Found:</b> a sensor read state once, then drifted, even with brain-wave bands.', '<b>In the apps:</b> the person says how they are. Nothing happens until they tap.'),
     ('From chapter 3', 'Expect change halfway.', '<b>Found:</b> within two minutes the pattern shifted.', '<b>In the apps:</b> Save &amp; pause, a note of where you stopped, break reminders.'),
     ('From real life', 'When stuck, make it smaller.', '<b>Seen:</b> a task too big all at once is where people stop.', '<b>In the apps:</b> “I’m stuck” makes the step smaller and keeps your place.'),
 ], 'rules')}""",
@@ -120,7 +133,7 @@ slide("ch4-screens", "Chapter 4: the rules on real screens in Next Step and Help
       "Here they are. Next Step asks about energy and shrinks the plan. Save and pause and I’m stuck make it easy to stop and come back. Helper Jobs gives one picture step at a time, read aloud, with a Help button that reaches a volunteer.")
 # 12
 slide("ch5", "Chapter 5: the road ahead in four steps.", f"""
-{head('Chapter 5 · Test, then go further', 'Where this goes next.', 'Everything here is a plan, and labelled that way.')}
+{head('Chapter 5 · Test, then go further', 'Where this goes next.')}
 {cards([(k, h, a, b) for k, h, a, b in B.ROADMAP])}""",
       "Next, with an ASDRP mentor, we run four more data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: does designing for state help people learn?", "dense")
 # 13
@@ -143,7 +156,7 @@ DECK_CSS = """html,body{margin:0;width:1000px;height:563px;overflow:hidden;backg
 .deck-slide h1{font-size:34px!important}.deck-slide .landing-hero h1{font-size:54px!important}.deck-slide .hj-sub{font-size:15px}
 .deck-slide .chart-card{grid-template-columns:1.3fr 1fr;padding:12px 16px;gap:18px;align-items:center}.deck-slide .chart-card svg.chart{max-height:215px;width:100%}.deck-slide .chart-card h3{font-size:19px}.deck-slide .chart-card p{font-size:13px}
 .deck-slide .lp-energy{font-size:14px;padding:12px 16px}.deck-slide .deck-shots img{max-height:225px}.deck-slide .deck-shots strong{font-size:15px}.deck-slide .deck-shots span{font-size:12px}
-.deck-slide.dense .landing-problems .lp-pain,.deck-slide.dense .landing-problems .lp-fix{font-size:12.5px;line-height:1.4}.deck-slide.dense .landing-problems h3{font-size:16px}
+.deck-slide.dense .landing-problems .lp-pain,.deck-slide.dense .landing-problems .lp-fix{font-size:12px;line-height:1.35}.deck-slide.dense .landing-problems h3{font-size:16px}
 .deck-slide .lm-grid h3{font-size:17px}"""
 
 

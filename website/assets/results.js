@@ -10,19 +10,22 @@ window.PortfolioResults = {
     "id": "Original mouse",
     "code": "static21067",
     "stimulus": 0.126,
-    "behavior": 0.158
+    "behavior": 0.158,
+    "gain": 0.0318
    },
    {
     "id": "Second mouse",
     "code": "static22846",
     "stimulus": 0.154,
-    "behavior": 0.203
+    "behavior": 0.203,
+    "gain": 0.0491
    },
    {
     "id": "Third mouse",
     "code": "static23343",
     "stimulus": 0.143,
-    "behavior": 0.191
+    "behavior": 0.191,
+    "gain": 0.0474
    }
   ],
   "leave_one_out_mean_gain": [
@@ -40,7 +43,28 @@ window.PortfolioResults = {
    }
   ],
   "behavior_shuffle": "20 behavior shuffles per animal give near-zero gains; aligned gains stay positive",
-  "ablation": "Pupil improves all three animals; the running contribution varies by animal"
+  "ablation": "Pupil improves all three animals; the running contribution varies by animal",
+  "first_mouse": {
+   "ablation": {
+    "Picture only": 0.126,
+    "+ running": 0.127,
+    "+ pupil": 0.158,
+    "+ both": 0.158
+   },
+   "fraction_improved": 0.899,
+   "median_gain": 0.017,
+   "mean_gain": 0.032,
+   "max_gain": 0.355,
+   "follow_pupil_gain": 0.069,
+   "follow_pupil_cells": 2750,
+   "other_gain": 0.014,
+   "best_cell": {
+    "id": 3035,
+    "picture_only": 0.049,
+    "with_state": 0.404
+   },
+   "source": "AmishI123/neuroscience-project · results/summary_stats.npz and docs/REPORT.md"
+  }
  },
  "eeg": {
   "source": "projects/eeg-eye-state/results/metrics.json",
@@ -173,6 +197,50 @@ window.PortfolioResults = {
     0.448,
     0.476
    ]
+  },
+  "bands": {
+   "with_gap": {
+    "raw readings": {
+     "stretches": [
+      0.359,
+      0.563,
+      0.368,
+      0.467,
+      0.649
+     ],
+     "mean": 0.481,
+     "below": 3
+    },
+    "all four bands": {
+     "stretches": [
+      0.645,
+      0.492,
+      0.575,
+      0.624,
+      0.492
+     ],
+     "mean": 0.566,
+     "below": 2
+    },
+    "alpha only": {
+     "stretches": [
+      0.415,
+      0.577,
+      0.539,
+      0.44,
+      0.238
+     ],
+     "mean": 0.442,
+     "below": 3
+    }
+   },
+   "without_gap_mean": {
+    "raw readings": 0.529,
+    "all four bands": 0.571,
+    "alpha only": 0.427
+   },
+   "shuffle_mean": 0.5,
+   "holds_up_better": false
   }
  }
 };

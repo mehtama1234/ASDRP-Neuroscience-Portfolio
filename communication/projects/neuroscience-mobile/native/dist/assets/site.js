@@ -21,9 +21,19 @@
       marks: [{ v: R.eeg.fold_means['pointwise EEG'], label: `Over time ${C.fmt(R.eeg.fold_means['pointwise EEG'])}`, tone: 'soft', below: true }, { v: R.eeg.holdout[0].auc, label: `Last stretch ${C.fmt(R.eeg.holdout[0].auc)}`, tone: 'soft' }, { v: R.eeg.glitches.holdout[0], label: `Capped ${C.fmt(R.eeg.glitches.holdout[0])}`, below: true }] }),
     'mouse-gain': () => C.rowBars({
       caption: 'How much knowing the mouse’s state adds, for each mouse.', max: 0.06, height: 220,
-      items: R.mouse.mice.map(m => ({ label: m.id, value: +(m.behavior - m.stimulus).toFixed(3) })),
+      items: R.mouse.mice.map(m => ({ label: m.id, value: m.gain })),
       format: v => (v === 0 ? '0' : `+${v.toFixed(3).replace(/^0/, '')}`)
     }),
+    'mouse1-ablation': () => { const f = R.mouse.first_mouse.ablation; return C.rowBars({
+      caption: 'First mouse: score with the picture only, plus running, plus pupil, and plus both.', max: 0.2, height: 230,
+      items: Object.entries(f).map(([label, value]) => ({ label, value, tone: label.includes('pupil') || label.includes('both') ? 's1' : 's0' })) }); },
+    'mouse1-cells': () => { const f = R.mouse.first_mouse; return C.rowBars({
+      caption: 'First mouse: average gain for brain cells that follow pupil size and for the rest.', max: 0.08, height: 230,
+      items: [{ label: `Follow pupil (${f.follow_pupil_cells.toLocaleString()} cells)`, value: f.follow_pupil_gain }, { label: 'All the rest', value: f.other_gain, tone: 's0' }],
+      format: v => `+${v.toFixed(3).replace(/^0/, '')}` }); },
+    'mouse1-cell': () => { const b = R.mouse.first_mouse.best_cell; return C.rowBars({
+      caption: `Brain cell ${b.id}: score from the picture alone and with the mouse's state added.`, max: 0.5, height: 230,
+      items: [{ label: 'Picture only', value: b.picture_only, tone: 's0' }, { label: 'Picture + state', value: b.with_state }] }); },
     'mouse-loo': () => C.rowBars({
       caption: 'Average gain from behaviour after leaving each mouse out in turn.', max: 0.06, height: 220, tone: 's0',
       items: R.mouse.leave_one_out_mean_gain.map(m => ({ label: `Without ${m.omit.toLowerCase()}`, value: m.gain })),
@@ -41,6 +51,15 @@
         { label: 'Now + a moment ago', values: R.eeg.folds.context, mean: R.eeg.fold_means['EEG + causal temporal context'], tone: 'ink' },
         { label: 'Readings capped', values: R.eeg.glitches.folds.pointwise, mean: R.eeg.glitches.means[0], tone: 'soft' },
         { label: 'With a gap', values: R.eeg.gap_folds.pointwise, mean: R.eeg.gap_means['pointwise EEG'], tone: 'soft' }
+      ]
+    }),
+    'eeg-bands': () => C.foldDots({
+      caption: 'Experiment 2: score on five later stretches for raw readings, all four brain-wave bands and alpha alone, with a gap of one second; the dashed line is a coin flip.',
+      min: 0.2, max: 0.8,
+      rows: [
+        { label: 'Raw readings', values: R.eeg.bands.with_gap['raw readings'].stretches, mean: R.eeg.bands.with_gap['raw readings'].mean, tone: 'soft' },
+        { label: 'All four bands', values: R.eeg.bands.with_gap['all four bands'].stretches, mean: R.eeg.bands.with_gap['all four bands'].mean },
+        { label: 'Alpha only', values: R.eeg.bands.with_gap['alpha only'].stretches, mean: R.eeg.bands.with_gap['alpha only'].mean, tone: 'ink' }
       ]
     }),
     'eeg-windows': () => C.groupedBars({

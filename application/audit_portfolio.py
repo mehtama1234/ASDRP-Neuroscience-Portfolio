@@ -134,6 +134,19 @@ def main() -> None:
     for path in ("website/index.html", "website/mouse.html", "website/neuroscience-mobile/index.html"):
         contains(path, headline)
     print(f"OK headline gain {headline} matches the flagship summary")
+    for row in mouse_summary["animals"]:
+        if f'"gain": {round(row["absolute_gain"], 4)}' not in text("website/build_results.py"):
+            raise SystemExit(f"MOUSE gain for {row['mouse'][:11]} differs from the flagship summary")
+    print("OK per-mouse gains match the flagship summary")
+    bands = json.loads(text("projects/eeg-eye-state/results/bands.json"))
+    for kind, shown in (("all four bands", "0.566"), ("raw readings", "0.481"), ("alpha only", "0.442")):
+        if f"{bands['with_gap'][kind]['mean']:.3f}" != shown:
+            raise SystemExit(f"EXPERIMENT 2 {kind} mean changed: rerun and update the pages")
+        contains("website/eeg.html", shown)
+    if bands["holds_up_better"]:
+        raise SystemExit("EXPERIMENT 2 now holds up: the pages say it did not")
+    contains("website/next.html", "2 · Done")
+    print("OK experiment 2 numbers and verdict match results/bands.json")
 
     apk = ROOT / "communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk"
     digest = hashlib.sha256(apk.read_bytes()).hexdigest()

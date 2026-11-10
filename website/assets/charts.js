@@ -51,7 +51,7 @@
     let body = `<line class="axis" x1="${left}" x2="${w - right}" y1="${y(0)}" y2="${y(0)}"/>`;
     items.forEach((it, i) => {
       const x = left + i * gw + (gw - bw) / 2;
-      body += `<rect class="bar ${tone}" x="${x}" y="${y(it.value)}" width="${bw}" height="${y(0) - y(it.value)}" rx="3"/><text class="val strong" x="${x + bw / 2}" y="${y(it.value) - 8}" text-anchor="middle">${format(it.value)}</text><text class="cat" x="${x + bw / 2}" y="${height - bottom + 22}" text-anchor="middle">${esc(it.label)}</text>`;
+      body += `<rect class="bar ${it.tone || tone}" x="${x}" y="${y(it.value)}" width="${bw}" height="${y(0) - y(it.value)}" rx="3"/><text class="val strong" x="${x + bw / 2}" y="${y(it.value) - 8}" text-anchor="middle">${format(it.value)}</text><text class="cat" x="${x + bw / 2}" y="${height - bottom + 22}" text-anchor="middle">${esc(it.label)}</text>`;
     });
     return frame(w, height, body, caption) + table(caption, ['', 'Value'], items.map(it => [it.label, format(it.value)]));
   }

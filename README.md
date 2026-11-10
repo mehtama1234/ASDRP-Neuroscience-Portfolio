@@ -40,7 +40,7 @@ scientific question -> experiment -> model -> interpretation -> usable tool -> p
 ## Code and related work
 
 - [AmishI123/neuroscience-project](https://github.com/AmishI123/neuroscience-project): the mouse visual-cortex analysis (notebooks, replication summary).
-- [Next Step](https://mehtama1234.github.io/neuro-divergent/) and [Helper Jobs](https://helper-jobs.onrender.com): the applied tools, linked as live apps (their source repositories are private).
+- [Next Step](https://next-step-live.onrender.com/) and [Helper Jobs](https://helper-jobs.onrender.com): the applied tools, linked as live apps (their source repositories are private).
 
 This repository is the application-facing map that explains how the projects fit together.
 

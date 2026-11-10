@@ -138,3 +138,29 @@ python3 src/analyze.py
 
 Dataset citation: Roesler, O. (2013). *EEG Eye State*. UCI Machine Learning
 Repository. DOI: [10.24432/C57G7J](https://doi.org/10.24432/C57G7J).
+
+## Experiment 2: brain-wave bands over time (follow-up)
+
+Plan written and committed before running: `EXPERIMENT-2-PLAN.md`. Code: `src/analyze_bands.py`.
+Results: `results/bands.json`.
+
+For every reading, the model sees the log strength of the delta (1–4 Hz), theta (4–8 Hz), alpha
+(8–13 Hz) and beta (13–30 Hz) bands over the previous second (128 readings, looking back only), after
+capping broken readings with limits learned from each fold's learning rows. Five forward stretches
+(`TimeSeriesSplit`, 5 splits), with a 128-reading gap because the windows overlap.
+
+| Model (with gap) | Five stretches (AUC) | Average | Below 0.5 |
+|---|---|---|---|
+| Raw readings | 0.359, 0.563, 0.368, 0.467, 0.649 | 0.481 | 3 |
+| All four bands | 0.645, 0.492, 0.575, 0.624, 0.493 | **0.566** | 2 |
+| Alpha only | 0.416, 0.577, 0.539, 0.440, 0.239 | 0.442 | 3 |
+
+Without the gap: 0.529 raw, 0.571 bands, 0.428 alpha. With eyes-open/closed labels scrambled 20 times
+(seed 20261110), the bands model averaged 0.500 (range 0.493–0.509).
+
+**Verdict, by the rule fixed in the plan: did not hold up.** Bands beat raw readings on average and
+lifted the worst stretch from 0.359 to 0.492, but two stretches remain just below a coin flip. Alpha on
+its own was the weakest, so the gain does not come from alpha alone. This strengthens, rather than
+weakens, chapter 3's conclusion: in this recording, even the best-known eyes-closed signal does not
+give a reading stable enough to build a tool on. One person and two minutes cannot say how this
+behaves in other people; experiment 4 (why it drifts) is the next step.

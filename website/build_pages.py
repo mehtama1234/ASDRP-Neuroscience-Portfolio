@@ -7,7 +7,7 @@ from pathlib import Path
 W = Path(__file__).resolve().parent
 REPO = "https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio"
 FLAGSHIP = "https://github.com/AmishI123/neuroscience-project"
-NEXT_STEP = "https://mehtama1234.github.io/neuro-divergent/"
+NEXT_STEP = "https://next-step-live.onrender.com/"
 HELPER_JOBS = "https://helper-jobs.onrender.com"
 SITE = "https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/"
 
@@ -64,6 +64,10 @@ def grid(items):
     return '<ul class="lm-grid">' + "".join(f'<li><div class="lm-top">{ic(i)}<p class="lm-k">{k}</p></div><h3>{h}</h3><p>{p}</p></li>' for i, k, h, p in items) + "</ul>"
 
 
+def shot(src, alt, cap, sub, width='100%'):
+    return f'<li><img src="{src}" alt="{alt}" loading="lazy" style="width:{width};border:1px solid var(--line);border-radius:var(--radius-card)"><strong>{cap}</strong><span>{sub}</span></li>'
+
+
 def phone(app, kicker, title, middle, cap, sub):
     return f'<li><div class="phone" aria-hidden="true"><div class="ph-bar"><span>{app}</span><em class="ph-picture-tag">Result</em></div><div class="ph-body"><p class="ph-k">{kicker}</p><p class="ph-title">{title}</p>{middle}</div></div><strong>{cap}</strong><span>{sub}</span></li>'
 
@@ -116,9 +120,9 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
         <ol aria-label="Five chapters" tabindex="0">
           <li><p class="lp-k">1 · Real life</p><h3>Same words, different moment.</h3><p class="lp-pain">At Pragnya’s outings and in schoolwork, a step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
           <li><p class="lp-k">2 · Understand</p><h3>A mouse’s state changes how its brain sees.</h3><p class="lp-pain">Mice watched pictures while thousands of brain cells were recorded. We guessed what each cell would do from the picture alone, then from the picture plus how alert and active the mouse was.</p><p class="lp-fix"><b>Found:</b> knowing the mouse’s state made our guesses 25–33% better, in all three mice. <a href="mouse.html">Read chapter 2 →</a></p></li>
-          <li><p class="lp-k">3 · Measure</p><h3>Can sensors read state in a person?</h3><p class="lp-pain">A cap of 14 sensors on one person’s head for two minutes (EEG). Closing your eyes is one of the clearest changes it picks up. Can a simple model tell when?</p><p class="lp-fix"><b>Found:</b> on one stretch, often (0.625, where 0.5 is a coin flip). Across the whole recording it drifted to 0.478, no better than guessing. <a href="eeg.html">Read chapter 3 →</a></p></li>
+          <li><p class="lp-k">3 · Measure</p><h3>Can sensors read state in a person?</h3><p class="lp-pain">A cap of 14 sensors on one person’s head for two minutes (EEG). Closing your eyes is one of the clearest changes it picks up. Can a simple model tell when?</p><p class="lp-fix"><b>Found:</b> on one stretch, often (0.625, where 0.5 is a coin flip). Across the whole recording it drifted to 0.478. Brain-wave bands did better (0.566) but still dipped below guessing. <a href="eeg.html">Read chapter 3 →</a></p></li>
           <li><p class="lp-k">4 · Design</p><h3>From findings to features.</h3><p class="lp-pain">If state matters but cannot be read from outside, an app should ask, not guess. It should show less on a low-energy day, and make pausing and coming back easy.</p><p class="lp-fix"><b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, for real jobs at Pragnya outings. <a href="tools.html">Read chapter 4 →</a></p></li>
-          <li><p class="lp-k">5 · Test, then go further</p><h3>Where this goes next.</h3><p class="lp-pain">Four more data experiments, design studies with Pragnya volunteers and families, and papers others can check.</p><p class="lp-fix"><b>The aim:</b> one research direction, where neuroscience and design meet. <a href="next.html">Read chapter 5 →</a></p></li>
+          <li><p class="lp-k">5 · Test, then go further</p><h3>Where this goes next.</h3><p class="lp-pain">One follow-up done, three more data experiments, design studies with Pragnya volunteers and families, and papers others can check.</p><p class="lp-fix"><b>The aim:</b> one research direction, where neuroscience and design meet. <a href="next.html">Read chapter 5 →</a></p></li>
         </ol>
         <p class="lp-energy"><b>The loop:</b> real life raised the question; the mouse showed that state changes what a brain takes in; the EEG showed that state is hard to read from outside; so the apps ask how someone is doing and keep each step small. The last experiment takes the apps back to real life to see if they help. <span>Three mice and one person are a start, not a rule for everyone.</span></p>
         <div class="lp-how"><p class="lp-how-short"><b>What this does not show yet:</b> whether the pattern holds in more animals and more people, what causes it, or whether the apps help. Each of those is an experiment in chapter 5.</p></div>
@@ -173,6 +177,12 @@ page("mouse.html", "Understand · mouse study · From neurons to next steps",
       {chart('mouse-scores', 'Result', 'Every mouse is easier to predict once we know its state.', 'The picture explains part of what the seeing part of the brain does. Whether the mouse is alert and moving explains more, in every animal.', 'Tested on pictures the guessers never saw.')}
       {chart('mouse-gain', 'How much state adds', 'Every mouse gains, by different amounts.', 'Pupil size helps all three mice. How much running adds changes from mouse to mouse, so each mouse is shown on its own.', 'Gain = guesser B’s score minus guesser A’s score.')}
 
+      <h2 class="landing-subhead" id="inside-title">Inside the first mouse</h2><p class="landing-demo-note">From Amishi’s saved results and report in <a href="{FLAGSHIP}">AmishI123/neuroscience-project</a>, redrawn here. These are for the first mouse only.</p>
+      <div class="tour-nums inside-nums"><p><b>90%</b><span>of brain cells were guessed better once state was added</span></p><p><b>+0.017</b><span>typical gain per cell (the middle value)</span></p><p><b>+0.35</b><span>the biggest gain for a single cell</span></p></div>
+      {chart('mouse1-ablation', 'Which part of state?', 'It is the pupil, not the running.', 'Adding running barely moved the score. Adding pupil size gave almost the whole gain. This mouse ran on only about 5% of trials, so running had little to say.', 'Score on unseen pictures, first mouse.')}
+      {chart('mouse1-cells', 'Which cells gain?', 'The cells that follow alertness gain most.', 'Cells whose activity rises or falls with pupil size gained about five times as much as the rest.', 'A cell “follows pupil” when its activity and pupil size move together (correlation above 0.1), as in Amishi’s report.')}
+      {chart('mouse1-cell', 'One cell', 'From noise to a pattern.', 'Brain cell 3035 was almost impossible to predict from the picture alone. Knowing the mouse’s state raised its score from 0.05 to 0.40.', 'Score for this one cell on unseen pictures.')}
+
       <section class="landing-more" aria-labelledby="checks-title" id="checks">
         <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Trying to break the result</h2><p class="lp-lead">Three checks that could have made the gain disappear. It survived all three.</p></div><div class="hj-art" data-art="controls"></div></div>
         {grid([
@@ -224,19 +234,26 @@ page("eeg.html", "Measure · EEG study · From neurons to next steps",
       </section>
       {chart('eeg-windows', 'How far back to look', 'Looking further back seems to help, but we did not pick a winner.', 'We chose to try 3, 9, 30 and 90 readings back before seeing any results. Ninety does best on average, but picking it now would mean tuning to this one recording.', 'Next: compare these on new recordings before choosing.')}
 
+      <section class="landing-more" aria-labelledby="bands-title" id="bands">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="bands-title">Experiment 2: would brain-wave bands hold steady?</h2><p class="lp-lead">Alpha waves grow when eyes close. So we asked a follow-up question, wrote the plan down before running it, and tested it the same way.</p></div><div class="hj-art" data-art="eegStudy"></div></div>
+        {grid([
+            ('activity', 'The idea', 'Strength over the last second', 'Instead of the raw reading at one moment, the model sees how strong four kinds of brain wave were over the last second, including alpha.'),
+            ('route-2', 'The test', 'Same five stretches, plus a gap', 'Learn from earlier, test on later, with one second left out between them, because the one-second windows overlap.'),
+            ('target', 'The rule set beforehand', 'Better on average, never below 0.5', 'It counts as holding up only if it beats the raw readings on average and no stretch falls below a coin flip.'),
+        ])}
+      </section>
+      <section class="landing-problems answer"><p class="lp-energy"><b>Better on average, but it still did not hold up.</b> All four bands averaged <b>0.566</b> across the five stretches, against <b>0.481</b> for the raw readings. But two stretches still dipped just below a coin flip (0.492 and 0.493), so by the rule we set beforehand it did not hold up. Alpha alone did worse (0.442). <span>Mixing up the answers gave 0.500, as it should.</span></p></section>
+      {chart('eeg-bands', 'Experiment 2', 'Brain-wave bands help, but not enough to rely on.', 'Bands lift the average and the worst stretch, but a model that is sometimes worse than guessing is still not something to build an app on. This is why the apps ask the person.', 'With a one-second gap between learning and testing. Without the gap: 0.571 for bands, 0.529 for raw readings. Plan: EXPERIMENT-2-PLAN.md in the repository.')}
+
       <div class="landing-facts" style="margin-top:28px">
-        <div class="landing-fact"><h2>Rerun it</h2><p><code>python3 projects/eeg-eye-state/src/analyze.py</code> writes <code>results/metrics.json</code>, and <code>python3 website/build_results.py</code> turns it into these charts. See the <a href="{REPO}/blob/main/projects/eeg-eye-state/report.md">full report</a>. Data: Roesler, O. (2013). <i>EEG Eye State</i>. UCI Machine Learning Repository, doi:10.24432/C57G7J.</p></div>
+        <div class="landing-fact"><h2>Rerun it</h2><p><code>python3 projects/eeg-eye-state/src/analyze.py</code> writes <code>results/metrics.json</code>, <code>src/analyze_bands.py</code> writes <code>results/bands.json</code> for experiment 2, and <code>python3 website/build_results.py</code> turns it into these charts. See the <a href="{REPO}/blob/main/projects/eeg-eye-state/report.md">full report</a>. Data: Roesler, O. (2013). <i>EEG Eye State</i>. UCI Machine Learning Repository, doi:10.24432/C57G7J.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>One person and one short recording cannot show how this works for other people. The only thing measured is eyes open or closed, not attention, tiredness or any condition.</p></div>
       </div>
-      {bridge('What chapter 3 tells us:', 'a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the apps ask the person instead of guessing.', 'tools.html', 'Chapter 4')}
+      {bridge('What chapter 3 tells us:', 'a sensor that is right on one stretch and wrong on the next, even using brain-wave bands, is not something to build a tool on. So the apps ask the person instead of guessing.', 'tools.html', 'Chapter 4')}
       {nav(('mouse.html', 'Chapter 2 · Mouse'), ('tools.html', 'Chapter 4 · Design'))}
     </section>""")
 
 # ---------------- tools ----------------
-def shot(src, alt, cap, sub, width='100%'):
-    return f'<li><img src="{src}" alt="{alt}" loading="lazy" style="width:{width};border:1px solid var(--line);border-radius:var(--radius-card)"><strong>{cap}</strong><span>{sub}</span></li>'
-
-
 page("tools.html", "Design · From neurons to next steps",
      "Chapter 4: what the two studies found, the design rule each finding gives, and where that rule lives in Next Step and Helper Jobs.", f"""    <section class="screen active landing" aria-labelledby="page-title">
 {heading(('index.html', 'All chapters'), 'Chapter 4 · Design · Human–computer interaction', '<span id="page-title">From findings to features.</span>', 'Chapter 2 showed that a brain’s state changes what gets through. Chapter 3 showed that state is hard to read from outside. Each finding became a design rule, and each rule is a real feature in two apps people use.', 'tablets')}
@@ -245,7 +262,7 @@ page("tools.html", "Design · From neurons to next steps",
         <p class="lp-lead">Read each card top to bottom: what we found, the rule it gives, and where the rule lives.</p>
         <ol aria-label="Findings, rules and features" tabindex="0">
           <li><p class="lp-k">From chapter 2</p><h3>Show less when energy is low.</h3><p class="lp-pain"><b>Found:</b> the same picture lands differently depending on the brain’s state.</p><p class="lp-fix"><b>In the apps:</b> Next Step asks “How much energy do you have today?” On “A little”, it shows just the next step. Helper Jobs shows one picture step at a time, read aloud.</p></li>
-          <li><p class="lp-k">From chapter 3</p><h3>Ask, don’t guess.</h3><p class="lp-pain"><b>Found:</b> a sensor read eye state on one stretch, then drifted to a coin flip.</p><p class="lp-fix"><b>In the apps:</b> the person tells the app how they are doing. The energy check is optional, Help is a button they press, and nothing happens until they tap.</p></li>
+          <li><p class="lp-k">From chapter 3</p><h3>Ask, don’t guess.</h3><p class="lp-pain"><b>Found:</b> a sensor read eye state on one stretch, then drifted to a coin flip. Brain-wave bands did not fix it.</p><p class="lp-fix"><b>In the apps:</b> the person tells the app how they are doing. The energy check is optional, Help is a button they press, and nothing happens until they tap.</p></li>
           <li><p class="lp-k">From chapter 3</p><h3>Expect change halfway through.</h3><p class="lp-pain"><b>Found:</b> within two minutes, the link between signal and state shifted.</p><p class="lp-fix"><b>In the apps:</b> Next Step has Save &amp; pause, a note of where you stopped, and “Pick up where you left off”. Helper Jobs reminds helpers to take breaks.</p></li>
           <li><p class="lp-k">From real life</p><h3>When stuck, make it smaller.</h3><p class="lp-pain"><b>Seen:</b> a task that is too big all at once is where people stop.</p><p class="lp-fix"><b>In the apps:</b> Next Step’s “I’m stuck” offers to make the step smaller, ask a question or take a break. Nothing is sent, and your place is kept.</p></li>
         </ol>
@@ -274,15 +291,15 @@ page("tools.html", "Design · From neurons to next steps",
 
 # ---------------- next ----------------
 EXPS = [
-    ("flask", "1 · Planned · tests chapter 2", "Does the timing matter?", "Does the mouse’s state at that exact moment help more than its state a little earlier or later? Needs the full mouse recordings."),
-    ("activity", "2 · Ready to run · tests chapter 3", "Brain-wave bands", "One kind of brain wave, called alpha, grows when eyes close. Does tracking it hold up over time better than the raw readings? Uses the recording we already have."),
-    ("brain", "3 · Planned · tests chapter 2", "Which brain cells change?", "Does state change every brain cell a little, or a few groups a lot? Groups are chosen before looking. Needs the full mouse recordings."),
+    ("flask", "1 · Started · tests chapter 2", "Does the timing matter?", "Does the mouse’s state at that exact moment help more than its state a little earlier or later? The code is written in Amishi’s repository; it needs the full mouse recordings to run."),
+    ("activity", "2 · Done · tests chapter 3", "Brain-wave bands", "Bands did better on average (0.566 against 0.481) but two of five stretches still fell just below a coin flip, so by the rule set beforehand it did not hold up. See chapter 3."),
+    ("brain", "3 · Planned · tests chapter 2", "Which brain cells change?", "Does state change every brain cell a little, or a few groups a lot? A first look at the first mouse shows no strong clustering by position. Groups are chosen before looking. Needs the full mouse recordings."),
     ("timeline", "4 · Started · tests chapter 3", "Why does it drift?", "How quickly does the eyes-closed pattern change, and can the model keep up if it keeps learning? The stretch-by-stretch scores and the broken-reading check are done."),
     ("users", "5 · Planned · closes the loop", "Do the apps help?", "Back to real life: do the four design rules make tasks easier to finish, for the people the apps are for? Needs consent, a task list written in advance and no personal data beyond what the test needs."),
 ]
 ROADMAP = [
-    ("Now · done", "Two studies, two apps.", "The mouse and EEG studies, every result checked and rerunnable. Next Step and Helper Jobs working, with the four design rules built in.", "<b>Shown:</b> on this site, in the slides and in the phone tour."),
-    ("Next · with an ASDRP mentor", "Run the four data experiments.", "Brain-wave bands and drift in the EEG, using the data already here. Then timing and groups of brain cells in the full mouse recordings.", "<b>Aim:</b> a first paper, on why the EEG drifts, for a student research journal such as the <i>Journal of Emerging Investigators</i>, plus a poster."),
+    ("Now · done", "Two studies, one follow-up, two apps.", "The mouse and EEG studies, every result checked and rerunnable, plus experiment 2 on brain-wave bands. Next Step and Helper Jobs working, with the four design rules built in.", "<b>Shown:</b> on this site, in the slides and in the phone tour."),
+    ("Next · with an ASDRP mentor", "Run the three remaining data experiments.", "Drift in the EEG, using the data already here. Then timing (code already written) and groups of brain cells in the full mouse recordings.", "<b>Aim:</b> a first paper, on why the EEG drifts and what brain-wave bands can and cannot fix, for a student research journal such as the <i>Journal of Emerging Investigators</i>, plus a poster."),
     ("Then · with people", "Study the design with the people it is for.", "Co-design sessions with Pragnya volunteers and families, then a usability test of the four design rules. Consent first, and tasks written down before anyone takes part.", "<b>Aim:</b> a second paper, on the design rules, and better apps."),
     ("Longer term · the joined-up question", "Does designing for state help people learn?", "Compare the energy-aware design with a fixed one, for the same person over several weeks. Then ask whether the brain findings predict who it helps most.", "<b>Aim:</b> one research direction, where neuroscience and human–computer interaction meet."),
 ]
@@ -295,7 +312,7 @@ OUTPUTS = [
     ("users", "Community", "Built with people, not for them", "Pragnya volunteers and families help decide what gets built and what gets tested."),
 ]
 page("next.html", "Where this goes next · From neurons to next steps",
-     "Chapter 5: the research plan. Four more data experiments, design studies with the people the apps are for, and papers others can check.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+     "Chapter 5: the research plan. One follow-up done, three more data experiments, design studies with the people the apps are for, and papers others can check.", f"""    <section class="screen active landing" aria-labelledby="page-title">
 {heading(('index.html', 'All chapters'), 'Chapter 5 · Test, then go further', '<span id="page-title">Where this goes next.</span>', 'The loop does not stop at two studies and two apps. Each turn adds a study, a better design and a write-up others can check. Everything on this page is a plan, and it is labelled that way.', 'plan')}
       <section class="landing-problems" id="roadmap" aria-labelledby="road-title">
         <h2 class="landing-subhead" id="road-title">The road ahead</h2>
@@ -325,10 +342,10 @@ TOUR = [
     ("ch2", "Understand", "eye", "Chapter 2 of 5 · Understand", "A mouse’s state changes how its brain sees.", "Mice watched pictures while thousands of brain cells were recorded. Guesser A saw only the picture. Guesser B also knew how alert and active the mouse was.",
      '<div class="hj-art" data-art="mouseStudy"></div>', '<b>Found:</b> knowing the mouse’s state made guesses 25–33% better, in all three mice.<div class="tour-nums"><p><b>25–33%</b><span>better guesses once state is known</span></p><p><b>3 of 3</b><span>mice show the gain</span></p></div>', "mouse.html"),
     ("ch3", "Measure", "activity", "Chapter 3 of 5 · Measure", "Can sensors read state in a person?", "A cap of 14 sensors on one person’s head for two minutes (EEG). Can a simple model tell when their eyes are closed?",
-     '<div class="hj-art" data-art="eegStudy"></div>', '<b>Found:</b> on one stretch, often. Across the recording it drifted to no better than guessing.<div class="tour-nums"><p><b>0.625</b><span>on one stretch (0.5 is a coin flip)</span></p><p><b>0.478</b><span>across the recording: guessing</span></p></div>', "eeg.html"),
+     '<div class="hj-art" data-art="eegStudy"></div>', '<b>Found:</b> on one stretch, often. Across the recording it drifted to no better than guessing. Brain-wave bands helped, but still dipped below a coin flip.<div class="tour-nums"><p><b>0.625</b><span>on one stretch (0.5 is a coin flip)</span></p><p><b>0.478</b><span>across the recording: guessing</span></p><p><b>0.566</b><span>with brain-wave bands: better, still unreliable</span></p><p><b>2 of 5</b><span>stretches still below a coin flip</span></p></div>', "eeg.html"),
     ("ch4", "Design", "heart-handshake", "Chapter 4 of 5 · Design", "From findings to features.", "State matters, but it cannot be read from outside. So the apps ask, not guess. They show less on a low-energy day, and make pausing and coming back easy.",
      '<img src="{img}next-step-energy.jpg" alt="Next Step asks how much energy you have today: a little, some or plenty." style="width:100%;border:1px solid var(--line);border-radius:var(--radius-card)">', '<b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, for real jobs at Pragnya outings.', "tools.html"),
-    ("ch5", "Future", "flask", "Chapter 5 of 5 · Test, then go further", "Where this goes next.", "Four more data experiments, design studies with Pragnya volunteers and families, and papers others can check. Everything here is a plan, and labelled that way.",
+    ("ch5", "Future", "flask", "Chapter 5 of 5 · Test, then go further", "Where this goes next.", "One follow-up done, three more data experiments, design studies with Pragnya volunteers and families, and papers others can check. Everything here is a plan, and labelled that way.",
      '<div class="hj-art" data-art="plan"></div>', '<b>The aim:</b> one research direction, where neuroscience and design meet.', "next.html"),
 ]
 TOUR_JS = """<script>

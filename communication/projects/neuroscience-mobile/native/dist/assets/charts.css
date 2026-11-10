@@ -47,3 +47,6 @@ main a.button.secondary{border-color:var(--field)}
 body:has(.tour-nav) main{padding-bottom:110px}
 .tour-nums{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 0}.tour-nums p{margin:0;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--rust);border-radius:var(--radius-card);padding:14px}.tour-nums b{display:block;font-family:var(--display);font-size:34px;font-weight:400;line-height:1.1;color:var(--ink)}.tour-nums span{display:block;font-size:14px;color:var(--muted);margin-top:4px}
 .family-links{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}.family-links b{margin-right:4px}
+.tour .tour-nums p:nth-child(n+3){border-top-color:var(--peach)}
+
+.inside-nums{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:6px}@media(max-width:560px){.inside-nums{grid-template-columns:1fr}}

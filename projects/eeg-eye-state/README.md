@@ -41,3 +41,8 @@ can be reproduced independently of the flagship project.
 This is a proof-of-method study on one continuous recording. It demonstrates
 time-aware neural-signal modeling; it does not diagnose sleep, attention, or any
 medical condition, and it does not establish generalization to new people.
+
+## Experiment 2: brain-wave bands (follow-up)
+
+Plan written before running: [`EXPERIMENT-2-PLAN.md`](EXPERIMENT-2-PLAN.md). Code: `src/analyze_bands.py`. Results: `results/bands.json`.
+Bands averaged 0.566 across five forward stretches against 0.481 for raw readings, but two stretches stayed just below a coin flip, so by the rule set beforehand it did not hold up. Details in [`report.md`](report.md).
