@@ -400,7 +400,7 @@ tour("neuroscience-mobile/index.html", "../", "../img/")
 
 def download(out, base, apk):
     page(out, "Android app · From neurons to next steps", "The phone tour as an Android app, built from the same pages as the website.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'Back to the phone tour'), 'The phone tour · Android', '<span id="page-title">The same five chapters, as an Android app.</span>', 'The app is built straight from the phone tour on this website, so the words, numbers and pictures are the same. It is a test build for reviewers, not a store release.', 'loopTall')}
+{heading(('index.html', 'Back to the phone tour'), 'The phone tour · Android', '<span id="page-title">The same five chapters, as an Android app.</span>', 'The app is built straight from the phone tour on this website, so the words, numbers and pictures are the same. It is a test build for reviewers, not a store release.', 'phone')}
       <div class="landing-actions"><a class="button primary" href="{apk}" download>Download the Android app <span aria-hidden="true">→</span></a><a class="button secondary" href="index.html">Use it in the browser instead</a></div>
       <section class="landing-more" aria-labelledby="dl-title">
         <h2 class="landing-subhead" id="dl-title">Before you install</h2>
@@ -596,29 +596,53 @@ page("handoff/answers.html", "Your answers · From neurons to next steps", "Amis
     </section>""", base="../", extra_js=HANDOFF_JS)
 
 
-def essay_page(num, title, prompt, src, art, prev, nxt):
+CHAPTER_TAGS = {
+    "1": ("users", "Chapter 1 · Real life"), "2": ("eye", "Chapter 2 · Understand"), "3": ("activity", "Chapter 3 · Measure"),
+    "4": ("heart-handshake", "Chapter 4 · Design"), "5": ("flask", "Chapter 5 · What’s next"),
+}
+
+
+def essay_read(body, chapters):
+    """The draft typeset for reading: one row per paragraph with its chapter tag, [brackets] shown as boxes to fill."""
+    import json as _json, re as _re
+    rows = []
+    for i, para in enumerate(body.split("\n\n")):
+        ic, tag = CHAPTER_TAGS.get(chapters[i], ("", "")) if i < len(chapters) else ("", "")
+        title, _, text = para.partition("\n") if "\n" in para else ("", "", para)
+        text = _re.sub(r"\[([^\]]+)\]", lambda m: f'<mark class="slot"><b>Your part</b> {esc(m.group(1))}</mark>', esc(text))
+        aside = f'<p class="essay-tag"><span data-icon="{ic}" aria-hidden="true"></span>{tag}</p>' if tag else '<p class="essay-tag"></p>'
+        rows.append(f'<div class="essay-row">{aside}<div>{f"<h3>{esc(title)}</h3>" if title else ""}<p>{text}</p></div></div>')
+    return f'<article class="essay-read" data-read data-chapters=\'{_json.dumps(chapters)}\' data-tags=\'{_json.dumps(CHAPTER_TAGS)}\'>{"".join(rows)}</article>'
+
+
+def essay_page(num, title, prompt, src, art, prev, nxt, chapters):
     body = essay_body((APP / "essays" / src).read_text())
     page(f"handoff/essay-{num}.html", f"Essay {num} · From neurons to next steps", f"Essay {num} draft ({prompt}), following the five chapters, for Amishi to make her own.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'For Amishi'), f'Step 2 of 4 · Essay {num}', f'<span id="page-title">{title}</span>', f'The prompt: {prompt}. This draft follows the same five chapters as the website. Edit it right here; it saves in this browser as you type.', art)}
+{heading(('index.html', 'For Amishi'), f'Step 2 of 4 · Essay {num}', f'<span id="page-title">Make Essay {num} yours.</span>', f'The prompt: {prompt}. This draft follows the same five chapters as the website, so a reviewer who reads the essay and opens the site hears one story.', art)}
+      <section class="essay-sheet" aria-labelledby="draft-{num}">
+        <div class="essay-head"><p class="eyebrow">Essay {num} · draft</p><h2 id="draft-{num}">{title}</h2><p class="essay-meta"><span data-words-for="essay-{num}" data-limit="375"></span></p></div>
+        {essay_read(body, chapters)}
+        <p class="essay-key"><mark class="slot"><b>Your part</b> boxes like this</mark> ask for something only you know. The tag beside each paragraph shows which chapter of the website it matches.</p>
+      </section>
       <section class="landing-more" aria-labelledby="how-{num}">
-        <h2 class="landing-subhead" id="how-{num}">Three passes</h2>
+        <h2 class="landing-subhead" id="how-{num}">Make it yours, in three passes</h2>
         {grid([
-            ('star', 'First', 'Fill the [brackets]', 'Each one asks for something only you know. Your answers from step 1 go here.'),
+            ('star', 'First', 'Fill the boxes', 'Each one asks for something only you know. Your answers from step 1 go here.'),
             ('message-2', 'Then', 'Make it sound like you', 'Change any word you would not say. Shorter is fine.'),
             ('shield-check', 'Last', 'Keep it true', 'Delete anything you cannot explain out loud, and keep your father’s help visible.'),
         ])}
       </section>
-      <div class="essay-box"><label class="field" for="essay-{num}">Essay {num} draft</label>
+      <div class="essay-box"><label class="field" for="essay-{num}">Edit the draft here. The page above updates as you type.</label>
         <textarea id="essay-{num}" rows="24" data-save="essay-{num}" data-label="Essay {num}: {prompt}">{esc(body)}</textarea>
         <p class="hint" data-words-for="essay-{num}" data-limit="375"></p></div>
       {toolbar(f"essay-{num}.txt")}
-      <p class="landing-try-note"><button class="link-button" type="button" data-reset>Start again from the original draft</button></p>
+      <p class="landing-try-note"><button class="link-button" type="button" data-reset>Start again from the original draft</button> · <button class="link-button" type="button" onclick="window.print()">Print the draft</button></p>
       <p class="landing-note"><a href="{prev[0]}">← {prev[1]}</a><a href="{nxt[0]}">{nxt[1]} →</a></p>
     </section>""", base="../", extra_js=HANDOFF_JS)
 
 
-essay_page(1, "Why are you applying?", "why are you applying? Up to 375 words", "essay-1-why-applying.md", "plan", ("answers.html", "Step 1: your answers"), ("essay-5.html", "Essay 5"))
-essay_page(5, "Your hands-on research.", "your hands-on research, up to three examples. Up to 375 words", "essay-5-research-experience.md", "controls", ("essay-1.html", "Essay 1"), ("who-did-what.html", "Step 3: who did what"))
+essay_page(1, "Why are you applying?", "why are you applying? Up to 375 words", "essay-1-why-applying.md", "plan", ("answers.html", "Step 1: your answers"), ("essay-5.html", "Essay 5"), ["1", "", "2", "3", "4", "5"])
+essay_page(5, "Your hands-on research.", "your hands-on research, up to three examples. Up to 375 words", "essay-5-research-experience.md", "controls", ("essay-1.html", "Essay 1"), ("who-did-what.html", "Step 3: who did what"), ["2", "3", "4"])
 
 
 def ledger_card(i, ic, t, w, h, st):
