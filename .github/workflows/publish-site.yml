@@ -41,7 +41,8 @@ jobs:
       - name: Push website/ to gh-pages
         run: |
           rm -rf _site && cp -r website _site
-          rm -f _site/build_results.py _site/build_pages.py _site/hosting.json
+          rm -f _site/build_results.py _site/build_pages.py _site/hosting.json _site/presentation/build_deck.py _site/presentation/viewers.py
+          rm -rf _site/__pycache__ _site/presentation/__pycache__
           touch _site/.nojekyll
           cd _site
           git init -q -b gh-pages

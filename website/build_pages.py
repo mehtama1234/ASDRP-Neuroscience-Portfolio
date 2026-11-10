@@ -9,6 +9,7 @@ REPO = "https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio"
 FLAGSHIP = "https://github.com/AmishI123/neuroscience-project"
 NEXT_STEP = "https://mehtama1234.github.io/neuro-divergent/"
 HELPER_JOBS = "https://helper-jobs.onrender.com"
+SITE = "https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/"
 
 
 def ic(name):
@@ -41,6 +42,7 @@ def page(name, title, description, body, base="", extra_js="", manifest=""):
   </header>
   <main id="app" tabindex="-1">
 {body}
+    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
   </main>
   <script src="{base}assets/icons.js"></script><script src="{base}assets/icons-extra.js"></script><script src="{base}assets/art.js"></script><script src="{base}assets/science-art.js"></script>
   <script src="{base}assets/results.js"></script><script src="{base}assets/charts.js"></script><script src="{base}assets/site.js"></script>{extra_js}
@@ -315,7 +317,6 @@ page("next.html", "Where this goes next · From neurons to next steps",
     </section>""")
 
 # ---------------- the phone tour: the same five chapters, one screen at a time ----------------
-SITE = "https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/"
 TOUR = [
     ("home", "Start", "home", "The loop", "From neurons to next steps", "At Pragnya’s outings and in schoolwork, the same instruction can land one moment and be lost the next. Does what a brain is doing change what it takes in? Five short screens follow that question from real life, into the lab, and back out again.",
      '<div class="loop-figure"><div data-art="loopTall"></div></div>', "", "index.html"),
@@ -390,6 +391,7 @@ REDIRECTS = {
     "mouse-visual-cortex.html": "mouse.html", "mouse-leave-one-out.html": "mouse.html#checks",
     "eeg-eye-state.html": "eeg.html", "eeg-label-shuffle-control.html": "eeg.html#checks", "eeg-purge-gap.html": "eeg.html#checks",
     "reviewer-dashboard.html": "index.html", "reviewer-packet.html": "index.html",
+    "mouse-visual-cortex-slides.html": "presentation/", "eeg-eye-state-slides.html": "presentation/",
 }
 for old, new in REDIRECTS.items():
     (W / old).write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><meta http-equiv="refresh" content="0; url={new}"><link rel="canonical" href="{new}"></head><body><p>This page moved: <a href="{new}">{new}</a>.</p></body></html>\n')
