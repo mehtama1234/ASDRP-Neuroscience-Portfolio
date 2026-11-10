@@ -1,35 +1,36 @@
 # Reviewer one-page summary
 
-## Portfolio thesis
+## The story: From neurons to next steps
 
-This portfolio studies how neural activity relates to behavior, then translates the
-work into accessible tools and explanations.
+The same instruction can land one moment and be lost the next. This portfolio asks whether that is
+the brain itself (does what a brain is doing change what it takes in?) and follows the question in
+one loop: real life, understand, measure, design, then test.
 
-## Flagship study
+## Understand: the mouse study
 
-The mouse visual-cortex project compares stimulus-only and behavior-augmented
-encoding models on Sensorium recordings. The original mouse rises from 0.1265 to
-0.1583, a second mouse rises from 0.1543 to 0.2034, and a third rises from 0.1431 to
-0.1905 under the same pipeline. The
-report still distinguishes prediction from causation and shows that the relative
-running-versus-pupil contribution varies by animal.
+Two simple models of thousands of brain cells in mouse visual cortex (Sensorium 2022), one from the
+picture alone and one also given pupil size and running speed. Knowing the mouse's state raised the
+score on unseen pictures from 0.126 to 0.158, 0.154 to 0.203 and 0.143 to 0.191: 25–33% better in
+all three mice. State taken from the wrong moments adds nothing, and leaving out any one mouse keeps
+the gain. A better prediction shows a link, not a cause.
 
-## Complementary study
+## Measure: the EEG study and experiment 2
 
-The EEG eye-state project uses a public chronological recording to test whether causal
-temporal context improves classification. Pointwise EEG reaches test ROC AUC 0.625;
-the first context extension reaches 0.530. The result demonstrates time-aware
-evaluation and a willingness to preserve a negative finding.
+A simple model reads eye state from one person's EEG on the last stretch (AUC 0.625; 0.728 with four
+broken readings capped), but across five stretches it averages 0.478, about a coin flip. Experiment 2,
+planned before running, used brain-wave bands: 0.566 on average, but two stretches still below 0.5, so
+by its own rule it did not hold up.
 
-## Translation layer
+## Design: findings to features
 
-The neuro-divergent and neurocomms projects provide human-centered communication and
-accessibility applications. Their interaction patterns are reused for mobile demos,
-HTML explainers, presentations, PDFs, and video scripts.
+Because state matters but is hard to read from outside, the apps ask instead of guessing. Next Step
+asks how much energy someone has and shows just the next step on a low day; Save & pause and "I'm
+stuck" make stopping and restarting easy. Helper Jobs gives one picture step at a time, read aloud,
+with a Help button, at Pragnya's Sunday outings.
 
-## What remains
+## Next
 
-The strongest scientific next step is extending the replication beyond three animals
-with a hierarchical population-level uncertainty summary. The strongest application next step is
-replacing draft essay prompts and scripts with the applicant’s own verified
-experiences and recorded work.
+Three more data experiments, design studies with the people the apps are for, and a first paper on
+why the EEG drifts. Everything planned is labelled as a plan.
+
+Website: https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/

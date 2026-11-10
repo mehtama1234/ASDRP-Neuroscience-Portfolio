@@ -1,36 +1,22 @@
 # Essay map
 
-## Why apply?
+Every essay tells the same story as the website, slides, phone tour and video:
+**From neurons to next steps**, one loop in five chapters.
 
-Lead with the moment the visual-cortex result made internal state feel measurable.
-Use the mouse project to show curiosity, then use the EEG project to show that the
-portfolio continued into a second neural-signal question.
+1. **Real life.** The same instruction lands one moment and is lost the next. Is that the brain itself?
+2. **Understand (mouse).** A mouse’s state makes its brain 25–33% easier to predict, in all three mice.
+3. **Measure (EEG).** State can be read on one stretch, then drifts to a coin flip. Brain-wave bands
+   (experiment 2) did not fix it.
+4. **Design.** So the apps ask, not guess: show less on a low-energy day, make pausing easy.
+5. **Test, then go further.** Three more data experiments, design studies with Pragnya volunteers
+   and families, and papers others can check.
 
-Personal detail still required: one genuine class, book, conversation, or experience
-that began the applicant’s interest in the brain or scientific research.
+Drafts that follow this story: `essays/essay-1-why-applying.md` and `essays/essay-5-research-experience.md`.
+They replace the older drafts in `AmishI123/neuroscience-project/application`, which started from the
+science instead of from real life.
 
-## Research experience
+## Still needed from Amishi
 
-Use three concrete actions:
-
-1. Learned the data-analysis workflow and explored real neural/behavioral data.
-2. Built and evaluated the mouse encoding models.
-3. Implemented the EEG study with a chronological split and retained its negative
-   generalization result.
-
-Be explicit about collaboration with the parent and distinguish applicant work from
-technical guidance.
-
-## Preferred fields
-
-Computational neuroscience, cognitive science, neural coding, and the comparison of
-biological and artificial vision are all supported by the current artifacts.
-
-## Evidence to attach
-
-- Mouse report and figures
-- EEG report and metrics
-- Interactive explainers
-- Presentation outline and video scripts
-- Contribution ledger
-- Reproducibility checklist
+- One real moment for chapter 1, in her words, with no names (`personalization-form.md`).
+- Her exact part in each piece of work (`contribution-ledger.md`).
+- Her voice on the video, if she wants it (`recording-script.md`).

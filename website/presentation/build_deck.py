@@ -124,7 +124,7 @@ slide("ch4-rules", "Chapter 4: four findings become four design rules.", f"""
       "This is where the science turns into design. Each finding gives a rule, and each rule is a real feature in the apps.", "dense")
 # 11
 slide("ch4-screens", "Chapter 4: the rules on real screens in Next Step and Helper Jobs.", f"""
-{head('Chapter 4 · On real screens', 'Two apps, real-world help.', 'Next Step, by Amishi Mehta, for schoolwork. Helper Jobs, a family project, for real jobs at Pragnya outings.')}
+{head('Chapter 4 · On real screens', 'Two apps, built for real life.', 'Next Step, by Amishi Mehta, for schoolwork. Helper Jobs, a family project, built for real jobs at Pragnya’s Sunday outings.')}
 <ol class="landing-demo deck-shots">
 {B.shot('../img/next-step-energy.jpg', 'Next Step energy check.', 'Show less when energy is low', 'The plan shrinks to one step.')}
 {B.shot('../img/next-step-stuck.jpg', 'Next Step pause and I’m stuck.', 'Pause, and make it smaller', 'Your place is kept.')}
@@ -140,7 +140,7 @@ slide("ch5", "Chapter 5: the road ahead in four steps.", f"""
 slide("close", "The loop, who did what, and where to see everything.", f"""
 {head('Thank you', 'From neurons to next steps.')}
 {answer('<b>The loop:</b> real life raised the question; the mouse showed that state changes what a brain takes in; the EEG showed that state is hard to read from outside; so the apps ask how someone is doing and keep each step small. <span>Three mice and one person are a start, not a rule for everyone.</span>')}
-<div class="landing-facts"><div class="landing-fact"><h2>See it all</h2><p>Website: mehtama1234.github.io/ASDRP-Neuroscience-Portfolio<br>Phone tour, slides, Next Step and Helper Jobs are all linked from there.</p></div><div class="landing-fact"><h2>Who did what</h2><p>The studies were done by the applicant with a parent collaborator. Software tools, including AI assistants, helped build the site and the apps. Every number comes from saved results.</p></div></div>""",
+<div class="landing-facts"><div class="landing-fact"><h2>See it all</h2><p>Website: mehtama1234.github.io/ASDRP-Neuroscience-Portfolio<br>Phone tour, slides, Next Step and Helper Jobs are all linked from there.</p></div><div class="landing-fact"><h2>Who did what</h2><p>The studies were done by Amishi with her father. Software tools, including AI assistants, helped build the site and the apps. Every number comes from saved results.</p></div></div>""",
       "To sum up the loop. Everything I showed is on the website, with the phone tour, these slides and both apps linked from it. Thank you.")
 
 DECK_CSS = """html,body{margin:0;width:1000px;height:563px;overflow:hidden;background:var(--bg,#F3ECE1)}main#app{margin:0!important;padding:0!important;max-width:none!important;width:1000px}

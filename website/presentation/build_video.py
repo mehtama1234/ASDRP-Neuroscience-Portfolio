@@ -2,7 +2,8 @@
 its narration plays. The narration is the slide's speaker notes, read by a computer voice (Kokoro).
 
 Run after build_deck.py:  python3 website/presentation/build_video.py <folder with kokoro-v1.0.onnx and voices-v1.0.bin>
-Writes website/video/from-neurons-to-next-steps.mp4 and .vtt."""
+Writes website/video/from-neurons-to-next-steps.mp4 and .vtt. A recording at website/video/voice/NN.wav (or .m4a, .mp3)
+replaces the computer voice for slide NN; see application/recording-script.md."""
 import json, subprocess, sys, tempfile
 from pathlib import Path
 
@@ -38,7 +39,13 @@ def main(tts):
     clips, cues, t = [], [], 0.0
     for i, (img, s) in enumerate(zip(files, D.SLIDES)):
         text = SPOKEN.get(s["key"], s["notes"])
-        a, sr = k.create(text, voice="af_bella", speed=0.94, lang="en-us")
+        own = next((f for f in sorted((OUT / "voice").glob(f"{i + 1:02d}.*")) if f.suffix in (".wav", ".m4a", ".mp3")), None) if (OUT / "voice").is_dir() else None
+        if own:  # Amishi's own recording for this slide (see application/recording-script.md)
+            decoded = tmp / f"own{i:02d}.wav"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(own), "-ac", "1", "-ar", "24000", str(decoded)], check=True)
+            a, sr = sf.read(decoded, dtype="float32")
+        else:
+            a, sr = k.create(text, voice="af_bella", speed=0.94, lang="en-us")
         idx = np.where(np.abs(a) > 0.01)[0]
         a = a[max(0, idx[0] - int(.03 * sr)): idx[-1] + int(.08 * sr)]
         lead, tail = 0.5, 0.9

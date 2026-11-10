@@ -6,6 +6,10 @@ complete.
 
 ## Why neuroscience
 
+- **Chapter 1 moment (most important):** one real time, at a Pragnya outing or in school, when the
+  same instruction worked once and was lost a little later. A few sentences, no names. It opens the
+  website, the slides, the video and Essay 1.
+
 - The first class, book, conversation, or observation that made the brain feel
   personally interesting:
 - One concrete moment when the applicant changed their mind because of data:
