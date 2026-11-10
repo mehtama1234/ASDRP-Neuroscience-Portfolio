@@ -42,7 +42,7 @@ def page(name, title, description, body, base="", extra_js="", manifest=""):
   </header>
   <main id="app" tabindex="-1">
 {body}
-    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
+    <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="{SITE}">The website</a><a href="{SITE}neuroscience-mobile/">Phone tour</a><a href="{SITE}presentation/">Slides</a><a href="{SITE}video/">Video</a><a href="{NEXT_STEP}">Next Step app</a><a href="{HELPER_JOBS}">Helper Jobs app</a><a href="{REPO}">Source code</a></nav>
   </main>
   <script src="{base}assets/icons.js"></script><script src="{base}assets/icons-extra.js"></script><script src="{base}assets/art.js"></script><script src="{base}assets/science-art.js"></script>
   <script src="{base}assets/results.js"></script><script src="{base}assets/charts.js"></script><script src="{base}assets/site.js"></script>{extra_js}
@@ -97,7 +97,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
             <a class="button primary" href="#story">Read the story <span aria-hidden="true">→</span></a>
             <a class="button secondary" href="mouse.html">Start with the mouse study</a>
           </div>
-          <p class="landing-try-note">Public data only. A prediction is not a cause. Plans are marked as plans.</p>
+          <p class="landing-try-note">The same story as <a href="presentation/">slides</a>, a <a href="video/">narrated video</a> and a <a href="neuroscience-mobile/">phone tour</a>. Public data only. A prediction is not a cause.</p>
           <ul class="landing-parts" aria-label="What makes it work">
             <li><a href="mouse.html"><span data-icon="eye"></span><b>Understand</b><small>Mouse: state changes the cortex</small></a></li>
             <li><a href="eeg.html"><span data-icon="activity"></span><b>Measure</b><small>EEG: readable once, then it drifts</small></a></li>
@@ -385,6 +385,17 @@ def download(out, base, apk):
 download("neuroscience-mobile/download.html", "../", "../neuroscience-lab-debug.apk")
 download("../communication/projects/neuroscience-mobile/download.html", "../../../website/", "releases/neuroscience-lab-debug.apk")
 tour("../communication/projects/neuroscience-mobile/index.html", "../../../website/", "../../../website/img/")
+
+# ---------------- the video ----------------
+page("video/index.html", "Video · From neurons to next steps", "The five chapters of From neurons to next steps as a short narrated video, with captions.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('../index.html', 'All chapters'), 'The video', '<span id="page-title">The same story, in a few minutes.</span>', 'The slides with their speaker notes read aloud, and captions you can turn on. The words, numbers and drawings are the same as on the website.', 'loop')}
+      <video controls preload="metadata" playsinline poster="../presentation/slides/01-cover.jpg" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card);background:#000">
+        <source src="from-neurons-to-next-steps.mp4" type="video/mp4">
+        <track kind="captions" src="from-neurons-to-next-steps.vtt" srclang="en" label="English" default>
+      </video>
+      <div class="landing-actions" style="margin-top:18px"><a class="button secondary" href="from-neurons-to-next-steps.mp4" download>Download the video</a><a class="button secondary" href="from-neurons-to-next-steps.vtt" download>Download the captions</a><a class="button secondary" href="../presentation/">See the slides</a></div>
+      <div class="landing-facts"><div class="landing-fact landing-fact-not"><h2>About the voice</h2><p>The narration is a computer voice reading the speaker notes, so anyone can rebuild the video from the repository.</p></div></div>
+    </section>""", base="../")
 
 # ---------------- old addresses keep working ----------------
 REDIRECTS = {

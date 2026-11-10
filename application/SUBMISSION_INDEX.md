@@ -15,19 +15,22 @@ that is not available in this Linux workspace.
 
 ## Reviewer-facing artifacts
 
-- [Live portfolio: landing page](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/)
-- [Mouse visual-cortex study, with charts and checks](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse.html)
-- [EEG eye-state study, with charts and checks](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg.html)
-- [Tools for people: Next Step and Helper Jobs](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/tools.html)
-- [Next experiments](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/next.html)
-- [PDF packet](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/ASDRP-neuroscience-portfolio-packet.pdf)
-- [Mobile research demo](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/)
-- [Verified Android debug build](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/download.html)
-- [Mouse presentation](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse-visual-cortex-slides.html)
-- [EEG presentation](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg-eye-state-slides.html)
-- [Mouse research storyboard video](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse-research-storyboard.mp4)
-- [EEG research storyboard video](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg-research-storyboard.mp4)
-- [Portfolio overview storyboard video](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/portfolio-research-storyboard.mp4)
+Everything below tells one story, *From neurons to next steps*, in five chapters, with the same words,
+numbers and drawings.
+
+- [The website: start here](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/)
+- Chapter 2 · Understand: [the mouse study](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/mouse.html)
+- Chapter 3 · Measure: [the EEG study](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/eeg.html)
+- Chapter 4 · Design: [findings to features, with Next Step and Helper Jobs](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/tools.html)
+- Chapter 5 · Where this goes next: [the research plan](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/next.html)
+- [Slides, with presenter view and PDF](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/presentation/)
+- [Narrated video, with captions](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/video/)
+- [Phone tour](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/) and [its Android app](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/download.html)
+- [PDF packet of the five chapters](https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/ASDRP-neuroscience-portfolio-packet.pdf)
+- The apps: [Next Step](https://mehtama1234.github.io/neuro-divergent/) and [Helper Jobs](https://helper-jobs.onrender.com)
+
+The earlier per-study slides now forward to the single deck. The earlier storyboard videos
+(`website/*-research-storyboard.mp4`) are kept as an archive and are no longer linked.
 
 If the private hosted Site is not available to a reviewer, the complete source
 fallback is the public [portfolio GitHub repository](https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio):

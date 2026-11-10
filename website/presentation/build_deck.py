@@ -180,11 +180,11 @@ def main():
     items = [{"src": f"slides/{n}.jpg", "alt": s["alt"], "notes": s["notes"]} for n, s in zip(files, SLIDES)]
     (P / "present.html").write_text(viewers.page("Slides · From neurons to next steps", "Slide", items, "./", "All slides", True, PDF))
     (P / "presenter.html").write_text(viewers.presenter(items))
-    figs = "".join(f'<li><a href="present.html#{i}"><img src="slides/{n}.jpg" alt="Slide {i}: {html.escape(s["alt"])}" loading="{"eager" if i < 3 else "lazy"}" width="1920" height="1080" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card)"></a><strong>{i} · {html.escape(s["alt"].split(":")[0])}</strong><span>{html.escape(s["notes"][:140])}{"…" if len(s["notes"]) > 140 else ""}</span></li>' for i, (n, s) in enumerate(zip(files, SLIDES), 1))
+    figs = "".join(f'<li><a href="present.html#{i}"><img src="slides/{n}.jpg" alt="Slide {i}: {html.escape(s["alt"])}" loading="{"eager" if i < 3 else "lazy"}" width="1920" height="1080" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card)"></a><strong>{i} · {html.escape(s["alt"].split(":")[0])}</strong><span>{html.escape(s["alt"].split(":", 1)[-1].strip())}</span></li>' for i, (n, s) in enumerate(zip(files, SLIDES), 1))
     B.page("presentation/index.html", "Slides · From neurons to next steps", f"The {len(SLIDES)} slides for From neurons to next steps, with speaker notes.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{B.heading(('../index.html', 'All chapters'), 'The slides', '<span id="page-title">The same story, in {len(SLIDES)} slides.</span>', 'Built from the same words, charts and drawings as the website. Present full screen, open the presenter view with speaker notes, or download the PDF.', 'loop')}
-      <div class="landing-actions"><a class="button primary" href="present.html">Present <span aria-hidden="true">→</span></a><a class="button secondary" href="presenter.html">Presenter view with notes</a><a class="button secondary" href="{PDF}" download>Download PDF</a></div>
-      <ol class="landing-demo deck-list" aria-label="All slides" tabindex="0">{figs}</ol>
+{B.heading(('../index.html', 'All chapters'), 'The slides', f'<span id="page-title">The same story, in {len(SLIDES)} slides.</span>', 'Built from the same words, charts and drawings as the website. Present full screen, open the presenter view with speaker notes, or download the PDF.', 'loop')}
+      <div class="landing-actions"><a class="button primary" href="present.html">Present <span aria-hidden="true">→</span></a><a class="button secondary" href="presenter.html">Presenter view with notes</a><a class="button secondary" href="{PDF}" download>Download PDF</a><a class="button secondary" href="../video/">Watch the video</a></div>
+      <h2 class="landing-subhead">All {len(SLIDES)} slides</h2><ol class="landing-demo deck-list" aria-label="All slides" tabindex="0">{figs}</ol>
     </section>""", base="../")
     print("deck:", len(SLIDES), "slides")
 
