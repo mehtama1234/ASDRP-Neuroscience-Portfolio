@@ -375,7 +375,7 @@ def download(out, base, apk):
         {grid([
             ('route-2', 'Step 1', 'Download the file', 'Tap the button above on an Android phone. The file ends in .apk.'),
             ('shield-check', 'Step 2', 'Allow this one install', 'Android asks before installing apps from outside the store. Say yes for this file only.'),
-            ('code', 'Check it', 'Same file as the code', 'Every new tour is built by GitHub from the repository. Its fingerprint (SHA-256) is in <a href="{REPO}/blob/main/communication/projects/neuroscience-mobile/releases/SHA256.txt">SHA256.txt</a>.'),
+            ('code', 'Check it', 'Same file as the code', f'Every new tour is built by GitHub from the repository. Its fingerprint (SHA-256) is in <a href="{REPO}/blob/main/communication/projects/neuroscience-mobile/releases/SHA256.txt">SHA256.txt</a>.'),
         ])}
       </section>
       <div class="landing-facts"><div class="landing-fact landing-fact-not"><h2>What it is not</h2><p>It does not collect anything, does not need an account and does not diagnose anyone. It explains the research, one screen at a time.</p></div><div class="landing-fact"><h2>iPhone and iPad</h2><p>Open the <a href="index.html">phone tour</a> in Safari and choose Share, then Add to Home Screen. It works the same way.</p></div></div>
