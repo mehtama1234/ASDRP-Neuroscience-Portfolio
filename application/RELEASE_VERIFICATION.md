@@ -37,3 +37,5 @@ under `blocked_label_shuffle_control`: mean shuffled ROC AUC 0.499 for the
 pointwise model and 0.501 for causal context. They also include a 90-sample
 purge-gap sensitivity analysis: mean ROC AUC 0.448 pointwise and 0.443 with
 causal context.
+
+> **Update, November 2026:** the phone tour was rebuilt as the five chapters of *From neurons to next steps*. The Android app is now rebuilt by GitHub Actions (`.github/workflows/phone-tour-android.yml`) whenever the tour changes, and the current SHA-256 is in `communication/projects/neuroscience-mobile/releases/SHA256.txt`. The checksum above belongs to the earlier build.

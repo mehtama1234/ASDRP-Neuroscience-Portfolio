@@ -10,6 +10,11 @@ on:
       - 'projects/eeg-eye-state/results/**'
       - '.github/workflows/publish-site.yml'
   workflow_dispatch:
+  # The Android build commits a new APK with the built-in token, which does not start
+  # other workflows, so publish again when it finishes.
+  workflow_run:
+    workflows: ["Phone tour Android app"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -23,6 +28,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

@@ -42,3 +42,5 @@ No native build or device result is represented as complete by this file.
 - An Android API 34 emulator/system image was installed and launched with
   software emulation, but the host has no KVM acceleration; the ADB device
   remained offline and the runtime test was not completed.
+
+> **Update, November 2026:** the phone tour was rebuilt as the five chapters of *From neurons to next steps*. The Android app is now rebuilt by GitHub Actions (`.github/workflows/phone-tour-android.yml`) whenever the tour changes, and the current SHA-256 is in `communication/projects/neuroscience-mobile/releases/SHA256.txt`. The checksum above belongs to the earlier build.

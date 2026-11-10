@@ -82,12 +82,17 @@ def main() -> None:
         "communication/projects/mouse-visual-cortex/index.html",
         "communication/projects/mouse-visual-cortex/slides.html",
         "communication/projects/mouse-visual-cortex/video-script.md",
-        "communication/projects/neuroscience-mobile/index.html",
         "application/reviewer-packet.html",
     ):
         contains(path, r"0\.143")
         contains(path, r"0\.191")
         contains(path, r"three")
+
+    for path in ("website/neuroscience-mobile/index.html", "communication/projects/neuroscience-mobile/index.html"):
+        contains(path, r"25–34%")
+        contains(path, r"three mice")
+        contains(path, r"0\.478")
+    print("OK phone tour tells the same story as the site")
 
     legacy_packet = text("application/reviewer-packet-v1.html")
     if re.search(r"one-mouse|one mouse|replication pending", legacy_packet, re.IGNORECASE):
@@ -123,7 +128,7 @@ def main() -> None:
 
     apk = ROOT / "communication/projects/neuroscience-mobile/releases/neuroscience-lab-debug.apk"
     digest = hashlib.sha256(apk.read_bytes()).hexdigest()
-    expected = "0549e522f492b8ea5c110554e780ca8027294e31a838b57921157774b8b5e3c1"
+    expected = (ROOT / "communication/projects/neuroscience-mobile/releases/SHA256.txt").read_text().split()[0]
     if digest != expected:
         raise SystemExit(f"APK SHA mismatch: {digest}")
     print(f"OK APK SHA-256 {digest}")

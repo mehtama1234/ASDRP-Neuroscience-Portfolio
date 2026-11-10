@@ -1,9 +1,9 @@
 {
-  "name": "Neuroscience Lab",
-  "short_name": "Neuro Lab",
+  "name": "From neurons to next steps",
+  "short_name": "Neurons to steps",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f6f7f4",
-  "theme_color": "#f6f7f4",
-  "description": "A mobile research explainer for the ASDRP neuroscience portfolio."
+  "background_color": "#F3ECE1",
+  "theme_color": "#F3ECE1",
+  "description": "The five chapters of From neurons to next steps, one phone screen at a time."
 }

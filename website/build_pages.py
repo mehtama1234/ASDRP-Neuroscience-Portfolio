@@ -15,7 +15,7 @@ def ic(name):
     return f'<span class="lm-icon" data-icon="{name}"></span>'
 
 
-def page(name, title, description, body):
+def page(name, title, description, body, base="", extra_js="", manifest=""):
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -24,26 +24,26 @@ def page(name, title, description, body):
   <meta name="theme-color" content="#F3ECE1" />
   <title>{title}</title>
   <meta name="description" content="{description}" />
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/base.css" />
-  <link rel="stylesheet" href="assets/experience.css" />
-  <link rel="stylesheet" href="assets/theme-atlas.css" />
-  <link rel="stylesheet" href="assets/styles.css" />
-  <link rel="stylesheet" href="assets/charts.css" />
+  {manifest}<link rel="icon" href="{base}assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="{base}assets/base.css" />
+  <link rel="stylesheet" href="{base}assets/experience.css" />
+  <link rel="stylesheet" href="{base}assets/theme-atlas.css" />
+  <link rel="stylesheet" href="{base}assets/styles.css" />
+  <link rel="stylesheet" href="{base}assets/charts.css" />
 </head>
 <body>
   <aside class="public-demo-banner" aria-label="About this portfolio">ASDRP application portfolio · Public data only · Every number comes from committed results</aside>
   <a class="skip-link" href="#app">Skip to the page</a>
   <header>
-    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">n.</span> From neurons to next steps</a>
+    <a class="brand" href="{base}index.html"><span class="mark" aria-hidden="true">n.</span> From neurons to next steps</a>
     <span class="header-status"><span class="badge">Public data only</span><span class="badge">Plans marked as plans</span></span>
     <a class="header-link" href="{REPO}">Source code</a>
   </header>
   <main id="app" tabindex="-1">
 {body}
   </main>
-  <script src="assets/icons.js"></script><script src="assets/icons-extra.js"></script><script src="assets/art.js"></script><script src="assets/science-art.js"></script>
-  <script src="assets/results.js"></script><script src="assets/charts.js"></script><script src="assets/site.js"></script>
+  <script src="{base}assets/icons.js"></script><script src="{base}assets/icons-extra.js"></script><script src="{base}assets/art.js"></script><script src="{base}assets/science-art.js"></script>
+  <script src="{base}assets/results.js"></script><script src="{base}assets/charts.js"></script><script src="{base}assets/site.js"></script>{extra_js}
 </body>
 </html>
 """
@@ -313,6 +313,77 @@ page("next.html", "Where this goes next · From neurons to next steps",
       <p class="lp-energy"><b>The rule we keep:</b> a plan stays labelled as a plan until it has code, saved results, a rerun record, its limits written down and a page like the two studies. <span>No paper, poster or result is listed as done before it is.</span></p>
       {nav(('tools.html', 'Chapter 4 · Design'), ('index.html', 'Back to the start'))}
     </section>""")
+
+# ---------------- the phone tour: the same five chapters, one screen at a time ----------------
+SITE = "https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/"
+TOUR = [
+    ("home", "Start", "home", "The loop", "From neurons to next steps", "At Pragnya’s outings and in schoolwork, the same instruction can land one moment and be lost the next. Does what a brain is doing change what it takes in? Five short screens follow that question from real life, into the lab, and back out again.",
+     '<div class="loop-figure"><div data-art="loopTall"></div></div>', "", "index.html"),
+    ("ch1", "Real life", "users", "Chapter 1 of 5 · Real life", "Same words, different moment.", "A step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself? To find out, look inside a brain while its state changes.",
+     '<div class="hj-art" data-art="note"></div>', "", "index.html#story"),
+    ("ch2", "Understand", "eye", "Chapter 2 of 5 · Understand", "A mouse’s state changes how its brain sees.", "Mice watched pictures while thousands of brain cells were recorded. Guesser A saw only the picture. Guesser B also knew how alert and active the mouse was.",
+     '<div class="hj-art" data-art="mouseStudy"></div>', '<b>Found:</b> knowing the mouse’s state made guesses 25–34% better, in all three mice.<div class="tour-nums"><p><b>25–34%</b><span>better guesses once state is known</span></p><p><b>3 of 3</b><span>mice show the gain</span></p></div>', "mouse.html"),
+    ("ch3", "Measure", "activity", "Chapter 3 of 5 · Measure", "Can sensors read state in a person?", "A cap of 14 sensors on one person’s head for two minutes (EEG). Can a simple model tell when their eyes are closed?",
+     '<div class="hj-art" data-art="eegStudy"></div>', '<b>Found:</b> on one stretch, often. Across the recording it drifted to no better than guessing.<div class="tour-nums"><p><b>0.625</b><span>on one stretch (0.5 is a coin flip)</span></p><p><b>0.478</b><span>across the recording: guessing</span></p></div>', "eeg.html"),
+    ("ch4", "Design", "heart-handshake", "Chapter 4 of 5 · Design", "From findings to features.", "State matters, but it cannot be read from outside. So the apps ask, not guess. They show less on a low-energy day, and make pausing and coming back easy.",
+     '<img src="{img}next-step-energy.jpg" alt="Next Step asks how much energy you have today: a little, some or plenty." style="width:100%;border:1px solid var(--line);border-radius:var(--radius-card)">', '<b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, for real jobs at Pragnya outings.', "tools.html"),
+    ("ch5", "Future", "flask", "Chapter 5 of 5 · Test, then go further", "Where this goes next.", "Four more data experiments, design studies with Pragnya volunteers and families, and papers others can check. Everything here is a plan, and labelled that way.",
+     '<div class="hj-art" data-art="plan"></div>', '<b>The aim:</b> one research direction, where neuroscience and design meet.', "next.html"),
+]
+TOUR_JS = """<script>
+(function(){
+  var ids = %s, screens = document.querySelectorAll('[data-screen]'), tabs = document.querySelectorAll('[data-go]');
+  function show(id){ if (ids.indexOf(id) < 0) id = 'home';
+    screens.forEach(function(s){ s.hidden = s.dataset.screen !== id; });
+    document.querySelectorAll('.experience-nav [data-go]').forEach(function(b){ if (b.dataset.go === id) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+    if (location.hash.slice(1) !== id) history.replaceState(null, '', '#' + id); window.scrollTo(0, 0); }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.go); }); });
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1)); });
+  show(location.hash.slice(1));
+})();
+</script>""" % str([t[0] for t in TOUR]).replace("'", '"')
+
+
+def tour(out, base, img):
+    screens = []
+    for i, (sid, tab, icon, eyebrow, title, sub, art, found, full) in enumerate(TOUR):
+        nxt = TOUR[i + 1] if i + 1 < len(TOUR) else TOUR[0]
+        go = f'<button class="button primary" type="button" data-go="{nxt[0]}">{"Start" if sid == "home" else ("Back to the start" if nxt[0] == "home" else "Next: " + nxt[1])} <span aria-hidden="true">→</span></button>'
+        screens.append(f"""    <section class="screen active landing tour" data-screen="{sid}" aria-labelledby="t-{sid}"{' hidden' if i else ''}>
+      <div class="hj-heading"><p class="eyebrow">{eyebrow}</p><h1 id="t-{sid}">{title}</h1><p class="hj-sub">{sub}</p></div>
+      {art.replace('{img}', img)}
+      {f'<section class="landing-problems answer"><p class="lp-energy">{found}</p></section>' if found and 'tour-nums' not in found else ''}
+      {f'<section class="landing-problems answer"><p class="lp-energy">{found.split("<div")[0]}</p></section><div' + found.split("<div", 1)[1] if 'tour-nums' in found else ''}
+      <div class="landing-actions">{go}<a class="button secondary" href="{SITE}{full}">{"Open the full site" if sid == "home" else "Read the full chapter"}</a></div>{'<p class="landing-try-note"><a href="download.html">Get it as an Android app</a> · or add this page to your home screen</p>' if sid == "home" else ''}
+    </section>""")
+    nav = '<nav class="experience-nav tour-nav" aria-label="Chapters">' + ''.join(f'<button type="button" data-go="{t[0]}"><span data-icon="{t[2]}" aria-hidden="true"></span>{t[1]}</button>' for t in TOUR if t[0] != 'ch1') + '</nav>'
+    page(out, "Phone tour · From neurons to next steps", "The five chapters of From neurons to next steps, one phone screen at a time.",
+         "\n".join(screens) + "\n    " + nav, base=base, extra_js=TOUR_JS,
+         manifest='<link rel="manifest" href="manifest.webmanifest" />\n  ')
+
+
+tour("neuroscience-mobile/index.html", "../", "../img/")
+
+
+def download(out, base, apk):
+    page(out, "Android app · From neurons to next steps", "The phone tour as an Android app, built from the same pages as the website.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'Back to the phone tour'), 'The phone tour · Android', '<span id="page-title">The same five chapters, as an Android app.</span>', 'The app is built straight from the phone tour on this website, so the words, numbers and pictures are the same. It is a test build for reviewers, not a store release.', 'loopTall')}
+      <div class="landing-actions"><a class="button primary" href="{apk}" download>Download the Android app <span aria-hidden="true">→</span></a><a class="button secondary" href="index.html">Use it in the browser instead</a></div>
+      <section class="landing-more" aria-labelledby="dl-title">
+        <h2 class="landing-subhead" id="dl-title">Before you install</h2>
+        {grid([
+            ('route-2', 'Step 1', 'Download the file', 'Tap the button above on an Android phone. The file ends in .apk.'),
+            ('shield-check', 'Step 2', 'Allow this one install', 'Android asks before installing apps from outside the store. Say yes for this file only.'),
+            ('code', 'Check it', 'Same file as the code', 'Every new tour is built by GitHub from the repository. Its fingerprint (SHA-256) is in <a href="{REPO}/blob/main/communication/projects/neuroscience-mobile/releases/SHA256.txt">SHA256.txt</a>.'),
+        ])}
+      </section>
+      <div class="landing-facts"><div class="landing-fact landing-fact-not"><h2>What it is not</h2><p>It does not collect anything, does not need an account and does not diagnose anyone. It explains the research, one screen at a time.</p></div><div class="landing-fact"><h2>iPhone and iPad</h2><p>Open the <a href="index.html">phone tour</a> in Safari and choose Share, then Add to Home Screen. It works the same way.</p></div></div>
+    </section>""", base=base)
+
+
+download("neuroscience-mobile/download.html", "../", "../neuroscience-lab-debug.apk")
+download("../communication/projects/neuroscience-mobile/download.html", "../../../website/", "releases/neuroscience-lab-debug.apk")
+tour("../communication/projects/neuroscience-mobile/index.html", "../../../website/", "../../../website/img/")
 
 # ---------------- old addresses keep working ----------------
 REDIRECTS = {
