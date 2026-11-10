@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#F3ECE1" />
-  <title>EEG eye state · Brain & Behaviour</title>
+  <title>EEG eye state · From neurons to next steps</title>
   <meta name="description" content="Chapter 3: a simple model reads eye state from one person’s EEG on one stretch of time, but not reliably across the recording, because the signal drifts." />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/base.css" />
@@ -17,13 +17,13 @@
   <aside class="public-demo-banner" aria-label="About this portfolio">ASDRP application portfolio · Public data only · Every number comes from committed results</aside>
   <a class="skip-link" href="#app">Skip to the page</a>
   <header>
-    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">b.</span> Brain &amp; Behaviour</a>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">n.</span> From neurons to next steps</a>
     <span class="header-status"><span class="badge">Public data only</span><span class="badge">Plans marked as plans</span></span>
     <a class="header-link" href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio">Source code</a>
   </header>
   <main id="app" tabindex="-1">
     <section class="screen active landing" aria-labelledby="page-title">
-    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 3 · From the outside · EEG study</p><h1><span id="page-title">Can a sensor on the head tell when someone’s eyes are closed?</span></h1><p class="hj-sub">Eyes closed is one of the clearest changes in brain waves. If a simple model cannot read it reliably over two minutes, quieter states like tiredness will be harder still.</p></div><div class="hj-art" data-art="eegHero"></div></div>
+    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 3 · Measure · EEG study</p><h1><span id="page-title">Can a sensor on the head tell when someone’s eyes are closed?</span></h1><p class="hj-sub">Eyes closed is one of the clearest changes in brain waves. If a simple model cannot read it reliably over two minutes, quieter states like tiredness will be harder still.</p></div><div class="hj-art" data-art="eegHero"></div></div>
       <section class="landing-problems answer"><p class="lp-energy"><b>On one stretch, yes. Over time, no.</b> The model scored 0.625 on the last part of the recording, and 0.728 once four glitch samples were limited. Tested block by block across the recording, it averaged 0.478, about a coin flip. <span>Giving it the last few moments of signal did not help.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
@@ -45,8 +45,8 @@
         <div class="landing-fact"><h2>Rerun it</h2><p><code>python3 projects/eeg-eye-state/src/analyze.py</code> writes <code>results/metrics.json</code>, and <code>python3 website/build_results.py</code> turns it into these charts. See the <a href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio/blob/main/projects/eeg-eye-state/report.md">full report</a>. Data: Roesler, O. (2013). <i>EEG Eye State</i>. UCI Machine Learning Repository, doi:10.24432/C57G7J.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>One person and one short recording cannot show how this works for other people. The label is eyes open or closed, not attention, alertness or any condition.</p></div>
       </div>
-      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What chapter 3 tells us:</b> a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the tools do not try to guess. <a href="tools.html">Chapter 4 →</a></p></section>
-      <p class="landing-note"><a href="mouse.html">← Chapter 2 · Mouse</a><a href="tools.html">Chapter 4 · Tools →</a><a href="index.html">All chapters</a></p>
+      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What chapter 3 tells us:</b> a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the apps ask the person instead of guessing. <a href="tools.html">Chapter 4 →</a></p></section>
+      <p class="landing-note"><a href="mouse.html">← Chapter 2 · Mouse</a><a href="tools.html">Chapter 4 · Design →</a><a href="index.html">All chapters</a></p>
     </section>
   </main>
   <script src="assets/icons.js"></script><script src="assets/icons-extra.js"></script><script src="assets/art.js"></script><script src="assets/science-art.js"></script>

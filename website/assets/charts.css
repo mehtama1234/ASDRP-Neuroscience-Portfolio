@@ -24,7 +24,7 @@
 main a.button.primary,main a.button.secondary{display:inline-flex;align-items:center;gap:8px;min-height:56px;padding:12px 24px;font-size:1rem;font-weight:700;border-radius:var(--radius-control);border:1.5px solid transparent;text-decoration:none}
 main a.button.secondary{border-color:var(--field)}
 .landing-parts a span[data-icon],.landing-voice a span[data-icon]{display:contents}
-.ph-bar span::before{content:"b."}
+.ph-bar span::before{content:"n."}
 .landing>.landing-subhead{margin-top:40px}
 .landing-problems.answer{margin:8px 0 0}
 .landing-problems.answer .lp-energy{margin:0}
@@ -32,3 +32,4 @@ main a.button.secondary{border-color:var(--field)}
 .landing-problems.answer.bridge{margin:36px 0 0}.landing-problems.answer.bridge a{white-space:nowrap;font-weight:700}
 @media(min-width:1100px){#story ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#story li{padding:14px 15px 16px}}@media(min-width:981px) and (max-width:1099px){#story ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .landing-problems.answer.bridge a{color:var(--peach)}.landing-problems.answer.bridge+.landing-note{margin-top:18px}
+#rules .lp-pain b{color:var(--ink)}

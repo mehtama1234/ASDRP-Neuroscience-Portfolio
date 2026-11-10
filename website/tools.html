@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#F3ECE1" />
-  <title>Tools for people · Brain & Behaviour</title>
-  <meta name="description" content="Chapter 4: rather than guess someone’s state, Next Step and Helper Jobs make every step work in any state." />
+  <title>Design · From neurons to next steps</title>
+  <meta name="description" content="Chapter 4: what the two studies found, the design rule each finding gives, and where that rule lives in Next Step and Helper Jobs." />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/base.css" />
   <link rel="stylesheet" href="assets/experience.css" />
@@ -17,33 +17,43 @@
   <aside class="public-demo-banner" aria-label="About this portfolio">ASDRP application portfolio · Public data only · Every number comes from committed results</aside>
   <a class="skip-link" href="#app">Skip to the page</a>
   <header>
-    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">b.</span> Brain &amp; Behaviour</a>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">n.</span> From neurons to next steps</a>
     <span class="header-status"><span class="badge">Public data only</span><span class="badge">Plans marked as plans</span></span>
     <a class="header-link" href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio">Source code</a>
   </header>
   <main id="app" tabindex="-1">
     <section class="screen active landing" aria-labelledby="page-title">
-    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 4 · Into design · Tools</p><h1><span id="page-title">Don’t guess someone’s state. Make every step work in any state.</span></h1><p class="hj-sub">Chapter 2 showed that state changes what gets through. Chapter 3 showed that reading it from outside is unreliable. So these apps keep each step small, say it aloud, and make it easy to stop and come back. Nothing happens until the person taps.</p></div><div class="hj-art" data-art="tablets"></div></div>
-      <section class="landing-problems two" aria-labelledby="apps-title">
-        <h2 class="landing-subhead" id="apps-title">Two working apps</h2>
-        <p class="lp-lead">Both follow the same rules: one step on the screen, big type, a picture, read aloud, and only made-up people in the examples.</p>
-        <ol aria-label="Two apps" tabindex="0">
-          <li><p class="lp-k">By Amishi Mehta</p><h3>Next Step</h3><p class="lp-pain">For anyone who finds long instructions, interruptions or explaining their needs hard. Made with neurodivergent young people in mind.</p><p class="lp-fix"><b>What it does:</b> turns a long brief into one next step, practises words for asking for help, and keeps a note of where to restart. <a href="https://mehtama1234.github.io/neuro-divergent/">Open Next Step →</a></p></li>
-          <li><p class="lp-k">Family project for Pragnya</p><h3>Helper Jobs</h3><p class="lp-pain">Gives neurodivergent adults a real job at kids’ Sunday outings, with a volunteer always close by.</p><p class="lp-fix"><b>What it does:</b> picture steps read aloud in English, Hindi or Spanish, and Help that reaches the lead’s phone in about a second. <a href="https://helper-jobs.onrender.com">Open Helper Jobs →</a></p></li>
+    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 4 · Design · Human–computer interaction</p><h1><span id="page-title">From findings to features.</span></h1><p class="hj-sub">Chapter 2 showed that a brain’s state changes what gets through. Chapter 3 showed that state is hard to read from outside. Each finding became a design rule, and each rule is a real feature in two apps people use.</p></div><div class="hj-art" data-art="tablets"></div></div>
+      <section class="landing-problems" id="rules" aria-labelledby="rules-title">
+        <h2 class="landing-subhead" id="rules-title">Four findings, four design rules</h2>
+        <p class="lp-lead">Read each card top to bottom: what we found, the rule it gives, and where the rule lives.</p>
+        <ol aria-label="Findings, rules and features" tabindex="0">
+          <li><p class="lp-k">From chapter 2</p><h3>Show less when energy is low.</h3><p class="lp-pain"><b>Found:</b> the same picture lands differently depending on the brain’s state.</p><p class="lp-fix"><b>In the apps:</b> Next Step asks “How much energy do you have today?” On “A little”, it shows just the next step. Helper Jobs shows one picture step at a time, read aloud.</p></li>
+          <li><p class="lp-k">From chapter 3</p><h3>Ask, don’t guess.</h3><p class="lp-pain"><b>Found:</b> a sensor read eye state on one stretch, then drifted to a coin flip.</p><p class="lp-fix"><b>In the apps:</b> the person tells the app how they are doing. The energy check is optional, Help is a button they press, and nothing happens until they tap.</p></li>
+          <li><p class="lp-k">From chapter 3</p><h3>Expect change halfway through.</h3><p class="lp-pain"><b>Found:</b> within two minutes, the link between signal and state shifted.</p><p class="lp-fix"><b>In the apps:</b> Next Step has Save &amp; pause, a note of where you stopped, and “Pick up where you left off”. Helper Jobs reminds helpers to take breaks.</p></li>
+          <li><p class="lp-k">From real life</p><h3>When stuck, make it smaller.</h3><p class="lp-pain"><b>Seen:</b> a task that is too big all at once is where people stop.</p><p class="lp-fix"><b>In the apps:</b> Next Step’s “I’m stuck” offers to make the step smaller, ask a question or take a break. Nothing is sent, and your place is kept.</p></li>
         </ol>
       </section>
-      <h2 class="landing-subhead">The apps</h2><p class="landing-demo-note">Real screens from both apps.</p>
+      <h2 class="landing-subhead">The rules, on real screens</h2><p class="landing-demo-note">Screens from the working apps, with made-up examples.</p>
       <ol class="landing-demo" aria-label="App screens" tabindex="0">
-        <li><img src="img/next-step-wide.jpg" alt="Next Step home page: plan your work, say what you need, and connect safely." loading="lazy" style="width:100%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>Next Step</strong><span>Plan your work, say what you need, and connect safely.</span></li>
-        <li><img src="img/helper-jobs-wide.jpg" alt="Helper Jobs home page: a real job at Sunday outings." loading="lazy" style="width:100%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>Helper Jobs</strong><span>Pick your picture, pick a job, one step at a time.</span></li>
-        <li><img src="img/helper-jobs-phone.jpg" alt="A Helper Jobs step with a real photo of the place." loading="lazy" style="width:62%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>One picture step</strong><span>A few words, a picture of the real place, and Read aloud.</span></li>
+        <li><img src="img/next-step-energy.jpg" alt="Next Step asks how much energy you have today: a little, some or plenty. A little shows just the next step." loading="lazy" style="width:78%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>Show less when energy is low</strong><span>The person picks their energy; the plan shrinks to one step.</span></li>
+        <li><img src="img/next-step-stuck.jpg" alt="Next Step step screen with Save and pause, a note for where I paused, and I’m stuck options: make it smaller, ask a question, see how others began, take a break." loading="lazy" style="width:78%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>Pause, and make it smaller</strong><span>Save &amp; pause keeps your place; “I’m stuck” shrinks the step.</span></li>
+        <li><img src="img/helper-jobs-phone.jpg" alt="A Helper Jobs step with a real photo of the place, a few words and Read aloud." loading="lazy" style="width:62%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>One picture step, read aloud</strong><span>A few words, a photo of the real place, and a Help button.</span></li>
       </ol>
+      <section class="landing-problems two" aria-labelledby="apps-title">
+        <h2 class="landing-subhead" id="apps-title">Two apps, real-world help</h2>
+        <p class="lp-lead">Both follow the same rules: one step on the screen, big type, a picture, read aloud, and only made-up people in the examples.</p>
+        <ol aria-label="Two apps" tabindex="0">
+          <li><p class="lp-k">By Amishi Mehta · for schoolwork</p><h3>Next Step</h3><p class="lp-pain">For young people who find long instructions, interruptions or explaining their needs hard. Made with neurodivergent students in mind.</p><p class="lp-fix"><b>What it does:</b> turns a long assignment into one next step, practises words for asking for help, and keeps a note of where to restart. <a href="https://mehtama1234.github.io/neuro-divergent/">Open Next Step →</a></p></li>
+          <li><p class="lp-k">Family project · for Pragnya outings</p><h3>Helper Jobs</h3><p class="lp-pain">Gives neurodivergent adults a real job at kids’ Sunday outings, with a volunteer always close by.</p><p class="lp-fix"><b>What it does:</b> picture steps read aloud in English, Hindi or Spanish, break reminders, and Help that reaches the lead’s phone in about a second. <a href="https://helper-jobs.onrender.com">Open Helper Jobs →</a></p></li>
+        </ol>
+      </section>
       <div class="landing-facts">
-        <div class="landing-fact"><h2>The story on a phone</h2><p>The <a href="neuroscience-mobile/">phone tour</a> tells the same five chapters, one screen at a time, in the same design as the apps.</p></div>
-        <div class="landing-fact landing-fact-not"><h2>Careful claims</h2><p>These are early test versions with made-up people in every example. They have not been tested in a formal study, and they do not diagnose or treat anything. A usability study is planned as experiment 5.</p></div>
+        <div class="landing-fact"><h2>The loop on a phone</h2><p>The <a href="neuroscience-mobile/">phone tour</a> tells the same five chapters, one screen at a time, in the same design as the apps.</p></div>
+        <div class="landing-fact landing-fact-not"><h2>Careful claims</h2><p>The studies suggest these rules; they do not prove the apps work. These are early test versions with made-up people in every example, not tested in a formal study, and they do not diagnose or treat anything.</p></div>
       </div>
-      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What we still don’t know:</b> whether these designs actually help the people they are for. That is the last of the five experiments. <a href="next.html">Chapter 5 →</a></p></section>
-      <p class="landing-note"><a href="eeg.html">← Chapter 3 · EEG</a><a href="next.html">Chapter 5 · Next →</a><a href="index.html">All chapters</a></p>
+      <section class="landing-problems answer bridge"><p class="lp-energy"><b>Closing the loop:</b> do these designs actually help the people they are for? That is where the research goes next. <a href="next.html">Chapter 5 →</a></p></section>
+      <p class="landing-note"><a href="eeg.html">← Chapter 3 · EEG</a><a href="next.html">Chapter 5 · What’s next →</a><a href="index.html">All chapters</a></p>
     </section>
   </main>
   <script src="assets/icons.js"></script><script src="assets/icons-extra.js"></script><script src="assets/art.js"></script><script src="assets/science-art.js"></script>
