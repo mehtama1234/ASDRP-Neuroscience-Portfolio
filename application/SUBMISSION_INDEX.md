@@ -50,6 +50,7 @@ rendered site assets are in `website/`, source reports and demos are in
 - [Release verification record](RELEASE_VERIFICATION.md)
 - [Submission sprint tracker](SUBMISSION_SPRINT.md)
 - [Research expansion goal](RESEARCH_EXPANSION_GOAL.md)
+- [Five-experiment end-to-end goal](FIVE_EXPERIMENT_END_TO_END_GOAL.md)
 
 ## Not yet submission-complete
 
