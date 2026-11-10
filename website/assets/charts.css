@@ -29,3 +29,6 @@ main a.button.secondary{border-color:var(--field)}
 .landing-problems.answer{margin:8px 0 0}
 .landing-problems.answer .lp-energy{margin:0}
 .landing-problems.two .lp-lead::after{content:' Swipe to see both.'}
+.landing-problems.answer.bridge{margin:36px 0 0}.landing-problems.answer.bridge a{white-space:nowrap;font-weight:700}
+@media(min-width:1100px){#story ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#story li{padding:14px 15px 16px}}@media(min-width:981px) and (max-width:1099px){#story ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.landing-problems.answer.bridge a{color:var(--peach)}.landing-problems.answer.bridge+.landing-note{margin-top:18px}

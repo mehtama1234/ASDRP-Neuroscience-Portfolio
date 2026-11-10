@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#F3ECE1" />
   <title>EEG eye state · Brain & Behaviour</title>
-  <meta name="description" content="A simple model reads eye state from one EEG recording on a single test block, but not reliably across time: the signal drifts." />
+  <meta name="description" content="Chapter 3: a simple model reads eye state from one person’s EEG on one stretch of time, but not reliably across the recording, because the signal drifts." />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/base.css" />
   <link rel="stylesheet" href="assets/experience.css" />
@@ -23,8 +23,8 @@
   </header>
   <main id="app" tabindex="-1">
     <section class="screen active landing" aria-labelledby="page-title">
-    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All studies</span></a><p class="eyebrow">Study 2 · EEG eye state · Done</p><h1><span id="page-title">Can brain waves tell when your eyes are closed?</span></h1><p class="hj-sub">And does giving the model the last few moments of signal help it decide?</p></div><div class="hj-art" data-art="eegHero"></div></div>
-      <section class="landing-problems answer"><p class="lp-energy"><b>The answer: sometimes, but not reliably over time.</b> The model scored 0.625 on the last part of the recording, 0.728 once four glitch samples were limited, yet across five blocks in time it was close to a coin flip. <span>Recent history did not help.</span></p></section>
+    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 3 · From the outside · EEG study</p><h1><span id="page-title">Can a sensor on the head tell when someone’s eyes are closed?</span></h1><p class="hj-sub">Eyes closed is one of the clearest changes in brain waves. If a simple model cannot read it reliably over two minutes, quieter states like tiredness will be harder still.</p></div><div class="hj-art" data-art="eegHero"></div></div>
+      <section class="landing-problems answer"><p class="lp-energy"><b>On one stretch, yes. Over time, no.</b> The model scored 0.625 on the last part of the recording, and 0.728 once four glitch samples were limited. Tested block by block across the recording, it averaged 0.478, about a coin flip. <span>Giving it the last few moments of signal did not help.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">Always train on the past, and test on the future.</p></div><div class="hj-art" data-art="eegStudy"></div></div>
@@ -45,7 +45,8 @@
         <div class="landing-fact"><h2>Rerun it</h2><p><code>python3 projects/eeg-eye-state/src/analyze.py</code> writes <code>results/metrics.json</code>, and <code>python3 website/build_results.py</code> turns it into these charts. See the <a href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio/blob/main/projects/eeg-eye-state/report.md">full report</a>. Data: Roesler, O. (2013). <i>EEG Eye State</i>. UCI Machine Learning Repository, doi:10.24432/C57G7J.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>One person and one short recording cannot show how this works for other people. The label is eyes open or closed, not attention, alertness or any condition.</p></div>
       </div>
-      <p class="landing-note"><a href="mouse.html">← Mouse study</a><a href="tools.html">Tools for people →</a><a href="index.html">All studies</a></p>
+      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What chapter 3 tells us:</b> a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the tools do not try to guess. <a href="tools.html">Chapter 4 →</a></p></section>
+      <p class="landing-note"><a href="mouse.html">← Chapter 2 · Mouse</a><a href="tools.html">Chapter 4 · Tools →</a><a href="index.html">All chapters</a></p>
     </section>
   </main>
   <script src="assets/icons.js"></script><script src="assets/icons-extra.js"></script><script src="assets/art.js"></script><script src="assets/science-art.js"></script>

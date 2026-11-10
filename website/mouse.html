@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#F3ECE1" />
   <title>Mouse visual cortex · Brain & Behaviour</title>
-  <meta name="description" content="Adding pupil size and running speed improved held-out prediction of mouse visual cortex in all three mice tested." />
+  <meta name="description" content="Chapter 2: knowing a mouse’s pupil size and running speed made its visual cortex 25–34% easier to predict, in all three mice." />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/base.css" />
   <link rel="stylesheet" href="assets/experience.css" />
@@ -23,8 +23,8 @@
   </header>
   <main id="app" tabindex="-1">
     <section class="screen active landing" aria-labelledby="page-title">
-    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All studies</span></a><p class="eyebrow">Study 1 · Mouse visual cortex · Done</p><h1><span id="page-title">Does knowing what a mouse is doing help predict what its brain sees?</span></h1><p class="hj-sub">A model that sees only the picture, against one that also knows the mouse’s pupil size and running speed.</p></div><div class="hj-art" data-art="mouseHero"></div></div>
-      <section class="landing-problems answer"><p class="lp-energy"><b>The answer: yes, in all three mice.</b> Adding pupil and running raised held-out prediction by +0.032 to +0.049, about 25–34% more than the picture alone. <span>This is prediction, not proof of cause.</span></p></section>
+    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 2 · Inside a brain · Mouse study</p><h1><span id="page-title">Does a mouse’s state change what its visual cortex does?</span></h1><p class="hj-sub">We predicted thousands of neurons from the picture a mouse saw, then again with its pupil size and running speed added. If state did not matter, the extra information would add nothing.</p></div><div class="hj-art" data-art="mouseHero"></div></div>
+      <section class="landing-problems answer"><p class="lp-energy"><b>It mattered, in all three mice.</b> With pupil and running added, prediction on unseen pictures rose by +0.032 to +0.049, a quarter to a third better than the picture alone. <span>A better prediction shows a link, not a cause.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">The same steps for every mouse, scored on images the model never saw.</p></div><div class="hj-art" data-art="mouseStudy"></div></div>
@@ -32,7 +32,7 @@
       </section>
 
       <h2 class="landing-subhead">The results</h2>
-      <div class="chart-card"><div data-chart="mouse-scores"></div><div><p class="lm-k">Result</p><h3>Every mouse is predicted better with behaviour.</h3><p>The picture alone explains part of what visual cortex does. Knowing whether the mouse is alert and running explains more, in all three animals.</p><p class="chart-note">Mean held-out Pearson correlation across neurons, Sensorium 2022 official test images.</p></div></div>
+      <div class="chart-card"><div data-chart="mouse-scores"></div><div><p class="lm-k">Result</p><h3>Every mouse is easier to predict once we know its state.</h3><p>The picture explains part of what visual cortex does. Whether the mouse is alert and moving explains more, in every animal.</p><p class="chart-note">Mean held-out Pearson correlation across neurons, Sensorium 2022 official test images.</p></div></div>
       <div class="chart-card"><div data-chart="mouse-gain"></div><div><p class="lm-k">Gain</p><h3>The size of the gain differs by mouse.</h3><p>Pupil size helps all three animals. How much running adds changes from mouse to mouse, so each animal is reported on its own.</p><p class="chart-note">Gain = score with behaviour minus score with the picture only.</p></div></div>
 
       <section class="landing-more" aria-labelledby="checks-title" id="checks">
@@ -45,7 +45,8 @@
         <div class="landing-fact"><h2>Code and data</h2><p>The analysis is in <a href="https://github.com/AmishI123/neuroscience-project">AmishI123/neuroscience-project</a> (notebooks 01–05 and <code>src/summarize_replication.py</code>). The numbers here are copied from its committed summary into <code>website/build_results.py</code>. Data: Willeke et al. (2022), <i>The Sensorium competition on predicting large-scale mouse primary visual cortex activity</i>, arXiv:2206.08666.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>Three mice cannot speak for all mice. A better prediction does not show that arousal or running cause the change. The report’s intervals are within each animal, not for the whole population.</p></div>
       </div>
-      <p class="landing-note"><a href="index.html">← All studies</a><a href="eeg.html">EEG study →</a></p>
+      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What chapter 2 tells us:</b> the same picture lands differently depending on the state the mouse is in. So the next question is whether that state can be read from outside the head, in a person. <a href="eeg.html">Chapter 3 →</a></p></section>
+      <p class="landing-note"><a href="index.html">← All chapters</a><a href="eeg.html">Chapter 3 · EEG →</a></p>
     </section>
   </main>
   <script src="assets/icons.js"></script><script src="assets/icons-extra.js"></script><script src="assets/art.js"></script><script src="assets/science-art.js"></script>

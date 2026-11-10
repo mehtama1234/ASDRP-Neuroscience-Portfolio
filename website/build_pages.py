@@ -66,58 +66,63 @@ def phone(app, kicker, title, middle, cap, sub):
     return f'<li><div class="phone" aria-hidden="true"><div class="ph-bar"><span>{app}</span><em class="ph-picture-tag">Result</em></div><div class="ph-body"><p class="ph-k">{kicker}</p><p class="ph-title">{title}</p>{middle}</div></div><strong>{cap}</strong><span>{sub}</span></li>'
 
 
+def bridge(label, text, href, link):
+    return f'<section class="landing-problems answer bridge"><p class="lp-energy"><b>{label}</b> {text} <a href="{href}">{link} →</a></p></section>'
+
+
 def nav(prev, nxt):
-    home = '' if 'index.html' in (prev[0], nxt[0]) else '<a href="index.html">All studies</a>'
+    home = '' if 'index.html' in (prev[0], nxt[0]) else '<a href="index.html">All chapters</a>'
     return f'<p class="landing-note"><a href="{prev[0]}">← {prev[1]}</a><a href="{nxt[0]}">{nxt[1]} →</a>{home}</p>'
 
 
 # ---------------- landing ----------------
 LANDING_ART = """<svg class="landing-art" viewBox="0 0 440 400" aria-hidden="true" focusable="false">
           <path class="la-line" d="M210 96 C 228 100, 222 120, 236 122"/><path class="la-line" d="M318 170 C 300 214, 250 204, 214 232"/><path class="la-line" d="M216 304 C 226 304, 228 302, 238 302"/>
-          <g class="la-card" transform="translate(14 18) rotate(-2)"><rect width="196" height="104"/><rect class="la-top" width="196" height="5"/><text class="la-kick" x="14" y="26">1 · THE QUESTION</text><text class="la-title" x="14" y="56">Does state matter?</text><text class="la-small" x="14" y="80">What a brain is doing, and</text><text class="la-small" x="14" y="94">what it takes in</text></g>
-          <g class="la-card" transform="translate(234 66) rotate(2)"><rect width="192" height="104"/><text class="la-kick" x="14" y="24">2 · MOUSE STUDY</text><text class="la-title" x="14" y="52">Picture + behaviour</text><rect class="la-note" x="14" y="64" width="164" height="28"/><text class="la-k2" x="24" y="82">BETTER IN ALL 3 MICE</text></g>
-          <g class="la-card la-ink" transform="translate(18 214) rotate(1.5)"><rect width="196" height="116"/><text class="la-kick" x="14" y="24">3 · EEG STUDY</text><text class="la-title" x="14" y="52">Eyes closed?</text><text class="la-k2" x="14" y="74">5 BLOCKS IN TIME</text><text class="la-body" x="14" y="94">The signal drifts.</text></g>
-          <g class="la-card" transform="translate(238 236) rotate(-2)"><rect width="190" height="132"/><text class="la-kick" x="14" y="24">4 · FOR PEOPLE</text><circle cx="30" cy="54" r="14"/><path class="la-tick" d="M24.5 54l3.5 3.5 7-7"/><text class="la-title" x="52" y="60">One clear step</text><rect class="la-pill" x="14" y="88" width="72" height="22" rx="11"/><text class="la-pt" x="50" y="103" text-anchor="middle">Next Step</text><rect class="la-pill" x="92" y="88" width="82" height="22" rx="11"/><text class="la-pt" x="133" y="103" text-anchor="middle">Helper Jobs</text></g>
+          <g class="la-card" transform="translate(14 18) rotate(-2)"><rect width="196" height="104"/><rect class="la-top" width="196" height="5"/><text class="la-kick" x="14" y="26">1 · THE PUZZLE</text><text class="la-title" x="14" y="56">Does state matter?</text><text class="la-small" x="14" y="80">Same words, but they land</text><text class="la-small" x="14" y="94">one moment and not the next</text></g>
+          <g class="la-card" transform="translate(234 66) rotate(2)"><rect width="192" height="104"/><text class="la-kick" x="14" y="24">2 · INSIDE A BRAIN</text><text class="la-title" x="14" y="52">Picture + behaviour</text><rect class="la-note" x="14" y="64" width="164" height="28"/><text class="la-k2" x="24" y="82">BETTER IN ALL 3 MICE</text></g>
+          <g class="la-card la-ink" transform="translate(18 214) rotate(1.5)"><rect width="196" height="116"/><text class="la-kick" x="14" y="24">3 · FROM THE OUTSIDE</text><text class="la-title" x="14" y="52">Eyes closed?</text><text class="la-k2" x="14" y="74">5 BLOCKS IN TIME</text><text class="la-body" x="14" y="94">The signal drifts.</text></g>
+          <g class="la-card" transform="translate(238 236) rotate(-2)"><rect width="190" height="132"/><text class="la-kick" x="14" y="24">4 · INTO DESIGN</text><circle cx="30" cy="54" r="14"/><path class="la-tick" d="M24.5 54l3.5 3.5 7-7"/><text class="la-title" x="52" y="60">One clear step</text><rect class="la-pill" x="14" y="88" width="72" height="22" rx="11"/><text class="la-pt" x="50" y="103" text-anchor="middle">Next Step</text><rect class="la-pill" x="92" y="88" width="82" height="22" rx="11"/><text class="la-pt" x="133" y="103" text-anchor="middle">Helper Jobs</text></g>
         </svg>"""
 
 page("index.html", "Brain & Behaviour · an ASDRP neuroscience portfolio",
-     "Two neuroscience studies on how a brain’s state changes what it takes in, the checks behind each result, and tools that make each step clear.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
+     "One question followed from a mouse’s visual cortex, to a person’s brain waves, to two apps: does what a brain is doing change what it takes in?", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
       <div class="landing-hero">
         <div class="landing-hero-text">
-          <p class="landing-kicker">What this is</p>
+          <p class="landing-kicker">A neuroscience portfolio in five chapters</p>
           <h1 id="home-title">Does what a brain is doing change what it takes in?</h1>
-          <p class="landing-lede">Two studies with public brain recordings: a mouse watching pictures, and a person opening and closing their eyes. Each result is tested on data kept aside, then checked against a control that could break it.</p>
+          <p class="landing-lede">The same instruction can land one moment and be lost the next. We wanted to know how much of that is the brain itself. So we asked two public brain recordings, tested every answer on data the model had never seen, tried hard to break it, and then built tools around what held up.</p>
           <div class="landing-actions">
-            <a class="button primary" href="mouse.html">The mouse study <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="eeg.html">The EEG study</a>
+            <a class="button primary" href="#story">Read the story <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="mouse.html">Start with the mouse study</a>
           </div>
-          <p class="landing-try-note">Public data only. Prediction is not cause. Plans are marked as plans.</p>
+          <p class="landing-try-note">Public data only. A prediction is not a cause. Plans are marked as plans.</p>
           <ul class="landing-parts" aria-label="What makes it work">
-            <li><a href="mouse.html"><span data-icon="eye"></span><b>Mouse visual cortex</b><small>Pupil and running help predict it</small></a></li>
-            <li><a href="eeg.html"><span data-icon="activity"></span><b>EEG eye state</b><small>Good once, then it drifts</small></a></li>
-            <li><a href="#checks"><span data-icon="arrows-shuffle"></span><b>Every result checked</b><small>Shuffles, time gaps, one left out</small></a></li>
-            <li><a href="tools.html"><span data-icon="heart-handshake"></span><b>Tools for people</b><small>Next Step and Helper Jobs</small></a></li>
+            <li><a href="mouse.html"><span data-icon="eye"></span><b>Mouse visual cortex</b><small>State changes what it does</small></a></li>
+            <li><a href="eeg.html"><span data-icon="activity"></span><b>EEG eye state</b><small>Readable once, then it drifts</small></a></li>
+            <li><a href="#checks"><span data-icon="arrows-shuffle"></span><b>Every result checked</b><small>Each one tested to break it</small></a></li>
+            <li><a href="tools.html"><span data-icon="heart-handshake"></span><b>Tools for people</b><small>One clear step, in any state</small></a></li>
           </ul>
-          <p class="landing-voice"><a href="next.html"><span data-icon="flask"></span>Five next experiments, each with the same steps.</a></p>
+          <p class="landing-voice"><a href="next.html"><span data-icon="flask"></span>Chapter 5: five experiments, one for each link in the story.</a></p>
         </div>
         {LANDING_ART}
       </div>
 
-      <section class="landing-problems" aria-labelledby="landing-problems-title">
-        <h2 class="landing-subhead" id="landing-problems-title">Two studies, two tools</h2>
-        <p class="lp-lead">Each starts with a question we could be wrong about, and ends with something a person can read, check or use.</p>
-        <ol aria-label="Studies and tools" tabindex="0">
-          <li><p class="lp-k">Study 1 · Done</p><h3>Does knowing what a mouse is doing help predict its visual cortex?</h3><p class="lp-pain">A model that sees only the picture, against one that also knows pupil size and running speed. Three mice, one held-out test.</p><p class="lp-fix"><b>Result:</b> better in all three mice, by +0.032 to +0.049. <a href="mouse.html">Open the study →</a></p></li>
-          <li><p class="lp-k">Study 2 · Done</p><h3>Can brain waves tell when eyes are closed?</h3><p class="lp-pain">One person, 14 EEG channels, 117 seconds. Always trained on the past and tested on the future.</p><p class="lp-fix"><b>Result:</b> 0.625 on the last block (0.728 without four glitches), but near a coin flip across time. <a href="eeg.html">Open the study →</a></p></li>
-          <li><p class="lp-k">Tool · by Amishi Mehta</p><h3>Next Step</h3><p class="lp-pain">Long instructions, interruptions and explaining your needs are hard for many neurodivergent young people.</p><p class="lp-fix"><b>Next Step:</b> one next step, words to ask for help, and a note of where to restart. <a href="tools.html">See the tools →</a></p></li>
-          <li><p class="lp-k">Tool · family project</p><h3>Helper Jobs</h3><p class="lp-pain">At Pragnya’s Sunday outings, “help out” is not a job, and spoken instructions are hard to hold on to.</p><p class="lp-fix"><b>Helper Jobs:</b> a real job in picture steps, with a volunteer close by. <a href="tools.html">See the tools →</a></p></li>
+      <section class="landing-problems" id="story" aria-labelledby="landing-problems-title">
+        <h2 class="landing-subhead" id="landing-problems-title">The story, one chapter at a time</h2>
+        <p class="lp-lead">Each chapter answers the question the last one raised.</p>
+        <ol aria-label="Five chapters" tabindex="0">
+          <li><p class="lp-k">1 · The puzzle</p><h3>Same words, different moment.</h3><p class="lp-pain">A step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself changing what it takes in?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
+          <li><p class="lp-k">2 · Inside a brain</p><h3>A mouse’s state shapes what its visual cortex does.</h3><p class="lp-pain">Thousands of neurons, recorded while mice watched pictures. We predicted each neuron from the picture alone, then from the picture plus pupil size and running.</p><p class="lp-fix"><b>Found:</b> knowing the mouse’s state made prediction 25–34% better, in all three mice. <a href="mouse.html">Read chapter 2 →</a></p></li>
+          <li><p class="lp-k">3 · From the outside</p><h3>Can a sensor read state in a person?</h3><p class="lp-pain">Eyes closed is one of the clearest changes in brain waves. One person, 14 scalp sensors, 117 seconds, and the model is always tested on what comes later.</p><p class="lp-fix"><b>Found:</b> on one stretch, yes (0.625, or 0.728 with four glitches limited). Across the recording it drifted to 0.478, about a coin flip. <a href="eeg.html">Read chapter 3 →</a></p></li>
+          <li><p class="lp-k">4 · Into design</p><h3>Don’t guess someone’s state. Design for it.</h3><p class="lp-pain">A sensor that is right one minute and wrong the next is not something to build on. It is better to make every step work in any state.</p><p class="lp-fix"><b>Built:</b> Next Step, by Amishi Mehta, and Helper Jobs, a family project for Pragnya. Both give one clear step at a time and an easy way back in. <a href="tools.html">Read chapter 4 →</a></p></li>
+          <li><p class="lp-k">5 · What comes next</p><h3>Five experiments, one for each link.</h3><p class="lp-pain">More of the mouse data, brain-wave bands, drift over time, and whether the apps really help the people they are for.</p><p class="lp-fix"><b>The rule:</b> a plan stays a plan until it has code, results and its limits written down. <a href="next.html">Read chapter 5 →</a></p></li>
         </ol>
-        <p class="lp-energy"><b>Under all of it, honesty:</b> results are kept even when they disappoint, and every number on these pages is generated from committed results. <span>Three mice and one EEG recording cannot speak for all mice or all people.</span></p>
-        <div class="lp-how"><p class="lp-how-short"><b>What this can’t tell us yet:</b> whether these patterns hold in more animals and more people, or what causes them. Next: five experiments with the same steps.</p></div>
+        <p class="lp-energy"><b>The thread:</b> a brain’s state changes what it takes in; reading that state from outside is unreliable; so a good tool makes every step clear, whatever state someone is in. <span>Three mice and one person are a start, not a rule for everyone.</span></p>
+        <div class="lp-how"><p class="lp-how-short"><b>What this does not show yet:</b> whether the pattern holds in more animals and more people, what causes it, or whether the apps help. Each of those is an experiment in chapter 5.</p></div>
       </section>
 
       <section class="landing-more" id="checks" aria-labelledby="landing-more-title">
-        <div class="lm-head"><div><h2 class="landing-subhead" id="landing-more-title">How we tried to break each result</h2><p class="lp-lead">A result is only shared after a check that could have made it disappear.</p></div><div class="hj-art" data-art="controls"></div></div>
+        <div class="lm-head"><div><h2 class="landing-subhead" id="landing-more-title">How we tried to break each result</h2><p class="lp-lead">Nothing in the story counts until it has survived a check that could have made it disappear.</p></div><div class="hj-art" data-art="controls"></div></div>
         {grid([
             ('arrows-shuffle', 'Shuffle the answers', 'A coin flip, as it should be', 'With the EEG labels scrambled 20 times, the score falls to 0.499. Mouse behaviour shuffled 20 times adds almost nothing.'),
             ('timeline', 'Split by time', 'Train on the past, test the future', 'No random mixing of neighbouring moments, which makes EEG results look far better than they are.'),
@@ -128,11 +133,11 @@ page("index.html", "Brain & Behaviour · an ASDRP neuroscience portfolio",
         ])}
       </section>
 
-      <h2 class="landing-subhead">The results, at a glance</h2><p class="landing-demo-note">Three results from the studies. Open a study for the charts and the checks.</p>
+      <h2 class="landing-subhead">The story in three numbers</h2><p class="landing-demo-note">One from inside a brain, two from outside. Each chapter has the charts and the checks.</p>
       <ol class="landing-demo" aria-label="Three results" tabindex="0">
-        {phone('Mouse study', 'THREE MICE', 'Behaviour helps', '<div class="ph-paused"><b>+0.032 to +0.049</b><em>held-out correlation</em></div><p class="ph-small">Pupil helps all three mice.</p>', 'Better in every mouse', 'Adding pupil and running raised prediction by about a quarter to a third.')}
-        {phone('EEG study', 'FINAL TEST BLOCK', '0.625 → 0.728', '<p class="ph-note">After limiting 4 glitches</p><p class="ph-small">0.5 is a coin flip, 1.0 is perfect.</p>', 'Good on one block', 'The simple model read eye state well on the last part of the recording.')}
-        {phone('EEG study', 'FIVE BLOCKS IN TIME', 'Near a coin flip', '<div class="ph-paused ph-red"><b>Average 0.478</b><em>some blocks well below 0.5</em></div><p class="ph-small">The pattern flips over time.</p>', 'But it drifts', 'Over the 117 seconds the link between signal and eye state changes.')}
+        {phone('Mouse study', 'THREE MICE', 'Behaviour helps', '<div class="ph-paused"><b>+0.032 to +0.049</b><em>held-out correlation</em></div><p class="ph-small">Pupil helps all three mice.</p>', 'State matters inside', 'Adding pupil and running made prediction a quarter to a third better.')}
+        {phone('EEG study', 'FINAL TEST BLOCK', '0.625 → 0.728', '<p class="ph-note">After limiting 4 glitches</p><p class="ph-small">0.5 is a coin flip, 1.0 is perfect.</p>', 'Readable once…', 'A simple model read eye state well on the last part of the recording.')}
+        {phone('EEG study', 'FIVE BLOCKS IN TIME', 'Near a coin flip', '<div class="ph-paused ph-red"><b>Average 0.478</b><em>some blocks well below 0.5</em></div><p class="ph-small">So the tools don’t try to guess.</p>', '…but not over time', 'Within two minutes the link between signal and eye state shifted.')}
       </ol>
 
       <div class="landing-facts">
@@ -144,9 +149,9 @@ page("index.html", "Brain & Behaviour · an ASDRP neuroscience portfolio",
 
 # ---------------- mouse ----------------
 page("mouse.html", "Mouse visual cortex · Brain & Behaviour",
-     "Adding pupil size and running speed improved held-out prediction of mouse visual cortex in all three mice tested.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'All studies'), 'Study 1 · Mouse visual cortex · Done', '<span id="page-title">Does knowing what a mouse is doing help predict what its brain sees?</span>', 'A model that sees only the picture, against one that also knows the mouse’s pupil size and running speed.', 'mouseHero')}
-      <section class="landing-problems answer"><p class="lp-energy"><b>The answer: yes, in all three mice.</b> Adding pupil and running raised held-out prediction by +0.032 to +0.049, about 25–34% more than the picture alone. <span>This is prediction, not proof of cause.</span></p></section>
+     "Chapter 2: knowing a mouse’s pupil size and running speed made its visual cortex 25–34% easier to predict, in all three mice.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'All chapters'), 'Chapter 2 · Inside a brain · Mouse study', '<span id="page-title">Does a mouse’s state change what its visual cortex does?</span>', 'We predicted thousands of neurons from the picture a mouse saw, then again with its pupil size and running speed added. If state did not matter, the extra information would add nothing.', 'mouseHero')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>It mattered, in all three mice.</b> With pupil and running added, prediction on unseen pictures rose by +0.032 to +0.049, a quarter to a third better than the picture alone. <span>A better prediction shows a link, not a cause.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">The same steps for every mouse, scored on images the model never saw.</p></div><div class="hj-art" data-art="mouseStudy"></div></div>
@@ -161,7 +166,7 @@ page("mouse.html", "Mouse visual cortex · Brain & Behaviour",
       </section>
 
       <h2 class="landing-subhead">The results</h2>
-      {chart('mouse-scores', 'Result', 'Every mouse is predicted better with behaviour.', 'The picture alone explains part of what visual cortex does. Knowing whether the mouse is alert and running explains more, in all three animals.', 'Mean held-out Pearson correlation across neurons, Sensorium 2022 official test images.')}
+      {chart('mouse-scores', 'Result', 'Every mouse is easier to predict once we know its state.', 'The picture explains part of what visual cortex does. Whether the mouse is alert and moving explains more, in every animal.', 'Mean held-out Pearson correlation across neurons, Sensorium 2022 official test images.')}
       {chart('mouse-gain', 'Gain', 'The size of the gain differs by mouse.', 'Pupil size helps all three animals. How much running adds changes from mouse to mouse, so each animal is reported on its own.', 'Gain = score with behaviour minus score with the picture only.')}
 
       <section class="landing-more" aria-labelledby="checks-title" id="checks">
@@ -178,14 +183,15 @@ page("mouse.html", "Mouse visual cortex · Brain & Behaviour",
         <div class="landing-fact"><h2>Code and data</h2><p>The analysis is in <a href="{FLAGSHIP}">AmishI123/neuroscience-project</a> (notebooks 01–05 and <code>src/summarize_replication.py</code>). The numbers here are copied from its committed summary into <code>website/build_results.py</code>. Data: Willeke et al. (2022), <i>The Sensorium competition on predicting large-scale mouse primary visual cortex activity</i>, arXiv:2206.08666.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>Three mice cannot speak for all mice. A better prediction does not show that arousal or running cause the change. The report’s intervals are within each animal, not for the whole population.</p></div>
       </div>
-      {nav(('index.html', 'All studies'), ('eeg.html', 'EEG study'))}
+      {bridge('What chapter 2 tells us:', 'the same picture lands differently depending on the state the mouse is in. So the next question is whether that state can be read from outside the head, in a person.', 'eeg.html', 'Chapter 3')}
+      {nav(('index.html', 'All chapters'), ('eeg.html', 'Chapter 3 · EEG'))}
     </section>""")
 
 # ---------------- EEG ----------------
 page("eeg.html", "EEG eye state · Brain & Behaviour",
-     "A simple model reads eye state from one EEG recording on a single test block, but not reliably across time: the signal drifts.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'All studies'), 'Study 2 · EEG eye state · Done', '<span id="page-title">Can brain waves tell when your eyes are closed?</span>', 'And does giving the model the last few moments of signal help it decide?', 'eegHero')}
-      <section class="landing-problems answer"><p class="lp-energy"><b>The answer: sometimes, but not reliably over time.</b> The model scored 0.625 on the last part of the recording, 0.728 once four glitch samples were limited, yet across five blocks in time it was close to a coin flip. <span>Recent history did not help.</span></p></section>
+     "Chapter 3: a simple model reads eye state from one person’s EEG on one stretch of time, but not reliably across the recording, because the signal drifts.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'All chapters'), 'Chapter 3 · From the outside · EEG study', '<span id="page-title">Can a sensor on the head tell when someone’s eyes are closed?</span>', 'Eyes closed is one of the clearest changes in brain waves. If a simple model cannot read it reliably over two minutes, quieter states like tiredness will be harder still.', 'eegHero')}
+      <section class="landing-problems answer"><p class="lp-energy"><b>On one stretch, yes. Over time, no.</b> The model scored 0.625 on the last part of the recording, and 0.728 once four glitch samples were limited. Tested block by block across the recording, it averaged 0.478, about a coin flip. <span>Giving it the last few moments of signal did not help.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="how-title">How we tested it</h2><p class="lp-lead">Always train on the past, and test on the future.</p></div><div class="hj-art" data-art="eegStudy"></div></div>
@@ -217,16 +223,17 @@ page("eeg.html", "EEG eye state · Brain & Behaviour",
         <div class="landing-fact"><h2>Rerun it</h2><p><code>python3 projects/eeg-eye-state/src/analyze.py</code> writes <code>results/metrics.json</code>, and <code>python3 website/build_results.py</code> turns it into these charts. See the <a href="{REPO}/blob/main/projects/eeg-eye-state/report.md">full report</a>. Data: Roesler, O. (2013). <i>EEG Eye State</i>. UCI Machine Learning Repository, doi:10.24432/C57G7J.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>One person and one short recording cannot show how this works for other people. The label is eyes open or closed, not attention, alertness or any condition.</p></div>
       </div>
-      {nav(('mouse.html', 'Mouse study'), ('tools.html', 'Tools for people'))}
+      {bridge('What chapter 3 tells us:', 'a sensor that is right on one stretch and wrong on the next is not something to build a tool on. So the tools do not try to guess.', 'tools.html', 'Chapter 4')}
+      {nav(('mouse.html', 'Chapter 2 · Mouse'), ('tools.html', 'Chapter 4 · Tools'))}
     </section>""")
 
 # ---------------- tools ----------------
 page("tools.html", "Tools for people · Brain & Behaviour",
-     "Next Step and Helper Jobs: one small, clear step at a time, for neurodivergent young people and adults.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'All studies'), 'Applied work · Tools for people', '<span id="page-title">Turning what we learn into one clear step at a time.</span>', 'Attention and state shape what a brain takes in. These tools keep each step small and calm, and nothing happens until the person taps.', 'tablets')}
+     "Chapter 4: rather than guess someone’s state, Next Step and Helper Jobs make every step work in any state.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'All chapters'), 'Chapter 4 · Into design · Tools', '<span id="page-title">Don’t guess someone’s state. Make every step work in any state.</span>', 'Chapter 2 showed that state changes what gets through. Chapter 3 showed that reading it from outside is unreliable. So these apps keep each step small, say it aloud, and make it easy to stop and come back. Nothing happens until the person taps.', 'tablets')}
       <section class="landing-problems two" aria-labelledby="apps-title">
         <h2 class="landing-subhead" id="apps-title">Two working apps</h2>
-        <p class="lp-lead">Both use the same design: big type, picture steps, read aloud, and made-up examples only.</p>
+        <p class="lp-lead">Both follow the same rules: one step on the screen, big type, a picture, read aloud, and only made-up people in the examples.</p>
         <ol aria-label="Two apps" tabindex="0">
           <li><p class="lp-k">By Amishi Mehta</p><h3>Next Step</h3><p class="lp-pain">For anyone who finds long instructions, interruptions or explaining their needs hard. Made with neurodivergent young people in mind.</p><p class="lp-fix"><b>What it does:</b> turns a long brief into one next step, practises words for asking for help, and keeps a note of where to restart. <a href="{NEXT_STEP}">Open Next Step →</a></p></li>
           <li><p class="lp-k">Family project for Pragnya</p><h3>Helper Jobs</h3><p class="lp-pain">Gives neurodivergent adults a real job at kids’ Sunday outings, with a volunteer always close by.</p><p class="lp-fix"><b>What it does:</b> picture steps read aloud in English, Hindi or Spanish, and Help that reaches the lead’s phone in about a second. <a href="{HELPER_JOBS}">Open Helper Jobs →</a></p></li>
@@ -239,29 +246,30 @@ page("tools.html", "Tools for people · Brain & Behaviour",
         <li><img src="img/helper-jobs-phone.jpg" alt="A Helper Jobs step with a real photo of the place." loading="lazy" style="width:62%;border:1px solid var(--line);border-radius:var(--radius-card)"><strong>One picture step</strong><span>A few words, a picture of the real place, and Read aloud.</span></li>
       </ol>
       <div class="landing-facts">
-        <div class="landing-fact"><h2>Research demo on a phone</h2><p>The <a href="neuroscience-mobile/">mobile research demo</a> puts both studies in a pocket-sized tour.</p></div>
+        <div class="landing-fact"><h2>The story on a phone</h2><p>The <a href="neuroscience-mobile/">phone tour</a> tells the same five chapters, one screen at a time, in the same design as the apps.</p></div>
         <div class="landing-fact landing-fact-not"><h2>Careful claims</h2><p>These are early test versions with made-up people in every example. They have not been tested in a formal study, and they do not diagnose or treat anything. A usability study is planned as experiment 5.</p></div>
       </div>
-      {nav(('eeg.html', 'EEG study'), ('next.html', 'Next experiments'))}
+      {bridge('What we still don’t know:', 'whether these designs actually help the people they are for. That is the last of the five experiments.', 'next.html', 'Chapter 5')}
+      {nav(('eeg.html', 'Chapter 3 · EEG'), ('next.html', 'Chapter 5 · Next'))}
     </section>""")
 
 # ---------------- next ----------------
 EXPS = [
-    ("flask", "1 · Planned", "Mouse behaviour timing", "Does behaviour from the same trial predict activity better than behaviour shifted to neighbouring trials? Needs the raw Sensorium recordings, which are not in this repository."),
-    ("activity", "2 · Ready to run", "EEG frequency bands", "Do brain-wave bands, like alpha that rises when eyes close, predict eye state better than raw signals over time? Uses the EEG file already here."),
-    ("brain", "3 · Planned", "Mouse neuron groups", "Is the gain spread across neurons, or concentrated in groups chosen in advance by depth and position? Needs raw responses and neuron positions."),
-    ("timeline", "4 · Started", "EEG drift over time", "How stable is prediction across the recording, and does adjusting for drift help? Block-by-block scores and the glitch check are done."),
-    ("users", "5 · Planned", "Usability with people", "Do the step-by-step designs make these research pages easier to follow? Needs consent, a task list written in advance and no unneeded personal data."),
+    ("flask", "1 · Planned · tests chapter 2", "Does the timing matter?", "Does behaviour from the same moment predict better than behaviour from a moment nearby? Needs the raw Sensorium recordings, which are not in this repository."),
+    ("activity", "2 · Ready to run · tests chapter 3", "Brain-wave bands", "Alpha waves rise when eyes close. Do bands like alpha hold up over time better than raw signals? Uses the EEG file already here."),
+    ("brain", "3 · Planned · tests chapter 2", "Which neurons care?", "Is the gain spread across all neurons, or held by groups chosen in advance by depth and position? Needs raw responses and neuron positions."),
+    ("timeline", "4 · Started · tests chapter 3", "Why does it drift?", "How fast does the link between signal and eye state change, and does adjusting for drift help? Block-by-block scores and the glitch check are done."),
+    ("users", "5 · Planned · tests chapter 4", "Do the apps help?", "Do one-step-at-a-time designs make tasks easier to finish? Needs consent, a task list written in advance and no personal data beyond what the test needs."),
 ]
 page("next.html", "Next experiments · Brain & Behaviour",
-     "Five experiments, each with the same steps from question to explanation.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'All studies'), 'What comes next', '<span id="page-title">Five experiments, each from question to explanation.</span>', 'Each gets an analysis written down before it runs, a held-out test, a control that could break it, and an honest write-up.', 'plan')}
+     "Chapter 5: five experiments, each testing one link in the story, with the same steps as the two studies.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+{heading(('index.html', 'All chapters'), 'Chapter 5 · What comes next', '<span id="page-title">Five experiments, one for each link in the story.</span>', 'Each one gets its analysis written down before it runs, a test on data kept aside, a check that could break it, and an honest write-up, just like chapters 2 and 3.', 'plan')}
       <section class="landing-more" aria-labelledby="exp-title">
         <h2 class="landing-subhead" id="exp-title">The five experiments</h2>
         {grid(EXPS)}
       </section>
       <p class="lp-energy"><b>The rule we keep:</b> a plan stays labelled as a plan until it has code, saved results, a rerun record, its limits written down and a page like the two studies.</p>
-      {nav(('tools.html', 'Tools for people'), ('index.html', 'All studies'))}
+      {nav(('tools.html', 'Chapter 4 · Tools'), ('index.html', 'Back to the start'))}
     </section>""")
 
 # ---------------- old addresses keep working ----------------
