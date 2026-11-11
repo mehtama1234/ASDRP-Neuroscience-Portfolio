@@ -6,7 +6,7 @@ complete.
 
 ## Why neuroscience
 
-- **Chapter 1 moment (most important):** one real time, at a Pragnya outing or in school, when the
+- **Chapter 1 moment (most important):** one real time from her own life when the
   same instruction worked once and was lost a little later. A few sentences, no names. It opens the
   website, the slides, the video and Essay 1.
 

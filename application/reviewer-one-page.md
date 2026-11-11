@@ -2,7 +2,7 @@
 
 ## The story: From neurons to next steps
 
-The same instruction can land one moment and be lost the next. This portfolio asks whether that is
+It started from Amishi's own experience: the same instruction can land one moment and be lost the next. This portfolio asks whether that is
 the brain itself (does what a brain is doing change what it takes in?) and follows the question in
 one loop: real life, understand, measure, design, then test.
 

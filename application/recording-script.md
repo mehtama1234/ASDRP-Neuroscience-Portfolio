@@ -10,7 +10,7 @@ Any slide with a recording uses your voice; any slide without one keeps the comp
 
 ## 01 · From neurons to next steps
 
-From neurons to next steps. This is one question, followed from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.
+From neurons to next steps. This started from Amishi’s own experience, and follows one question from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.
 
 ## 02 · The loop
 
@@ -18,7 +18,7 @@ Here is the whole story. Real life raised a question. A mouse study helps us und
 
 ## 03 · Chapter 1, real life
 
-This is where it started. The same instruction works one moment and is lost the next. That made us ask whether the brain’s state itself changes what gets in.
+This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether the brain’s state itself changes what gets in.
 
 ## 04 · Chapter 2
 

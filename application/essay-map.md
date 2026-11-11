@@ -3,7 +3,7 @@
 Every essay tells the same story as the website, slides, phone tour and video:
 **From neurons to next steps**, one loop in five chapters.
 
-1. **Real life.** The same instruction lands one moment and is lost the next. Is that the brain itself?
+1. **Real life.** It started from Amishi’s own experience: the same instruction lands one moment and is lost the next. Is that the brain itself?
 2. **Understand (mouse).** A mouse’s state makes its brain 25–33% easier to predict, in all three mice.
 3. **Measure (EEG).** State can be read on one stretch, then drifts to a coin flip. Brain-wave bands
    (experiment 2) did not fix it.
@@ -17,6 +17,6 @@ science instead of from real life.
 
 ## Still needed from Amishi
 
-- One real moment for chapter 1, in her words, with no names (`personalization-form.md`).
+- One real moment from her own experience for chapter 1, in her words (`handoff/answers.html`).
 - Her exact part in each piece of work (`contribution-ledger.md`).
 - Her voice on the video, if she wants it (`recording-script.md`).

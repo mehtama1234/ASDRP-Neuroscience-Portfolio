@@ -19,7 +19,7 @@ import build_deck as D  # noqa: E402
 
 # The talk notes are written for a person presenting; the video says the same thing without "I".
 SPOKEN = {
-    "cover": "From neurons to next steps. This is one question, followed from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.",
+    "cover": "From neurons to next steps. This started from Amishi’s own experience, and follows one question from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.",
     "loop": "Here is the whole story. Real life raised a question. A mouse study helps us understand it. An EEG study asks whether we can measure it in a person. The answers shape the design of two apps. And the last step tests the apps back in real life.",
     "close": "So, the loop. Real life raised the question. The mouse showed that a brain’s state changes what it takes in. The EEG showed that state is hard to read from outside. So the apps ask how someone is doing, and keep each step small. Everything in this video is on the website, with the phone tour, the slides and both apps linked from it.",
 }

@@ -73,3 +73,5 @@ mark.slot b{font:700 11px system-ui,sans-serif;letter-spacing:.08em;text-transfo
 .essay-key{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin:8px 0 0}
 @media(max-width:700px){.essay-sheet{padding:24px 18px}.essay-row{grid-template-columns:1fr;gap:4px}.essay-row p{font-size:17px}}
 @media print{header,.public-demo-banner,.landing-more,.essay-box,.handoff-bar,.landing-try-note,.landing-note,.family-links,.hj-heading .back-button,.hj-art{display:none!important}.essay-sheet{box-shadow:none;border:0;padding:0}}
+.vision-sub{font-size:18px;line-height:1.55;color:var(--muted);max-width:640px;margin:10px 0 0}
+#vision+#story{margin-top:40px}

@@ -111,7 +111,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
         <div class="landing-hero-text">
           <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
           <h1 id="home-title">From neurons to next steps</h1>
-          <p class="landing-lede">At Pragnya’s outings for neurodivergent kids and adults, and in everyday schoolwork, the same instruction can land one moment and be lost the next. That raised a question: <b>does what a brain is doing (its state: alert, tired, calm) change what it takes in?</b> We tested it in two public brain recordings, tried hard to break each answer, and turned what held up into the design of two apps.</p>
+          <p class="landing-lede">It started from Amishi’s own experience of a familiar moment: the same instruction can land one moment and be lost the next. That raised a question: <b>does what a brain is doing (its state: alert, tired, calm) change what it takes in?</b> We tested it in two public brain recordings, tried hard to break each answer, and turned what held up into the design of two apps: Next Step for students, and Helper Jobs for Pragnya’s Sunday outings.</p>
           <div class="landing-actions">
             <a class="button primary" href="#story">Read the story <span aria-hidden="true">→</span></a>
             <a class="button secondary" href="mouse.html">Start with the mouse study</a>
@@ -128,12 +128,22 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
         {LANDING_ART}
       </div>
 
+      <section class="landing-more" id="vision" aria-labelledby="vision-title">
+        <div class="lm-head"><div><h2 class="landing-subhead" id="vision-title">The big picture</h2><p class="lp-lead">Instructions, apps and classrooms often assume a brain is always ready to take things in. It is not.</p><p class="vision-sub">So this work asks three questions in order: how much does a brain’s state matter, can we tell what state it is in, and how do we build tools that work either way? Then it checks whether those tools actually help.</p></div><div class="hj-art" data-art="family"></div></div>
+        {grid([
+            ('brain', 'Understand', 'How much does state change what gets in?', 'A mouse study and an EEG study, each tested on data the model never saw and checked in ways that could have broken it.'),
+            ('heart-handshake', 'Design', 'Tools that work in any state', 'Ask how someone is doing instead of guessing, show one step at a time, and make pausing easy.'),
+            ('users', 'Help', 'With the people they are for', 'Next Step for students and Helper Jobs for Pragnya’s Sunday outings, tested with the people who use them next.'),
+        ])}
+        <section class="landing-problems answer"><p class="lp-energy"><b>Where it leads:</b> one research direction, where neuroscience and human–computer interaction meet. First with an ASDRP mentor: the next experiments and a first paper. Then studies with people. <a href="next.html">See the plan →</a></p></section>
+      </section>
+
       <section class="landing-problems" id="story" aria-labelledby="landing-problems-title">
         <h2 class="landing-subhead" id="landing-problems-title">One loop, five chapters</h2>
         <p class="lp-lead">It starts in real life and ends back there. Each chapter answers the question the last one raised.</p>
         <div class="loop-figure"><div class="loop-wide" data-art="loop"></div><div class="loop-tall" data-art="loopTall"></div></div>
         <ol aria-label="Five chapters" tabindex="0">
-          <li><p class="lp-k">1 · Real life</p><h3>Same words, different moment.</h3><p class="lp-pain">At Pragnya’s outings and in schoolwork, a step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
+          <li><p class="lp-k">1 · Real life</p><h3>Same words, different moment.</h3><p class="lp-pain">It started from Amishi’s own experience: a step that is easy when you are calm can be lost when you are tired, rushed or overloaded. Is that the brain itself?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
           <li><p class="lp-k">2 · Understand</p><h3>A mouse’s state changes how its brain sees.</h3><p class="lp-pain">Mice watched pictures while thousands of brain cells were recorded. We guessed what each cell would do from the picture alone, then from the picture plus how alert and active the mouse was.</p><p class="lp-fix"><b>Found:</b> knowing the mouse’s state made our guesses 25–33% better, in all three mice. <a href="mouse.html">Read chapter 2 →</a></p></li>
           <li><p class="lp-k">3 · Measure</p><h3>Can sensors read state in a person?</h3><p class="lp-pain">A cap of 14 sensors on one person’s head for two minutes (EEG). Closing your eyes is one of the clearest changes it picks up. Can a simple model tell when?</p><p class="lp-fix"><b>Found:</b> on one stretch, often (0.625, where 0.5 is a coin flip). Across the whole recording it drifted to 0.478. Brain-wave bands did better (0.566) but still dipped below guessing. <a href="eeg.html">Read chapter 3 →</a></p></li>
           <li><p class="lp-k">4 · Design</p><h3>From findings to features.</h3><p class="lp-pain">If state matters but cannot be read from outside, an app should ask, not guess. It should show less on a low-energy day, and make pausing and coming back easy.</p><p class="lp-fix"><b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, built for real jobs at Pragnya’s Sunday outings. <a href="tools.html">Read chapter 4 →</a></p></li>
@@ -350,7 +360,7 @@ page("next.html", "Where this goes next · From neurons to next steps",
 
 # ---------------- the phone tour: the same five chapters, one screen at a time ----------------
 TOUR = [
-    ("home", "Start", "home", "The loop", "From neurons to next steps", "At Pragnya’s outings and in schoolwork, the same instruction can land one moment and be lost the next. Does what a brain is doing change what it takes in? Five short screens follow that question from real life, into the lab, and back out again.",
+    ("home", "Start", "home", "The loop", "From neurons to next steps", "It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. Does what a brain is doing change what it takes in? Five short screens follow that question from real life, into the lab, and back out again.",
      '<div class="loop-figure"><div data-art="loopTall"></div></div>', "", "index.html"),
     ("ch1", "Real life", "users", "Chapter 1 of 5 · Real life", "Same words, different moment.", "A step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself? To find out, look inside a brain while its state changes.",
      '<div class="hj-art" data-art="note"></div>', "", "index.html#story"),
@@ -544,7 +554,7 @@ LEDGER = [
     + "\n## Rules\n\n- Only claim what Amishi did and can explain out loud.\n- Keep her father’s and the AI tools’ help visible.\n- Where a step was done for her, say so.\n")
 
 QUESTIONS = [
-    ("moment", "Your chapter 1 moment (the most important one)", "One real time, at a Pragnya outing or in school, when the same instruction worked once and was lost a little later. What happened, and what did you notice? A few sentences, no names.", 6, "It opens the website, the slides, the video and Essay 1."),
+    ("moment", "Your chapter 1 moment (the most important one)", "One real time from your own life, at school or anywhere, when the same instruction worked once and was lost a little later. What happened, and what did you notice? A few sentences. You decide how much to share; no names.", 6, "It opens the website, the slides, the video and Essay 1."),
     ("spark", "What first made the brain interesting to you?", "A class, a book, a conversation or something you saw.", 3, "Used in Essay 1 if it is different from your moment."),
     ("changed-mind", "A time the data changed your mind", "For example, expecting running to matter and finding it was the pupil.", 3, "Used in Essay 5."),
     ("next-step", "Next Step: your part", "What you designed, built, tested or decided.", 4, "Used in chapter 4 and Essay 5."),
@@ -560,7 +570,7 @@ def field(key, label, hint, rows, use):
 
 
 STEPS = [
-    ("1 · About 15 minutes", "Your real moment, and your parts.", "One real time the same instruction worked once and was lost later, plus what you did in each app.", '<b>Opens:</b> the website, slides, video and Essay 1. <a href="answers.html">Write your answers →</a>'),
+    ("1 · About 15 minutes", "Your real moment, and your parts.", "One real time from your own life when the same instruction worked once and was lost later, plus what you did in each app.", '<b>Opens:</b> the website, slides, video and Essay 1. <a href="answers.html">Write your answers →</a>'),
     ("2 · About 30 minutes each", "Make both essays yours.", "Drafts that follow the same five chapters. Fill the parts in [brackets] and change anything that does not sound like you.", '<b>Limit:</b> 375 words each. <a href="essay-1.html">Essay 1 →</a> <a href="essay-5.html">Essay 5 →</a>'),
     ("3 · About 10 minutes", "Check who did what.", "Eleven parts of the work. Confirm each one, or say what to change.", '<b>Rule:</b> only claim what you did and can explain. <a href="who-did-what.html">Check the list →</a>'),
     ("4 · Optional · About 20 minutes", "Your voice on the video.", "Read 15 short parts, one per slide, on a phone. Any you skip keep the computer voice.", '<b>Then:</b> send the recordings. <a href="recording.html">Recording script →</a>'),
@@ -589,7 +599,7 @@ page("handoff/index.html", "For Amishi · From neurons to next steps", "What Ami
 
 page("handoff/answers.html", "Your answers · From neurons to next steps", "Amishi’s real moment for chapter 1, and her part in each app, written in her own words.", f"""    <section class="screen active landing" aria-labelledby="page-title">
 {heading(('index.html', 'For Amishi'), 'Step 1 of 4 · Your answers', '<span id="page-title">In your own words.</span>', 'Short and true beats long and polished. Write the way you would tell a friend. Nothing here is sent anywhere until you download it.', 'note')}
-      <section class="landing-problems answer"><p class="lp-energy"><b>Why the first one matters:</b> the whole story starts with it. Right now chapter 1 says what can happen in general; your moment makes it yours. <span>No names, nothing private: what happened and what you noticed.</span></p></section>
+      <section class="landing-problems answer"><p class="lp-energy"><b>Why the first one matters:</b> the whole story starts with it. Chapter 1 says the work started from your own experience; one real moment shows it. <span>You decide how much to share. What happened and what you noticed is enough.</span></p></section>
       <div class="handoff-form">{''.join(field(*q) for q in QUESTIONS)}</div>
       {toolbar("amishi-answers.txt")}
       <p class="landing-note"><a href="index.html">← For Amishi</a><a href="essay-1.html">Step 2: Essay 1 →</a></p>

@@ -2,16 +2,16 @@
 
 > **Draft for Amishi to make her own.** It follows the same story as the website, slides and video
 > (*From neurons to next steps*), so everything a reviewer opens says the same thing. Replace the part
-> in [brackets] with a real moment, in your words, with no names. Change any sentence that does not
+> in [brackets] with a real moment from your own experience, in your words. Change any sentence that does not
 > sound like you, and delete any claim you cannot explain out loud. This replaces the older draft in
 > AmishI123/neuroscience-project/application, which started from the science instead. About 330 words.
 
 ---
 
-[Two or three sentences: one real moment, at a Pragnya outing or in school, when the same instruction
-worked once and was lost a little later. What happened, and what you noticed.]
+[Two or three sentences: one real time from your own life when the same instruction worked once and
+was lost a little later. What happened, and what you noticed. Share only what you are comfortable with.]
 
-The words were the same. Something inside the person had changed. I wanted to know whether that was
+The words were the same. Something inside me had changed. I wanted to know whether that was
 the brain itself: does what a brain is doing change what it takes in?
 
 I tested it first in public recordings from mice watching pictures. I built two simple models of
