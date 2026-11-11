@@ -5,57 +5,61 @@ WEBVTT
 From neurons to next steps. This started from Amishi’s own experience, and follows one question from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.
 
 2
-00:00:17.866 --> 00:00:34.732
-Here is the whole story. Real life raised a question. A mouse study helps us understand it. An EEG study asks whether we can measure it in a person. The answers shape the design of two apps. And the last step tests the apps back in real life.
+00:00:17.866 --> 00:00:37.077
+Here is the whole answer in three sentences. First: what a brain is doing changes how it responds to the same thing. Second: that state is hard to read from outside the head. Third: so tools should ask, not guess, and keep each step small. The rest of this talk shows the evidence for each one.
 
 3
-00:00:36.132 --> 00:00:48.171
-This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether the brain’s state itself changes what gets in.
+00:00:38.477 --> 00:00:55.343
+Here is the whole story. Real life raised a question. A mouse study helps us understand it. An EEG study asks whether we can measure it in a person. The answers shape the design of two apps. And the last step tests the apps back in real life.
 
 4
-00:00:49.571 --> 00:01:07.969
-Scientists shared recordings of thousands of brain cells from mice watching pictures. We built two simple guessers. Guesser A only knows the picture. Guesser B also knows how wide the pupils were and how fast the mouse was running. Both are tested on pictures they have never seen.
+00:00:56.743 --> 00:01:08.782
+This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether the brain’s state itself changes what gets in.
 
 5
-00:01:09.369 --> 00:01:22.852
-In every mouse, guesser B wins. The scores look small because single brain cells are noisy, so the thing to look at is the jump from A to B: a quarter to a third better. That is a link, not proof of cause.
+00:01:10.182 --> 00:01:28.580
+Scientists shared recordings of thousands of brain cells from mice watching pictures. We built two simple guessers. Guesser A only knows the picture. Guesser B also knows how wide the pupils were and how fast the mouse was running. Both are tested on pictures they have never seen.
 
 6
-00:01:24.252 --> 00:01:44.214
-Looking inside the first mouse, from Amishi’s own analysis. Adding running barely changed anything; pupil size, a sign of how alert the mouse is, gave almost the whole gain. Nine in ten brain cells were guessed better, and the cells that follow alertness gained about five times as much as the rest.
+00:01:29.980 --> 00:01:43.463
+In every mouse, guesser B wins. The scores look small because single brain cells are noisy, so the thing to look at is the jump from A to B: a quarter to a third better. That is a link, not proof of cause.
 
 7
-00:01:45.614 --> 00:02:00.410
-We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?
+00:01:44.863 --> 00:02:04.825
+Looking inside the first mouse, from Amishi’s own analysis. Adding running barely changed anything; pupil size, a sign of how alert the mouse is, gave almost the whole gain. Nine in ten brain cells were guessed better, and the cells that follow alertness gained about five times as much as the rest.
 
 8
-00:02:01.810 --> 00:02:19.616
-Now a person. EEG is a cap of sensors on the head. Closing your eyes is one of the easiest changes for it to see. If a simple model cannot read even that reliably, quieter states like tiredness will be harder. We always learn from earlier and test on later.
+00:02:06.225 --> 00:02:21.021
+We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?
 
 9
-00:02:21.016 --> 00:02:28.867
-On one stretch it worked reasonably well. But when we tested it on five stretches across the recording, it averaged a coin flip.
+00:02:22.421 --> 00:02:40.227
+Now a person. EEG is a cap of sensors on the head. Closing your eyes is one of the easiest changes for it to see. If a simple model cannot read even that reliably, quieter states like tiredness will be harder. We always learn from earlier and test on later.
 
 10
-00:02:30.267 --> 00:02:39.269
-Each dot is one stretch. They land on both sides of a coin flip, and some are worse than guessing. Within two minutes, the signal drifted.
+00:02:41.627 --> 00:02:49.478
+On one stretch it worked reasonably well. But when we tested it on five stretches across the recording, it averaged a coin flip.
 
 11
-00:02:40.669 --> 00:03:02.344
-So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave bands, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess someone’s state from a sensor.
+00:02:50.878 --> 00:02:59.880
+Each dot is one stretch. They land on both sides of a coin flip, and some are worse than guessing. Within two minutes, the signal drifted.
 
 12
-00:03:03.744 --> 00:03:11.052
-This is where the science turns into design. Each finding gives a rule, and each rule is a real feature in the apps.
+00:03:01.280 --> 00:03:22.955
+So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave bands, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess someone’s state from a sensor.
 
 13
-00:03:12.452 --> 00:03:27.873
-Here they are. Next Step asks about energy and shrinks the plan. Save and pause and I’m stuck make it easy to stop and come back. Helper Jobs gives one picture step at a time, read aloud, with a Help button that reaches a volunteer.
+00:03:24.355 --> 00:03:31.663
+This is where the science turns into design. Each finding gives a rule, and each rule is a real feature in the apps.
 
 14
-00:03:29.273 --> 00:03:46.083
-Next, with an ASDRP mentor, we run four more data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: does designing for state help people learn?
+00:03:33.063 --> 00:03:48.484
+Here they are. Next Step asks about energy and shrinks the plan. Save and pause and I’m stuck make it easy to stop and come back. Helper Jobs gives one picture step at a time, read aloud, with a Help button that reaches a volunteer.
 
 15
-00:03:47.483 --> 00:04:08.561
+00:03:49.884 --> 00:04:06.694
+Next, with an ASDRP mentor, we run four more data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: does designing for state help people learn?
+
+16
+00:04:08.094 --> 00:04:29.172
 So, the loop. Real life raised the question. The mouse showed that a brain’s state changes what it takes in. The EEG showed that state is hard to read from outside. So the apps ask how someone is doing, and keep each step small. Everything in this video is on the website, with the phone tour, the slides and both apps linked from it.

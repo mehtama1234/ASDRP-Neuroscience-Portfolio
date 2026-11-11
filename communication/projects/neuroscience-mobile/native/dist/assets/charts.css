@@ -51,7 +51,7 @@ body:has(.tour-nav) main{padding-bottom:110px}
 
 .inside-nums{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:6px}@media(max-width:560px){.inside-nums{grid-template-columns:1fr}}
 .qr-row{grid-template-columns:repeat(4,minmax(0,1fr))!important}.qr-row li{align-items:center;text-align:center}@media(max-width:700px){.qr-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(min-width:1100px){#demo ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#demo li{padding:14px 15px 16px}}.landing-problems.answer a{color:var(--peach)}
+@media(min-width:1100px){#found ol{grid-template-columns:repeat(3,minmax(0,1fr))}#demo ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#demo li{padding:14px 15px 16px}}.landing-problems.answer a{color:var(--peach)}
 .handoff-form{display:grid;gap:6px;max-width:820px;margin:18px 0}.handoff-field{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--rust);border-radius:var(--radius-card);padding:16px 18px}
 .handoff-field .field{margin:0 0 4px;font-size:17px;font-family:var(--display);font-weight:400}.hint{color:var(--muted);font-size:14px;margin:0 0 8px}.hint.used{margin:8px 0 0;font-size:13px}
 .handoff-form textarea,.essay-box textarea,.ledger textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;font-size:16px;line-height:1.55;background:#fff;color:var(--ink)}
@@ -75,3 +75,4 @@ mark.slot b{font:700 11px system-ui,sans-serif;letter-spacing:.08em;text-transfo
 @media print{header,.public-demo-banner,.landing-more,.essay-box,.handoff-bar,.landing-try-note,.landing-note,.family-links,.hj-heading .back-button,.hj-art{display:none!important}.essay-sheet{box-shadow:none;border:0;padding:0}}
 .vision-sub{font-size:18px;line-height:1.55;color:var(--muted);max-width:640px;margin:10px 0 0}
 #vision+#story{margin-top:40px}
+#found+#vision{margin-top:40px}#found .lp-pain b{color:var(--ink)}#found h3{font-size:22px}

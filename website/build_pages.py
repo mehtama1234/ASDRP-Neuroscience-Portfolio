@@ -10,6 +10,7 @@ FLAGSHIP = "https://github.com/AmishI123/neuroscience-project"
 NEXT_STEP = "https://next-step-live.onrender.com/"
 HELPER_JOBS = "https://helper-jobs.onrender.com"
 SITE = "https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/"
+N_SLIDES = len(list((Path(__file__).resolve().parent / "presentation/slides").glob("*.jpg")))
 
 
 def ic(name):
@@ -106,27 +107,31 @@ LANDING_ART = """<svg class="landing-art" viewBox="0 0 440 400" aria-hidden="tru
         </svg>"""
 
 page("index.html", "From neurons to next steps · an ASDRP neuroscience portfolio",
-     "From neurons to next steps: a question from real life, tested in a mouse’s brain and a person’s brain waves, then turned into two apps that help.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
+     "What a brain is doing changes how it responds; that state is hard to read from outside; so tools should ask, not guess, and keep each step small. Two studies and two apps by Amishi Mehta.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
       <div class="landing-hero">
         <div class="landing-hero-text">
           <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
           <h1 id="home-title">From neurons to next steps</h1>
-          <p class="landing-lede">It started from Amishi’s own experience of a familiar moment: the same instruction can land one moment and be lost the next. That raised a question: <b>does what a brain is doing (its state: alert, tired, calm) change what it takes in?</b> We tested it in two public brain recordings, tried hard to break each answer, and turned what held up into the design of two apps: Next Step for students, and Helper Jobs for Pragnya’s Sunday outings.</p>
+          <p class="landing-lede">It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. <b>Is that the brain itself?</b> Two studies with public brain recordings and two apps later, here is what we found, in three sentences.</p>
           <div class="landing-actions">
-            <a class="button primary" href="#story">Read the story <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="mouse.html">Start with the mouse study</a>
+            <a class="button primary" href="#found">What we found <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#story">The whole story</a>
           </div>
-          <p class="landing-try-note">The same story as <a href="presentation/">slides</a>, a <a href="video/">narrated video</a> and a <a href="neuroscience-mobile/">phone tour</a>, all on <a href="share/">one page to share</a>. Public data only. A prediction is not a cause.</p>
-          <ul class="landing-parts" aria-label="What makes it work">
-            <li><a href="mouse.html"><span data-icon="eye"></span><b>Understand</b><small>Mouse: state changes how the brain sees</small></a></li>
-            <li><a href="eeg.html"><span data-icon="activity"></span><b>Measure</b><small>EEG: readable once, then it drifts</small></a></li>
-            <li><a href="#checks"><span data-icon="arrows-shuffle"></span><b>Checked</b><small>Every result tested to break it</small></a></li>
-            <li><a href="tools.html"><span data-icon="heart-handshake"></span><b>Design</b><small>Findings become app features</small></a></li>
-          </ul>
-          <p class="landing-voice"><a href="next.html"><span data-icon="flask"></span>Chapter 5: where this goes next, with more studies, design research and papers.</a></p>
+          <p class="landing-try-note">Also as <a href="presentation/">slides</a>, a <a href="video/">short video</a> and a <a href="neuroscience-mobile/">phone tour</a>, all on <a href="share/">one page to share</a>. Public data only. A prediction is not a cause.</p>
         </div>
         {LANDING_ART}
       </div>
+
+      <section class="landing-problems" id="found" aria-labelledby="found-title">
+        <h2 class="landing-subhead" id="found-title">What we found, in three sentences</h2>
+        <p class="lp-lead">Each sentence is one finding, and each links to the evidence behind it.</p>
+        <ol aria-label="Three findings" tabindex="0">
+          <li><p class="lp-k">1 · Inside a brain</p><h3>What a brain is doing changes how it responds to the same thing.</h3><p class="lp-pain">In three mice, knowing whether the mouse was alert and moving made its brain cells <b>25–33% easier to predict</b>, for the very same pictures.</p><p class="lp-fix"><a href="mouse.html">The mouse study →</a></p></li>
+          <li><p class="lp-k">2 · From outside the head</p><h3>But that state is hard to read from outside.</h3><p class="lp-pain">A model reading one person’s brain waves could tell eyes open from closed on one stretch, then drifted to <b>a coin flip within two minutes</b>. Brain-wave bands did not fix it.</p><p class="lp-fix"><a href="eeg.html">The EEG study →</a></p></li>
+          <li><p class="lp-k">3 · In practice</p><h3>So tools should ask, not guess, and keep each step small.</h3><p class="lp-pain">Next Step asks <b>“How much energy do you have today?”</b> and on a low day shows just the next step. Helper Jobs gives one picture step at a time.</p><p class="lp-fix"><a href="tools.html">The design →</a></p></li>
+        </ol>
+        <p class="lp-energy"><b>What comes next:</b> test whether that actually helps the people the apps are for, and take the science further with an ASDRP mentor. <a href="next.html">The plan →</a></p>
+      </section>
 
       <section class="landing-more" id="vision" aria-labelledby="vision-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="vision-title">The big picture</h2><p class="lp-lead">Instructions, apps and classrooms often assume a brain is always ready to take things in. It is not.</p><p class="vision-sub">So this work asks three questions in order: how much does a brain’s state matter, can we tell what state it is in, and how do we build tools that work either way? Then it checks whether those tools actually help.</p></div><div class="hj-art" data-art="family"></div></div>
@@ -135,7 +140,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
             ('heart-handshake', 'Design', 'Tools that work in any state', 'Ask how someone is doing instead of guessing, show one step at a time, and make pausing easy.'),
             ('users', 'Help', 'With the people they are for', 'Next Step for students and Helper Jobs for Pragnya’s Sunday outings, tested with the people who use them next.'),
         ])}
-        <section class="landing-problems answer"><p class="lp-energy"><b>Where it leads:</b> one research direction, where neuroscience and human–computer interaction meet. First with an ASDRP mentor: the next experiments and a first paper. Then studies with people. <a href="next.html">See the plan →</a></p></section>
+        <p class="vision-sub"><b>Where it leads:</b> one research direction, where neuroscience and human–computer interaction meet.</p>
       </section>
 
       <section class="landing-problems" id="story" aria-labelledby="landing-problems-title">
@@ -149,7 +154,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
           <li><p class="lp-k">4 · Design</p><h3>From findings to features.</h3><p class="lp-pain">If state matters but cannot be read from outside, an app should ask, not guess. It should show less on a low-energy day, and make pausing and coming back easy.</p><p class="lp-fix"><b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, built for real jobs at Pragnya’s Sunday outings. <a href="tools.html">Read chapter 4 →</a></p></li>
           <li><p class="lp-k">5 · Test, then go further</p><h3>Where this goes next.</h3><p class="lp-pain">One follow-up done, three more data experiments, design studies with Pragnya volunteers and families, and papers others can check.</p><p class="lp-fix"><b>The aim:</b> one research direction, where neuroscience and design meet. <a href="next.html">Read chapter 5 →</a></p></li>
         </ol>
-        <p class="lp-energy"><b>The loop:</b> real life raised the question; the mouse showed that state changes what a brain takes in; the EEG showed that state is hard to read from outside; so the apps ask how someone is doing and keep each step small. The last experiment takes the apps back to real life to see if they help. <span>Three mice and one person are a start, not a rule for everyone.</span></p>
+        <p class="lp-energy"><b>In short:</b> state matters, it is hard to read from outside, so ask and keep steps small. <span>Three mice and one person are a start, not a rule for everyone.</span></p>
         <div class="lp-how"><p class="lp-how-short"><b>What this does not show yet:</b> whether the pattern holds in more animals and more people, what causes it, or whether the apps help. Each of those is an experiment in chapter 5.</p></div>
       </section>
 
@@ -165,12 +170,6 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
         ])}
       </section>
 
-      <h2 class="landing-subhead">The story in three numbers</h2><p class="landing-demo-note">One from inside a brain, two from outside. Each chapter has the charts and the checks.</p>
-      <ol class="landing-demo" aria-label="Three results" tabindex="0">
-        {phone('Mouse study', 'THREE MICE', 'State helps', '<div class="ph-paused"><b>25–33% better</b><em>in every mouse</em></div><p class="ph-small">Once we know if the mouse is alert and running.</p>', 'State matters inside', 'Knowing the mouse’s state made its brain a quarter to a third easier to predict.')}
-        {phone('EEG study', 'LAST STRETCH', '0.625 → 0.728', '<p class="ph-note">With 4 broken readings capped</p><p class="ph-small">0.5 is a coin flip. 1.0 is always right.</p>', 'Readable once…', 'On the last stretch, a simple model could often tell eyes open from closed.')}
-        {phone('EEG study', 'FIVE STRETCHES', 'About a coin flip', '<div class="ph-paused ph-red"><b>Average 0.478</b><em>some stretches worse than guessing</em></div><p class="ph-small">So the apps ask instead of guess.</p>', '…but not over time', 'Within two minutes, the brain-wave pattern for eyes closed changed.')}
-      </ol>
 
       <div class="landing-facts">
         <div class="landing-fact"><h2>Who did what</h2><p>The studies were done by Amishi with her father, who helped shape the questions, review the code and fix problems. Software tools, including AI assistants, helped build this website and the apps. The <a href="{REPO}/blob/main/application/contribution-ledger.md">contribution ledger</a> lists each part.</p></div>
@@ -360,8 +359,8 @@ page("next.html", "Where this goes next · From neurons to next steps",
 
 # ---------------- the phone tour: the same five chapters, one screen at a time ----------------
 TOUR = [
-    ("home", "Start", "home", "The loop", "From neurons to next steps", "It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. Does what a brain is doing change what it takes in? Five short screens follow that question from real life, into the lab, and back out again.",
-     '<div class="loop-figure"><div data-art="loopTall"></div></div>', "", "index.html"),
+    ("home", "Start", "home", "The loop", "From neurons to next steps", "It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. Is that the brain itself? Five short screens follow that question from real life, into the lab, and back out again.",
+     '<div class="loop-figure"><div data-art="loopTall"></div></div>', '<b>What we found, in three sentences:</b> what a brain is doing changes how it responds to the same thing. But that state is hard to read from outside. So tools should ask, not guess, and keep each step small.', "index.html"),
     ("ch1", "Real life", "users", "Chapter 1 of 5 · Real life", "Same words, different moment.", "A step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself? To find out, look inside a brain while its state changes.",
      '<div class="hj-art" data-art="note"></div>', "", "index.html#story"),
     ("ch2", "Understand", "eye", "Chapter 2 of 5 · Understand", "A mouse’s state changes how its brain sees.", "Mice watched pictures while thousands of brain cells were recorded. Guesser A saw only the picture. Guesser B also knew how alert and active the mouse was.",
@@ -429,7 +428,7 @@ download("../communication/projects/neuroscience-mobile/download.html", "../../.
 tour("../communication/projects/neuroscience-mobile/index.html", "../../../website/", "../../../website/img/")
 
 # ---------------- the video ----------------
-page("video/index.html", "Video · From neurons to next steps", "The five chapters of From neurons to next steps as a four-minute narrated video, with captions.", f"""    <section class="screen active landing" aria-labelledby="page-title">
+page("video/index.html", "Video · From neurons to next steps", "The five chapters of From neurons to next steps as a short narrated video, with captions.", f"""    <section class="screen active landing" aria-labelledby="page-title">
 {heading(('../index.html', 'All chapters'), 'The video', '<span id="page-title">The same story, in a few minutes.</span>', 'The slides with their speaker notes read aloud, and captions you can turn on. The words, numbers and drawings are the same as on the website.', 'loop')}
       <video controls preload="metadata" playsinline poster="../presentation/slides/01-cover.jpg" style="width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius-card);background:#000">
         <source src="from-neurons-to-next-steps.mp4" type="video/mp4">
@@ -462,7 +461,7 @@ page("share/index.html", "Share and demo · From neurons to next steps", "Everyt
 
       <section class="landing-problems" id="demo" aria-labelledby="demo-title">
         <h2 class="landing-subhead" id="demo-title">A five-minute demo</h2>
-        <p class="lp-lead">One step per chapter. Or skip the talking and play the four-minute video.</p>
+        <p class="lp-lead">One step per chapter. Or skip the talking and play the short video.</p>
         <ol aria-label="Demo steps" tabindex="0">
           {''.join(f'<li><p class="lp-k">{k}</p><h3>{h}</h3><p class="lp-pain">{a}</p><p class="lp-fix">{b}</p></li>' for k, h, a, b in DEMO)}
         </ol>
@@ -471,8 +470,8 @@ page("share/index.html", "Share and demo · From neurons to next steps", "Everyt
       <section class="landing-more" aria-labelledby="present-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="present-title">Present it</h2><p class="lp-lead">The same story in every format. Pick the one that fits the room.</p></div></div>
         {grid([
-            ('presentation', 'Slides, full screen', '15 slides', f'<a href="../presentation/present.html">Present</a> with arrow keys, or open the <a href="../presentation/presenter.html">presenter view</a> on the laptop for notes and a timer.'),
-            ('player-play', 'Video', 'About four minutes, with captions', '<a href="../video/">Play it here</a>, or download it below to play offline.'),
+            ('presentation', 'Slides, full screen', f'{N_SLIDES} slides', f'<a href="../presentation/present.html">Present</a> with arrow keys, or open the <a href="../presentation/presenter.html">presenter view</a> on the laptop for notes and a timer.'),
+            ('player-play', 'Video', 'About four and a half minutes, with captions', '<a href="../video/">Play it here</a>, or download it below to play offline.'),
             ('device-mobile', 'Phone tour', 'Five chapters, one screen each', '<a href="../neuroscience-mobile/">Open it</a>, or let people scan the code below.'),
         ])}
       </section>
@@ -573,7 +572,7 @@ STEPS = [
     ("1 · About 15 minutes", "Your real moment, and your parts.", "One real time from your own life when the same instruction worked once and was lost later, plus what you did in each app.", '<b>Opens:</b> the website, slides, video and Essay 1. <a href="answers.html">Write your answers →</a>'),
     ("2 · About 30 minutes each", "Make both essays yours.", "Drafts that follow the same five chapters. Fill the parts in [brackets] and change anything that does not sound like you.", '<b>Limit:</b> 375 words each. <a href="essay-1.html">Essay 1 →</a> <a href="essay-5.html">Essay 5 →</a>'),
     ("3 · About 10 minutes", "Check who did what.", "Eleven parts of the work. Confirm each one, or say what to change.", '<b>Rule:</b> only claim what you did and can explain. <a href="who-did-what.html">Check the list →</a>'),
-    ("4 · Optional · About 20 minutes", "Your voice on the video.", "Read 15 short parts, one per slide, on a phone. Any you skip keep the computer voice.", '<b>Then:</b> send the recordings. <a href="recording.html">Recording script →</a>'),
+    ("4 · Optional · About 20 minutes", "Your voice on the video.", f"Read {N_SLIDES} short parts, one per slide, on a phone. Any you skip keep the computer voice.", '<b>Then:</b> send the recordings. <a href="recording.html">Recording script →</a>'),
 ]
 steps_html = "".join(f'<li><p class="lp-k">{k}</p><h3>{h}</h3><p class="lp-pain">{a}</p><p class="lp-fix">{b}</p></li>' for k, h, a, b in STEPS)
 
@@ -588,8 +587,8 @@ page("handoff/index.html", "For Amishi · From neurons to next steps", "What Ami
         <div class="lm-head"><div><h2 class="landing-subhead" id="see-title">See what is already done</h2><p class="lp-lead">The same story in every format, all linked together.</p></div><div class="hj-art" data-art="loop"></div></div>
         {grid([
             ('route-2', 'The website', 'Five chapters', '<a href="../">Read the story</a>, from real life into the lab and back.'),
-            ('presentation', 'The slides', '15 slides, with notes', '<a href="../presentation/">See them</a>, or present them full screen.'),
-            ('player-play', 'The video', 'About four minutes', '<a href="../video/">Watch it</a>. Step 4 puts your voice on it.'),
+            ('presentation', 'The slides', f'{N_SLIDES} slides, with notes', '<a href="../presentation/">See them</a>, or present them full screen.'),
+            ('player-play', 'The video', 'About four and a half minutes', '<a href="../video/">Watch it</a>. Step 4 puts your voice on it.'),
             ('device-mobile', 'The phone tour', 'One chapter per screen', '<a href="../neuroscience-mobile/">Open it</a> on your phone.'),
             ('heart-handshake', 'Share and demo', 'Everything in one place', '<a href="../share/">Links, a five-minute demo, codes and downloads</a>.'),
             ('code', 'Your mouse study', 'Your code', f'<a href="{FLAGSHIP}">AmishI123/neuroscience-project</a>, checked against the website.'),
@@ -683,17 +682,17 @@ REC = (APP / "recording-script.md").read_text().split("\n## ")[1:]
 SLIDE_FILES = sorted((W / "presentation/slides").glob("*.jpg"))
 rec_html = "".join(rec_card(i, part, SLIDE_FILES) for i, part in enumerate(REC))
 page("handoff/recording.html", "Your voice · From neurons to next steps", "The recording script for the video, one short part per slide, for Amishi to read in her own voice.", f"""    <section class="screen active landing" aria-labelledby="page-title">
-{heading(('index.html', 'For Amishi'), 'Step 4 of 4 · Optional · Your voice', '<span id="page-title">Read it the way you would say it.</span>', 'Fifteen short parts, one per slide, about four minutes in all. Record on a phone. Any part you skip keeps the computer voice, so you can do a few at a time.', 'breakTime')}
+{heading(('index.html', 'For Amishi'), 'Step 4 of 4 · Optional · Your voice', '<span id="page-title">Read it the way you would say it.</span>', f'{N_SLIDES} short parts, one per slide, about four and a half minutes in all. Record on a phone. Any part you skip keeps the computer voice, so you can do a few at a time.', 'breakTime')}
       <section class="landing-more" aria-labelledby="tips-title">
         <h2 class="landing-subhead" id="tips-title">Before you start</h2>
         {grid([
             ('home', 'Where', 'A quiet room', 'Soft things around you, like a bedroom, sound better than a kitchen.'),
             ('device-mobile', 'How', 'Your phone’s voice memo app', 'Hold it about a hand’s width away. One recording per part.'),
             ('message-2', 'What to say', 'Change words that are not yours', 'Keep the meaning and the numbers the same.'),
-            ('certificate', 'When done', 'Name and send the files', 'Name each one by its number, 01.m4a to 15.m4a, and send them to your dad.'),
+            ('certificate', 'When done', 'Name and send the files', f'Name each one by its number, 01.m4a to {N_SLIDES:02d}.m4a, and send them to your dad.'),
         ])}
       </section>
-      <h2 class="landing-subhead">The 15 parts</h2><p class="landing-demo-note">Each part is read while its slide is on screen.</p>
+      <h2 class="landing-subhead">The {N_SLIDES} parts</h2><p class="landing-demo-note">Each part is read while its slide is on screen.</p>
       <ol class="landing-demo rec-list" aria-label="Recording script">{rec_html}</ol>
       <p class="landing-note"><a href="who-did-what.html">← Step 3</a><a href="index.html">Back to your four steps →</a></p>
     </section>""", base="../")

@@ -6,6 +6,15 @@ It started from Amishi's own experience: the same instruction can land one momen
 the brain itself (does what a brain is doing change what it takes in?) and follows the question in
 one loop: real life, understand, measure, design, then test.
 
+## What we found, in three sentences
+
+1. What a brain is doing changes how it responds to the same thing: in three mice, knowing the
+   mouse's state made its brain cells 25–33% easier to predict, for the very same pictures.
+2. But that state is hard to read from outside: a model reading one person's brain waves drifted to
+   a coin flip within two minutes, and brain-wave bands did not fix it.
+3. So tools should ask, not guess, and keep each step small: Next Step asks "How much energy do you
+   have today?" and on a low day shows just the next step.
+
 ## Understand: the mouse study
 
 Two simple models of thousands of brain cells in mouse visual cortex (Sensorium 2022), one from the

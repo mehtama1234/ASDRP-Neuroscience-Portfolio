@@ -43,6 +43,15 @@ slide("cover", "From neurons to next steps: an ASDRP neuroscience portfolio by A
 <p class="landing-try-note">Public data only. A prediction is not a cause. Plans are marked as plans.</p>
 </div>{B.LANDING_ART}</div>""",
       "This is one question, followed from real life into the lab and back out again. I’ll show two studies with public brain recordings, then the two apps their findings shaped, and where the work goes next.")
+# 1b
+slide("found", "What we found, in three sentences: state changes how a brain responds; it is hard to read from outside; so tools should ask and keep steps small.", f"""
+{head('What we found', 'In three sentences.')}
+{cards([
+    ('1 · Inside a brain', 'What a brain is doing changes how it responds to the same thing.', 'In three mice, knowing whether the mouse was alert and moving made its brain cells <b>25–33% easier to predict</b>, for the very same pictures.', ''),
+    ('2 · From outside the head', 'But that state is hard to read from outside.', 'A model reading one person’s brain waves could tell eyes open from closed on one stretch, then drifted to <b>a coin flip within two minutes</b>.', ''),
+    ('3 · In practice', 'So tools should ask, not guess, and keep each step small.', 'Next Step asks <b>“How much energy do you have today?”</b> and on a low day shows just the next step.', ''),
+], 'found3')}""",
+      "Here is the whole answer in three sentences. First: what a brain is doing changes how it responds to the same thing. Second: that state is hard to read from outside the head. Third: so tools should ask, not guess, and keep each step small. The rest of this talk shows the evidence for each one.")
 # 2
 slide("loop", "The loop: real life, understand, measure, design, test, and back to real life.", f"""
 {head('The whole story on one page', 'One loop, five chapters.', 'It starts in real life and ends back there. Each chapter answers the question the last one raised.')}
@@ -157,7 +166,8 @@ DECK_CSS = """html,body{margin:0;width:1000px;height:563px;overflow:hidden;backg
 .deck-slide .chart-card{grid-template-columns:1.3fr 1fr;padding:12px 16px;gap:18px;align-items:center}.deck-slide .chart-card svg.chart{max-height:215px;width:100%}.deck-slide .chart-card h3{font-size:19px}.deck-slide .chart-card p{font-size:13px}
 .deck-slide .lp-energy{font-size:14px;padding:12px 16px}.deck-slide .deck-shots img{max-height:225px}.deck-slide .deck-shots strong{font-size:15px}.deck-slide .deck-shots span{font-size:12px}
 .deck-slide.dense .landing-problems .lp-pain,.deck-slide.dense .landing-problems .lp-fix{font-size:12px;line-height:1.35}.deck-slide.dense .landing-problems h3{font-size:16px}
-.deck-slide .lm-grid h3{font-size:17px}"""
+.deck-slide .lm-grid h3{font-size:17px}
+.deck-slide .found3 ol{grid-template-columns:repeat(3,minmax(0,1fr))!important}.deck-slide .found3 h3{font-size:19px}.deck-slide .found3 .lp-pain{font-size:14px}.deck-slide .found3 .lp-pain b{color:var(--ink)}"""
 
 
 def slide_html(i, s):
@@ -193,6 +203,7 @@ def main():
     from PIL import Image
     src = P / "src"; out = P / "slides"; src.mkdir(exist_ok=True); out.mkdir(exist_ok=True)
     for old in out.glob("*.jpg"): old.unlink()
+    for old in src.glob("*.html"): old.unlink()
     files = []
     for i, s in enumerate(SLIDES, 1):
         name = f"{i:02d}-{s['key']}"
