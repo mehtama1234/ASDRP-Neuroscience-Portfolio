@@ -16,14 +16,14 @@ from the pupil, not the running, and the cells that follow alertness gained abou
 as the rest. I tried to break the result: state taken from the wrong moments added nothing, and
 leaving out any one mouse kept the gain. What I learned: a result needs a test that could make it fail.
 
-**2. Can state be read from outside the head? (EEG study, in my portfolio)**
+**2. Can a brain-wave headset measure state in a person? (EEG study, in my portfolio)**
 Using a public two-minute EEG recording, I tested whether a simple model could tell when a person’s
 eyes were closed, always learning from earlier and testing on later, like a real app would. It worked
 on one stretch and drifted to a coin flip over time. [Only if you ran or reran it yourself:] A
-follow-up with brain-wave bands, planned before running, helped on average but still dipped below
+follow-up with brain-wave rhythms, planned before running, helped on average but still dipped below
 a coin flip. I reported it as “did not hold up”, because that is what the rule I set said.
 
 **3. From findings to features (Next Step and Helper Jobs)**
 [In your words: what you designed, built or tested in Next Step, and your part in Helper Jobs for
-Pragnya’s outings.] Because the EEG showed state is hard to read from outside, Next Step asks people
+Pragnya’s outings.] Because the EEG showed a headset could not reliably measure state, Next Step asks people
 how much energy they have instead of guessing, and shows less on a low day.

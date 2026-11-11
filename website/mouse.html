@@ -26,16 +26,16 @@
   <link rel="stylesheet" href="assets/charts.css" />
 </head>
 <body>
-  <aside class="public-demo-banner" aria-label="About this portfolio">ASDRP application portfolio · Public data only · Every number comes from committed results</aside>
+  <aside class="public-demo-banner" aria-label="About this portfolio">ASDRP application portfolio · Public data only · Every number comes from saved results</aside>
   <a class="skip-link" href="#app">Skip to the page</a>
   <header>
     <a class="brand" href="index.html"><span class="mark" aria-hidden="true">n.</span> From neurons to next steps</a>
-    <span class="header-status"><span class="badge">Public data only</span><span class="badge">Plans marked as plans</span></span>
+    <span class="header-status"><span class="badge">Public data only</span><span class="badge">Future plans clearly marked</span></span>
     <a class="header-link" href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio">Source code</a>
   </header>
   <main id="app" tabindex="-1">
     <section class="screen active landing" aria-labelledby="page-title">
-    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 2 · Understand · Mouse study</p><h1><span id="page-title">Does a mouse’s state change how its brain responds to what it sees?</span></h1><p class="hj-sub">Mice watched pictures while scientists recorded thousands of brain cells in the part of the brain that handles seeing. We tried to guess what each cell would do, first from the picture alone, then from the picture plus two signs of the mouse’s state: how wide its pupils were and how fast it was running. If state did not matter, the extra signs would not help.</p></div><div class="hj-art" data-art="mouseHero"></div></div>
+    <div class="lm-head"><div class="hj-heading"><a class="back-button" href="index.html">← <span>All chapters</span></a><p class="eyebrow">Chapter 2 · Understand · Mouse study</p><h1><span id="page-title">Does how alert a mouse is change how its brain responds to what it sees?</span></h1><p class="hj-sub">Mice watched pictures while scientists recorded thousands of brain cells in the part of the brain that handles seeing. We tried to guess what each cell would do, first from the picture alone, then from the picture plus two signs of the mouse’s state: how wide its pupils were and how fast it was running. If state did not matter, the extra signs would not help.</p></div><div class="hj-art" data-art="mouseHero"></div></div>
       <section class="landing-problems answer"><p class="lp-energy"><b>It mattered, in all three mice.</b> Knowing the mouse’s state made our guesses a quarter to a third better (25–33%), on pictures the model had never seen. <span>This shows state and seeing are linked. It does not yet show which causes which.</span></p></section>
 
       <section class="landing-more" aria-labelledby="how-title">
@@ -52,7 +52,7 @@
       <div class="tour-nums inside-nums"><p><b>90%</b><span>of brain cells were guessed better once state was added</span></p><p><b>+0.017</b><span>typical gain per cell (the middle value)</span></p><p><b>+0.35</b><span>the biggest gain for a single cell</span></p></div>
       <div class="chart-card"><div data-chart="mouse1-ablation"></div><div><p class="lm-k">Which part of state?</p><h3>It is the pupil, not the running.</h3><p>Adding running barely moved the score. Adding pupil size gave almost the whole gain. This mouse ran on only about 5% of trials, so running had little to say.</p><p class="chart-note">Score on unseen pictures, first mouse.</p></div></div>
       <div class="chart-card"><div data-chart="mouse1-cells"></div><div><p class="lm-k">Which cells gain?</p><h3>The cells that follow alertness gain most.</h3><p>Cells whose activity rises or falls with pupil size gained about five times as much as the rest.</p><p class="chart-note">A cell “follows pupil” when its activity and pupil size move together (correlation above 0.1), as in Amishi’s report.</p></div></div>
-      <div class="chart-card"><div data-chart="mouse1-cell"></div><div><p class="lm-k">One cell</p><h3>From noise to a pattern.</h3><p>Brain cell 3035 was almost impossible to predict from the picture alone. Knowing the mouse’s state raised its score from 0.05 to 0.40.</p><p class="chart-note">Score for this one cell on unseen pictures.</p></div></div>
+      <div class="chart-card"><div data-chart="mouse1-cell"></div><div><p class="lm-k">One cell</p><h3>From nearly unpredictable to predictable.</h3><p>Brain cell 3035 was almost impossible to predict from the picture alone. Knowing the mouse’s state raised its score from 0.05 to 0.40.</p><p class="chart-note">Score for this one cell on unseen pictures.</p></div></div>
 
       <section class="landing-more" aria-labelledby="checks-title" id="checks">
         <div class="lm-head"><div><h2 class="landing-subhead" id="checks-title">Trying to break the result</h2><p class="lp-lead">Three checks that could have made the gain disappear. It survived all three.</p></div><div class="hj-art" data-art="controls"></div></div>
@@ -64,7 +64,7 @@
         <div class="landing-fact"><h2>Code and data</h2><p>The analysis is in <a href="https://github.com/AmishI123/neuroscience-project">AmishI123/neuroscience-project</a> (her notebooks 01–05). The numbers on this page are copied from its saved results, and an automatic check confirms they still match. Data: Willeke et al. (2022), <i>The Sensorium competition on predicting large-scale mouse primary visual cortex activity</i>, arXiv:2206.08666.</p></div>
         <div class="landing-fact landing-fact-not"><h2>What it does not show</h2><p>Three mice cannot speak for all mice. A better guess does not show that being alert or running causes the brain to change. Other things that happen at the same time could explain it.</p></div>
       </div>
-      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What chapter 2 tells us:</b> the same picture lands differently depending on the state the mouse is in. So the next question is whether that state can be read from outside the head, in a person. <a href="eeg.html">Chapter 3 →</a></p></section>
+      <section class="landing-problems answer bridge"><p class="lp-energy"><b>What chapter 2 tells us:</b> the same picture lands differently depending on the state the mouse is in. So the next question: can a brain-wave headset measure that in a person? <a href="eeg.html">Chapter 3 →</a></p></section>
       <p class="landing-note"><a href="index.html">← All chapters</a><a href="eeg.html">Chapter 3 · EEG →</a></p>
     </section>
     <nav class="landing-note family-links" aria-label="Everything in this portfolio"><b>Everything in this portfolio:</b><a href="https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/share/">Share and demo</a><a href="https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/handoff/">For Amishi</a><a href="https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/">The website</a><a href="https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/neuroscience-mobile/">Phone tour</a><a href="https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/presentation/">Slides</a><a href="https://mehtama1234.github.io/ASDRP-Neuroscience-Portfolio/video/">Video</a><a href="https://next-step-live.onrender.com/">Next Step app</a><a href="https://helper-jobs.onrender.com">Helper Jobs app</a><a href="https://github.com/mehtama1234/ASDRP-Neuroscience-Portfolio">Source code</a></nav>

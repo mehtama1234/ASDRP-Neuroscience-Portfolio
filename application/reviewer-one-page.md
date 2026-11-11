@@ -26,13 +26,13 @@ the gain. A better prediction shows a link, not a cause.
 ## Measure: the EEG study and experiment 2
 
 A simple model reads eye state from one person's EEG on the last stretch (AUC 0.625; 0.728 with four
-broken readings capped), but across five stretches it averages 0.478, about a coin flip. Experiment 2,
-planned before running, used brain-wave bands: 0.566 on average, but two stretches still below 0.5, so
+glitchy readings trimmed), but across five stretches it averages 0.478, about a coin flip. Experiment 2,
+planned before running, used brain-wave rhythms: 0.566 on average, but two stretches still below 0.5, so
 by its own rule it did not hold up.
 
 ## Design: findings to features
 
-Because state matters but is hard to read from outside, the apps ask instead of guessing. Next Step
+Because alertness matters but a headset could not reliably measure it, the apps ask instead of guessing. Next Step
 asks how much energy someone has and shows just the next step on a low day; Save & pause and "I'm
 stuck" make stopping and restarting easy. Helper Jobs gives one picture step at a time, read aloud,
 with a Help button, at Pragnya's Sunday outings.

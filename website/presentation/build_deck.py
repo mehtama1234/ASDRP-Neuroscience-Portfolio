@@ -40,7 +40,7 @@ slide("cover", "From neurons to next steps: an ASDRP neuroscience portfolio by A
 <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
 <h1>From neurons to next steps</h1>
 <p class="landing-lede">It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. <b>Does what a brain is doing change what it takes in?</b> And if it does, how should we design for it?</p>
-<p class="landing-try-note">Public data only. A prediction is not a cause. Plans are marked as plans.</p>
+<p class="landing-try-note">Public data only. Predicting something is not the same as knowing its cause. Plans are marked as plans.</p>
 </div>{B.LANDING_ART}</div>""",
       "This is one question, followed from real life into the lab and back out again. I’ll show two studies with public brain recordings, then the two apps their findings shaped, and where the work goes next.")
 # 1b
@@ -61,10 +61,10 @@ slide("loop", "The loop: real life, understand, measure, design, test, and back 
 slide("ch1", "Chapter 1, real life: same words, different moment.", f"""
 {head('Chapter 1 · Real life', 'Same words, different moment.', 'It started from Amishi’s own experience: a step that is easy when you are calm can be lost when you are tired, rushed or overloaded.', 'note')}
 {answer('<b>The question:</b> is that the brain itself changing what it takes in? <span>To find out, look inside a brain while its state changes.</span>')}""",
-      "This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether the brain’s state itself changes what gets in.")
+      "This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether how alert or tired a brain is changes what gets in.")
 # 4
 slide("ch2-how", "Chapter 2: how the mouse study works, in four steps.", f"""
-{head('Chapter 2 · Understand · Mouse study', 'Does a mouse’s state change how its brain sees?', 'Mice watched pictures while thousands of brain cells were recorded in the part of the brain that handles seeing.', 'mouseStudy')}
+{head('Chapter 2 · Understand · Mouse study', 'Does how alert a mouse is change how its brain sees?', 'Mice watched pictures while thousands of brain cells were recorded in the part of the brain that handles seeing.', 'mouseStudy')}
 {B.grid([
     ('photo', 'Step 1', 'What the mouse saw', 'Each picture shrunk to a short summary of its light and dark patterns.'),
     ('eye', 'Step 2', 'What state it was in', 'Pupil size (wider usually means more alert) and running speed.'),
@@ -91,8 +91,8 @@ slide("ch2-checks", "Chapter 2 checks: mix up the state, leave one mouse out, pu
     ('users', 'Leave one mouse out', 'Still there', 'Take any one mouse away and the other two still show the gain.'),
     ('eye', 'Pupil or running?', 'Pupil helps every mouse', 'Running helps some mice more than others.'),
 ])}
-{B.bridge('What chapter 2 tells us:', 'the same picture lands differently depending on the mouse’s state. Can that state be read from outside the head, in a person?', '#', 'Chapter 3')}""",
-      "We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?")
+{B.bridge('What chapter 2 tells us:', 'the same picture lands differently depending on the mouse’s state. Can a brain-wave headset measure that in a person?', '#', 'Chapter 3')}""",
+      "We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So how alert the mouse is really matters inside its brain. Next question: can a headset measure that in a person?")
 # 7
 slide("ch3-how", "Chapter 3: how the EEG study works.", f"""
 {head('Chapter 3 · Measure · EEG study', 'Can sensors on the head tell when someone’s eyes are closed?', 'EEG is a cap of small sensors that pick up the brain’s electrical activity through the scalp. Closing your eyes is one of the clearest changes it can see.', 'eegHero')}
@@ -105,35 +105,35 @@ slide("ch3-how", "Chapter 3: how the EEG study works.", f"""
 # 8
 slide("ch3-result", "Chapter 3 result: good on one stretch, a coin flip over time.", f"""
 {head('Chapter 3 · The result', 'On one stretch, yes. Over time, no.')}
-{answer('On the last part of the recording the model scored <b>0.625</b> (0.728 once four broken readings were capped). Across five stretches it averaged <b>0.478: about a coin flip.</b>')}
+{answer('On the last part of the recording the model scored <b>0.625</b> (0.728 once four glitchy readings were trimmed). Across five stretches it averaged <b>0.478: about a coin flip.</b>')}
 {B.chart('eeg-scale', 'How to read the score', 'Where the results sit between guessing and always right.', 'Near 0.5 is no better than flipping a coin. Below 0.5 means the pattern it learned has flipped.', 'The score is called AUC.')}""",
       "On one stretch it worked reasonably well. But when we tested it on five stretches across the recording, it averaged a coin flip.")
 # 9
 slide("ch3-drift", "Chapter 3: scores on five stretches scatter around a coin flip.", f"""
 {head('Chapter 3 · Over time', 'Within two minutes, the signal drifts.')}
-{B.chart('eeg-folds', 'Five stretches in time', 'Across the recording, it drifts to a coin flip.', 'Some stretches fall well below 0.5: the pattern learned earlier had flipped by later on. Capping broken readings and leaving a gap do not fix it.', 'Mixing up the answers gives 0.499, so the method itself does not invent a pattern.')}
+{B.chart('eeg-folds', 'Five stretches in time', 'Across the recording, it drifts to a coin flip.', 'Some stretches fall well below 0.5: the pattern learned earlier had flipped by later on. Trimming glitchy readings and leaving a gap do not fix it.', 'Mixing up the answers gives 0.499, so the method itself does not invent a pattern.')}
 """,
       "Each dot is one stretch. They land on both sides of a coin flip, and some are worse than guessing. Within two minutes, the signal drifted.")
 # 9b
-slide("ch3-bands", "Experiment 2: brain-wave bands help on average but still dip below a coin flip.", f"""
-{head('Chapter 3 · Experiment 2', 'Would brain-wave bands hold steady?', 'So the apps ask the person: even bands are not steady enough to build on.')}
-{answer('Planned before running. All four bands averaged <b>0.566</b> against 0.481 for raw readings, but two of five stretches still fell just below a coin flip. <b>By the rule set beforehand, it did not hold up.</b>')}
+slide("ch3-bands", "Experiment 2: brain-wave rhythms help on average but still dip below a coin flip.", f"""
+{head('Chapter 3 · Experiment 2', 'Would brain-wave rhythms hold steady?', 'So the apps ask the person: even brain-wave rhythms are not steady enough to build on.')}
+{answer('Planned before running. All four rhythms averaged <b>0.566</b> against 0.481 for raw readings, but two of five stretches still fell just below a coin flip. <b>By the rule set beforehand, it did not hold up.</b>')}
 {B.chart('eeg-bands', 'Five stretches, one-second gap', 'Better on average, still not reliable.', 'Alpha alone did worse (0.442). Mixing up the answers gave 0.500, as it should.', 'Plan and code in the repository.')}
 """,
-      "So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave bands, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess someone’s state from a sensor.")
+      "So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave rhythms, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess how someone is doing from a sensor.")
 # 10
 slide("ch4-rules", "Chapter 4: four findings become four design rules.", f"""
 {head('Chapter 4 · Design · Human–computer interaction', 'From findings to features.')}
 {cards([
-    ('From chapter 2', 'Show less when energy is low.', '<b>Found:</b> the same picture lands differently depending on state.', '<b>In the apps:</b> “How much energy do you have today?” On “A little”, just the next step.'),
-    ('From chapter 3', 'Ask, don’t guess.', '<b>Found:</b> a sensor read state once, then drifted, even with brain-wave bands.', '<b>In the apps:</b> the person says how they are. Nothing happens until they tap.'),
-    ('From chapter 3', 'Expect change halfway.', '<b>Found:</b> within two minutes the pattern shifted.', '<b>In the apps:</b> Save &amp; pause, a note of where you stopped, break reminders.'),
+    ('From chapter 2', 'Show less when energy is low.', '<b>Found:</b> the same picture lands differently depending on how alert the brain is.', '<b>In the apps:</b> “How much energy do you have today?” On “A little”, just the next step.'),
+    ('From chapter 3', 'Ask, don’t guess.', '<b>Found:</b> a headset read closed eyes on one stretch, then drifted, even with brain-wave rhythms.', '<b>In the apps:</b> the person says how they are. Nothing happens until they tap.'),
+    ('From chapter 3', 'Expect change halfway.', '<b>Found:</b> within two minutes the brain-wave pattern for closed eyes changed.', '<b>In the apps:</b> Save &amp; pause, a note of where you stopped, break reminders.'),
     ('From real life', 'When stuck, make it smaller.', '<b>Seen:</b> a task too big all at once is where people stop.', '<b>In the apps:</b> “I’m stuck” makes the step smaller and keeps your place.'),
 ], 'rules')}""",
       "This is where the science turns into design. Each finding gives a rule, and each rule is a real feature in the apps.", "dense")
 # 11
 slide("ch4-screens", "Chapter 4: the rules on real screens in Next Step and Helper Jobs.", f"""
-{head('Chapter 4 · On real screens', 'Two apps, built for real life.', 'Next Step, by Amishi Mehta, for schoolwork. Helper Jobs, a family project, built for real jobs at Pragnya’s Sunday outings.')}
+{head('Chapter 4 · On real screens', 'Two apps, built for real life.', 'Next Step, by Amishi Mehta, for schoolwork. Helper Jobs, a family project that gives neurodivergent adults one picture step at a time while they help at Pragnya’s Sunday outings for kids.')}
 <ol class="landing-demo deck-shots">
 {B.shot('../img/next-step-energy.jpg', 'Next Step energy check.', 'Show less when energy is low', 'The plan shrinks to one step.')}
 {B.shot('../img/next-step-stuck.jpg', 'Next Step pause and I’m stuck.', 'Pause, and make it smaller', 'Your place is kept.')}
@@ -144,7 +144,7 @@ slide("ch4-screens", "Chapter 4: the rules on real screens in Next Step and Help
 slide("ch5", "Chapter 5: the road ahead in four steps.", f"""
 {head('Chapter 5 · Test, then go further', 'Where this goes next.')}
 {cards([(k, h, a, b) for k, h, a, b in B.ROADMAP])}""",
-      "Next, with an ASDRP mentor, we run four more data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: does designing for state help people learn?", "dense")
+      "Next, with an ASDRP mentor, we run the three remaining data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: do apps that adjust to how you feel help people learn?", "dense")
 # 13
 slide("close", "The loop, who did what, and where to see everything.", f"""
 {head('Thank you', 'From neurons to next steps.')}

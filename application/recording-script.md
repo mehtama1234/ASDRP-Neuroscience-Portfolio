@@ -22,7 +22,7 @@ Here is the whole story. Real life raised a question. A mouse study helps us und
 
 ## 04 · Chapter 1, real life
 
-This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether the brain’s state itself changes what gets in.
+This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether how alert or tired a brain is changes what gets in.
 
 ## 05 · Chapter 2
 
@@ -38,7 +38,7 @@ Looking inside the first mouse, from Amishi’s own analysis. Adding running bar
 
 ## 08 · Chapter 2 checks
 
-We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So state really matters inside the brain. Next question: can we read it from outside, in a person?
+We tried to break it. When we gave guesser B the wrong moments’ state, the gain disappeared. Leaving out any one mouse kept the gain. So how alert the mouse is really matters inside its brain. Next question: can a headset measure that in a person?
 
 ## 09 · Chapter 3
 
@@ -54,7 +54,7 @@ Each dot is one stretch. They land on both sides of a coin flip, and some are wo
 
 ## 12 · Experiment 2
 
-So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave bands, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess someone’s state from a sensor.
+So we asked a follow-up and wrote the plan down before running it: would the strength of brain-wave rhythms, like alpha, hold steady where raw readings did not? They helped on average, but two of five stretches still fell below a coin flip. By the rule we set beforehand, it did not hold up. So a tool should not try to guess how someone is doing from a sensor.
 
 ## 13 · Chapter 4
 
@@ -66,7 +66,7 @@ Here they are. Next Step asks about energy and shrinks the plan. Save and pause 
 
 ## 15 · Chapter 5
 
-Next, with an ASDRP mentor, we run four more data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: does designing for state help people learn?
+Next, with an ASDRP mentor, we run the three remaining data experiments and write the first paper, on why the EEG drifts. Then design studies with the people the apps are for. Longer term, the joined-up question: do apps that adjust to how you feel help people learn?
 
 ## 16 · The loop, who did what, and where to see everything.
 

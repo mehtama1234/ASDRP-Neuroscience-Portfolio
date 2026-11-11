@@ -20,10 +20,10 @@ mouse’s pupils were and how fast it was running. Knowing the mouse’s state m
 percent better, in all three mice. When I gave the model the state from the wrong moments, the gain
 disappeared. State is not noise. It shapes what gets in.
 
-Then I asked whether state can be read from outside the head. In a public EEG recording, a simple
+Then I asked whether a brain-wave headset could measure state in a person. In a public EEG recording, a simple
 model could tell when someone’s eyes were closed on one stretch, but over two minutes it drifted to
 a coin flip. [Only if you ran or reran it yourself:] I wrote down a follow-up plan before running
-it, using brain-wave bands, and it still did not hold up. I kept that result, because it changed
+it, using brain-wave rhythms, and it still did not hold up. I kept that result, because it changed
 what I believe.
 
 That result changed what I build. Next Step, my app for students, does not try to guess how

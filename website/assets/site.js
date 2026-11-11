@@ -18,7 +18,7 @@
     },
     'eeg-scale': () => C.scale({ caption: 'Score scale from 0 to 1 where 0.5 is a coin flip, with the EEG results marked.', band: [0.45, 0.55],
       ticks: [{ v: 0, label: '0 · always wrong' }, { v: 0.5, label: '0.5 · coin flip' }, { v: 1, label: '1 · always right' }],
-      marks: [{ v: R.eeg.fold_means['pointwise EEG'], label: `Over time ${C.fmt(R.eeg.fold_means['pointwise EEG'])}`, tone: 'soft', below: true }, { v: R.eeg.holdout[0].auc, label: `Last stretch ${C.fmt(R.eeg.holdout[0].auc)}`, tone: 'soft' }, { v: R.eeg.glitches.holdout[0], label: `Capped ${C.fmt(R.eeg.glitches.holdout[0])}`, below: true }] }),
+      marks: [{ v: R.eeg.fold_means['pointwise EEG'], label: `Over time ${C.fmt(R.eeg.fold_means['pointwise EEG'])}`, tone: 'soft', below: true }, { v: R.eeg.holdout[0].auc, label: `Last stretch ${C.fmt(R.eeg.holdout[0].auc)}`, tone: 'soft' }, { v: R.eeg.glitches.holdout[0], label: `Glitches trimmed ${C.fmt(R.eeg.glitches.holdout[0])}`, below: true }] }),
     'mouse-gain': () => C.rowBars({
       caption: 'How much knowing the mouse’s state adds, for each mouse.', max: 0.06, height: 220,
       items: R.mouse.mice.map(m => ({ label: m.id, value: m.gain })),
@@ -35,13 +35,13 @@
       caption: `Brain cell ${b.id}: score from the picture alone and with the mouse's state added.`, max: 0.5, height: 230,
       items: [{ label: 'Picture only', value: b.picture_only, tone: 's0' }, { label: 'Picture + state', value: b.with_state }] }); },
     'mouse-loo': () => C.rowBars({
-      caption: 'Average gain from behaviour after leaving each mouse out in turn.', max: 0.06, height: 220, tone: 's0',
+      caption: 'Average gain from knowing the mouse’s state, leaving out each mouse in turn.', max: 0.06, height: 220, tone: 's0',
       items: R.mouse.leave_one_out_mean_gain.map(m => ({ label: `Without ${m.omit.toLowerCase()}`, value: m.gain })),
       format: v => `+${v.toFixed(3).replace(/^0/, '')}`
     }),
     'eeg-holdout': () => C.groupedBars({
-      caption: 'Score on the last stretch of the recording for each model, as first run and with four broken readings capped.',
-      series: ['As first run', 'Broken readings capped'], max: 0.8, min: 0, ticks: 4,
+      caption: 'Score on the last stretch of the recording for each model, as first run and with four glitchy readings trimmed.',
+      series: ['As first run', 'Glitches trimmed'], max: 0.8, min: 0, ticks: 4,
       groups: [{ label: 'Now only', values: [R.eeg.holdout[0].auc, R.eeg.glitches.holdout[0]] }, { label: 'Now + a moment ago', values: [R.eeg.holdout[1].auc, R.eeg.glitches.holdout[1]] }]
     }),
     'eeg-folds': () => C.foldDots({
@@ -49,16 +49,16 @@
       rows: [
         { label: 'Now only', values: R.eeg.folds.pointwise, mean: R.eeg.fold_means['pointwise EEG'] },
         { label: 'Now + a moment ago', values: R.eeg.folds.context, mean: R.eeg.fold_means['EEG + causal temporal context'], tone: 'ink' },
-        { label: 'Readings capped', values: R.eeg.glitches.folds.pointwise, mean: R.eeg.glitches.means[0], tone: 'soft' },
+        { label: 'Glitches trimmed', values: R.eeg.glitches.folds.pointwise, mean: R.eeg.glitches.means[0], tone: 'soft' },
         { label: 'With a gap', values: R.eeg.gap_folds.pointwise, mean: R.eeg.gap_means['pointwise EEG'], tone: 'soft' }
       ]
     }),
     'eeg-bands': () => C.foldDots({
-      caption: 'Experiment 2: score on five later stretches for raw readings, all four brain-wave bands and alpha alone, with a gap of one second; the dashed line is a coin flip.',
+      caption: 'Experiment 2: score on five later stretches for raw readings, all four brain-wave rhythms and alpha alone, with a gap of one second; the dashed line is a coin flip.',
       min: 0.2, max: 0.8,
       rows: [
         { label: 'Raw readings', values: R.eeg.bands.with_gap['raw readings'].stretches, mean: R.eeg.bands.with_gap['raw readings'].mean, tone: 'soft' },
-        { label: 'All four bands', values: R.eeg.bands.with_gap['all four bands'].stretches, mean: R.eeg.bands.with_gap['all four bands'].mean },
+        { label: 'All four rhythms', values: R.eeg.bands.with_gap['all four bands'].stretches, mean: R.eeg.bands.with_gap['all four bands'].mean },
         { label: 'Alpha only', values: R.eeg.bands.with_gap['alpha only'].stretches, mean: R.eeg.bands.with_gap['alpha only'].mean, tone: 'ink' }
       ]
     }),

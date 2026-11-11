@@ -10,8 +10,8 @@ Written to Amishi. The designed page is at https://mehtama1234.github.io/ASDRP-N
 | Pupil or running, and which cells gain | You compared pupil with running, and found the cells that follow alertness gain most. | Your father reviewed choices and writing. | Confirm |
 | Two more mice and the checks | The other two mice, mixing up the state, and leaving one mouse out. | Run in your repository with your father’s help. | Say which parts you ran |
 | The EEG study | The learn-from-earlier, test-on-later study and its write-up. | Your father and AI tools helped set up and review it. | Say which parts you did |
-| The EEG checks | Five stretches, mixing up the answers, leaving a gap, capping broken readings. | Added with AI tools and your father. | Say which parts you ran |
-| Experiment 2: brain-wave bands | Planned, coded and run with AI help on 10 November 2026. | AI tools wrote and ran it from a plan written first. | Rerun it yourself first |
+| The EEG checks | Five stretches, mixing up the answers, leaving a gap, trimming glitchy readings. | Added with AI tools and your father. | Say which parts you ran |
+| Experiment 2: brain-wave rhythms | Planned, coded and run with AI help on 10 November 2026. | AI tools wrote and ran it from a plan written first. | Rerun it yourself first |
 | Website, slides, phone tour and video | The pages that tell the story. | Built with AI tools and your father. | Say what you designed, checked or will present |
 | Next Step | Credited to you, Amishi Mehta. | Built with AI tools and your father. | Describe your part |
 | Helper Jobs | A family project for Pragnya’s Sunday outings. | Built with AI tools and your father. | Describe your part |

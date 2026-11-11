@@ -5,7 +5,7 @@ Every essay tells the same story as the website, slides, phone tour and video:
 
 1. **Real life.** It started from Amishi’s own experience: the same instruction lands one moment and is lost the next. Is that the brain itself?
 2. **Understand (mouse).** A mouse’s state makes its brain 25–33% easier to predict, in all three mice.
-3. **Measure (EEG).** State can be read on one stretch, then drifts to a coin flip. Brain-wave bands
+3. **Measure (EEG).** A headset can tell closed eyes on one stretch, then drifts to a coin flip. Brain-wave rhythms
    (experiment 2) did not fix it.
 4. **Design.** So the apps ask, not guess: show less on a low-energy day, make pausing easy.
 5. **Test, then go further.** Three more data experiments, design studies with Pragnya volunteers
