@@ -107,7 +107,7 @@ LANDING_ART = """<svg class="landing-art" viewBox="0 0 440 400" aria-hidden="tru
         </svg>"""
 
 page("index.html", "From neurons to next steps · an ASDRP neuroscience portfolio",
-     "What a brain is doing changes how it responds; that state is hard to read from outside; so tools should ask, not guess, and keep each step small. Two studies and two apps by Amishi Mehta.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
+     "In mice, brain cells reacted differently to the same picture depending on how alert the mouse was; a brain-wave headset could not reliably tell even whether eyes were open or closed; so a helpful app asks how you feel and shows one small step at a time. Two studies and two apps by Amishi Mehta.", f"""    <section id="home" class="screen active landing" aria-labelledby="home-title">
       <div class="landing-hero">
         <div class="landing-hero-text">
           <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
@@ -124,11 +124,11 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
 
       <section class="landing-problems" id="found" aria-labelledby="found-title">
         <h2 class="landing-subhead" id="found-title">What we found, in three sentences</h2>
-        <p class="lp-lead">Each sentence is one finding, and each links to the evidence behind it.</p>
+        <p class="lp-lead">The question: does how alert you are change what your brain takes in, and can a device measure it? Each answer links to its evidence.</p>
         <ol aria-label="Three findings" tabindex="0">
-          <li><p class="lp-k">1 · Inside a brain</p><h3>What a brain is doing changes how it responds to the same thing.</h3><p class="lp-pain">In three mice, knowing whether the mouse was alert and moving made its brain cells <b>25–33% easier to predict</b>, for the very same pictures.</p><p class="lp-fix"><a href="mouse.html">The mouse study →</a></p></li>
-          <li><p class="lp-k">2 · From outside the head</p><h3>But that state is hard to read from outside.</h3><p class="lp-pain">A model reading one person’s brain waves could tell eyes open from closed on one stretch, then drifted to <b>a coin flip within two minutes</b>. Brain-wave bands did not fix it.</p><p class="lp-fix"><a href="eeg.html">The EEG study →</a></p></li>
-          <li><p class="lp-k">3 · In practice</p><h3>So tools should ask, not guess, and keep each step small.</h3><p class="lp-pain">Next Step asks <b>“How much energy do you have today?”</b> and on a low day shows just the next step. Helper Jobs gives one picture step at a time.</p><p class="lp-fix"><a href="tools.html">The design →</a></p></li>
+          <li><p class="lp-k">1 · The mouse study</p><h3>In mice, brain cells reacted differently to the very same picture depending on how alert the mouse was.</h3><p class="lp-pain">We used public recordings of thousands of brain cells in three mice. Adding how alert each mouse was (its pupil size and running speed) made our predictions of the cells <b>25–33% better</b>, in all three.</p><p class="lp-fix"><a href="mouse.html">The mouse study →</a></p></li>
+          <li><p class="lp-k">2 · The brain-wave study</p><h3>A brain-wave headset on a person could not reliably tell even whether their eyes were open or closed.</h3><p class="lp-pain">We used a public recording of one person. A computer learned to spot closed eyes from the brain waves, but within two minutes it was <b>no better than flipping a coin</b>, even with a smarter method.</p><p class="lp-fix"><a href="eeg.html">The EEG study →</a></p></li>
+          <li><p class="lp-k">3 · The app</p><h3>So a helpful app should not try to read your brain: it should ask how you feel and show one small step at a time.</h3><p class="lp-pain">Next Step, Amishi’s app for students, asks <b>“How much energy do you have today?”</b> On a low day it shows only the next step, so nothing has to guess.</p><p class="lp-fix"><a href="tools.html">The design →</a></p></li>
         </ol>
         <p class="lp-energy"><b>What comes next:</b> test whether that actually helps the people the apps are for, and take the science further with an ASDRP mentor. <a href="next.html">The plan →</a></p>
       </section>
@@ -154,7 +154,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
           <li><p class="lp-k">4 · Design</p><h3>From findings to features.</h3><p class="lp-pain">If state matters but cannot be read from outside, an app should ask, not guess. It should show less on a low-energy day, and make pausing and coming back easy.</p><p class="lp-fix"><b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project, built for real jobs at Pragnya’s Sunday outings. <a href="tools.html">Read chapter 4 →</a></p></li>
           <li><p class="lp-k">5 · Test, then go further</p><h3>Where this goes next.</h3><p class="lp-pain">One follow-up done, three more data experiments, design studies with Pragnya volunteers and families, and papers others can check.</p><p class="lp-fix"><b>The aim:</b> one research direction, where neuroscience and design meet. <a href="next.html">Read chapter 5 →</a></p></li>
         </ol>
-        <p class="lp-energy"><b>In short:</b> state matters, it is hard to read from outside, so ask and keep steps small. <span>Three mice and one person are a start, not a rule for everyone.</span></p>
+        <p class="lp-energy"><b>In short:</b> how alert you are changes what your brain takes in, a headset could not reliably measure it, so a good app asks and keeps steps small. <span>Three mice and one person are a start, not a rule for everyone.</span></p>
         <div class="lp-how"><p class="lp-how-short"><b>What this does not show yet:</b> whether the pattern holds in more animals and more people, what causes it, or whether the apps help. Each of those is an experiment in chapter 5.</p></div>
       </section>
 
@@ -360,7 +360,7 @@ page("next.html", "Where this goes next · From neurons to next steps",
 # ---------------- the phone tour: the same five chapters, one screen at a time ----------------
 TOUR = [
     ("home", "Start", "home", "The loop", "From neurons to next steps", "It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. Is that the brain itself? Five short screens follow that question from real life, into the lab, and back out again.",
-     '<div class="loop-figure"><div data-art="loopTall"></div></div>', '<b>What we found, in three sentences:</b> what a brain is doing changes how it responds to the same thing. But that state is hard to read from outside. So tools should ask, not guess, and keep each step small.', "index.html"),
+     '<div class="loop-figure"><div data-art="loopTall"></div></div>', '<b>What we found, in three sentences:</b> In mice, brain cells reacted differently to the very same picture depending on how alert the mouse was. A brain-wave headset on a person could not reliably tell even whether their eyes were open or closed. So a helpful app should not try to read your brain: it should ask how you feel and show one small step at a time.', "index.html"),
     ("ch1", "Real life", "users", "Chapter 1 of 5 · Real life", "Same words, different moment.", "A step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself? To find out, look inside a brain while its state changes.",
      '<div class="hj-art" data-art="note"></div>', "", "index.html#story"),
     ("ch2", "Understand", "eye", "Chapter 2 of 5 · Understand", "A mouse’s state changes how its brain sees.", "Mice watched pictures while thousands of brain cells were recorded. Guesser A saw only the picture. Guesser B also knew how alert and active the mouse was.",

@@ -8,12 +8,12 @@ one loop: real life, understand, measure, design, then test.
 
 ## What we found, in three sentences
 
-1. What a brain is doing changes how it responds to the same thing: in three mice, knowing the
-   mouse's state made its brain cells 25–33% easier to predict, for the very same pictures.
-2. But that state is hard to read from outside: a model reading one person's brain waves drifted to
-   a coin flip within two minutes, and brain-wave bands did not fix it.
-3. So tools should ask, not guess, and keep each step small: Next Step asks "How much energy do you
-   have today?" and on a low day shows just the next step.
+1. In mice, brain cells reacted differently to the very same picture depending on how alert the
+   mouse was. Adding alertness (pupil size, running speed) made predictions 25–33% better, in all three mice.
+2. A brain-wave headset on a person could not reliably tell even whether their eyes were open or
+   closed. Within two minutes the computer was no better than a coin flip, even with a smarter method.
+3. So a helpful app should not try to read your brain: it should ask how you feel and show one small
+   step at a time. Next Step asks "How much energy do you have today?" and on a low day shows only the next step.
 
 ## Understand: the mouse study
 

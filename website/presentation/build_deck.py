@@ -44,14 +44,14 @@ slide("cover", "From neurons to next steps: an ASDRP neuroscience portfolio by A
 </div>{B.LANDING_ART}</div>""",
       "This is one question, followed from real life into the lab and back out again. I’ll show two studies with public brain recordings, then the two apps their findings shaped, and where the work goes next.")
 # 1b
-slide("found", "What we found, in three sentences: state changes how a brain responds; it is hard to read from outside; so tools should ask and keep steps small.", f"""
+slide("found", "What we found, in three sentences: in mice, brain cells reacted differently to the same picture depending on alertness; a brain-wave headset could not reliably tell even eyes open from closed; so a helpful app asks how you feel and shows one small step at a time.", f"""
 {head('What we found', 'In three sentences.')}
 {cards([
-    ('1 · Inside a brain', 'What a brain is doing changes how it responds to the same thing.', 'In three mice, knowing whether the mouse was alert and moving made its brain cells <b>25–33% easier to predict</b>, for the very same pictures.', ''),
-    ('2 · From outside the head', 'But that state is hard to read from outside.', 'A model reading one person’s brain waves could tell eyes open from closed on one stretch, then drifted to <b>a coin flip within two minutes</b>.', ''),
-    ('3 · In practice', 'So tools should ask, not guess, and keep each step small.', 'Next Step asks <b>“How much energy do you have today?”</b> and on a low day shows just the next step.', ''),
+    ('1 · The mouse study', 'In mice, brain cells reacted differently to the very same picture depending on how alert the mouse was.', 'Adding how alert each mouse was made our predictions of its brain cells <b>25–33% better</b>, in all three mice.', ''),
+    ('2 · The brain-wave study', 'A brain-wave headset on a person could not reliably tell even whether their eyes were open or closed.', 'A computer spotted closed eyes for one stretch, then within two minutes was <b>no better than a coin flip</b>.', ''),
+    ('3 · The app', 'So a helpful app should not try to read your brain: it should ask how you feel and show one small step at a time.', 'Next Step asks <b>“How much energy do you have today?”</b> and on a low day shows only the next step.', ''),
 ], 'found3')}""",
-      "Here is the whole answer in three sentences. First: what a brain is doing changes how it responds to the same thing. Second: that state is hard to read from outside the head. Third: so tools should ask, not guess, and keep each step small. The rest of this talk shows the evidence for each one.")
+      "Here is the whole answer in three sentences. One: In mice, brain cells reacted differently to the very same picture depending on how alert the mouse was. Two: A brain-wave headset on a person could not reliably tell even whether their eyes were open or closed. Three: So a helpful app should not try to read your brain: it should ask how you feel and show one small step at a time. The rest of this talk shows the evidence for each one.")
 # 2
 slide("loop", "The loop: real life, understand, measure, design, test, and back to real life.", f"""
 {head('The whole story on one page', 'One loop, five chapters.', 'It starts in real life and ends back there. Each chapter answers the question the last one raised.')}

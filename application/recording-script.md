@@ -14,7 +14,7 @@ From neurons to next steps. This started from Amishi’s own experience, and fol
 
 ## 02 · What we found, in three sentences
 
-Here is the whole answer in three sentences. First: what a brain is doing changes how it responds to the same thing. Second: that state is hard to read from outside the head. Third: so tools should ask, not guess, and keep each step small. The rest of this talk shows the evidence for each one.
+Here is the whole answer in three sentences. One: In mice, brain cells reacted differently to the very same picture depending on how alert the mouse was. Two: A brain-wave headset on a person could not reliably tell even whether their eyes were open or closed. Three: So a helpful app should not try to read your brain: it should ask how you feel and show one small step at a time. The rest of this talk shows the evidence for each one.
 
 ## 03 · The loop
 
@@ -70,4 +70,4 @@ Next, with an ASDRP mentor, we run four more data experiments and write the firs
 
 ## 16 · The loop, who did what, and where to see everything.
 
-So, the loop. Real life raised the question. The mouse showed that a brain’s state changes what it takes in. The EEG showed that state is hard to read from outside. So the apps ask how someone is doing, and keep each step small. Everything in this video is on the website, with the phone tour, the slides and both apps linked from it.
+So, the loop. Real life raised the question. In mice, how alert the brain was changed how it reacted to the same picture. A brain-wave headset could not reliably tell even whether a person’s eyes were closed. So the apps ask how someone feels, and show one small step at a time. Everything in this video is on the website, with the phone tour, the slides and both apps linked from it.
