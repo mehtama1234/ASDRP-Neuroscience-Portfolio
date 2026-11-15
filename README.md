@@ -40,7 +40,7 @@ scientific question -> experiment -> model -> interpretation -> usable tool -> p
 ## Code and related work
 
 - [AmishI123/neuroscience-project](https://github.com/AmishI123/neuroscience-project): the mouse visual-cortex analysis (notebooks, replication summary).
-- [Next Step](https://next-step-live.onrender.com/) and [Helper Jobs](https://helper-jobs.onrender.com): the applied tools, linked as live apps (their source repositories are private).
+- [Next Step](https://next-step-live.onrender.com/) and [Helper Jobs](https://helper-jobs.onrender.com): the applied tools, linked as live apps (source: [AmishI123/next-step](https://github.com/AmishI123/next-step) and, for Helper Jobs, [AmishI123/neurocomms-app](https://github.com/AmishI123/neurocomms-app)). Both were built with AI coding tools, with advice and guidance from a parent..
 
 This repository is the application-facing map that explains how the projects fit together.
 

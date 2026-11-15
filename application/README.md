@@ -28,9 +28,9 @@ verify public routes and the live PDF hash.
 
 ## Existing drafts
 
-- [Why applying](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_1_why_applying.md)
-- [Hands-on research experience](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_5_research_experience.md)
-- [Field and advisor preference](https://github.com/AmishI123/neuroscience-project/blob/main/application/essay_advisor_and_fields.md)
+- [Current essay drafts (all prompts)](https://github.com/AmishI123/neuroscience-project/blob/main/application/final_drafts.md)
+- [Her submitted answers](https://github.com/AmishI123/neuroscience-project/blob/main/application/submitted_answers.md)
+- [Story sketch](https://github.com/AmishI123/neuroscience-project/blob/main/application/story_sketch.md)
 
 Use [personalization-form.md](personalization-form.md) to replace the remaining
 bracketed prompts with verified applicant-specific details.
