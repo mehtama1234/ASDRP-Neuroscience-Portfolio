@@ -19,7 +19,7 @@ import build_deck as D  # noqa: E402
 
 # The talk notes are written for a person presenting; the video says the same thing without "I".
 SPOKEN = {
-    "cover": "From neurons to next steps. This started from Amishi’s own experience, and follows one question from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.",
+    "cover": "From neurons to next steps. This started at Pragnya, where Amishi volunteers with neurodivergent children, and follows one question from real life into the lab and back out again: two studies with public brain recordings, the two apps their findings shaped, and where the work goes next.",
     "loop": "Here is the whole story. Real life raised a question. A mouse study helps us understand it. An EEG study asks whether we can measure it in a person. The answers shape the design of two apps. And the last step tests the apps back in real life.",
     "close": "So, the loop. Real life raised the question. In mice, how alert the brain was changed how it reacted to the same picture. A brain-wave headset could not reliably tell even whether a person’s eyes were closed. So the apps ask how someone feels, and show one small step at a time. Everything in this video is on the website, with the phone tour, the slides and both apps linked from it.",
 }

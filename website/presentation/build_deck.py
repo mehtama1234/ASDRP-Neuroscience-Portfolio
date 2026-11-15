@@ -39,7 +39,7 @@ slide("cover", "From neurons to next steps: an ASDRP neuroscience portfolio by A
 <div class="landing-hero"><div class="landing-hero-text">
 <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
 <h1>From neurons to next steps</h1>
-<p class="landing-lede">It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. <b>Does what a brain is doing change what it takes in?</b> And if it does, how should we design for it?</p>
+<p class="landing-lede">It started at Pragnya, where Amishi volunteers with neurodivergent children: one child was dancing while another covered their ears in the same room. <b>Does what a brain is doing change what it takes in?</b> And if it does, how should we design for it?</p>
 <p class="landing-try-note">Public data only. Predicting something is not the same as knowing its cause. Plans are marked as plans.</p>
 </div>{B.LANDING_ART}</div>""",
       "This is one question, followed from real life into the lab and back out again. I’ll show two studies with public brain recordings, then the two apps their findings shaped, and where the work goes next.")
@@ -59,9 +59,9 @@ slide("loop", "The loop: real life, understand, measure, design, test, and back 
       "Here is the whole talk. Real life raised a question. A mouse study helps us understand it. An EEG study asks whether we can measure it in a person. The answers shape the design of two apps. And the last step tests the apps back in real life.")
 # 3
 slide("ch1", "Chapter 1, real life: same words, different moment.", f"""
-{head('Chapter 1 · Real life', 'Same words, different moment.', 'It started from Amishi’s own experience: a step that is easy when you are calm can be lost when you are tired, rushed or overloaded.', 'note')}
+{head('Chapter 1 · Real life', 'Same words, different moment.', 'It started at Pragnya, where one child was dancing while another covered their ears in the same room. A step that is easy when you are calm can be lost when you are tired, rushed or overloaded.', 'note')}
 {answer('<b>The question:</b> is that the brain itself changing what it takes in? <span>To find out, look inside a brain while its state changes.</span>')}""",
-      "This is where it started: in Amishi’s own experience. The same instruction works one moment and is lost the next. That made us ask whether how alert or tired a brain is changes what gets in.")
+      "This is where it started: at Pragnya, where one child was dancing while another covered their ears in the same room. That made us ask whether how alert or tired a brain is changes what gets in.")
 # 4
 slide("ch2-how", "Chapter 2: how the mouse study works, in four steps.", f"""
 {head('Chapter 2 · Understand · Mouse study', 'Does how alert a mouse is change how its brain sees?', 'Mice watched pictures while thousands of brain cells were recorded in the part of the brain that handles seeing.', 'mouseStudy')}

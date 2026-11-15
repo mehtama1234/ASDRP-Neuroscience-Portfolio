@@ -6,8 +6,9 @@ complete.
 
 ## Why neuroscience
 
-- **Chapter 1 moment (most important):** one real time from her own life when the
-  same instruction worked once and was lost a little later. A few sentences, no names. It opens the
+- **Chapter 1 moment (most important):** now the Pragnya moment from her own Essay 4
+  (one child dancing while another covered their ears in the same room). Confirm it is the one she
+  wants to lead with, or replace it with her own in a few sentences, no names. It opens the
   website, the slides, the video and Essay 1.
 
 - The first class, book, conversation, or observation that made the brain feel
