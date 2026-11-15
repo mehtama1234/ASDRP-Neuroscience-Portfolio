@@ -1,3 +1,5 @@
+> **This portfolio has moved** to Amishi's own account: https://amishi123.github.io/neuroscience-project/ (source: https://github.com/AmishI123/neuroscience-project/tree/main/portfolio). Pages on the old address forward there automatically. This copy is kept only so old links keep working.
+
 # ASDRP Neuroscience Portfolio
 
 An integrated portfolio of neuroscience research, human-centered neurotechnology,

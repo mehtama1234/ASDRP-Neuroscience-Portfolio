@@ -49,6 +49,14 @@ jobs:
           pip install -q playwright==1.48.0
           python3 -m playwright install --with-deps chromium >/dev/null
           python3 application/e2e_site.py _site
+      - name: Forward every page to the new address
+        run: |
+          NEW=https://amishi123.github.io/neuroscience-project
+          cd _site
+          find . -name "*.html" | while read -r f; do
+            p="${f#./}"
+            printf '<!doctype html><meta charset="utf-8"><title>Moved</title><meta http-equiv="refresh" content="0; url=%s/%s"><link rel="canonical" href="%s/%s"><p>This portfolio has moved to <a href="%s/%s">%s</a>.</p>' "$NEW" "$p" "$NEW" "$p" "$NEW" "$p" "$NEW" > "$f"
+          done
       - name: Push the site to gh-pages
         run: |
           cd _site
