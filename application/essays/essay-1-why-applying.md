@@ -1,35 +1,15 @@
-# Essay 1: Why are you applying? (limit 375 words)
+# Essay 1: Why ASDRP (limit 375)
 
-> **Draft for Amishi to make her own.** It follows the same story as the website, slides and video
-> (*From neurons to next steps*), so everything a reviewer opens says the same thing. Replace the part
-> in [brackets] with a real moment from your own experience, in your words. Change any sentence that does not
-> sound like you, and delete any claim you cannot explain out loud. This replaces the older draft in
-> AmishI123/neuroscience-project/application, which started from the science instead. About 330 words.
+Current draft. The source of truth is `final_drafts.md` in https://github.com/AmishI123/neuroscience-project/tree/main/application. Written from her own submitted answers; she should edit anything that does not sound like her.
 
 ---
 
-[Two or three sentences: one real time from your own life when the same instruction worked once and
-was lost a little later. What happened, and what you noticed. Share only what you are comfortable with.]
+At Pragnya, where I volunteer with neurodivergent children, I watched one child dancing while another covered their ears because the room was too loud. Same room, same noise, opposite reactions. I keep coming back to that moment. The input was identical, so the difference had to be in the child's state.
 
-The words were the same. Something inside me had changed. I wanted to know whether that was
-the brain itself: does what a brain is doing change what it takes in?
+How a brain's state changes what it takes in is the center of my interest in neuroscience, and I explore it through code. Combining computer science with biology lets me work on problems too complicated to solve by hand, and I would rather ask my own questions of data than memorize what someone else has already found. For one project I used public recordings from mouse visual cortex to test whether a mouse's pupil size and running help predict what its neurons do, beyond the image it sees. They did, in all three mice. I also shuffled the behavior data to check the result was not an accident, and the gain disappeared. That check convinced me more than the result did.
 
-I tested it first in public recordings from mice watching pictures. I built two simple models of
-how thousands of brain cells responded. One knew only the picture. The other also knew how wide the
-mouse’s pupils were and how fast it was running. Knowing the mouse’s state made the guesses 25 to 33
-percent better, in all three mice. When I gave the model the state from the wrong moments, the gain
-disappeared. State is not noise. It shapes what gets in.
+Prediction only describes the brain from a distance. What I want to understand is what is actually changing. That is why I plan to become a Certified Registered Nurse Anesthetist. Anesthesia is the one situation where we switch consciousness off and on again on purpose, and I am curious what is changing in neurons and the signals between them, and how drugs and diseases change the way those signals travel.
 
-Then I asked whether a brain-wave headset could measure state in a person. In a public EEG recording, a simple
-model could tell when someone’s eyes were closed on one stretch, but over two minutes it drifted to
-a coin flip. [Only if you ran or reran it yourself:] I wrote down a follow-up plan before running
-it, using brain-wave rhythms, and it still did not hold up. I kept that result, because it changed
-what I believe.
+I am applying to ASDRP because I have taken my independent work about as far as I can alone. I want mentors who can show me how to analyze data more carefully, question my own results, and explain what I find. I want wet-lab experience, because these questions cannot be answered from a laptop. I also want to be around students who push me into topics I would not have looked at on my own.
 
-That result changed what I build. Next Step, my app for students, does not try to guess how
-someone is doing. It asks: how much energy do you have today? On a low day it shows just the next
-step, and it makes pausing and coming back easy.
-
-At ASDRP I want to do this properly, with a mentor: run the next experiments, write up why the EEG
-signal drifts, and test whether designs like mine actually help the people they are for. I am
-applying because I have started, and I want to learn to do it well.
+Longer term, I want to pair neuroscience with healthcare through college and beyond. Understanding anesthesia at the cellular level should help me make better decisions for patients. ASDRP is where I want to start building those habits, in the lab now and in the hospital someday.

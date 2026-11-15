@@ -112,7 +112,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
         <div class="landing-hero-text">
           <p class="landing-kicker">An ASDRP neuroscience portfolio · Amishi Mehta</p>
           <h1 id="home-title">From neurons to next steps</h1>
-          <p class="landing-lede">It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. <b>Is that the brain itself?</b> Two studies with public brain recordings and two apps later, here is what we found, in three sentences.</p>
+          <p class="landing-lede">It started at Pragnya, where Amishi volunteers with neurodivergent children: in one session, one child was dancing while another covered their ears in the same room. <b>Is that the brain’s state?</b> Two studies with public brain recordings and two apps later, here is what we found, in three sentences.</p>
           <div class="landing-actions">
             <a class="button primary" href="#found">What we found <span aria-hidden="true">→</span></a>
             <a class="button secondary" href="#story">The whole story</a>
@@ -148,7 +148,7 @@ page("index.html", "From neurons to next steps · an ASDRP neuroscience portfoli
         <p class="lp-lead">It starts in real life and ends back there. Each chapter answers the question the last one raised.</p>
         <div class="loop-figure"><div class="loop-wide" data-art="loop"></div><div class="loop-tall" data-art="loopTall"></div></div>
         <ol aria-label="Five chapters" tabindex="0">
-          <li><p class="lp-k">1 · Real life</p><h3>Same words, different moment.</h3><p class="lp-pain">It started from Amishi’s own experience: a step that is easy when you are calm can be lost when you are tired, rushed or overloaded. Is that the brain itself?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
+          <li><p class="lp-k">1 · Real life</p><h3>Same words, different moment.</h3><p class="lp-pain">It started at Pragnya, where one child was dancing while another covered their ears in the same room. A step that is easy when you are calm can be lost when you are tired, rushed or overloaded. Is that the brain’s state?</p><p class="lp-fix"><b>To find out:</b> look inside a brain while its state changes.</p></li>
           <li><p class="lp-k">2 · Understand</p><h3>How alert a mouse is changes how its brain responds to what it sees.</h3><p class="lp-pain">Mice watched pictures while thousands of brain cells were recorded. We guessed what each cell would do from the picture alone, then from the picture plus how alert and active the mouse was.</p><p class="lp-fix"><b>Found:</b> knowing the mouse’s state made our guesses 25–33% better, in all three mice. <a href="mouse.html">Read chapter 2 →</a></p></li>
           <li><p class="lp-k">3 · Measure</p><h3>Can a brain-wave headset tell when a person’s eyes are closed?</h3><p class="lp-pain">A cap of 14 sensors on one person’s head for two minutes (EEG). Closing your eyes is one of the clearest changes it picks up. Can a simple model tell when?</p><p class="lp-fix"><b>Found:</b> on one stretch it scored 0.625 (0.5 is a coin flip, 1 is always right). Across the whole recording it fell to 0.478, about a coin flip. A smarter method using brain-wave rhythms scored 0.566, but still fell below a coin flip on some stretches. <a href="eeg.html">Read chapter 3 →</a></p></li>
           <li><p class="lp-k">4 · Design</p><h3>From findings to features.</h3><p class="lp-pain">If alertness matters but a headset cannot reliably measure it, an app should ask, not guess. It should show less on a low-energy day, and make pausing and coming back easy.</p><p class="lp-fix"><b>Built into:</b> Next Step, by Amishi Mehta, for schoolwork, and Helper Jobs, a family project that gives neurodivergent adults one picture step at a time while they help at Pragnya’s Sunday outings for kids. <a href="tools.html">Read chapter 4 →</a></p></li>
@@ -359,7 +359,7 @@ page("next.html", "Where this goes next · From neurons to next steps",
 
 # ---------------- the phone tour: the same five chapters, one screen at a time ----------------
 TOUR = [
-    ("home", "Start", "home", "The loop", "From neurons to next steps", "It started from Amishi’s own experience: the same instruction can land one moment and be lost the next. Is that the brain itself? Five short screens follow that question from real life, into the lab, and back out again.",
+    ("home", "Start", "home", "The loop", "From neurons to next steps", "It started at Pragnya, where one child was dancing while another covered their ears in the same room. Is that the brain’s state? Five short screens follow that question from real life, into the lab, and back out again.",
      '<div class="loop-figure"><div data-art="loopTall"></div></div>', '<b>What we found, in three sentences:</b> In mice, brain cells reacted differently to the very same picture depending on how alert the mouse was. A brain-wave headset on a person could not reliably tell even whether their eyes were open or closed. So a helpful app should not try to read your brain: it should ask how you feel and show one small step at a time.', "index.html"),
     ("ch1", "Real life", "users", "Chapter 1 of 5 · Real life", "Same words, different moment.", "A step that is easy when someone is calm can be lost when they are tired, rushed or overloaded. Is that the brain itself? To find out, look inside a brain while its state changes.",
      '<div class="hj-art" data-art="note"></div>', "", "index.html#story"),
@@ -496,8 +496,8 @@ page("share/index.html", "Share and demo · From neurons to next steps", "Everyt
       <section class="landing-more" aria-labelledby="apps2-title">
         <div class="lm-head"><div><h2 class="landing-subhead" id="apps2-title">The two apps</h2><p class="lp-lead">Live, with made-up examples. Each links back here.</p></div></div>
         {grid([
-            ('heart-handshake', 'By Amishi Mehta', 'Next Step', f'<a href="{NEXT_STEP}">Open Next Step</a>. It can take about 30 seconds to wake up the first time.'),
-            ('users', 'Family project', 'Helper Jobs', f'<a href="{HELPER_JOBS}">Open Helper Jobs</a>. Built for real jobs at Pragnya’s Sunday outings.'),
+            ('heart-handshake', 'By Amishi Mehta', 'Next Step', f'<a href="{NEXT_STEP}">Open Next Step</a>. It can take about 30 seconds to wake up the first time. <a href="https://github.com/AmishI123/next-step">Source code</a>.'),
+            ('users', 'Family project', 'Helper Jobs', f'<a href="{HELPER_JOBS}">Open Helper Jobs</a>. Built for real jobs at Pragnya’s Sunday outings. <a href="https://github.com/AmishI123/neurocomms-app">Source code</a>.'),
         ])}
       </section>
 
